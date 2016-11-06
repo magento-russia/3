@@ -1,4 +1,5 @@
 <?php
+use Df\C1\Cml2\Action\Front;
 class Df_C1_Cml2Controller extends Mage_Core_Controller_Front_Action {
 	/**
 	 * Обратите внимание, что проверку на наличие и доступности лицензии
@@ -14,7 +15,7 @@ class Df_C1_Cml2Controller extends Mage_Core_Controller_Front_Action {
 		if (df_my_local()) {
 			Mage::log(df_last(explode('?', df_ruri())));
 		}
-		df_action($this, \Df\C1\Cml2\Action\Front::class);
+		df_action($this, Front::class);
 	}
 
 	/**

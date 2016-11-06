@@ -52,14 +52,14 @@ class Front extends \Df\C1\Cml2\Action {
 			 */
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__DEACTIVATE:
 				/** @uses \Df\C1\Cml2\Action\Catalog\Deactivate */
-				$this->delegate('Catalog_Deactivate');
+				$this->delegate('Catalog\Deactivate');
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__FILE:
 				$this->action_upload();
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__IMPORT:
 				/** @uses \Df\C1\Cml2\Action\Catalog\Import */
-				$this->delegate('Catalog_Import');
+				$this->delegate('Catalog\Import');
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__INIT:
 				$this->action_init();
@@ -85,7 +85,7 @@ class Front extends \Df\C1\Cml2\Action {
 					 * @uses \Df\C1\Cml2\Action\Catalog\Export\Finish
 					 * @uses \Df\C1\Cml2\Action\Catalog\Export\Process
 					 */
-					$this->delegate('Catalog_Export_' . $process ? 'Process' : 'Finish');
+					$this->delegate('Catalog\Export\\' . $process ? 'Process' : 'Finish');
 					$this->flag_catalogHasJustBeenExported($process);
 				}
 				catch (\Exception $e) {
@@ -107,14 +107,14 @@ class Front extends \Df\C1\Cml2\Action {
 		switch($this->rmRequest()->getMode()) {
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__FILE:
 				/** @uses \Df\C1\Cml2\Action\Orders\Import */
-				$this->delegate('Orders_Import');
+				$this->delegate('Orders\Import');
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__INIT:
 				$this->action_init();
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__QUERY:
 				/** @uses \Df\C1\Cml2\Action\Orders\Export */
-				$this->delegate('Orders_Export');
+				$this->delegate('Orders\Export');
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__SUCCESS:
 				$this->setResponseSuccess();
@@ -130,7 +130,7 @@ class Front extends \Df\C1\Cml2\Action {
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__IMPORT:
 				/** @uses \Df\C1\Cml2\Action\Reference\Import */
-				$this->delegate('Reference_Import');
+				$this->delegate('Reference\Import');
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__INIT:
 				$this->action_init();
@@ -142,7 +142,7 @@ class Front extends \Df\C1\Cml2\Action {
 	 * @uses \Df\C1\Cml2\Action\GenericImport\Upload
 	 * @return void
 	 */
-	private function action_upload() {$this->delegate('GenericImport_Upload');}
+	private function action_upload() {$this->delegate('GenericImport\Upload');}
 
 	/** @return void */
 	private function checkLoggedIn() {
