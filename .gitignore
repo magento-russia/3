@@ -4,6 +4,9 @@
 *
 !*/
 !.gitignore
+# 2016-11-07
+!LICENSE
+!README.md
 !app/code/local/Df/**/*
 !app/code/local/Mage/1930/**/*
 !app/code/local/Mage/Core/Block/Abstract.php
