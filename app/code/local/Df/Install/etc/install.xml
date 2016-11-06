@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<config>
+	<wizard>
+		<steps>
+			<begin>
+				<remove>true</remove>
+			</begin>
+			<locale>
+				<code>Региональные настройки</code>
+			</locale>
+			<config>
+				<code>Другие настройки</code>
+			</config>
+			<administrator>
+				<code>Анкета администратора</code>
+			</administrator>
+			<end>
+				<code>ФИНИШ!</code>
+			</end>
+		</steps>
+	</wizard>
+</config>

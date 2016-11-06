@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Phpquery>
+			<author>Дмитрий Федюк</author>
+			<version>1.0.0</version>
+		</Df_Phpquery>
+	</modules>
+</config>

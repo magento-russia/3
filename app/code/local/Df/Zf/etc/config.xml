@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Zf>
+			<author>Дмитрий Федюк</author>
+			<version>1.0.0</version>
+		</Df_Zf>
+	</modules>
+	<global>
+		<models><df_zf><class>Df_Zf_Model</class></df_zf></models>
+		<helpers><df_zf><class>Df_Zf_Helper</class></df_zf></helpers>
+		<log>
+			<core>
+				<writer_model>Df_Zf_Log_Writer_Stream_Simple</writer_model>
+			</core>
+		</log>
+	</global>
+</config>

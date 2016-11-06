@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Api2>
+			<author>Дмитрий Федюк</author>
+			<version>1.0.0</version>
+		</Df_Api2>
+	</modules>
+	<global>
+		<blocks><df_api2><class>Df_Api2_Block</class></df_api2></blocks>
+		<helpers><df_api2><class>Df_Api2_Helper</class></df_api2></helpers>
+		<models><df_api2><class>Df_Api2_Model</class></df_api2></models>
+	</global>
+</config>

@@ -1,0 +1,6 @@
+<?php /** @var \Df\Pd4\Block\Info $this */ ?>
+<?php
+	echo df_e($this->getMethodTitle());
+	if ($this->capableLinkToOrder()) {
+		echo $this->getLinkToDocumentAsHtml();
+	}

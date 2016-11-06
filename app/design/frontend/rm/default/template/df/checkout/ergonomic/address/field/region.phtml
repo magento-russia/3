@@ -1,0 +1,37 @@
+<?php /** @var Df_Checkout_Block_Frontend_Ergonomic_Address_Field_Region $this */ ?>
+<?php
+    /** @var Df_Checkout_Block_Frontend_Ergonomic_Address_Field_Region_Text $asText  */
+	$asText = $this->getControlText();
+	/** @var Df_Checkout_Block_Frontend_Ergonomic_Address_Field_Dropdown $asDropdown  */
+	$asDropdown = $this->getControlDropdown();
+?>
+<?php echo $asDropdown->getLabelHtml(); ?>
+<div class='input-box'>
+	<select 
+		id='<?php echo $asDropdown->getDomId(); ?>'
+		name='<?php echo $asDropdown->getDomName(); ?>'
+		title='<?php echo $asDropdown->getLabel(); ?>'
+		class='<?php echo $asDropdown->getCssClassesAsText(); ?>'
+		style='display:none;'
+	>
+		<option
+			value=''
+		><?php echo df_h()->checkout()->__('Please select region, state or province') ?></option>
+	</select>
+	<script type='text/javascript'>
+	//<![CDATA[
+		$('<?php echo $asDropdown->getDomId(); ?>')
+			.setAttribute('defaultValue', '<?php echo $asDropdown->getValue(); ?>')
+		;
+	//]]>
+	</script>
+	<input
+		type='text'
+		id='<?php echo $asText->getDomId(); ?>'
+		name='<?php echo $asText->getDomName(); ?>'
+		value='<?php echo df_e($asText->getValue()); ?>'
+		title='<?php echo $asText->getLabel(); ?>'
+		class='<?php echo $asDropdown->getCssClassesAsText(); ?>'
+		style='display:none;'
+	/>
+</div>

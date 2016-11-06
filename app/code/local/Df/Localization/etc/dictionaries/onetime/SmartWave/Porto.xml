@@ -1,0 +1,1544 @@
+<?xml version='1.0'?>
+<dictionary>
+	<config>
+		<entry>
+			<path>ajax_catalog/price_slider_conf/goBtnText</path>
+			<value>OK</value>
+			<set_as_default/>
+		</entry>
+		<!-- похоже, они эти настройки (и сам модуль) стибрили у Infortis -->
+		<entry>
+			<path>megamenu/category_labels/label1</path>
+			<value>новинка</value>
+			<set_as_default/>
+		</entry>
+		<entry>
+			<path>megamenu/category_labels/label2</path>
+			<value>скидки</value>
+			<set_as_default/>
+		</entry>
+		<entry>
+			<path>porto_settings/footer/footer_ribbon_text</path>
+			<original_value>Ribbon Text</original_value>
+			<value>Текст на ленте</value>
+		</entry>
+		<entry>
+			<path>porto_settings/footer/footer_newsletter</path>
+			<original_value>%Get all the latest%</original_value>
+			<value><![CDATA[Полиряд изящно диссонирует лирический голос.<br/>Эти слова совершенно справедливы, однако звукосниматель продолжает зеркальный сет.]]></value>
+		</entry>
+		<entry>
+			<path>porto_settings/footer/footer_newsletter_title</path>
+			<original_value>Be the First to Know</original_value>
+			<value>Midi-контроллер сложен</value>
+		</entry>
+		<entry>
+			<path>porto_settings/footer/copyrights</path>
+			<original_value><![CDATA[&copy;Copyright 2015 by SW-THEMES. All Rights Reserved.]]></original_value>
+			<value>Российская сборка Magento</value>
+		</entry>
+		<entry>
+			<path>porto_settings/newsletter_popup/newsletter_content</path>
+			<original_value><![CDATA[<h2>BE THE FIRST TO KNOW</h2><p>Subscribe to the Porto eCommerce newsletter to receive timely updates from your favorite products.</p>]]></original_value>
+			<value><![CDATA[<h2>Показательный пример</h2><p>Песня "All The Things She Said" (в русском варианте - "Я сошла с ума") имеет хамбакер, как и реверансы в сторону ранних "роллингов".</p>]]></value>
+		</entry>
+		<entry>
+			<path>porto_settings/contacts/address</path>
+			<original_value>Porto Store</original_value>
+			<value>Российская сборка Magento</value>
+		</entry>
+		<entry>
+			<path>porto_settings/contacts/infoblock</path>
+			<original_value>%porto@gmail.com%</original_value>
+			<value><![CDATA[                <div class="row"><div class="col-sm-12">
+			                <i class="icon-phone"></i>
+			                <p>+7 495 777-5-444</p>
+			                <p>+7 495 777-5-444</p>
+			            </div></div>
+			                <div class="row"><div class="col-sm-12">
+			                    <i class="icon-mobile"></i>
+			                    <p>+7 495 777-5-444</p>
+			                    <p>+7 495 777-5-444</p>
+			                </div></div>
+			                <div class="row"><div class="col-sm-12">
+			                    <i class="icon-mail-alt"></i>
+			                    <p>admin@magento-forum.ru</p>
+			                    <p>admin@magento-forum.ru</p>
+			                </div></div>
+			                <div class="row"><div class="col-sm-12">
+			                    <i class="icon-skype"></i>
+			                    <p>magento-forum.ru</p>
+			                    <p>magento-forum.ru</p>
+			                </div></div>]]></value>
+		</entry>
+		<entry>
+			<path>porto_settings/product_label/new_label_text</path>
+			<original_value>New</original_value>
+			<value>Новинка</value>
+		</entry>
+		<entry>
+			<path>porto_settings/product_label/sale_label_text</path>
+			<original_value>Sale</original_value>
+			<value>Скидка</value>
+		</entry>
+	</config>
+	<db>
+		<table name='catalog_category_entity_text'>
+			<column name='value'>
+				<term><from><![CDATA[>SHOP NOW <]]></from><to><![CDATA[>КУПИТЬ <]]></to></term>
+				<term><from><![CDATA[>TV's<]]></from><to><![CDATA[>ТЕЛЕВИЗОРЫ<]]></to></term>
+				<term><from><![CDATA[>VIEW NOW <]]></from><to><![CDATA[>ПОКАЗАТЬ <]]></to></term>
+				<term><from><![CDATA[>This is a custom block. You can add any images or links here.<]]></from><to><![CDATA[><br/><br/>Пример самодельного блока.<br/>Его содержимое настраивается на административном экране товарного раздела.<]]></to></term>
+				<term><from><![CDATA[>SUGGESTIONS:<]]></from><to><![CDATA[>РЕКОМЕНДАЦИИ:<]]></to></term>
+				<term><from><![CDATA[>MOBILE<]]></from><to><![CDATA[>ГРЕЧКА<]]></to></term>
+				<term><from><![CDATA[>CAMERAS<]]></from><to><![CDATA[>ПШЕНО<]]></to></term>
+				<term><from><![CDATA[>HEADSETS<]]></from><to><![CDATA[>РИС<]]></to></term>
+				<term><from><![CDATA[>STUB<]]></from><to><![CDATA[>ТЕСТ<]]></to></term>
+			</column>
+		</table>
+		<table name='smartwave_blog'>
+			<column name='title'>
+				<term><from>Hello world!</from><to>Превед, медвед!</to></term>
+				<term><from>Post Format – Single Image</from><to>Статья с картинкой</to></term>
+				<term><from>Post Format – Image Gallery</from><to>Статья с галереей</to></term>
+				<term><from>Post Format – Video</from><to>Статья с видеороликом</to></term>
+			</column>
+			<column name='post_content'>
+				<term><from>%Welcome to Porto%</from><to><![CDATA[Эти слова совершенно справедливы, однако дифференциация имитирует хроматический сет. Поп-индустрия, в том числе, полифигурно начинает лирический лайн-ап. Развивая эту тему, форма заканчивает флажолет, не говоря уже о том, что рок-н-ролл мертв. Винил просветляет тон-полутоновый флажолет. Внутридискретное арпеджио продолжает open-air.
+
+				Модальное письмо может быть реализовано на основе принципов центропостоянности и центропеременности, таким образом хорус имеет звукорядный рок-н-ролл 50-х, не случайно эта композиция вошла в диск В.Кикабидзе "Ларису Ивановну хочу". Нонаккорд многопланово представляет собой автономный громкостнoй прогрессийный период. Нота использует фьюжн, а после исполнения Утесовым роли Потехина в "Веселых ребятах" слава артиста стала всенародной.
+
+				Голос синхронно дает самодостаточный тетрахорд, благодаря употреблению микромотивов (нередко из одного звука, а также двух-трех с паузами). Арпеджированная фактура монотонно имеет структурный октавер. Крещендирующее хождение имеет винил. Плотностная компонентная форма использует глубокий сет.]]></to></term>
+				<term><from>%Lorem ipsum%</from><to>Поп-индустрия использует резкий хамбакер. Ретро, следовательно, продолжает конструктивный голос. Рок-н-ролл 50-х, и это особенно заметно у Чарли Паркера или Джона Колтрейна, традиционен.
+
+				Фьюжн монотонно варьирует флюгель-горн. Кластерное вибрато относительно. Внутридискретное арпеджио, согласно традиционным представлениям, заканчивает флэнжер, благодаря употреблению микромотивов (нередко из одного звука, а также двух-трех с паузами). Лайн-ап, следовательно, регрессийно начинает тон-полутоновый доминантсептаккорд. Рондо начинает микрохроматический интервал, и если в одних голосах или пластах музыкальной ткани сочинения еще продолжаются конструктивно-композиционные процессы предыдущей части, то в других - происходит становление новых. Аллегро, на первый взгляд, параллельно.</to></term>
+				<term><from>%Euismod atras%</from><to>Очевидно, что шоу-бизнес неравномерен. Фишка диссонирует тетрахорд. Мономерная остинатная педаль дает доминантсептаккорд. Как было показано выше, легато диссонирует позиционный нонаккорд, в таких условиях можно спокойно выпускать пластинки раз в три года.
+
+				Очевидно, что аккорд вызывает позиционный сет. Крещендирующее хождение многопланово выстраивает хроматический сет. Ощущение мономерности ритмического движения возникает, как правило, в условиях темповой стабильности, тем не менее форма использует мелодический громкостнoй прогрессийный период.</to></term>
+			</column>
+			<column name='user'>
+				<term><from>Dmitry</from><to>Иван Иванов</to></term>
+				<term><from>Martin</from><to>Пётр Петров</to></term>
+				<term><from>Admin</from><to>Сидор Сидоров</to></term>
+				<term><from>Roberto</from><to>Васисуалий Лоханкин</to></term>
+			</column>
+			<column name='update_user'>
+				<term><from>Super Admin</from><to>Администратор</to></term>
+			</column>
+			<column name='tags'>
+				<term><from>Clothing,Blog,Photography,Women</from><to>Звукосниматель,Флажолет</to></term>
+				<term><from>Fashion,Bags</from><to>Звукосниматель,Октавер</to></term>
+				<term><from>Fashion,Shoes</from><to>Звукосниматель,Соноропериод</to></term>
+				<term><from>Fashio,Dresses</from><to>Звукосниматель,Флажолет,Октавер</to></term>
+			</column>
+			<column name='short_content'>
+				<term><from>%Welcome to Porto%</from><to><![CDATA[Эти слова совершенно справедливы, однако дифференциация имитирует хроматический сет. Поп-индустрия, в том числе, полифигурно начинает лирический лайн-ап. Развивая эту тему, форма заканчивает флажолет, не говоря уже о том, что рок-н-ролл мертв. Винил просветляет тон-полутоновый флажолет. Внутридискретное арпеджио продолжает open-air.]]></to></term>
+				<term><from>%Lorem ipsum%</from><to>Поп-индустрия использует резкий хамбакер. Ретро, следовательно, продолжает конструктивный голос. Рок-н-ролл 50-х, и это особенно заметно у Чарли Паркера или Джона Колтрейна, традиционен.</to></term>
+				<term><from>%Euismod atras%</from><to>Очевидно, что шоу-бизнес неравномерен. Фишка диссонирует тетрахорд. Мономерная остинатная педаль дает доминантсептаккорд. Как было показано выше, легато диссонирует позиционный нонаккорд, в таких условиях можно спокойно выпускать пластинки раз в три года.</to></term>
+			</column>
+		</table>
+		<table name='smartwave_blog_cat'>
+			<column name='title'>
+				<term><from>All about clothing</from><to>Превед, медвед!</to></term>
+				<term><from><![CDATA[Make-up & beauty]]></from><to>Композиционный сет</to></term>
+				<term><from>Accessories</from><to>Хроматический канал</to></term>
+				<term><from>Fashion trends</from><to>Гипнотический рифф</to></term>
+				<term><from><![CDATA[Haircuts & hairstyles]]></from><to>Гармонический интервал</to></term>
+			</column>
+		</table>
+		<table name='smartwave_blog_comment'>
+			<column name='comment'>
+				<term><from>%Cgestas metus%</from><to><![CDATA[Говорят также о фактуре, типичной для тех или иных жанров ("фактура походного марша", "фактура вальса" и пр.), и здесь мы видим, что фаза иллюстрирует звукорядный форшлаг, что отчасти объясняет такое количество кавер-версий. Эти слова совершенно справедливы, однако синкопа фактурна. В заключении добавлю, микрохроматический интервал иллюстрирует длительностный эффект "вау-вау". Ощущение мономерности ритмического движения возникает, как правило, в условиях темповой стабильности, тем не менее панладовая система свободна.]]></to></term>
+				<term><from>%Aliquam eu%</from><to><![CDATA[Динамический эллипсис, в том числе, образует гармонический интервал, и если в одних голосах или пластах музыкальной ткани сочинения еще продолжаются конструктивно-композиционные процессы предыдущей части, то в других - происходит становление новых. Рефрен дает гипнотический рифф. Гармоническое микророндо вызывает неизменный флюгель-горн.]]></to></term>
+				<term><from>test</from><to><![CDATA[Нота возможна. Нота представляет собой целотоновый кризис жанра. Пласт регрессийно трансформирует голос, благодаря употреблению микромотивов (нередко из одного звука, а также двух-трех с паузами). Звукоряд, и это особенно заметно у Чарли Паркера или Джона Колтрейна, диссонирует дорийский септаккорд, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани.]]></to></term>
+			</column>
+			<column name='user'>
+				<term><from>Elen Aliquam</from><to>Иван Иванов</to></term>
+				<term><from>Martin Doe</from><to>Пётр Петров</to></term>
+				<term><from>Test</from><to>Сидор Сидоров</to></term>
+				<term><from>Martin</from><to>Васисуалий Лоханкин</to></term>
+			</column>
+		</table>
+		<table name='smartwave_blog_tags'>
+			<column name='tag'>
+				<term><from>Accessories</from><to>Звукосниматель</to></term>
+				<term><from>Bags</from><to>Соноропериод</to></term>
+				<term><from>Blog</from><to>Флажолет</to></term>
+				<term><from>Clother</from><to>Октавер</to></term>
+				<term><from>Clothing</from><to>Арпеджио</to></term>
+				<term><from>Dresses</from><to>Техно</to></term>
+				<term><from>Fashio</from><to>Рондо</to></term>
+				<term><from>Fashion</from><to>Ротация</to></term>
+				<term><from>Photography</from><to>Лайн-ап</to></term>
+				<term><from>Shoes</from><to>Аккорд</to></term>
+				<term><from>Women</from><to>Рифф</to></term>
+			</column>
+		</table>
+	</db>
+	<rule>
+		<conditions><type>category</type><category><name>Root Catalog</name></category></conditions>
+		<actions><new_title>Корневой раздел</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Fashion</name></category></conditions>
+		<actions><new_title>Молочные продукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Motors</name></category></conditions>
+		<actions><new_title>Детское питание</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Jewellery</name></category></conditions>
+		<actions><new_title>Диетические продукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Kids Fashion</name></category></conditions>
+		<actions><new_title>Овощи, фрукты, зелень, грибы</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Shoes & Boots]]></name></category>
+		</conditions>
+		<actions><new_title>Бакалея</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Watch Fashion</name></category></conditions>
+		<actions><new_title>Заправки, соусы, приправы</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Tees, Knits & Polos]]></name></category>
+		</conditions>
+		<actions><new_title>Консервированные продукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Sweaters</name></category></conditions>
+		<actions><new_title>Кондитерские изделия</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Jeans & Shorts]]></name></category>
+		</conditions>
+		<actions><new_title>Чай, кофе, какао</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Parts & Accessories]]></name></category>
+		</conditions>
+		<actions><new_title>Мини-овощи</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Auto Tools & Supplies]]></name></category>
+		</conditions>
+		<actions><new_title>Фрукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Spring & Autumn]]></name></category>
+		</conditions>
+		<actions><new_title>Мясная гастрономия</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Computers & Tablets]]></name></category>
+		</conditions>
+		<actions><new_title>Рыбная гастрономия</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Car Audio, Video & GPS]]></name></category>
+		</conditions>
+		<actions><new_title>Мясо, птица, рыба и морепродукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Radios & Clock Radios]]></name></category>
+		</conditions>
+		<actions><new_title>Готовые блюда и кулинария</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Cell Phones & Accessories]]></name></category>
+		</conditions>
+		<actions><new_title>Яйцо</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Cameras & Photo]]></name></category>
+		</conditions>
+		<actions><new_title>Хлебобулочные изделия и выпечка</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[iPad & Android Tablets]]></name></category>
+		</conditions>
+		<actions><new_title>Напитки, соки, воды</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Video Games & Consolers]]></name></category>
+		</conditions>
+		<actions><new_title>Молоко, сливки, молочные коктейли</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Printers & Scanners]]></name></category>
+		</conditions>
+		<actions><new_title>Соевые продукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Game Machine & Devices]]></name></category>
+		</conditions>
+		<actions><new_title>Кисломолочные продукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>category</type><category>
+			<name><![CDATA[Motorcycles & Powersports]]></name></category>
+		</conditions>
+		<actions><new_title>Йогурты, десерты, творожки</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Casual Shoes</name></category></conditions>
+		<actions><new_title>Творожные изделия</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Winter Sneakers</name></category></conditions>
+		<actions><new_title>Сливочные масла, маргарины, спреды</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Smart TVs</name></category></conditions>
+		<actions><new_title>Сыры</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Games</name></category></conditions>
+		<actions><new_title>Мороженое</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>TV, Audio</name></category></conditions>
+		<actions><new_title>Закваски для домашнего приготовления</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Home Office Equipments</name></category></conditions>
+		<actions><new_title>Для беременных и кормящих мам</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>GPS Navigation</name></category></conditions>
+		<actions><new_title>Заменители материнского молока и сухие смеси</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Photo Accessories</name></category></conditions>
+		<actions><new_title>Пюре</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>IP Phones</name></category></conditions>
+		<actions><new_title>Каши</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Samsung Galaxy Phones</name></category></conditions>
+		<actions><new_title>Вода, соки и напитки</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>e-Book Readers</name></category></conditions>
+		<actions><new_title>Детская бакалея, печенье</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Digital Picture Frames</name></category></conditions>
+		<actions><new_title>Десерты и пудинги</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>3D Fashion Games</name></category></conditions>
+		<actions><new_title>Безглютеновые продукты</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Cars and Trucks</name></category></conditions>
+		<actions><new_title>Готовые блюда</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Boats</name></category></conditions>
+		<actions><new_title>Здоровая диета</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Motorcycle Parts</name></category></conditions>
+		<actions><new_title>Кондитерские изделия без сахара</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>ATV Parts</name></category></conditions>
+		<actions><new_title>Масла и эликсиры</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Snowmobile Parts</name></category></conditions>
+		<actions><new_title>Плодово-ягодные консервы без сахара</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Personal Watercraft Parts</name></category></conditions>
+		<actions><new_title>Сахарозаменители</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Other Vehicle Parts</name></category></conditions>
+		<actions><new_title>Хлебобулочные изделия</new_title></actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>block page</type>
+		</conditions>
+		<actions>
+			<term>
+				<from>Custom Tab</from>
+				<to>Пример товарной вкладки</to>
+			</term>
+			<term>
+				<from>#^Porto \- Homepage Slider (\d+)$#</from>
+				<to>Porto. Главная страница. Слайдер №$1</to>
+			</term>
+			<term>
+				<from>#^Porto \- Homepage Slider (\d+) New$#</from>
+				<to>Porto. Главная страница. Слайдер №$1 новый</to>
+			</term>
+			<term>
+				<from><![CDATA[>Premium Responsive Magento Theme<]]></from>
+				<to><![CDATA[>Российская сборка Magento<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>GET STARTED NOW<]]></from>
+				<to><![CDATA[>КУПИТЬ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Now starting at<]]></from>
+				<to><![CDATA[>Все модули за<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>$99<]]></from>
+				<to><![CDATA[>3000 рублей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>OFF<]]></from>
+				<to><![CDATA[>СКИДКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>HUGE <]]></from>
+				<to><![CDATA[>БОЛЬШАЯ <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SALE<]]></from>
+				<to><![CDATA[>РАСПРОДАЖА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Hurry up!<]]></from>
+				<to><![CDATA[>Поспешите!<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> Sale ends 19th Nov.<]]></from>
+				<to><![CDATA[>Распродажа завершается 19 ноября.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>BACKGROUNDS<]]></from>
+				<to><![CDATA[>ЗАСТАВКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>VIDEO <]]></from>
+				<to><![CDATA[>ВИДЕО <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>It's very simple to use!<]]></from>
+				<to><![CDATA[>Просты в настройке<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SHOP NOW<]]></from>
+				<to><![CDATA[>КУПИТЬ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>DO YOU NEED A NEW<]]></from>
+				<to><![CDATA[>НУЖЕН НОВЫЙ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>eCOMMERCE?<]]></from>
+				<to><![CDATA[>ИНТЕРНЕТ_МАГАЗИН?<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Check our options and features.<]]></from>
+				<to><![CDATA[>Российская сборка Magento<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> off!<]]></from>
+				<to><![CDATA[> скидка!<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Fashion<]]></from>
+				<to><![CDATA[>Крупы<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Electronics<]]></from>
+				<to><![CDATA[>Макаронные изделия<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Gifts<]]></from>
+				<to><![CDATA[>Масла растительные<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Music<]]></from>
+				<to><![CDATA[>Сахар, соль<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Sports<]]></from>
+				<to><![CDATA[>Орехи<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>It’s time to feel<]]></from>
+				<to><![CDATA[>Самое время<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>POWER<]]></from>
+				<to><![CDATA[>ПОПРОБОВАТЬ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Up to <]]></from>
+				<to><![CDATA[>скидка <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>70% OFF<]]></from>
+				<to><![CDATA[>до 70%<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> in the new collection.<]]></from>
+				<to><![CDATA[> на гречку :-)<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>EXCLUSIVE<]]></from>
+				<to><![CDATA[>Эксклюзивная<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Sunglasses<]]></from>
+				<to><![CDATA[>крупа<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Incredible prices<]]></from>
+				<to><![CDATA[>Невероятные цены<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SUNGLASSES<]]></from>
+				<to><![CDATA[>КРУПА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>WOMAN DRESSES<]]></from>
+				<to><![CDATA[>ЧИПСЫ И СУХАРИКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>WOMAN BAGS<]]></from>
+				<to><![CDATA[>МАЙОНЕЗ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>WEEKLY FEATURED PRODUCTS<]]></from>
+				<to><![CDATA[>ТОВАРЫ НЕДЕЛИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SPECIAL <]]></from>
+				<to><![CDATA[>НОВАЯ <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>PROMO<]]></from>
+				<to><![CDATA[>ПРОМО-АКЦИЯ!<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Purchase now &gt;<]]></from>
+				<to><![CDATA[>Купить &gt;<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>LUXURY<]]></from>
+				<to><![CDATA[>ПРЕМИУМ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> man clock<]]></from>
+				<to><![CDATA[> консервы<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>get early deals now...<]]></from>
+				<to><![CDATA[>поторопись...<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FASHION<]]></from>
+				<to><![CDATA[>РЫБА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> deals<]]></from>
+				<to><![CDATA[> мороженая<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>UP TO<]]></from>
+				<to><![CDATA[>ДО<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SHOP NOW <]]></from>
+				<to><![CDATA[>КУПИТЬ <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Free Shipping & Return<]]></from>
+				<to><![CDATA[>Бесплатная доставка<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>при заказе от 3000 рублей<]]></from>
+				<to><![CDATA[>100% FREE IN ALL ORDERS<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed vulputate massa. Fusce ante magna, iaculis ut purus ut, facilisis ultrices nibh.<]]></from>
+				<to><![CDATA[>Строфоид текстологически вызывает стих. Познание текста нивелирует брахикаталектический брих.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed vulputate massa. Fusce ante magna, iaculis ut purus ut, facili.<]]></from>
+				<to><![CDATA[>Строфоид существенно приводит холодный цинизм. Дискурс иллюстрирует былинный реципиент.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed vulputate massa. Fusce ante magna, iaculis ut purus ut, facilisis ultrices.<]]></from>
+				<to><![CDATA[>Строфоид аллитерирует генезис свободного стиха. Поток сознания, чтобы уловить хореический ритм или аллитерацию на "л", нивелирует верлибр.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>THIS IS A GREAT OFFER<]]></from>
+				<to><![CDATA[>МЯСНЫЕ КОНСЕРВЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Featured<]]></from>
+				<to><![CDATA[>ПРЕМИУМ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SIGN UP BELOW FOR <]]></from>
+				<to><![CDATA[>ПОДПИШИСЬ <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>EARLY UPDATES<]]></from>
+				<to><![CDATA[>НА НОВОСТИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Please sign up to the mailing list to receive updates on new arrivals, special offers and other discount information.<]]></from>
+				<to><![CDATA[>Узнай первым о понижении цен на гречку.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Porto Presents...<]]></from>
+				<to><![CDATA[>Российская сборка Magento<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>The Bride's Dream<]]></from>
+				<to><![CDATA[>Мечта продавца<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Shop now <]]></from>
+				<to><![CDATA[>Купить <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> TOP CATEGORIES<]]></from>
+				<to><![CDATA[> ПОПУЛЯРНОЕ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Home & Garden<]]></from>
+				<to><![CDATA[>Торты, пирожные, выпечка<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> TRENDING<]]></from>
+				<to><![CDATA[> ГОРЯЧИЕ СКИДКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Huge Sale - 70% Off<]]></from>
+				<to><![CDATA[>Скидка 70% на лимоны<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>New Arrivals<]]></from>
+				<to><![CDATA[>Свежие :-)<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FREE SHIPPING & RETURN<]]></from>
+				<to><![CDATA[>Бесплатная доставка<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Free shipping on all orders over $99.<]]></from>
+				<to><![CDATA[>При заказе от 3000 рублей.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>MONEY BACK GUARANTEE<]]></from>
+				<to><![CDATA[>НЕ ПРОПУСТИ ГРЕЧКУ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>100% money back guarantee.<]]></from>
+				<to><![CDATA[>Пока она дешёвая.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>ONLINE SUPPORT 24/7<]]></from>
+				<to><![CDATA[>Круглосуточная доставка<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet.<]]></from>
+				<to><![CDATA[>Стиль интуитивно понятен.<]]></to>
+			</term>
+			<term>
+				<from>Blank!!!</from>
+				<to>Здесь пока пусто...</to>
+			</term>
+			<term>
+				<from><![CDATA[>Now starting at <]]></from>
+				<to><![CDATA[>От <]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Shop now &gt;<]]></from>
+				<to><![CDATA[>Купить &gt;<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>amazing<]]></from>
+				<to><![CDATA[>потрясающие<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>COLLECTION<]]></from>
+				<to><![CDATA[>КОНСЕРВЫ]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>MOBILE<]]></from>
+				<to><![CDATA[>МЯСНЫЕ СУБПРОДУКТЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>MEGA SALE<]]></from>
+				<to><![CDATA[>СВИНЫЕ УШКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Deals<]]></from>
+				<to><![CDATA[>Овёс<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>PROMOS<]]></from>
+				<to><![CDATA[>ГОРОХ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Limited sales in<]]></from>
+				<to><![CDATA[>Мясо, птица, рыба<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>our categories.<]]></from>
+				<to><![CDATA[>МОРЕПРОДУКТЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FEEL<]]></from>
+				<to><![CDATA[>ПОЧУВСТВУЙ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>The<]]></from>
+				<to><![CDATA[>вкус<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Power!<]]></from>
+				<to><![CDATA[>гречки!<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[EXPLORE <b style="font-weight:800;">PORTO</b>]]></from>
+				<to><![CDATA[Российская сборка <b style="font-weight:800;">Magento</b>]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>With <b>PORTO</b> you can customize the<br/>banners and styles whithin minutes.<]]></from>
+				<to><![CDATA[>Настройте обмен данными с 1С: Управление торговлей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>fashion<]]></from>
+				<to><![CDATA[>модная<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>TRENDS<]]></from>
+				<to><![CDATA[>ГРЕЧКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> + PROMOS<]]></from>
+				<to><![CDATA[>и ГОРОХ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Furniture & Garden<]]></from>
+				<to><![CDATA[>Рыба охлажденная и замороженная<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>HUGE<]]></from>
+				<to><![CDATA[>БОЛЬШАЯ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>up to<]]></from>
+				<to><![CDATA[>до<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FREE SHIPPING & FREE RETURNS<]]></from>
+				<to><![CDATA[>БЕСПЛАТНАЯ ДОСТАВКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Amazing New<]]></from>
+				<to><![CDATA[>Потрясающая свежая<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Collection<]]></from>
+				<to><![CDATA[>капуста<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Yes, this is our new collection, check it<br/>out our new arrivals.<]]></from>
+				<to><![CDATA[>О да, нам завезли свежую капусту.<br/>Налетай!<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Check our options and features.<]]></from>
+				<to><![CDATA[>Оплати лицензию и попробуй.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Fashion Sunglasses<]]></from>
+				<to><![CDATA[>Полуфабрикаты замороженные<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FEATURED PRODUCTS<]]></from>
+				<to><![CDATA[>ПРЕМИУМ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>LET THE MUSIC PLAY<]]></from>
+				<to><![CDATA[>СЭНДВИЧИ, БУТЕРБРОДЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Connect with the best tech!<]]></from>
+				<to><![CDATA[>Купи себе сосиску в тесте!<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Up to 70% OFF in the new collection.<]]></from>
+				<to><![CDATA[>из мяса Шарика<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>NEW ARRIVALS<]]></from>
+				<to><![CDATA[>МЯСО ШАРИКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>NEW COLLECTION<]]></from>
+				<to><![CDATA[>ШАУРМА ОТБОРНАЯ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Women Dresses<]]></from>
+				<to><![CDATA[>Только сегодня отобрали<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>COSMETICS<]]></from>
+				<to><![CDATA[>ПИЦЦА, ЛАЗАНЬЯ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>CHECK OUT THE NEW<]]></from>
+				<to><![CDATA[>Попробуй со вкусом<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>GLOSS FOR LIPS<]]></from>
+				<to><![CDATA[>ШАРИКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Starting at $9.99<]]></from>
+				<to><![CDATA[>от 499 рублей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Shipping Returns<]]></from>
+				<to><![CDATA[>Пельмени, хинкали<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Holiday Extension *<]]></from>
+				<to><![CDATA[>с мясом Шарика *<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>100+ BRANDS<]]></from>
+				<to><![CDATA[>БЛИНЧИКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>10,000+ Products<]]></from>
+				<to><![CDATA[>с капустой и творогом<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>(+404) 158 14 25 78<]]></from>
+				<to><![CDATA[>+7 495 777-5-444<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>CONTACT US<]]></from>
+				<to><![CDATA[>ЗВОНИТЕ, НЕ КУСАЕМСЯ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FASHION PROMO<]]></from>
+				<to><![CDATA[>БИФШТЕКСЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>WOMAN SHOES<]]></from>
+				<to><![CDATA[>КОТЛЕТЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>50% OFF FASHION<]]></from>
+				<to><![CDATA[>ШНИЦЕЛИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>&copy;Copyright 2015 by SW-THEMES.<]]></from>
+				<to><![CDATA[>Российская сборка Magento<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Features<span class="cat-label cat-label-label2">Hot!</span><]]></from>
+				<to><![CDATA[>Обзор возможностей<]]></to>
+			</term>
+			<term>
+				<from>#Header Type (\d+)#</from>
+				<to>Пример шапки №$1</to>
+			</term>
+			<term>
+				<from><![CDATA[>Headers<]]></from>
+				<to><![CDATA[>Примеры шапок<]]></to>
+			</term>
+			<term>
+				<from>#Homepage Variations (\d+)#</from>
+				<to>Примеры главной страницы. Часть $1</to>
+			</term>
+			<term>
+				<from>#Home Layout (\d+)#</from>
+				<to>Пример главной страницы №$1</to>
+			</term>
+			<term>
+				<from><![CDATA[>Home RTL Layout<]]></from>
+				<to><![CDATA[>Пример с текстом справа-налево<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Home Full Ajax Layout<]]></from>
+				<to><![CDATA[>Пример с асинхронной загрузкой<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Fullwidth Banner<]]></from>
+				<to><![CDATA[>Широкоформатный баннер<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Boxed Slider Banner<]]></from>
+				<to><![CDATA[>Слайдер фиксированного размера<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Boxed Image Banner<]]></from>
+				<to><![CDATA[>Баннер фиксированного размера<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Left Sidebar<]]></from>
+				<to><![CDATA[>Боковая колонка слева<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Right Sidebar<]]></from>
+				<to><![CDATA[>Боковая колонка справа]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Ajax Infinite Scroll<]]></from>
+				<to><![CDATA[>Асинхронная подгрузка страницы при прокрутке вниз<]]></to>
+			</term>
+			<term>
+				<from>#(\d+) Columns Products#</from>
+				<to>Количество товарных колонок: $1</to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page with Sidebar<]]></from>
+				<to><![CDATA[>Товарная страница с боковой колонкой<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page without Sidebar<]]></from>
+				<to><![CDATA[>Товарная страница без боковой колонки<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page with Outer Zoom<]]></from>
+				<to><![CDATA[>Товарная страница с зумом<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page with Vertical Gallery<]]></from>
+				<to><![CDATA[>Товарная страница с вертикальной галереей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page with Addtocart Sticky<]]></from>
+				<to><![CDATA[>Товарная страница с постоянно видимой кнопкой добавления товара в корзину<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page with Vertical Tabs<]]></from>
+				<to><![CDATA[>Товарная страница с вертикальным рядом вкладок<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page with Accordion<]]></from>
+				<to><![CDATA[>Товарная страница с акордеоном<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Product Page with Moved Tabs<]]></from>
+				<to><![CDATA[>Товарная страница с подвижными вкладками<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Configurable Sample Product<]]></from>
+				<to><![CDATA[>Пример настраиваемого товара<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Bundle Sample Product<]]></from>
+				<to><![CDATA[>Пример товарного комплекта<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Grouped Sample Product<]]></from>
+				<to><![CDATA[>Пример сгруппированного товара<]]></to>
+			</term>
+			<term>
+				<from>?ref=SW-THEMES</from>
+				<to>?ref=dfediuk</to>
+			</term>
+			<term>
+				<from><![CDATA[>Buy Porto!<]]></from>
+				<to><![CDATA[>Купить Porto<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Contact Information<]]></from>
+				<to><![CDATA[>Контакты<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Address:<]]></from>
+				<to><![CDATA[>Адрес:<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Phone:<]]></from>
+				<to><![CDATA[>Телефон:<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>123 Street Name, City, England<]]></from>
+				<to><![CDATA[>127299, г. Москва, ул. Клары Цеткин, д.2/3, стр.1<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>(123) 456-7890<]]></from>
+				<to><![CDATA[>+7 495 777-5-444<]]></to>
+			</term>
+			<term>
+				<from>mail@example.com</from>
+				<to>admin@magento-forum.ru</to>
+			</term>
+			<term>
+				<from><![CDATA[>Working Days/Hours:<]]></from>
+				<to><![CDATA[>Рабочее время офиса:<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Mon - Sun / 9:00AM - 8:00PM<]]></from>
+				<to><![CDATA[>Ежедневно с 9:00 до 20:00<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>My Account<]]></from>
+				<to><![CDATA[>Личный кабинет<]]></to>
+			</term>
+			<term>
+				<from>About us</from>
+				<to>О компании</to>
+			</term>
+			<term>
+				<from>Contact us</from>
+				<to>Контакты</to>
+			</term>
+			<term>
+				<from>My account</from>
+				<to>Личный кабинет</to>
+			</term>
+			<term>
+				<from>Orders history</from>
+				<to>Заказы</to>
+			</term>
+			<term>
+				<from>Advanced search</from>
+				<to>Поиск</to>
+			</term>
+			<term>
+				<from><![CDATA[>Main Features<]]></from>
+				<to><![CDATA[>Ключевые особенности<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Super Fast Magento Theme<]]></from>
+				<to><![CDATA[>Почему неизменяем замысел?<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>1st Fully working Ajax Theme<]]></from>
+				<to><![CDATA[>Ритм иллюстрирует эпизодический дискурс<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>10 Unique Homepage Layouts<]]></from>
+				<to><![CDATA[>Мифопорождающее текстовое устройство<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Powerful Admin Panel<]]></from>
+				<to><![CDATA[>Архаический миф<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Mobile &amp; Retina Optimized<]]></from>
+				<to><![CDATA[>Лирический палимпсест<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Start Selling Today, Buy Porto eCommerce<]]></from>
+				<to><![CDATA[>Российская сборка Magento<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Be the First to Know<]]></from>
+				<to><![CDATA[>Узнай первым<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Sign up for newsletter today.<]]></from>
+				<to><![CDATA[>о снижении цены на гречку<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FREE SHIPPING<]]></from>
+				<to><![CDATA[>БЕСПЛАТНАЯ ДОСТАВКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>100% money back guarantee<]]></from>
+				<to><![CDATA[>100% свежая гречка<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>LIVE CHAT<]]></from>
+				<to><![CDATA[>ОНЛАЙН-КОНСУЛЬТАНТ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Buy Porto eCommerce<]]></from>
+				<to><![CDATA[>Купить Porto<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<]]></from>
+				<to><![CDATA[>Из нетрадиционных способов циклизации обратим внимание на случаи, когда познание текста последовательно.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Who We Are<]]></from>
+				<to><![CDATA[>О компании<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>BLOG<]]></from>
+				<to><![CDATA[>БЛОГ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Custom HTML Block<]]></from>
+				<to><![CDATA[>Пример самодельного блока<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>This is a custom sub-title.<]]></from>
+				<to><![CDATA[>Пример подзаголовка.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non placerat mi. Etiam non tellus <]]></from>
+				<to><![CDATA[>Ложная цитата, несмотря на то, что все эти характерологические черты отсылают не к единому образу нарратора, просветляет культурный реформаторский пафос.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>This is custom tab. You can add custom tab as an attribute for entire products, or for each categories. You can add CMS content such as sizing guide or videos to enhance product detail.<]]></from>
+				<to><![CDATA[>Пример товарной вкладки.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>CATEGORY <b>BANNER</b><]]></from>
+				<to><![CDATA[><b>Баннер</b> товарного раздела<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Set banners and description for any category of your website.<]]></from>
+				<to><![CDATA[>Вы можете установить баннеры и описание для любого товарного раздела.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>ABOUT PORTO<]]></from>
+				<to><![CDATA[>ТЕСТ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique augue eget enim feugiat blandit. Phasellus bibendum ex leo, at egestas lacus pellentesque in x leo, at egestas lacus pellentesque in. x leo, at egestas lacus pellentesque.<]]></from>
+				<to><![CDATA[>Категория текста начинает дактиль. Вопрос о популярности произведений того или иного автора относится к сфере культурологии, однако жанр недоступно вызывает не-текст, что связано со смысловыми оттенками, логическим выделением или с синтаксической омонимией.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Need Help?<]]></from>
+				<to><![CDATA[>Хотите спросить?<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FOLLOW US<]]></from>
+				<to><![CDATA[>ПОДПИШИТЕСЬ<]]></to>
+			</term>
+			<term>
+				<from>https://twitter.com/twitterdev</from>
+				<to>https://twitter.com/dfediuk</to>
+			</term>
+			<term>
+				<from>eternalfriend38</from>
+				<to>dfediuk</to>
+			</term>
+			<term>
+				<from>Tweets by @eternalfriend38</from>
+				<to>Наш Твиттер</to>
+			</term>
+			<term>
+				<from><![CDATA[>SHOP<]]></from>
+				<to><![CDATA[>Эпизодический эпитет<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Fashion Promo<]]></from>
+				<to><![CDATA[>Женщина-крестьянка в 19 веке<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Discounts<]]></from>
+				<to><![CDATA[>Реформаторский пафос<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Outlet<]]></from>
+				<to><![CDATA[>Культурный симулякр<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>MY ACCOUNT<]]></from>
+				<to><![CDATA[>ЛИЧНЫЙ КАБИНЕТ<]]></to>
+			</term>
+			<term>
+				<from>My Account</from>
+				<to>Личный кабинет</to>
+			</term>
+			<term>
+				<from>About Us</from>
+				<to>О компании</to>
+			</term>
+			<term>
+				<from>Store Locations</from>
+				<to>Адреса магазинов</to>
+			</term>
+			<term>
+				<from><![CDATA[>CONTACT INFORMATION<]]></from>
+				<to><![CDATA[>КОНТАКТЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[><b>SALE:</b> use coupon code <b>PORTO</b> to save 30%<]]></from>
+				<to><![CDATA[><b>РАСПРОДАЖА:</b> используйте код <b>PORTO</b> для получения скидки 30%<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Featured Products<]]></from>
+				<to><![CDATA[>Премиум<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>New Products<]]></from>
+				<to><![CDATA[>Новинки<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Customer Support<]]></from>
+				<to><![CDATA[>Техническая поддержка<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>YOU WON'T BE ALONE<]]></from>
+				<to><![CDATA[>ОТВЕТИМ НА ВСЕ ВАШИ ВОПРОСЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>We really care about you and your website as much as you do. Purchasing Porto or any other theme from us you get 100% free support.<]]></from>
+				<to><![CDATA[>Заимствование вызывает строфоид, также необходимо сказать о сочетании метода апроприации художественных стилей прошлого с авангардистскими стратегиями.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Fully Customizable<]]></from>
+				<to><![CDATA[>Парономазия уязвима<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>TONS OF OPTIONS<]]></from>
+				<to><![CDATA[>ПАРОНОМАЗИЯ ОТРАЖАЕТ АНАПЕСТ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>With Porto you can customize the layout, colors and styles within only a few minutes. Start creating an amazing website right now!<]]></from>
+				<to><![CDATA[>Слово, не учитывая количества слогов, стоящих между ударениями, неумеренно осознаёт контрапункт, первым образцом которого принято считать книгу А.Бертрана "Гаспар из тьмы".<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Powerful Admin<]]></from>
+				<to><![CDATA[>Аллюзия приводит подтекст<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>MADE TO HELP YOU<]]></from>
+				<to><![CDATA[>ОРНАМЕНТАЛЬНЫЙ СКАЗ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Porto has very powerful admin features to help customer to build their own shop in minutes without any special skills in web development.<]]></from>
+				<to><![CDATA[>Быличка, как бы это ни казалось парадоксальным, непосредственно просветляет генезис свободного стиха.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Premium theme, unlimited possibilities...<]]></from>
+				<to><![CDATA[>Обсценная идиома неумеренно выбирает конкретный палимпсест...<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> music<]]></from>
+				<to><![CDATA[> свиные ушки<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FEATURED<]]></from>
+				<to><![CDATA[>ПРЕМИУМ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>LATEST PRODUCTS<]]></from>
+				<to><![CDATA[>НОВИНКИ<]]></to>
+			</term>
+		</actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>page</type>
+		</conditions>
+		<actions>
+			<term>
+				<from><![CDATA[>Home Page<]]></from>
+				<to><![CDATA[>Главная страница<]]></to>
+			</term>
+			<term>
+				<from>#^Porto - Homepage (\d+)$#</from>
+				<to>Porto. Главная страница №$1</to>
+			</term>
+			<term>
+				<from>#^Porto - Homepage (\d+) New$#</from>
+				<to>Porto. Главная страница №$1 новая</to>
+			</term>
+			<term>
+				<from>Porto - Homepage RTL</from>
+				<to>Porto. Главная страница справа-налево</to>
+			</term>
+			<term>
+				<from>404 Not Found 2</from>
+				<to>Страница не найдена 2</to>
+			</term>
+			<term>
+				<from>Porto - About Us</from>
+				<to>Porto. О компании</to>
+			</term>
+			<term>
+				<from><![CDATA[>FEATURED<]]></from>
+				<to><![CDATA[>ПРЕМИУМ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>NEW PRODUCTS<]]></from>
+				<to><![CDATA[>НОВИНКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>MOBILE<]]></from>
+				<to><![CDATA[>ГРЕЧКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>MEGA SALE<]]></from>
+				<to><![CDATA[>РАСПРОДАЖА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[><span>$</span>450.<span>00</span><]]></from>
+				<to><![CDATA[>59<span>рублей</span><]]></to>
+			</term>
+			<term>
+				<from><![CDATA[><span>$</span>350.<span>00</span><]]></from>
+				<to><![CDATA[>49<span>рублей</span><]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Our Brands<]]></from>
+				<to><![CDATA[>Производители<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>BEST SELLERS<]]></from>
+				<to><![CDATA[>ПОПУЛЯРНОЕ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>From the Blog<]]></from>
+				<to><![CDATA[>Новости<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FROM THE BLOG<]]></from>
+				<to><![CDATA[>НОВОСТИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>BestSellers<]]></from>
+				<to><![CDATA[>Популярное<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>New<]]></from>
+				<to><![CDATA[>Новинки<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>The Wedding Day<]]></from>
+				<to><![CDATA[>Мясные консервы<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a arcu lacinia, ornare lorem maximus, consequat mauris. Nam vitae risus at leo convallis sagittis.<]]></from>
+				<to><![CDATA[>Ложная цитата вероятна. Поток сознания, несмотря на внешние воздействия, традиционен. Палимпсест, по определению редуцирует эпитет. Гиперцитата аллитерирует резкий цикл.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Valentine’s Day<]]></from>
+				<to><![CDATA[>Овощные консервы<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Galaxy phones Just Arrived<]]></from>
+				<to><![CDATA[>Новое поступление тушёнки<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Featured Brands<]]></from>
+				<to><![CDATA[>Премиум<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>CATEGORIES<]]></from>
+				<to><![CDATA[>РАЗДЕЛЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SPECIAL<]]></from>
+				<to><![CDATA[>ПРОМО-АКЦИЯ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>OFFER<]]></from>
+				<to><![CDATA[>ВНИМАНИЕ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Buy new digital cameras & <br/>get lenses or accessories<]]></from>
+				<to><![CDATA[>Купи килограмм гречки<br/>и получи полкило овса<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Shop now!<]]></from>
+				<to><![CDATA[>Купить!<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Keep up on our always evolving product features and technology.<br/>Enter your e-mail and subscribe to our newsletter.<]]></from>
+				<to><![CDATA[>Узнай первым о снижении цены на гречку.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>John Smith<]]></from>
+				<to><![CDATA[>Иван Петров<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>CEO &amp; Founder - Okler<]]></from>
+				<to><![CDATA[>Директор совхоза<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit vehicula est.<]]></from>
+				<to><![CDATA[>Акцент текстологически нивелирует конструктивный хорей. Ложная цитата пространственно представляет собой сюжетный генезис свободного стиха.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Featured Fashion Dress<]]></from>
+				<to><![CDATA[>Грибные консервы<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Hot<]]></from>
+				<to><![CDATA[>Рис<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Sale<]]></from>
+				<to><![CDATA[>Пшено<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>WHY SHOP WITH US?<]]></from>
+				<to><![CDATA[>ЗАКУСКИ ИЗ МОРЕПРОДУКТОВ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>ИКРА МИНТАЯ<]]></from>
+				<to><![CDATA[>ТЕСТ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Consult our specialists for help with an order, customization, or design advice.<]]></from>
+				<to><![CDATA[>Ритмический рисунок текстологически диссонирует стиль.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Get in Touch &gt;<]]></from>
+				<to><![CDATA[>Узнать больше &gt;<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>FREE RETURNS<]]></from>
+				<to><![CDATA[>МАНТЫ, ВАРЕНИКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>We stand behind our goods and services and want you to be satisfied with them.<]]></from>
+				<to><![CDATA[>Расположение эпизодов притягивает культурный эпитет, что нельзя сказать о нередко манерных эпитетах.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Returns Policy &gt;<]]></from>
+				<to><![CDATA[>Хлеб, тосты, лаваш &gt;<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>INTERNATIONAL SHIPPING<]]></from>
+				<to><![CDATA[>БАРАНКИ, БУБЛИКИ, СУШКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Currently over 50 countries qualify for express international shipping.<]]></from>
+				<to><![CDATA[>Гиперцитата, не учитывая количества слогов, стоящих между ударениями, отражает экзистенциальный коммунальный модернизм.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Learn More &gt;<]]></from>
+				<to><![CDATA[>Узнать больше &gt;<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>DEDICATED SERVICE<]]></from>
+				<to><![CDATA[>ТАРТАЛЕТКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Browse Our Categories<]]></from>
+				<to><![CDATA[>РАЗДЕЛЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>HOME & GARDEN<]]></from>
+				<to><![CDATA[>ТОРТЫ, ПИРОЖНЫЕ, ВЫПЕЧКА<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SPORTS<]]></from>
+				<to><![CDATA[>МУЧНЫЕ КОНДИТЕРСКИЕ ИЗДЕЛИЯ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>ELECTRONICS<]]></from>
+				<to><![CDATA[>ВОСТОЧНЫЕ СЛАДОСТИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Just Arrived<]]></from>
+				<to><![CDATA[>МАРМЕЛАД, ЗЕФИР<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Latest Blog Posts<]]></from>
+				<to><![CDATA[>НОВОСТИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>What Client's Say<]]></from>
+				<to><![CDATA[>Отзывы покупателей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Hello, I want to thank you for creating a great template and for the excellent and quick support and help that you have been providing to me as I begin to work with it.<]]></from>
+				<to><![CDATA[>Графомания, не учитывая количества слогов, стоящих между ударениями, приводит голос персонажа. В данной работе мы не будем анализировать все эти аспекты, однако хорей существенно интегрирует ритм.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Hello, I want to thank you for creating a great template and for the excellent and quick support and help that you have been providing to me as I begin to work with it.<]]></from>
+				<to><![CDATA[>Действительно, коммунальный модернизм дает литературный дольник, таким образом, очевидно, что в нашем языке царит дух карнавала, пародийного отстранения.<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>LATEST PRODUCTS<]]></from>
+				<to><![CDATA[>НОВИНКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SALES<]]></from>
+				<to><![CDATA[>УКСУС, МАРИНАДЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SHOP LIVING ROOM<]]></from>
+				<to><![CDATA[>ГАЗИРОВАННЫЕ НАПИТКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>LIVING ROOM STARTING AT $999<]]></from>
+				<to><![CDATA[>Лимонад Буратино от 29 рублей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SHOP DINING ROOM<]]></from>
+				<to><![CDATA[>МОРСЫ, КИСЕЛИ, КОМПОТЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>DINING ROOM STARTING AT $999<]]></from>
+				<to><![CDATA[>Компот из груши от 39 рублей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>SHOP BEDROOM<]]></from>
+				<to><![CDATA[>ЭНЕРГЕТИЧЕСКИЕ НАПИТКИ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>BEDROOM STARTING AT $999<]]></from>
+				<to><![CDATA[>Яга от 59 рублей<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Top Selling Items<]]></from>
+				<to><![CDATA[>Самое популярное<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[>Fashion Selection<]]></from>
+				<to><![CDATA[>Холодный чай<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> SHOP CATEGORIES<]]></from>
+				<to><![CDATA[> РАЗДЕЛЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> DEDICATED SERVICE<]]></from>
+				<to><![CDATA[> РЫБНЫЕ КОНСЕРВЫ<]]></to>
+			</term>
+			<term>
+				<from><![CDATA[> FREE RETURNS<]]></from>
+				<to><![CDATA[> МОЛОЧНЫЕ КОНСЕРВЫ<]]></to>
+			</term>
+		</actions>
+	</rule>
+</dictionary>

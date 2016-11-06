@@ -1,0 +1,397 @@
+.sidebar .df-slideshow #slideshow {
+	margin-bottom: 16px;
+	border: 1px solid rgb(196, 193, 188);
+	background-color: rgb(248, 247, 245);
+}
+
+.df-slideshow .homepage_content {
+	width: 816px;
+	padding: 0px;
+	height: 317px;
+	background: none;
+	overflow: hidden;
+	position: relative;
+}
+
+.df-slideshow .homepage_content img {
+	border: none;
+	margin: 0;
+	padding: 0;
+	width: 816px;
+	height: 317px;
+}
+
+.df-slideshow #divMainRotatorNav {
+	position: absolute;
+	bottom: 0px;
+	left: 8px;
+	z-index: 99;
+}
+
+.df-slideshow #divMainRotatorNav a {
+	margin: 0 0 0 4px;
+	padding: 0;
+	display: block;
+	text-decoration: none;
+	color: #888888;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	border: 5px solid #420807;
+	width: 87px;
+	height: 50px;
+	display: block;
+	background-color: #000; /* for IE */
+	filter: alpha(opacity = 50); /* CSS3 standard */
+	opacity: 0.6;
+}
+
+.df-slideshow #divMainRotatorNav a:hover {
+	text-decoration: none;
+	color: #ffffff;
+	border: 5px solid #7b1616;
+	background-color: #000; /* for IE */
+	filter: alpha(opacity = 100); /* CSS3 standard */
+	opacity: 1.0;
+}
+
+.df-slideshow #divMainRotatorNav a.activeSlide {
+	text-decoration: none;
+	color: #ffffff;
+	border: 5px solid #7b1616;
+	background-color: #000; /* for IE */
+	filter: alpha(opacity = 100); /* CSS3 standard */
+	opacity: 1.0;
+}
+
+.df-slideshow #divMainRotatorNav a:focus {
+	outline: none;
+}
+
+.df-slideshow .home_events_row {
+	overflow: hidden;
+	width: 100%;
+	border-bottom: 2px solid #dddddd;
+	padding: 14px 0 9px 0;
+}
+
+.df-slideshow .home_events_row h4 {
+	float: left;
+	display: inline;
+	font-size: 3.8em;
+	color: #aaaaaa;
+	margin-left: 12px;
+	line-height: 1em;
+	padding: 0;
+}
+
+.df-slideshow .home_events_content {
+	float: right;
+	display: inline;
+	width: 84%;
+}
+
+.df-slideshow .home_events_content h3 {
+	font-size: 1.4em;
+}
+
+.df-slideshow .home_events_content p {
+	margin: 1px 0 0 0;
+}
+
+.df-slideshow .aaa {
+	position: relative;
+	width: 100%;
+	margin-bottom: 35px;
+}
+
+.df-slideshow .bbb {
+	top: -14px;
+	z-index: 1000;
+	width: 100%;
+	position: absolute;
+}
+
+/*slide*/
+
+.df-slideshow #nav1 {
+	margin: 0px;
+	position: relative
+}
+
+.df-slideshow #nav1 li {
+	float: left;
+	list-style: none;
+	line-height: 24px;
+}
+
+.df-slideshow #nav1 a {
+	padding: 0px 5px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 12px;
+	font-family: arial;
+	width: 7px;
+	height: 22px;
+	font-weight: bold;
+}
+
+.df-slideshow #nav1 a.activeSlide {
+	color: #FF920A;
+	font-size: 12px;
+	font-family: arial;
+	font-weight: bold;
+}
+
+.df-slideshow #nav1 a:focus {
+	outline: none;
+}
+
+.df-slideshow .intro_barner {
+	height: 200px;
+}
+
+.df-slideshow #nav1 a span {
+	display: none;
+}
+
+.df-slideshow #demos {
+/*clear:both;*/
+	width: 100%;
+	float: left;
+}
+
+.df-slideshow .so {
+	background: transparent url(../images/sliderbanner/tab_number.png) no-repeat;
+	height: 42px;
+	margin: auto;
+	text-align: left;
+	width: 100%;
+	display: block;
+	padding-top: 17px;
+}
+
+.df-slideshow .so a {
+	float: left;
+	line-height: 24px;
+}
+
+.df-slideshow .so ul {
+	float: left;
+}
+
+.df-slideshow #prev img {
+	padding-top: 3px;
+	padding-left: 25px;
+}
+
+.df-slideshow #next img {
+	padding-top: 4px;
+}
+
+.df-slideshow #slideshow {
+	overflow: hidden;
+	height: 310px;
+}
+
+.df-slideshow #demos h2 {
+	padding: 0px;
+	margin: 0px;
+	width: 597px;
+	float: left;
+}
+
+.df-slideshow .Profitez {
+	overflow: hidden;
+	width: 597px;
+	float: left;
+}
+
+.df-slideshow .green_intro {
+	height: 236px !important;
+}
+
+.df-slideshow .so a.link-more {
+	color: #F9D428;
+	font-size: 14px;
+	text-decoration: none;
+	float: right;
+	text-align: right;
+	padding-right: 20px;
+}
+
+.df-slideshow .so a:hover.link-more {
+	color: #F9D428;
+	font-size: 14px;
+	text-decoration: underline;
+	float: right;
+	text-align: right;
+	padding-right: 20px;
+}
+
+.df-slideshow #pauseButton {
+	padding-top: 4px;
+	padding-left: 5px;
+}
+
+.df-slideshow .std h3 {
+	text-transform: uppercase;
+	font-size: 12px;
+	padding: 10px 0;
+}
+
+/* Easy SimpleSlider */
+.df-slideshow .df-slider-pager {
+	position: absolute;
+	bottom: 10px;
+	left: 38px;
+	z-index: 99;
+}
+
+.df-slideshow .df-slider-pager a {
+	margin: 0 0 0 4px;
+	padding: 3px 7px;
+	background: #ffffff;
+	text-decoration: none;
+	color: #888888;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.df-slideshow .df-slider-pager a:hover {
+	background: #454545;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.df-slideshow .df-slider-pager a.activeSlide {
+	background: #618499;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.df-slideshow .df-slider-pager a:focus {
+	outline: none;
+}
+
+/* Easy SimpleSlider */
+
+/* Easy Slider */
+.df-slideshow #content_slider {
+	position: relative;
+	margin: 0px 45px;
+}
+
+.df-slideshow #slider {
+}
+
+.df-slideshow #slider ul, .df-slideshow #slider li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.df-slideshow #slider li {
+	/*
+		define width and height of list item (slide)
+		entire slider area will adjust according to the parameters provided here
+	*/
+	width: 856px;
+	height: 241px;
+	overflow: hidden;
+}
+
+.df-slideshow #prevBtn, .df-slideshow #nextBtn {
+	display: block;
+	width: 30px;
+	height: 77px;
+	position: absolute;
+	left: -30px;
+	top: 71px;
+}
+
+.df-slideshow #nextBtn {
+	left: 856px;
+}
+
+.df-slideshow #prevBtn a, .df-slideshow #nextBtn a {
+	display: block;
+	width: 30px;
+	height: 77px;
+	background: url(../images/easyslider/btn_prev.gif) no-repeat 0 0;
+}
+
+.df-slideshow #nextBtn a {
+	background: url(../images/easyslider/btn_next.gif) no-repeat 0 0;
+}
+
+.df-slideshow .graphic, .df-slideshow #prevBtn, .df-slideshow #nextBtn {
+	text-indent: -8000px;
+}
+
+/* // Easy Slider */
+
+/* // accordion Slider */
+.df-slideshow .set {
+	border-bottom: 1px solid #000
+}
+
+.df-slideshow .set1 {
+	background-color: #C77B3F;
+}
+
+.df-slideshow .set2 {
+	background-color: #FFC732;
+}
+
+.df-slideshow .set3 {
+	background-color: #007C90;
+}
+
+.df-slideshow .set4 {
+	background-color: #AD6F08;
+}
+
+.df-slideshow .set5 {
+	background-color: #387855;
+}
+
+.df-slideshow .set6 {
+	background-color: #8C4B2D;
+}
+
+.df-slideshow .set7 {
+	background-color: #82A668;
+}
+
+.df-slideshow .accordionWrapper {
+	display: inline-block;
+	background: none;
+	overflow: hidden;
+}
+
+.df-slideshow .accordionWrapper img {
+	vertical-align: top;
+	border: 0;
+	margin: 0;
+	padding: 0
+}
+
+.df-slideshow .accordionWrapper div {
+	display: inline;
+	float: left;
+	margin: auto;
+}
+
+.df-slideshow .accordionWrapper div.title {
+	cursor: pointer;
+}
+
+.df-slideshow .accordionWrapper div.content {
+	display: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+/* // accordion Slider */

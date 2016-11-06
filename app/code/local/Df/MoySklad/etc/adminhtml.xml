@@ -1,0 +1,43 @@
+<?xml version='1.0'?>
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<df_moysklad>
+										<title>Российская сборка → МойСклад</title>
+									</df_moysklad>
+								</children>
+							</config>
+							<convert>
+								<children>
+									<moysklad translate="title">
+										<title>Экспорт товаров из интернет-магазина в МойСклад</title>
+									</moysklad>
+								</children>
+							</convert>
+						</children>
+					</system>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+	<menu>
+		<system>
+			<children>
+				<convert>
+					<children>
+						<moysklad translate='title' module='df_moysklad'>
+							<title>Экспорт товаров из интернет-магазина в МойСклад</title>
+							<action>df_moysklad/export/index</action>
+						</moysklad>
+					</children>
+				</convert>
+			</children>
+		</system>
+	</menu>
+</config>

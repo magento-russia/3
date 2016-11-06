@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<layout version='0.1.0'>
+	<df_moysklad_export_index>
+        <reference name='content'>
+            <block type='Df\MoySklad\Block\Export' template='df/moysklad/export.phtml'/>
+        </reference>
+	</df_moysklad_export_index>
+</layout>

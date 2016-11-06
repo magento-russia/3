@@ -1,0 +1,43 @@
+<?php
+	/** @var Df_Localization_Block_Admin_Verification_File $this */
+	/** @var string $fileClassesS  */
+	$fileClassesS = df_cc_s('df-file', $this->isFullyTranslated() ? 'df-file-fully-translated' : null);
+?>
+<li
+	class='<?php echo $fileClassesS; ?>'
+>
+	<ol class='df-file-properties'>
+		<li class='df-file-property df-name'>
+			<?php
+				if ($this->isFullyTranslated()) {
+					echo $this->getName();
+				}
+				else {
+					?>
+						<a
+							href='javascript:void(0);'
+							title='Подробная информация о недостатках перевода'
+						><?php echo $this->getName(); ?></a>
+					<?php
+				}
+			?>
+		</li>
+		<li class='df-file-property df-total'>
+			<?php echo $this->getNumEntries(); ?>
+		</li>
+		<li class='df-file-property df-untranslated'>
+			<?php
+				if (0 !== $this->getNumUntranslatedEntries()) {
+					echo $this->getNumUntranslatedEntries();
+				}
+			?>
+		</li>
+		<li class='df-file-property df-absent'>
+			<?php
+				if (0 !== $this->getNumAbsentEntries()) {
+					echo $this->getNumAbsentEntries();
+				}
+			?>
+		</li>
+	</ol>
+</li>

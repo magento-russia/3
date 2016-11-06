@@ -1,0 +1,24 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Index>
+			<author>Дмитрий Федюк</author>
+			<version>1.0.0</version>
+		</Df_Index>
+	</modules>
+	<global>
+		<blocks><df_index><class>Df_Index_Block</class></df_index></blocks>
+		<helpers><df_index><class>Df_Index_Helper</class></df_index></helpers>
+		<models><df_index><class>Df_Index_Model</class></df_index></models>
+		<events>
+			<catalog_product_flat_prepare_columns>
+				<observers>
+					<Df_Index>
+						<class>Df_Index_Observer</class>
+						<method>catalog_product_flat_prepare_columns</method>
+					</Df_Index>
+				</observers>
+			</catalog_product_flat_prepare_columns>
+		</events>
+	</global>
+</config>

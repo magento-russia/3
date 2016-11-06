@@ -1,0 +1,95 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_YandexMarket>
+			<author>Дмитрий Федюк</author>
+			<title>Яндекс.Маркет</title>
+			<version>3.0.1</version>
+		</Df_YandexMarket>
+	</modules>
+	<df>
+		<attribute_set_processors>
+			<yandex-market>Df\YandexMarket\Setup\AttributeSet</yandex-market>
+		</attribute_set_processors>
+		<features>
+			<df-yandex-market>
+				<module>df_yandex_market</module>
+				<title>Яндекс.Маркет</title>
+				<url>http://magento-forum.ru/forum/217/</url>
+			</df-yandex-market>
+		</features>
+		<!--
+			Обработка системой перечисленных ниже веб-адресов
+			не требует функциональности языкового перевода пользовательского интерфейса,
+			поэтому отключаем эту функциональность для перечисленных веб-адресов
+			ради ускорения их обработки системой.
+		-->
+		<disable-translation>
+			<df-yandex-market-yml>df-yandex-market/yml</df-yandex-market-yml>
+		</disable-translation>
+	</df>
+	<global>
+		<helpers><df_yandex_market><class>Df_YandexMarket_Helper</class></df_yandex_market></helpers>
+		<resources>
+			<df_yandex_market_setup>
+				<setup>
+					<module>Df_YandexMarket</module>
+					<class>Df_Core_Model_Resource_Setup</class>
+				</setup>
+			</df_yandex_market_setup>
+		</resources>
+		<ignoredModules><entities><df-yandex-market/></entities></ignoredModules>
+	</global>
+	<adminhtml>
+		<layout>
+			<updates>
+				<df_yandex_market><file>df/yandex_market.xml</file></df_yandex_market>
+			</updates>
+		</layout>
+	</adminhtml>
+	<frontend>
+		<routers>
+			<df-yandex-market>
+				<use>standard</use>
+				<args>
+					<module>Df_YandexMarket</module>
+					<frontName>df-yandex-market</frontName>
+				</args>
+			</df-yandex-market>
+		</routers>
+	</frontend>
+	<default>
+		<df_yandex_market>
+			<api>
+				<application_id></application_id>
+				<application_password></application_password>
+				<confirmation_code></confirmation_code>
+			</api>
+			<general>
+				<enabled>0</enabled>
+				<notification_email><![CDATA[admin@magento-forum.ru]]></notification_email>
+				<currency>RUB</currency>
+				<pickup>1</pickup>
+				<sales_notes></sales_notes>
+			</general>
+			<diagnostics>
+				<enabled>0</enabled>
+				<need_limit>0</need_limit>
+				<limit>10</limit>
+				<need_explain_rejection>0</need_explain_rejection>
+			</diagnostics>
+			<other>
+				<categories_reference_book_url>http://download.cdn.yandex.net/support/ru/partnermarket/files/market_categories.xls</categories_reference_book_url>
+			</other>
+			<products>
+				<publish_out_of_stock>0</publish_out_of_stock>
+			</products>
+			<shop>
+				<name_for_clients><![CDATA[Рога и Копыта]]></name_for_clients>
+				<name_for_administration><![CDATA[ООО «Рога и Копыта»]]></name_for_administration>
+				<agency><![CDATA[Российская сборка Magento]]></agency>
+				<support_email><![CDATA[admin@magento-forum.ru]]></support_email>
+			</shop>
+		</df_yandex_market>
+	</default>
+</config>

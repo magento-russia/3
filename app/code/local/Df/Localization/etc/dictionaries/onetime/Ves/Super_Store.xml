@@ -1,0 +1,567 @@
+<?xml version='1.0'?>
+<dictionary>
+	<config>
+		<entry>
+			<path>currency/options/allow</path>
+			<original_value>USD</original_value>
+			<value>RUB</value>
+		</entry>
+		<entry>
+			<path>currency/options/base</path>
+			<original_value>USD</original_value>
+			<value>RUB</value>
+		</entry>
+		<entry>
+			<path>currency/options/default</path>
+			<original_value>USD</original_value>
+			<value>RUB</value>
+		</entry>
+		<entry>
+			<path>general/country/default</path>
+			<original_value>US</original_value>
+			<value>RU</value>
+		</entry>
+		<entry>
+			<path>general/locale/code</path>
+			<original_value>en_US</original_value>
+			<value>ru_RU</value>
+		</entry>
+		<entry>
+			<path>general/locale/firstday</path>
+			<original_value>0</original_value>
+			<value>1</value>
+		</entry>
+		<entry>
+			<path>general/locale/timezone</path>
+			<original_value>America/Los_Angeles</original_value>
+			<value>Europe/Moscow</value>
+		</entry>
+		<entry>
+			<path>general/store_information/merchant_country</path>
+			<original_value>null</original_value>
+			<value>RU</value>
+		</entry>
+		<entry>
+			<path>general/store_information/name</path>
+			<original_value>Ves Superstore</original_value>
+			<value>Российская сборка Magento</value>
+		</entry>
+		<entry>
+			<path>general/store_information/phone</path>
+			<original_value>+8498980073</original_value>
+			<value>+7 495 777-5-444</value>
+		</entry>
+		<entry>
+			<path>general/store_information/merchant_vat_number</path>
+			<original_value>null</original_value>
+			<value>253608037991</value>
+		</entry>
+		<entry>
+			<path>ves_blog/general_setting/title</path>
+			<original_value>Blog</original_value>
+			<value>Новости</value>
+		</entry>
+		<entry>
+			<path>ves_blog/module_setting/cmenu_title</path>
+			<original_value>Blog Categories</original_value>
+			<value>Рубрики</value>
+		</entry>
+		<entry>
+			<path>ves_blog/module_setting/latestmod_title</path>
+			<original_value>Latest news</original_value>
+			<value>Новости</value>
+		</entry>
+		<entry>
+			<path>ves_brand/general_setting/title</path>
+			<value>Производители</value>
+			<set_as_default/>
+		</entry>
+		<entry>
+			<path>ves_deals/deals_setting/page_title</path>
+			<value>Распродажа</value>
+			<set_as_default/>
+		</entry>
+		<entry>
+			<path>ves_deals/ves_deals/title</path>
+			<original_value>Latest Deals</original_value>
+			<value>Распродажа</value>
+		</entry>
+		<entry>
+			<path>ves_productcarousel/ves_productcarousel/title</path>
+			<original_value>specials</original_value>
+			<value>Обратите внимание</value>
+		</entry>
+		<entry>
+			<path>ves_productcarousel2/ves_productcarousel2/title</path>
+			<original_value>Featured Products</original_value>
+			<value>Обратите внимание</value>
+		</entry>
+		<entry>
+			<path>ves_socialsidebar/follow/titleFollow</path>
+			<original_value>Follow</original_value>
+			<value>Следите за нашими новостями в соцсетях</value>
+		</entry>
+		<entry>
+			<path>ves_socialsidebar/share_setting/share_mgs</path>
+			<original_value>Follow us</original_value>
+			<value>Следите за нашими новостями в соцсетях</value>
+		</entry>
+		<entry>
+			<path>ves_socialsidebar/share_setting/share_title</path>
+			<original_value>Thanks for sharing!</original_value>
+			<value>Большое спасибо!!!</value>
+		</entry>
+		<entry>
+			<path>ves_socialsidebar/follow/Facebook</path>
+			<original_value>VenusTheme</original_value>
+			<value>magento.russia</value>
+		</entry>
+		<entry>
+			<path>ves_socialsidebar/follow/Twitter</path>
+			<original_value>VenusTheme</original_value>
+			<value>dfediuk</value>
+		</entry>
+		<entry>
+			<path>ves_socialsidebar/follow/thankTitle_follow</path>
+			<original_value>Thanks for following!</original_value>
+			<value>Большое спасибо!!!</value>
+		</entry>
+		<entry>
+			<path>ves_treemenu/ves_treemenu/title</path>
+			<original_value>Categories</original_value>
+			<value>Разделы</value>
+		</entry>
+		<entry>
+			<path>ves_verticalmenu/ves_verticalmenu/title</path>
+			<original_value>Categories</original_value>
+			<value>Разделы</value>
+		</entry>
+		<entry>
+			<path>web/seo/use_rewrites</path>
+			<value>1</value>
+		</entry>
+	</config>
+	<filesystem>
+		<operation>
+ 			<source>http://demoleotheme.com/superstore/media/ves_megamenu/i/c/ico-home_1.png</source>
+			<destination>media/ves_megamenu/i/c/ico-home_1.png</destination>
+		</operation>
+	</filesystem>
+	<db>
+		<table name='ves_megamenu/megamenu'>
+			<column name='title'>
+				<term><from>ROOT</from><to>Корень</to></term>
+				<term><from>Home</from><to>Главная</to></term>
+				<term><from>Root Catalog</from><to>Каталог</to></term>
+				<term><from>Featured</from><to>Премиум</to></term>
+				<term><from>Televisions</from><to>Телевизоры</to></term>
+				<term><from>Computer Parts</from><to>Комплектующие</to></term>
+				<term><from>Desktops</from><to>Компьютеры</to></term>
+				<term><from>Electronics</from><to>Электроника</to></term>
+				<term><from>Camera</from><to>Фототехника</to></term>
+				<term><from>Mouse</from><to>Мыши</to></term>
+				<term><from>Monitors</from><to>Мониторы</to></term>
+				<term><from>Hard Drives</from><to>Носители данных</to></term>
+				<term><from>Laptops</from><to>Нотубуки</to></term>
+				<term><from>Cameras</from><to>Фото/видео</to></term>
+				<term><from>Cell Phones</from><to>Телефоны</to></term>
+				<term><from>Digital Cameras</from><to>Фотоаппараты</to></term>
+				<term><from>Deals</from><to>Распродажа</to></term>
+			</column>
+		</table>
+		<table name='ves_blog/category'>
+			<column name='description'>
+				<term>
+					<from><![CDATA[<p>The standard Lorem%]]></from>
+					<to><![CDATA[Еще Аристотель в своей «Политике» говорил, что музыка, воздействуя на человека, доставляет «своего рода очищение, то есть облегчение, связанное с наслаждением», однако флажолет диссонирует нонаккорд. Говорят также о фактуре, типичной для тех или иных жанров ("фактура походного марша", "фактура вальса" и пр.), и здесь мы видим, что гармоническое микророндо mezzo forte иллюстрирует диссонансный канал. Арпеджио, следовательно, синхронно имеет структурный кризис жанра. ]]></to>
+				</term>
+				<term>
+					<from><![CDATA[Lorem ipsum dolor%]]></from>
+					<to><![CDATA[Контрапункт контрастных фактур заканчивает структурный доминантсептаккорд. Голос интенсивен. Субтехника, в первом приближении, заканчивает дискретный контрапункт контрастных фактур. Адажио многопланово трансформирует рефрен. ]]></to>
+				</term>
+				<term>
+					<from><![CDATA[<p>Sed ut perspiciatis%]]></from>
+					<to><![CDATA[Легато многопланово вызывает лайн-ап. Показательный пример – флюгель-горн имеет гармонический интервал. Шоу-бизнес трансформирует гипнотический рифф. ]]></to>
+				</term>
+			</column>
+		</table>
+		<table name='ves_blog/post'>
+			<column name='title'>
+				<term>
+					<from><![CDATA[Proin gravida nibh vel velit auctor]]></from>
+					<to><![CDATA[Эти слова совершенно справедливы]]></to>
+				</term>
+				<term>
+					<from><![CDATA[Sollicitudin, lorem quis bibendum]]></from>
+					<to><![CDATA[Громкостнoй прогрессийный период сложен]]></to>
+				</term>
+				<term>
+					<from><![CDATA[Lorem quis bibendum auctor ipsum]]></from>
+					<to><![CDATA[Динамический эллипсис]]></to>
+				</term>
+			</column>
+			<column name='description'>
+				<term>
+					<from><![CDATA[<p><span style="font-size: small;">Lorem ipsum dolor%]]></from>
+					<to><![CDATA[Флажолет, так или иначе, mezzo forte представляет собой ритмоформульный цикл. Протяженность, по определению, начинает дисторшн. Адажио, в первом приближении, дисгармонично. Действительно, живая сессия монотонно имеет доминантсептаккорд. Явление культурологического порядка, на первый взгляд, дает композиционный канал.]]></to>
+				</term>
+				<term>
+					<from><![CDATA[<p><span style="font-size: small;">Nemo enim ipsam%]]></from>
+					<to><![CDATA[Ревер, следовательно, заканчивает midi-контроллер. Адажио образует музыкальный громкостнoй прогрессийный период. Хамбакер интуитивно понятен. Пентатоника, как бы это ни казалось парадоксальным, диссонирует внетактовый райдер, однако сами песни забываются очень быстро. Нота регрессийно просветляет open-air.]]></to>
+				</term>
+				<term>
+					<from><![CDATA[<p><span style="font-size: small;">Duis sed odio%]]></from>
+					<to><![CDATA[Шоу-бизнес имитирует мономерный рефрен. Крещендирующее хождение, как бы это ни казалось парадоксальным, просветляет midi-контроллер. Развивая эту тему, форма имеет тон-полутоновый лайн-ап. Как отмечает Теодор Адорно, мнимотакт образует рок-н-ролл 50-х.]]></to>
+				</term>
+			</column>
+			<column name='detail_content'>
+				<term>
+					<from><![CDATA[%The standard Lorem Ipsum passage, used since the 1500s%]]></from>
+					<to><![CDATA[<p>Явление культурологического порядка, так или иначе, многопланово продолжает серийный гипнотический рифф. Сет, следовательно, дает винил. Форшлаг, следовательно, неравномерен.</p>
+
+					<p>Внутридискретное арпеджио трансформирует громкостнoй прогрессийный период, не говоря уже о том, что рок-н-ролл мертв. Нонаккорд иллюстрирует структурный дисторшн. Говорят также о фактуре, типичной для тех или иных жанров ("фактура походного марша", "фактура вальса" и пр.), и здесь мы видим, что голос монотонно просветляет алеаторически выстроенный бесконечный канон с полизеркальной векторно-голосовой структурой. Детройтское техно, по определению, трансформирует ревер, таким образом конструктивное состояние всей музыкальной ткани или какой-либо из составляющих ее субструктур (в том числе: временнoй, гармонической, динамической, тембровой, темповой) возникает как следствие их выстраивания на основе определенного ряда (модуса). Гипнотический рифф, на первый взгляд, просветляет тетрахорд. Рефрен варьирует паузный хорус.</p>
+
+					<p>Адажио, на первый взгляд, образует лирический доминантсептаккорд. Эффект "вау-вау" регрессийно использует соноропериод, это и есть одномоментная вертикаль в сверхмногоголосной полифонической ткани. Развивая эту тему, эффект "вау-вау" неизменяем.</p>]]></to>
+				</term>
+			</column>
+			<column name='tags'>
+				<term>
+					<from><![CDATA[Proin, gravida, auctor]]></from>
+					<to><![CDATA[Российская, сборка, Magento]]></to>
+				</term>
+				<term>
+					<from><![CDATA[Sollicitudin, lorem, quis bibendum]]></from>
+					<to><![CDATA[Российская, сборка, Magento]]></to>
+				</term>
+				<term>
+					<from><![CDATA[Lorem, bibendum, ipsum]]></from>
+					<to><![CDATA[Российская, сборка, Magento]]></to>
+				</term>
+			</column>
+		</table>
+		<table name='ves_brand/brand'>
+			<column name='title'>
+				<term><from>Demo Brand</from><to>Производитель №1</to></term>
+				<term><from>Brand demo</from><to>Производитель №2</to></term>
+			</column>
+			<column name='description'>
+				<term>
+					<from><![CDATA[%Lorem ipsum%]]></from>
+					<to><![CDATA[<p>Действительно, септаккорд начинает алеаторически выстроенный бесконечный канон с полизеркальной векторно-голосовой структурой. Легато имитирует midi-контроллер. Голос интенсивен.</p>
+
+					<p>Синкопа иллюстрирует звукосниматель. Как мы уже знаем, звукоряд интуитивно понятен. Детройтское техно музыкально.</p>
+
+					<p>Ретро, на первый взгляд, выстраивает сет. Разносторонняя пятиступенчатая громкостная пирамида, следовательно, варьирует тетрахорд. Как мы уже знаем, полимодальная организация варьирует хорус. Глиссандо, на первый взгляд, многопланово имеет хорус.</p>]]></to>
+				</term>
+			</column>
+		</table>
+		<table name='ves_layerslider/banner'>
+			<column name='params' filters='serialize,base64'>
+				<path value='*/*/itemData/content'>
+					<term>
+						<from>%The ultimate in modem design%</from>
+						<to>В связи с этим нужно подчеркнуть, что субтехника просветляет форшлаг. Гипнотический рифф неравномерен. </to>
+					</term>
+					<term><from>Text Element</from><to>Текст</to></term>
+					<term><from>Last chance to buy</from><to>Покупай, налетай</to></term>
+					<term><from>Extra 50% off</from><to>Скидка 50%</to></term>
+					<term><from>Shop now</from><to>Купить</to></term>
+				</path>
+				<path value='*/*/originalTitle'>
+					<term>
+						<from>Text Element</from>
+						<to>Текст</to>
+					</term>
+					<term>
+						<from>Image Element</from>
+						<to>Картинка</to>
+					</term>
+				</path>
+			</column>
+		</table>
+		<table name='ves_megamenu/megamenu_widget'>
+			<column name='name'>
+				<term><from>Demo HTML</from><to>Пример HTML</to></term>
+				<term><from>Demo Images</from><to>Пример картинок</to></term>
+				<term><from>Custom List</from><to>Пример списка</to></term>
+				<term><from>Best seller</from><to>Самые продаваемые товары</to></term>
+				<term><from>Information</from><to>Пример информационного блока</to></term>
+				<term><from>Video Widget</from><to>Пример видео</to></term>
+				<term><from>Categories</from><to>Разделы</to></term>
+				<term><from>Lingerie</from><to>Одежда</to></term>
+				<term><from>Account</from><to>Личный кабинет</to></term>
+				<term><from>Demo Images Top</from><to>Пример картинок 2</to></term>
+				<term><from>Last Tweets</from><to>Новости</to></term>
+				<term><from>Bestseller</from><to>Самые продаваемые товары</to></term>
+			</column>
+			<column name='params' filters='serialize'>
+				<!--
+					Значения одной и той же колонки могут быть закодированы в 2 разных форматах:
+					1) просто serialize
+					2) serialize + base64
+					Мы здесь переводим только первый формат (второй переводим ниже).
+				-->
+				<where><![CDATA[params LIKE '%show_name%']]></where>
+				<path value='html'>
+					<term>
+						<from>%Lorem Ipsum%</from>
+						<to><![CDATA[Действительно, примочка диссонирует алеаторически выстроенный бесконечный канон с полизеркальной векторно-голосовой структурой. Флажолет регрессийно представляет собой пласт, таким образом объектом имитации является число длительностей в каждой из относительно автономных ритмогрупп ведущего голоса. Развивая эту тему, аллюзийно-полистилистическая композиция просветляет определенный полиряд, на этих моментах останавливаются Л.А.Мазель и В.А.Цуккерман в своем "Анализе музыкальных произведений".]]></to>
+					</term>
+					<term><from>Dresses</from><to>Платья</to></term>
+					<term><from>New</from><to>Новинки</to></term>
+					<term><from>Accessories</from><to>Аксессуары</to></term>
+					<term><from>Tops</from><to>Блузки</to></term>
+					<term><from>Bottoms</from><to>Юбки</to></term>
+					<term><from>About Us</from><to>О магазине</to></term>
+					<term><from>Delivery Information</from><to>Доставка</to></term>
+					<term><from>Privacy Policy</from><to>Контакты</to></term>
+					<term><from><![CDATA[Terms & Conditions]]></from><to>Поддержка</to></term>
+				</path>
+			</column>
+			<column name='params' filters='serialize,base64'>
+				<!-- YTozOntzOjk6InNob3dfb... -->
+				<where><![CDATA[params LIKE 'YTo%']]></where>
+				<path value='html'>
+					<term><from>Presets</from><to>Соноропериод</to></term>
+					<term><from>Typography</from><to>Регрессийно</to></term>
+					<term><from>Fully Loaded</from><to>Крещендирующее</to></term>
+					<term><from>Module Position</from><to>Флажолет</to></term>
+					<term><from>Module Variations</from><to>Полиряд</to></term>
+					<term><from>Duis vulputate</from><to>Хроматический</to></term>
+					<term><from>Morbi accumsan</from><to>Ритмоединица</to></term>
+					<term><from>Nam tellus odio</from><to>Доминантсептаккорд</to></term>
+					<term><from>Gravida</from><to>Соноропериод</to></term>
+					<term><from>Sollicitudin</from><to>Соноропериод</to></term>
+					<term><from>Bibendum</from><to>Соноропериод</to></term>
+					<term><from>Consequat ipsum</from><to>Соноропериод</to></term>
+					<term><from>Duis vulputate</from><to>Соноропериод</to></term>
+					<term><from>Morbi accumsan</from><to>Соноропериод</to></term>
+					<term><from>Shrot Sleeved</from><to>Соноропериод</to></term>
+					<term><from>Nam tellus odio</from><to>Соноропериод</to></term>
+					<term><from>Login</from><to>Соноропериод</to></term>
+					<term><from>Create account</from><to>Соноропериод</to></term>
+					<term><from>Wish List</from><to>Соноропериод</to></term>
+					<term><from>My Account</from><to>Соноропериод</to></term>
+					<term><from>Shopping Cart</from><to>Соноропериод</to></term>
+					<term><from>Consequat ipsum</from><to>Соноропериод</to></term>
+					<term><from>Duis vulputate</from><to>Соноропериод</to></term>
+					<term><from>MAKES UP PHOTOSHOP</from><to>Соноропериод</to></term>
+					<term><from>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet laboriosam provident at option</from><to>Очевидно, что флажолет сложен. Дисторшн, на первый взгляд, представляет собой гипнотический рифф.</to></term>
+					<term><from>Voluptates, consectetur soluta laborum maiores alias autem velit deserunt quas quis repellendus</from><to>Дисторшн, и это особенно заметно у Чарли Паркера или Джона Колтрейна, иллюстрирует дисторшн.</to></term>
+				</path>
+			</column>
+		</table>
+		<table name='ves_tempcp/theme'>
+			<column name='params' filters='serialize,base64'>
+				<path value='copyright'>
+					<term>
+						<from>%%</from>
+						<to><![CDATA[<a href="http://magento-forum.ru" title="Magento">Российская сборка Magento</a>]]></to>
+					</term>
+				</path>
+				<path value='location_address'>
+					<term>
+						<from>%%</from>
+						<to>127299, г. Москва, ул. Клары Цеткин, д.2/3, стр.1</to>
+					</term>
+				</path>
+				<path value='widget_aboutus_data'>
+					<term><from>FREE SHIPPING</from><to>Российская сборка Magento</to></term>
+					<term><from>SPECIAL GIFT CARDS</from><to>Российская сборка Magento</to></term>
+					<term><from>DAILY PROMOTION</from><to>Российская сборка Magento</to></term>
+					<term><from>24/7 CUSTOMER</from><to>Российская сборка Magento</to></term>
+				</path>
+				<path value='widget_custom-footer-links_data'>
+					<term><from>Proin gravida nibh</from><to>Миксолидийский аккорд</to></term>
+					<term><from>Duis cursus</from><to>Миксолидийский аккорд</to></term>
+					<term><from>Morbi accumsan ipsum</from><to>Миксолидийский аккорд</to></term>
+					<term><from>Nam cidunt auctor</from><to>Миксолидийский аккорд</to></term>
+					<term><from>Sed mauris consequat</from><to>Миксолидийский аккорд</to></term>
+					<term><from>Mauris erat</from><to>Миксолидийский аккорд</to></term>
+					<term><from>About Us</from><to>Форшлаг</to></term>
+					<term><from>Jobs</from><to>Форшлаг</to></term>
+					<term><from>Affiliates</from><to>Форшлаг</to></term>
+					<term><from>Contact</from><to>Форшлаг</to></term>
+					<term><from>Newsletter</from><to>Форшлаг</to></term>
+					<term><from>Blog</from><to>Форшлаг</to></term>
+					<term><from>Contact Us</from><to>Полимодальная</to></term>
+					<term>
+						<from><![CDATA[Terms &amp; Conditions]]></from>
+						<to>Полимодальная</to>
+					</term>
+					<term><from>Privacy Policy</from><to>Полимодальная</to></term>
+					<term><from>Orders and Returns</from><to>Полимодальная</to></term>
+					<term><from>Site Map</from><to>Полимодальная</to></term>
+					<term><from>info@venustheme.com</from><to>admin@magento-forum.ru</to></term>
+					<term><from>latest from blog</from><to>Наши новости</to></term>
+					<term>
+						<from><![CDATA[<h3>informations</h3>]]></from>
+						<to><![CDATA[<h3>Арпеджио</h3>]]></to>
+					</term>
+					<term>
+						<from><![CDATA[<h3>service &amp; support</h3>]]></from>
+						<to><![CDATA[Оплата и доставка]]></to>
+					</term>
+					<term>
+						<from><![CDATA[<h3>about store</h3>]]></from>
+						<to><![CDATA[<h3>О магазине</h3>]]></to>
+					</term>
+					<term>
+						<from><![CDATA[#<p>Duis at nisl quis quam condimentum pulvar.<br />Quisque euismod convallis eros, quis lacinia<br />enim rhoncus sed.</p>#]]></from>
+						<to><![CDATA[<p>Алеаторически выстроенный бесконечный канон с полизеркальной векторно-голосовой структурой полифигурно имеет open-air. Развивая эту тему, драм-машина иллюстрирует тетрахорд.</p>]]></to>
+					</term>
+					<term>
+						<from>Phone: +01 888 (000) 1234</from>
+						<to>+7 (495) 745-51-65</to>
+					</term>
+				</path>
+			</column>
+		</table>
+		<table name='ves_verticalmenu/verticalmenu'>
+			<column name='title'>
+				<term><from>ROOT</from><to>Корень</to></term>
+				<term><from>Root Catalog</from><to>Каталог</to></term>
+				<term><from><![CDATA[Cameras & Camcorders]]></from><to>Фототехника</to></term>
+				<term><from>Home Entertainment</from><to>Домашние кинотеатры</to></term>
+				<term><from><![CDATA[Computers & Laptops]]></from><to>Компьютеры</to></term>
+				<term><from><![CDATA[Gaming & Consoles]]></from><to>Игровые приставки</to></term>
+				<term><from><![CDATA[Smartphones & Tablets]]></from><to>Планшеты</to></term>
+				<term><from>Televisions</from><to>Телевизоры</to></term>
+				<term><from><![CDATA[Game & Toys]]></from><to>Настольные игры</to></term>
+				<term><from>Leather</from><to>Дисторшн</to></term>
+				<term><from>Tempor</from><to>Дисторшн</to></term>
+				<term><from>Vulputate</from><to>Дисторшн</to></term>
+				<term><from>Hendrerit</from><to>Дисторшн</to></term>
+				<term><from>Litterarum</from><to>Дисторшн</to></term>
+				<term><from>Office</from><to>Дисторшн</to></term>
+			</column>
+		</table>
+		<table name='ves_verticalmenu/verticalmenu_widget'>
+			<column name='name'>
+				<term><from>Custom Product 1</from><to>Товар №1</to></term>
+				<term><from>Custom Product 2</from><to>Товар №2</to></term>
+				<term><from>Custom Product 3</from><to>Товар №3</to></term>
+				<term><from>Custom Product 4</from><to>Товар №4</to></term>
+				<term><from>Category</from><to>Каталог</to></term>
+				<term><from><![CDATA[Camera & Videos]]></from><to>Фототехника</to></term>
+				<term><from>Video Widget</from><to>Пример видео</to></term>
+				<term><from>Last Tweets</from><to>Наши новости</to></term>
+				<term><from>Demo Images</from><to>Пример картинки</to></term>
+			</column>
+			<column name='params' filters='serialize,base64'>
+				<where><![CDATA['html' = type]]></where>
+				<path value='html'>
+					<term>
+						<from><![CDATA[>Crossed Shirt - Beluga<]]></from>
+						<to><![CDATA[>Соноропериод<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Crossed Shirt - Belugas<]]></from>
+						<to><![CDATA[>Глубокий форшлаг<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Double layer super soft<]]></from>
+						<to><![CDATA[>Контрапункт контрастных фактур<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Farlap Shirt - Ruby Wine<]]></from>
+						<to><![CDATA[>Изоритмический лайн-ап<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Framed-Sleeve Bot<]]></from>
+						<to><![CDATA[>Мнимотакт<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Apple Cinema 30"<]]></from>
+						<to><![CDATA[>Глиссандо волнообразно<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Canon EOS 40D<]]></from>
+						<to><![CDATA[>Мнимотакт<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Double layer super<]]></from>
+						<to><![CDATA[>Флажолет<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Framed-Sleeve<]]></from>
+						<to><![CDATA[>Флажолет<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>MAKES UP PHOTOSHOP<]]></from>
+						<to><![CDATA[>Доминантсептаккорд<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet laboriosam provident at optio<]]></from>
+						<to><![CDATA[>Попса образует глубокий соноропериод.<]]></to>
+					</term>
+					<term>
+						<from><![CDATA[>Voluptates, consectetur soluta laborum maiores alias autem velit deserunt quas quis repellendus<]]></from>
+						<to><![CDATA[>Попса образует глубокий соноропериод.<]]></to>
+					</term>
+				</path>
+			</column>
+		</table>
+	</db>
+	<attributes>
+		<used_in_product_listing>featured</used_in_product_listing>
+	</attributes>
+	<rule>
+		<conditions>
+			<type>block</type>
+			<block><id>social-link</id></block>
+		</conditions>
+		<actions>
+			<new_title>Мы в соцсетях</new_title>
+			<term>
+				<from><![CDATA[>Follow us on<]]></from>
+				<to><![CDATA[>Мы в соцсетях<]]></to>
+			</term>
+		</actions>
+	</rule>
+	<rule>
+		<conditions>
+			<type>block</type>
+			<block><id>contact-info</id></block>
+		</conditions>
+		<actions>
+			<new_title>Контакты</new_title>
+			<term>
+				<from>No 1123, Sky Tower, New York, USA</from>
+				<to>127299, г. Москва, ул. Клары Цеткин, д.2/3, стр.1</to>
+			</term>
+			<term>
+				<from><![CDATA[+084 &nbsp;0123 456 789]]></from>
+				<to>+7 (495) 745-51-65</to>
+			</term>
+			<term>
+				<from>info@company.com</from>
+				<to>admin@magento-forum.ru</to>
+			</term>
+		</actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Root Catalog</name></category></conditions>
+		<actions><new_title>Корневой раздел</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Camera</name></category></conditions>
+		<actions><new_title>Фототехника</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Computer Parts</name></category></conditions>
+		<actions><new_title>Комплектующие</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Desktops</name></category></conditions>
+		<actions><new_title>Компьютеры</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Televisions</name></category></conditions>
+		<actions><new_title>Телевизоры</new_title></actions>
+	</rule>
+	<rule>
+		<conditions><type>category</type><category><name>Featured</name></category></conditions>
+		<actions><new_title>Премиум</new_title></actions>
+	</rule>
+</dictionary>

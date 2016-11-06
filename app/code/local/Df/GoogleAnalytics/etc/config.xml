@@ -1,0 +1,25 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_GoogleAnalytics>
+			<author>Дмитрий Федюк</author>
+			<version>1.0.0</version>
+		</Df_GoogleAnalytics>
+	</modules>
+	<global>
+		<blocks>
+			<df_google_analytics><class>Df_GoogleAnalytics_Block</class></df_google_analytics>
+			<googleanalytics>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						кэширование блока Google Analytics.
+					-->
+					<ga>Df_GoogleAnalytics_Block_Ga</ga>
+				</rewrite>
+			</googleanalytics>
+		</blocks>
+		<helpers><df_google_analytics><class>Df_GoogleAnalytics_Helper</class></df_google_analytics></helpers>
+		<models><df_google_analytics><class>Df_GoogleAnalytics_Model</class></df_google_analytics></models>
+	</global>
+</config>

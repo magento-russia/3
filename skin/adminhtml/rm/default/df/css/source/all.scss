@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/**
+	Обратите внимание, что правило @charset надо записывать именно с двойными кавычками
+	и именно в самом начале файла, без любых символов и пробелов впереди.
+*/
+@import '_catalog';
+@import '_chronopay';
+@import '_cms';
+@import 'external/_dropdown';
+@import 'external/_spectrum';
+@import '_forms';
+@import 'localization/_theme';
+@import 'localization/_verification';
+@import '_moysklad';
+@import '_notifier';
+@import 'sales/grid/column/_products';
+@import 'system/_common';
+@import 'system/_config';
+@import '_yandex.market';

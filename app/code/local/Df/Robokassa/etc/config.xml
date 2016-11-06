@@ -1,0 +1,127 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Robokassa>
+			<author>Дмитрий Федюк</author>
+			<title>ROBOKASSA</title>
+			<version>1.0.0</version>
+		</Df_Robokassa>
+	</modules>
+	<global>
+		<helpers><df_robokassa><class>Df_Robokassa_Helper</class></df_robokassa></helpers>
+		<request>
+			<direct_front_name>
+<!--
+2016-10-21
+Позволяет администратору магазина указывать в личном кабинете платёжной системы
+адрес для оповещений (df-robokassa/confirm) без указания в нём кода магазина.
+Таким образом, если в системе присутствует несколько магазинов,
+то исчезает путаница: код какого магазина использовать в адресах оповещений.
+https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Core/Controller/Request/Http.php#L37
+https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Core/Controller/Request/Http.php#L161-L170
+
+Для адресов df-payment/success и df-payment/cancel
+мы аналогичное объявление делаем в файле Df/Payment/etc/config.xml
+-->
+				<df-robokassa/>
+			</direct_front_name>
+		</request>
+	</global>
+	<frontend>
+		<routers>
+			<df_robokassa>
+				<use>standard</use>
+				<args>
+					<module>Df_Robokassa</module>
+					<frontName>df-robokassa</frontName>
+				</args>
+			</df_robokassa>
+		</routers>
+	</frontend>
+	<default>
+		<!--
+			Применение для настроек нестандартного ключа df_payment вместо payment
+			позволяет нам расположить настройки наших платёжных модулей
+			не в группе стандартных платёжных модулей,а в группе Российской сборки
+		-->
+		<df_payment>
+			<robokassa>
+				<active>0</active>
+				<payment_service__test>1</payment_service__test>
+				<payment_service__currency>RUB</payment_service__currency>
+				<frontend__title>Платёжный сервис ROBOKASSA</frontend__title>
+				<frontend__description><![CDATA[Прежде чем проводить оплату, свяжитесь с менеджером по телефону, уточните наличие товара и поставьте его в резерв.]]></frontend__description>
+				<frontend__sort_order>0</frontend__sort_order>
+				<admin__order_status>1</admin__order_status>
+				<admin__payment_action>Authorization</admin__payment_action>
+			</robokassa>
+		</df_payment>
+		<!--
+			Система использует ключ «payment»
+			для сопоставления кода (идентификатора) способа оплаты
+			и программного класса (в терминах PHP) этого способа
+		-->
+		<payment>
+			<df-robokassa>
+				<model>Df\Robokassa\Method</model>
+			</df-robokassa>
+		</payment>
+	</default>
+	<df>
+		<features>
+			<df-robokassa>
+				<title>ROBOKASSA</title>
+				<url>http://magento-forum.ru/forum/151/</url>
+			</df-robokassa>
+		</features>
+		<payment>
+			<robokassa>
+				<currencies>
+					<!--
+2016-10-20
+Как выяснил сегодня в техподдержке ROBOKASSSA,
+у магазина нет возможности выставлять покупателю счёт не в рублях:
+https://partner.robokassa.ru/Support/Requests/29f54a98-5c8e-4608-85f6-748fb3a2cbf9
+
+При этом в API есть параметр «OutSumCurrency»: http://docs.robokassa.ru/#1204
+«Способ указать валюту, в которой магазин выставляет стоимость заказа.»
+Однако этот параметр на самом деле лишь позволяет указывать «OutSum» в нестандартной валюте,
+однако стоимость заказа будет всё равно пересчитана в рубли.
+
+http://magento-forum.ru/topic/1629/#entry20178
+					-->
+					<allowed>RUB</allowed>
+				</currencies>
+				<url>
+					<payment_page>https://auth.robokassa.ru/Merchant/Index.aspx</payment_page>
+				</url>
+				<request>
+					<confirmation>
+						<payment>
+							<!--
+								Размер платежа.
+								Обязательный параметр.
+							-->
+							<amount>OutSum</amount>
+						</payment>
+						<request>
+							<!--
+								Подпись подтверждения платёжной системой магазину оплаты заказа.
+								Обязательный параметр.
+							-->
+							<signature>SignatureValue</signature>
+						</request>
+						<response>
+							<!--
+								Тип содержимого ответа магазина платёжной системе
+								в ответ на подтверждение платёжной системой магазину оплаты заказа.
+								Обязательный параметр.
+							-->
+							<content-type>text/plain</content-type>
+						</response>
+					</confirmation>
+				</request>
+			</robokassa>
+		</payment>
+	</df>
+</config>

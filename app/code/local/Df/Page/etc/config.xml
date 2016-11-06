@@ -1,0 +1,140 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Page>
+			<author>Дмитрий Федюк</author>
+			<version>1.0.0</version>
+		</Df_Page>
+	</modules>
+	<df>
+		<admin>
+			<notifiers>
+				<merge_css>Df_Page_Model_Admin_Notifier_Merge_Css</merge_css>
+				<merge_js>Df_Page_Model_Admin_Notifier_Merge_Js</merge_js>
+			</notifiers>
+		</admin>
+	</df>
+	<global>
+		<blocks>
+			<df_page><class>Df_Page_Block</class></df_page>
+			<page>
+				<rewrite>
+					<!--
+						Цели перекрытия:
+						1) кэширование блока
+						2) предоставление администратору возможности
+						скрывать названия товара из навигационного меню витринной товарной карточки:
+						http://magento-forum.ru/topic/4509/
+					-->
+					<html_breadcrumbs>Df_Page_Block_Html_Breadcrumbs</html_breadcrumbs>
+					<!--
+						Цель перекрытия —
+						предоставление возможности удобного добавления клиентских ресурсов
+						(скриптов и стилей) на страницу.
+					-->
+					<html_head>Df_Page_Block_Html_Head</html_head>
+					<!--
+						Цель перекрытия —
+						предоставление администратору возможности скрывать сообщение «Добро пожаловать»
+						либо показывать там только имя посетителя без фамилии.
+						2015-11-16
+						Начиная с Magento CE 1.7.0.2
+						метод @see Mage_Page_Block_Html_Header::getWelcome() стал устаревшим:
+						https://github.com/OpenMage/magento-mirror/blob/1.9.2.2/app/code/core/Mage/Page/Block/Html/Header.php#L85
+						и уже редко используется современными оформительскими темами.
+						Для современных версий Magento CE
+						аналогичное перекрытие делает мой класс	Df_Page_Block_Html_Welcome (см. ниже).
+					-->
+					<html_header>Df_Page_Block_Html_Header</html_header>
+					<!--
+						Цель перекрытия —
+						кэширование блока.
+					-->
+					<html_notices>Df_Page_Block_Html_Notices</html_notices>
+					<!--
+						Цель перекрытия —
+						кэширование меню.
+					-->
+					<html_topmenu>Df_Page_Block_Html_Topmenu</html_topmenu>
+					<!--
+						2015-11-16
+						Цель перекрытия —
+						предоставление администратору возможности скрывать сообщение «Добро пожаловать»
+						либо показывать там только имя посетителя без фамилии.
+						Для Magento CE версий ранее 1.7.0.2 для этой же цели используется
+						класс Df_Page_Block_Html_Head,
+						однако перекрываемый им метод @see Mage_Page_Block_Html_Header::getWelcome()
+						с Magento CE версии 1.7.0.2 стал устаревшим:
+						https://github.com/OpenMage/magento-mirror/blob/1.9.2.2/app/code/core/Mage/Page/Block/Html/Header.php#L85
+						и уже редко используется современными оформительскими темами.
+					-->
+					<html_welcome>Df_Page_Block_Html_Welcome</html_welcome>
+					<!--
+						Цель перекрытия —
+						кэширование блока.
+					-->
+					<js_cookie>Df_Page_Block_Js_Cookie</js_cookie>
+					<!--
+						Цель перекрытия —
+						кэширование блока.
+					-->
+					<switch>Df_Page_Block_Switch</switch>
+					<!--
+						Цели перекрытия —
+						1) кэширование блока
+						2) предоставление возможности удаления пункта меню
+						по типу блока, соответствующего пункту меню.
+					-->
+					<template_links>Df_Page_Block_Template_Links</template_links>
+				</rewrite>
+			</page>
+		</blocks>
+		<helpers><df_page><class>Df_Page_Helper</class></df_page></helpers>
+		<models><df_page><class>Df_Page_Model</class></df_page></models>
+	</global>
+	<frontend>
+		<events>
+			<page_block_html_topmenu_gethtml_before>
+				<observers>
+					<Df_Page>
+						<class>Df_Page_Observer</class>
+						<method>page_block_html_topmenu_gethtml_before</method>
+					</Df_Page>
+				</observers>
+			</page_block_html_topmenu_gethtml_before>
+			<df_menu_top_add_submenu>
+				<observers>
+					<Df_Page>
+						<class>Df_Page_Observer</class>
+						<method>df_menu_top_add_submenu</method>
+					</Df_Page>
+				</observers>
+			</df_menu_top_add_submenu>
+		</events>
+	</frontend>
+	<default>
+		<design>
+			<head translate='default_description' module='page'>
+				<default_title>Российская сборка Magento</default_title>
+				<default_description></default_description>
+				<default_keywords></default_keywords>
+			</head>
+			<header translate='welcome' module='page'>
+				<logo_alt>Российская сборка Magento</logo_alt>
+				<!--
+					2015-11-16
+					Неправильно таким образом переводить интерфейсные строки,
+					потому что магазин может иметь несколько витрин с разными языками.
+					<welcome>Добро пожаловать!</welcome>
+
+					С другой стороны, показывать приветствие по умолчанию
+					мне вообще не нравится, поэтому установил тут пустую строку.
+				-->
+				<welcome></welcome>
+			</header>
+			<footer translate='copyright' module='page'>
+				<copyright>Российская сборка Magento</copyright>
+			</footer>
+		</design>
+	</default>
+</config>

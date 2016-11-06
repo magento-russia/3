@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<config>
+	<api>
+		<acl>
+			<resources>
+				<rm>
+					<!--
+					 	2015-08-04
+						Атрибут «module» явлется обязательным.
+						Если его не указать, то ресурс не появится в дереве ресурсов.
+						https://github.com/OpenMage/magento-mirror/blob/1.9.2.0/app/code/core/Mage/Adminhtml/Block/Api/Tab/Rolesedit.php#L105
+						if ($child->getName()!='title' && $child->getName()!='sort_order' && $child->attributes()->module) {...}
+
+						Указываем в качестве модуля «df_core»,
+						потому что ядро пытается загрузить главный хелпер модуля,
+						а у модуля 1C мы хелпер удалили (он нам для других целей не нужен,
+						а заводить целый класс ради атрибута «module» не хочется).
+					-->
+					<_1c module='df_core'>
+						<title>1С:Управление торговлей</title>
+					</_1c>
+				</rm>
+			</resources>
+		</acl>
+	</api>
+</config>

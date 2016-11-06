@@ -1,0 +1,35 @@
+// Информационная поле, где система сообщает администратору,
+// какие веб-адреса надо использовать для настройки модуля.
+// Используется модулями «1С:Управление торговлей» и «Яндекс.Маркет».
+.df-config-info-urls {
+	display: block;
+	background: white;
+	padding: 2px 0 2px 0.75em;
+	width: 300px;
+	li {
+		display: block;
+		background: white;
+		margin: 0;
+		padding: 0;
+		.df-name {
+			float: left;
+			width: 7em;
+			padding: 4px 0;
+		}
+		.df-url {margin-left: 8em;}
+	}
+}
+// 2016-10-21
+// Вынес эти правила за пределы блока «.df-config-info-urls»,
+// потому что они отныне используются не только внутри  «.df-config-info-urls»
+// (когда надо показать адреса для всех магазинов),
+// но и вне (когда адрес общий для всех магазинов:
+// смотрите, например, поле «Result URL» модуля «ROBOKASSA»).
+.df-url {
+	display: block;
+	width: 35em;
+	padding: 4px 0.75em;
+	background: white;
+	cursor: pointer;
+	&:hover {background: #FFF9E9;}
+}

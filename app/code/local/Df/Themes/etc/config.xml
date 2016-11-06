@@ -1,0 +1,1441 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Themes>
+			<version>1.0.0</version>
+			<author>Дмитрий Федюк</author>
+		</Df_Themes>
+	</modules>
+	<global>
+		<blocks>
+			<dataporter>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						перевод надписей на кнопках «Import» и «Export»
+						и фразы «Click to go to the import/export page»
+						в разделе импорта/экспорта настроек оформительской темы.
+					-->
+					<system_config_form_field_configimpex>Df_Themes_Block_Infortis_Dataporter_System_Config_Form_Field_Configimpex</system_config_form_field_configimpex>
+				</rewrite>
+			</dataporter>
+			<df_themes><class>Df_Themes_Block</class></df_themes>
+			<productlist>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						объявление свойств,
+						которые родительский класс использует без предварительного объявления.
+					-->
+					<list>Df_Themes_Block_Sns_ProductList_List</list>
+				</rewrite>
+			</productlist>
+			<slider>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						объявление свойств,
+						которые родительский класс использует без предварительного объявления.
+					-->
+					<list>Df_Themes_Block_Sns_Slider_List</list>
+				</rewrite>
+			</slider>
+			<ultimo>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						перевод надписей на кнопках «import static blocks» и «import pages»
+						в разделе импорта/экспорта самодельных блоков и страниц оформительской темы.
+					-->
+					<adminhtml_button_import_cms>Df_Themes_Block_Infortis_Ultimo_Adminhtml_Button_Import_Cms</adminhtml_button_import_cms>
+				</rewrite>
+			</ultimo>
+			<!--
+					2015-08-22
+					Цель перекрытия —
+					показ вместо мусора действительно полезной русскоязычным клиентам информации.
+					Оформительская тема Ves Super Store (ThemeForest 8002349)
+					http://themeforest.net/item/ves-super-store-responsive-magento-theme-/8002349?ref=dfediuk
+					http://demoleotheme.com/superstore/
+					http://magento-forum.ru/forum/370/
+			-->
+			<ves_autosearch>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_autosearch>
+			<ves_blog>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_blog>
+			<ves_brand>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_brand>
+			<ves_deals>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_deals>
+			<ves_layerslider>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_layerslider>
+			<ves_megamenu>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_megamenu>
+			<ves_parallax>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_parallax>
+			<ves_productcarousel>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_productcarousel>
+			<ves_productcarousel2>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_productcarousel2>
+			<ves_socialsidebar>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_socialsidebar>
+			<ves_tabshome>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_tabshome>
+			<ves_tempcp>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_tempcp>
+			<ves_verticalmenu>
+				<rewrite>
+					<system_config_form_field_information>Df_Themes_Block_Ves_SupportInformation</system_config_form_field_information>
+				</rewrite>
+			</ves_verticalmenu>
+		</blocks>
+		<helpers>
+			<df_themes><class>Df_Themes_Helper</class></df_themes>
+			<!-- TemplateMela Megnor Framework -->
+			<framework>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						устранение сбоя
+						«Undefined property: Df_Catalog_Model_Product::$special_price
+						in Megnor/Framework/Helper/Data.php on line 26»
+						http://magento-forum.ru/topic/4490/
+					-->
+					<data>Df_Themes_Helper_Megnor_Framework_Data</data>
+				</rewrite>
+			</framework>
+			<galatitanshopsettings>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						русификация ярлыка «скидка»
+					-->
+					<data>Df_Themes_Helper_Gala_Galatitanshopsettings_Data</data>
+				</rewrite>
+			</galatitanshopsettings>
+			<multidealpro>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						русификация счётчика времени до окончания акции.
+					-->
+					<data>Df_Themes_Helper_EM_Multidealpro_Data</data>
+				</rewrite>
+			</multidealpro>
+			<xsport>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						инициализация полей массива,
+						которые родительский класс использует без предварительной инициализации.
+					-->
+					<data>Df_Themes_Helper_Sns_Xsport_Data</data>
+				</rewrite>
+			</xsport>
+		</helpers>
+		<models>
+			<dataporter>
+				<rewrite>
+					<!--
+						Цель перекрытия —
+						перевод названий модулей, для которых возможен экспорт/импорт настроек.
+					-->
+					<source_cfgporter_packagemodules>Df_Themes_Model_Infortis_Dataporter_Source_Cfgporter_Packagemodules</source_cfgporter_packagemodules>
+					<!--
+						Цель перекрытия —
+						перевод названий магазинов, для которых имеются демо-данные для импорта.
+					-->
+					<source_cfgporter_packagepresets>Df_Themes_Model_Infortis_Dataporter_Source_Cfgporter_Packagepresets</source_cfgporter_packagepresets>
+
+				</rewrite>
+			</dataporter>
+			<df_themes><class>Df_Themes_Model</class></df_themes>
+		</models>
+	</global>
+	<adminhtml>
+		<translate>
+			<modules>
+				<!--
+					2015-09-05
+					Оформительская тема Porto (ThemeForest 9725864)
+					http://themeforest.net/item/porto-ultimate-responsive-magento-theme/9725864
+					http://magento-forum.ru/forum/371/
+				-->
+				<AddThis_PluginsGeneral>
+					<files><rm>AddThis/PluginsGeneral.csv</rm></files>
+				</AddThis_PluginsGeneral>
+				<AddThis_SharingTool>
+					<files><rm>AddThis/SharingTool.csv</rm></files>
+				</AddThis_SharingTool>
+				<AddThis_SmartLayers>
+					<files><rm>AddThis/SmartLayers.csv</rm></files>
+				</AddThis_SmartLayers>
+				<!--
+				 	2015-10-16
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Cmsmart_AjaxCart>
+					<files><rm>Cmsmart/AjaxCart.csv</rm></files>
+				</Cmsmart_AjaxCart>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Cmsmart_Ajaxsearch>
+					<files><rm>Cmsmart/Ajaxsearch.csv</rm></files>
+				</Cmsmart_Ajaxsearch>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Cmsmart_Megamenu>
+					<files><rm>Cmsmart/Megamenu.csv</rm></files>
+				</Cmsmart_Megamenu>
+				<Gala_Galatitanshopsettings>
+					<!-- Оформительская тема Gala TitanShop -->
+					<files>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>Gala/TitanShop.csv</default>
+						<tag>Mage_Tag.csv</tag>
+					</files>
+				</Gala_Galatitanshopsettings>
+				<Gala_Softwaremarketsettings>
+					<!-- Оформительская тема Gala SoftwareMarket -->
+					<files>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>Gala/SoftwareMarket.csv</default>
+						<tag>Mage_Tag.csv</tag>
+					</files>
+				</Gala_Softwaremarketsettings>
+				<EM_LayeredNavigation>
+					<files><default>EM/LayeredNavigation.csv</default></files>
+				</EM_LayeredNavigation>
+				<EM_Themeframework>
+					<files>
+						<default>EM/Themeframework.csv</default>
+					</files>
+				</EM_Themeframework>
+				<Infortis_Brands>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_brands>Infortis/Brands.csv</infortis_brands>
+					</files>
+				</Infortis_Brands>
+				<Infortis_CloudZoom>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_cloudzoom>Infortis/CloudZoom.csv</infortis_cloudzoom>
+						<infortis_cloudzoom_admin>Infortis/CloudZoom/admin.csv</infortis_cloudzoom_admin>
+					</files>
+				</Infortis_CloudZoom>
+				<Infortis_Dataporter>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_dataporter>Infortis/Dataporter.csv</infortis_dataporter>
+					</files>
+				</Infortis_Dataporter>
+				<Infortis_Fortis>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_fortis>Infortis/Fortis.csv</infortis_fortis>
+						<infortis_fortis_ultimo>Infortis/Fortis_Ultimo.csv</infortis_fortis_ultimo>
+					</files>
+				</Infortis_Fortis>
+				<Infortis_Infortis>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_infortis>Infortis/Infortis.csv</infortis_infortis>
+					</files>
+				</Infortis_Infortis>
+				<Infortis_Ultimo>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_fortis_ultimo>Infortis/Fortis_Ultimo.csv</infortis_fortis_ultimo>
+						<infortis_ultimo>Infortis/Ultimo.csv</infortis_ultimo>
+					</files>
+				</Infortis_Ultimo>
+				<Infortis_UltraMegamenu>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_ultramegamenu>Infortis/UltraMegamenu.csv</infortis_ultramegamenu>
+					</files>
+				</Infortis_UltraMegamenu>
+				<Infortis_UltraSlideshow>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_ultraslideshow>Infortis/UltraSlideshow.csv</infortis_ultraslideshow>
+					</files>
+				</Infortis_UltraSlideshow>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<LitExtension_SocialLogin>
+					<files><rm>LitExtension_SocialLogin.csv</rm></files>
+				</LitExtension_SocialLogin>
+				<!--
+					2015-09-05
+					Оформительская тема Porto (ThemeForest 9725864)
+					http://themeforest.net/item/porto-ultimate-responsive-magento-theme/9725864
+					http://magento-forum.ru/forum/371/
+				-->
+				<Magegiant_Dailydeal>
+					<files><rm>Magegiant/Dailydeal.csv</rm></files>
+				</Magegiant_Dailydeal>
+				<Magegiant_Magegiantcore>
+					<files><rm>Magegiant/Core.csv</rm></files>
+				</Magegiant_Magegiantcore>
+				<!--
+				 	К сожалению, вынуждены указать в качестве модуля Mage_Adminhtml
+				 	вместо модулей Infortis,
+				 	потому что файл system.xml модулей Infortis
+				 	не содержит указание модуля для перевода,
+				 	и поэтому для перевода используется модуль Mage_Adminhtml.
+				 	@see Mage_Adminhtml_Model_Config::getAttributeModule()
+				-->
+				<Megnor_AdvancedMenu>
+					<files><default>Megnor_AdvancedMenu.csv</default></files>
+				</Megnor_AdvancedMenu>
+				<Megnor_Bestseller>
+					<files><default>Megnor_Bestseller.csv</default></files>
+				</Megnor_Bestseller>
+				<Megnor_FeaturedProducts>
+					<files><default>Megnor_FeaturedProducts.csv</default></files>
+				</Megnor_FeaturedProducts>
+				<Megnor_Newproducts>
+					<files><default>Megnor_Newproducts.csv</default></files>
+				</Megnor_Newproducts>
+				<Megnor_Specialproducts>
+					<files><default>Megnor_Specialproducts.csv</default></files>
+				</Megnor_Specialproducts>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Olark_Chatbox>
+					<files><rm>Olark_Chatbox.csv</rm></files>
+				</Olark_Chatbox>
+				<!--
+					2015-09-05
+					Оформительская тема Porto (ThemeForest 9725864)
+					http://themeforest.net/item/porto-ultimate-responsive-magento-theme/9725864
+					http://magento-forum.ru/forum/371/
+				-->
+				<Smartwave_Ajaxcart>
+					<files><rm>Smartwave/Ajaxcart.csv</rm></files>
+				</Smartwave_Ajaxcart>
+				<Smartwave_Ajaxcatalog>
+					<files><rm>Smartwave/Ajaxcatalog.csv</rm></files>
+				</Smartwave_Ajaxcatalog>
+				<Smartwave_All>
+					<files><rm>Smartwave/All.csv</rm></files>
+				</Smartwave_All>
+				<Smartwave_Blog>
+					<files><rm>Smartwave/Blog.csv</rm></files>
+				</Smartwave_Blog>
+				<Smartwave_CatalogCategorySearch>
+					<files><rm>Smartwave/CatalogCategorySearch.csv</rm></files>
+				</Smartwave_CatalogCategorySearch>
+				<Smartwave_Filterproducts>
+					<files><rm>Smartwave/Filterproducts.csv</rm></files>
+				</Smartwave_Filterproducts>
+				<Smartwave_Fullajax>
+					<files><rm>Smartwave/Fullajax.csv</rm></files>
+				</Smartwave_Fullajax>
+				<Smartwave_Homeslider>
+					<files><rm>Smartwave/Homeslider.csv</rm></files>
+				</Smartwave_Homeslider>
+				<Smartwave_Megamenu>
+					<files><rm>Smartwave/Megamenu.csv</rm></files>
+				</Smartwave_Megamenu>
+				<Smartwave_Porto>
+					<files><rm>Smartwave/Porto.csv</rm></files>
+				</Smartwave_Porto>
+				<Smartwave_QuickView>
+					<files><rm>Smartwave/QuickView.csv</rm></files>
+				</Smartwave_QuickView>
+				<Smartwave_Socialfeeds>
+					<files><rm>Smartwave/Socialfeeds.csv</rm></files>
+				</Smartwave_Socialfeeds>
+				<Smartwave_Socialicons>
+					<files><rm>Smartwave/Socialicons.csv</rm></files>
+				</Smartwave_Socialicons>
+				<!--
+				 	SNS Xsport
+				 	http://themeforest.net/item/sns-xsport-premium-responsive-magento-theme/8205296
+				 	http://demo.snstheme.com/theme/xsport/
+				 	http://magento-forum.ru/forum/355/
+				-->
+				<Sns_Ajaxcart>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Ajaxcart.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_ajaxcart>SNS/Ajaxcart.csv</sns_ajaxcart>
+						<checkout>Mage_Checkout.csv</checkout>
+					</files>
+				</Sns_Ajaxcart>
+				<Sns_Ajaxfilter>
+					<files>
+						<!--
+							В оригинале никакого языкового файла для модуля не указано.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_ajaxfilter>SNS/Ajaxfilter.csv</sns_ajaxfilter>
+					</files>
+				</Sns_Ajaxfilter>
+				<Sns_ProductList>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_ProductList.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_productlist>SNS/ProductList.csv</sns_productlist>
+					</files>
+				</Sns_ProductList>
+				<Sns_Producttabs>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Producttabs.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_producttabs>SNS/Producttabs.csv</sns_producttabs>
+					</files>
+				</Sns_Producttabs>
+				<Sns_Quickview>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Quickview.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_quickview>SNS/Quickview.csv</sns_quickview>
+					</files>
+				</Sns_Quickview>
+				<Sns_RevolutionSlider>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_RevolutionSlider.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_revolutionslider>SNS/RevolutionSlider.csv</sns_revolutionslider>
+					</files>
+				</Sns_RevolutionSlider>
+				<Sns_Slider>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Slider.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_slider>SNS/Slider.csv</sns_slider>
+					</files>
+				</Sns_Slider>
+				<Sns_Twitter>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Twitter.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_twitter>SNS/Twitter.csv</sns_twitter>
+					</files>
+				</Sns_Twitter>
+				<Sns_Xsport>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Xsport.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<default>SNS.csv</default>
+						<sns_xsport>SNS/Xsport.csv</sns_xsport>
+					</files>
+				</Sns_Xsport>
+				<Thirty4_CatalogSale>
+					<files><default>Thirty4_CatalogSale.csv</default></files>
+				</Thirty4_CatalogSale>
+				<!--
+					2015-10-17
+					Приставку «TM_» имеют модули TemplateMonster.
+					Какой именно оформительской теме принадлежат перечисленные ниже модули,
+					для которых оформительская тема я вно не указана — я не помню.
+				-->
+				<TM_AjaxSearch>
+					<files><rm>TM/AjaxSearch.csv</rm></files>
+				</TM_AjaxSearch>
+				<TM_AskIt>
+					<files><rm>TM/AskIt.csv</rm></files>
+				</TM_AskIt>
+				<TM_CustomMenu>
+					<files><rm>TM/CustomMenu.csv</rm></files>
+				</TM_CustomMenu>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_Facebook>
+					<files><rm>TM/Facebook.csv</rm></files>
+				</TM_Facebook>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_GoogleMap>
+					<files><rm>TM/GoogleMap.csv</rm></files>
+				</TM_GoogleMap>
+				<TM_Highlight>
+					<files><rm>TM/Highlight.csv</rm></files>
+				</TM_Highlight>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_Instagram>
+					<files><rm>TM/Instagram.csv</rm></files>
+				</TM_Instagram>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_NewsletterPopup>
+					<files><rm>TM/NewsletterPopup.csv</rm></files>
+				</TM_NewsletterPopup>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_SpecialPriceCountdown>
+					<files><rm>TM/SpecialPriceCountdown.csv</rm></files>
+				</TM_SpecialPriceCountdown>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_Twitter>
+					<files><rm>TM/Twitter.csv</rm></files>
+				</TM_Twitter>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Youama_Ajaxlogin>
+					<files><rm>Youama_Ajaxlogin.csv</rm></files>
+				</Youama_Ajaxlogin>
+				<!--
+					2015-08-21
+					Элементы с приставкой Ves_* содержат перевод
+					для модулей оформительской темы Ves Super Store (ThemeForest 8002349)
+					http://themeforest.net/item/ves-super-store-responsive-magento-theme-/8002349?ref=dfediuk
+					http://demoleotheme.com/superstore/
+					http://magento-forum.ru/forum/370/
+
+					Обратите внимание, что языковые файлы уже объявлены
+					в аналогичных секциях «translate» этих модулей,
+					однако языковые файлы отсутствуют в дистрибутиве оформительской темы
+					(и уж тем более не стоит когда-либо ожидать от разработчиков
+					перевода на русский язык).
+
+					Мы объявляем языковые файлы заново, чтобы сгруппировать их в подпапке Ves,
+					вместо пихания в корневую папку языковых файлов
+					вперемешку с языковыми файлами ядра.
+
+					Обратите внимание, что мы используем ключ «rm», а не «default»,
+					потому что настроечные файлы модулей Ves_*
+					имеют приоритет перед нашим настроечным файлом при объединении их системой
+					(вообще, это странно, ибо модули Ves_* расположены в области comminity,
+					а наш — в области local, хоть и под другим именем).
+				-->
+				<Ves_Autosearch>
+					<files><rm>Ves/Autosearch.csv</rm></files>
+				</Ves_Autosearch>
+				<Ves_Base>
+					<files><rm>Ves/Base.csv</rm></files>
+				</Ves_Base>
+				<Ves_BlockBuilder>
+					<files><rm>Ves/BlockBuilder.csv</rm></files>
+				</Ves_BlockBuilder>
+				<Ves_Blog>
+					<files><rm>Ves/Blog.csv</rm></files>
+				</Ves_Blog>
+				<Ves_Brand>
+					<files><rm>Ves/Brand.csv</rm></files>
+				</Ves_Brand>
+				<Ves_Deals>
+					<files><rm>Ves/Deals.csv</rm></files>
+				</Ves_Deals>
+				<Ves_Layerslider>
+					<files><rm>Ves/Layerslider.csv</rm></files>
+				</Ves_Layerslider>
+				<Ves_Megamenu>
+					<files><rm>Ves/Megamenu.csv</rm></files>
+				</Ves_Megamenu>
+				<Ves_Parallax>
+					<files><rm>Ves/Parallax.csv</rm></files>
+				</Ves_Parallax>
+				<Ves_ProductCarousel>
+					<files><rm>Ves/ProductCarousel.csv</rm></files>
+				</Ves_ProductCarousel>
+				<Ves_ProductCarousel2>
+					<files><rm>Ves/ProductCarousel2.csv</rm></files>
+				</Ves_ProductCarousel2>
+				<Ves_Socialsidebar>
+					<files><rm>Ves/Socialsidebar.csv</rm></files>
+				</Ves_Socialsidebar>
+				<Ves_TabsHome>
+					<files><rm>Ves/TabsHome.csv</rm></files>
+				</Ves_TabsHome>
+				<Ves_Tempcp>
+					<files><rm>Ves/Tempcp.csv</rm></files>
+				</Ves_Tempcp>
+				<Ves_Verticalmenu>
+					<files><rm>Ves/Verticalmenu.csv</rm></files>
+				</Ves_Verticalmenu>
+			</modules>
+			<!--
+				2015-08-22
+				Моё давнее великое изобретение:
+				возможность назначение модуля для перевода в том случае,
+				когда разработчик модуля по неряшливости этого не сделал.
+
+				Обратите внимание, что с сегодняшнего дня
+				в этом разделе не надо указывать не секции,
+				названия которых совпадают с названием модуля:
+				@used-by Df_Adminhtml_Model_Config::getAttributeModule()
+			-->
+			<sections>
+				<!-- Infortis_CloudZoom -->
+				<cloudzoom>infortis_cloudzoom</cloudzoom>
+			</sections>
+		</translate>
+	</adminhtml>
+	<frontend>
+		<events>
+			<controller_action_postdispatch_ajax_index_options>
+				<!--
+					Это событие случается при использовании модуля Excellence Ajax
+					при попытке добавления товара с опциями в корзину на странице списка товаров.
+					Шаблон ajax/catalog/product/options.phtml модуля Excellence Ajax
+					в оформительской теме TemplateMonster #43373
+					(и, видимо, и в других оформительских темах)
+					содержит фразу «Please specify the product's required option(s).»
+				    без вызова метода для перевода этой фразы.
+				    Таким образом, приходится переводит эту фразу перехватом события
+				    «controller_action_postdispatch_ajax_index_options».
+				-->
+				<observers>
+					<Df_Themes>
+						<class>Df_Themes_Observer</class>
+						<method>controller_action_postdispatch_ajax_index_options</method>
+					</Df_Themes>
+				</observers>
+			</controller_action_postdispatch_ajax_index_options>
+			<!--
+				2015-08-24
+				Ves Super Store (ThemeForest 8002349)
+				http://themeforest.net/item/ves-super-store-responsive-magento-theme-/8002349?ref=dfediuk
+				http://demoleotheme.com/superstore/
+				http://magento-forum.ru/forum/370/
+			-->
+			<controller_action_postdispatch_vesautosearch_index_ajaxgetproduct>
+				<observers>
+					<Df_Themes>
+						<class>Df_Themes_Observer</class>
+						<method>controller_action_postdispatch_vesautosearch_index_ajaxgetproduct</method>
+					</Df_Themes>
+				</observers>
+			</controller_action_postdispatch_vesautosearch_index_ajaxgetproduct>
+		</events>
+		<layout>
+			<updates>
+				<df_themes>
+					<file>df/themes.xml</file>
+				</df_themes>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<!--
+					2015-09-05
+					Оформительская тема Porto (ThemeForest 9725864)
+					http://themeforest.net/item/porto-ultimate-responsive-magento-theme/9725864
+					http://magento-forum.ru/forum/371/
+				-->
+				<AddThis_PluginsGeneral>
+					<files><rm>AddThis/PluginsGeneral.csv</rm></files>
+				</AddThis_PluginsGeneral>
+				<AddThis_SharingTool>
+					<files><rm>AddThis/SharingTool.csv</rm></files>
+				</AddThis_SharingTool>
+				<AddThis_SmartLayers>
+					<files><rm>AddThis/SmartLayers.csv</rm></files>
+				</AddThis_SmartLayers>
+				<!--
+				 	2015-10-16
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Cmsmart_AjaxCart>
+					<files><rm>Cmsmart/AjaxCart.csv</rm></files>
+				</Cmsmart_AjaxCart>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Cmsmart_Ajaxsearch>
+					<files><rm>Cmsmart/Ajaxsearch.csv</rm></files>
+				</Cmsmart_Ajaxsearch>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Cmsmart_Megamenu>
+					<files><rm>Cmsmart/Megamenu.csv</rm></files>
+				</Cmsmart_Megamenu>
+				<EM_Ajaxcart>
+					<files>
+						<df>EM/Ajaxcart.csv</df>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+					</files>
+				</EM_Ajaxcart>
+				<EM_Ajaxproducts>
+					<files>
+						<default>EM/Ajaxproducts.csv</default>
+					</files>
+				</EM_Ajaxproducts>
+				<EM_Bestsellerproducts>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</EM_Bestsellerproducts>
+				<EM_Blog>
+					<files>
+						<!--
+							2015-12-03
+							Нельзя использовать здесь ключ «default»,
+							потому что этот ключ перетирается модулем.
+						-->
+						<df>EM/Blog.csv</df>
+					</files>
+				</EM_Blog>
+				<EM_Cmswidget>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<default>EM/Cmswidget.csv</default>
+					</files>
+				</EM_Cmswidget>
+				<EM_Dynamicproducts>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<default>EM/Dynamicproducts.csv</default>
+					</files>
+				</EM_Dynamicproducts>
+				<EM_LayeredNavigation>
+					<files><default>EM/LayeredNavigation.csv</default></files>
+				</EM_LayeredNavigation>
+				<EM_Multidealpro>
+					<files>
+						<!--
+						 	Обратите внимание на используемый приём:
+						 	мы указываем не один файл с переводом, а несколько.
+						 	Дополнительный файл Mage_Catalog.csv — для перевода стандартных фраз
+						 	вроде «Add to Cart», «Add to Wishlist», «Add to Compare».
+						-->
+						<catalog>Mage_Catalog.csv</catalog>
+						<default>EM/Multidealpro.csv</default>
+					</files>
+				</EM_Multidealpro>
+				<EM_Newproducts>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<default>EM/Newproducts.csv</default>
+					</files>
+				</EM_Newproducts>
+				<EM_Onestepcheckout>
+					<files>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>EM/Onestepcheckout.csv</default>
+					</files>
+				</EM_Onestepcheckout>
+				<EM_Quickshop>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+					</files>
+				</EM_Quickshop>
+				<EM_Productlabels>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<catalog>EM/Productlabels.csv</catalog>
+					</files>
+				</EM_Productlabels>
+				<EM_Recentreviewproducts>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>EM/Recentreviewproducts.csv</default>
+					</files>
+				</EM_Recentreviewproducts>
+				<EM_Saleproducts>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>EM/Saleproducts.csv</default>
+					</files>
+				</EM_Saleproducts>
+				<EM_Sliderwidget>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>EM/Sliderwidget.csv</default>
+					</files>
+				</EM_Sliderwidget>
+				<EM_Slideshow2>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>EM/Slideshow2.csv</default>
+					</files>
+				</EM_Slideshow2>
+				<EM_Tabs>
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>EM/Tabs.csv</default>
+					</files>
+				</EM_Tabs>
+				<EM_Themeframework>
+					<files>
+						<default>EM/Themeframework.csv</default>
+					</files>
+				</EM_Themeframework>
+				<Excellence_Ajax>
+					<!--
+						Модуль Excellence Ajax используется оформительскими темами TemplateMonster.
+						Например: TemplateMonster #43373.
+						http://magento-forum.ru/forum/364/
+					-->
+					<files>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>Excellence/Ajax.csv</default>
+					</files>
+				</Excellence_Ajax>
+				<Gala_Galatitanshopsettings>
+					<!-- Оформительская тема Gala TitanShop -->
+					<files>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>Gala/TitanShop.csv</default>
+						<tag>Mage_Tag.csv</tag>
+					</files>
+				</Gala_Galatitanshopsettings>
+				<Gala_Softwaremarketsettings>
+					<!-- Оформительская тема Gala SoftwareMarket -->
+					<files>
+						<checkout>Mage_Checkout.csv</checkout>
+						<default>Gala/SoftwareMarket.csv</default>
+						<tag>Mage_Tag.csv</tag>
+					</files>
+				</Gala_Softwaremarketsettings>
+				<Infortis_Brands>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_brands>Infortis/Brands.csv</infortis_brands>
+					</files>
+				</Infortis_Brands>
+				<Infortis_CloudZoom>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_cloudzoom>Infortis/CloudZoom.csv</infortis_cloudzoom>
+					</files>
+				</Infortis_CloudZoom>
+				<Infortis_Dataporter>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_dataporter>Infortis/Dataporter.csv</infortis_dataporter>
+					</files>
+				</Infortis_Dataporter>
+				<Infortis_Fortis>
+					<files>
+						<infortis>Infortis.csv</infortis>
+					</files>
+				</Infortis_Fortis>
+				<Infortis_Infortis>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_infortis>Infortis/Infortis.csv</infortis_infortis>
+					</files>
+				</Infortis_Infortis>
+				<Infortis_Ultimo>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_ultimo>Infortis/Ultimo.csv</infortis_ultimo>
+					</files>
+				</Infortis_Ultimo>
+				<Infortis_UltraMegamenu>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_ultramegamenu>Infortis/UltraMegamenu.csv</infortis_ultramegamenu>
+					</files>
+				</Infortis_UltraMegamenu>
+				<Infortis_UltraSlideshow>
+					<files>
+						<infortis>Infortis.csv</infortis>
+						<infortis_ultraslideshow>Infortis/UltraSlideshow.csv</infortis_ultraslideshow>
+					</files>
+				</Infortis_UltraSlideshow>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<LitExtension_SocialLogin>
+					<files><rm>LitExtension_SocialLogin.csv</rm></files>
+				</LitExtension_SocialLogin>
+				<!--
+					Magento CE по недосмотру не определяет файл перевода для модуля Mage_Captcha,
+					хотя сам файл Mage_Captcha.csv присутствует как в английском пакете,
+					так и для других языковых пакетов
+				-->
+				<Mage_Captcha><files><default>Mage_Captcha.csv</default></files></Mage_Captcha>
+				<!--
+					2015-09-05
+					Оформительская тема Porto (ThemeForest 9725864)
+					http://themeforest.net/item/porto-ultimate-responsive-magento-theme/9725864
+					http://magento-forum.ru/forum/371/
+				-->
+				<Magegiant_Dailydeal>
+					<files><rm>Magegiant/Dailydeal.csv</rm></files>
+				</Magegiant_Dailydeal>
+				<Magegiant_Magegiantcore>
+					<files><rm>Magegiant/Core.csv</rm></files>
+				</Magegiant_Magegiantcore>
+				<Megnor_AdvancedMenu>
+					<files><default>Megnor_AdvancedMenu.csv</default></files>
+				</Megnor_AdvancedMenu>
+				<Megnor_Bestseller>
+					<files><default>Megnor_Bestseller.csv</default></files>
+				</Megnor_Bestseller>
+				<Megnor_FeaturedProducts>
+					<files><default>Megnor_FeaturedProducts.csv</default></files>
+				</Megnor_FeaturedProducts>
+				<Megnor_Newproducts>
+					<files><default>Megnor_Newproducts.csv</default></files>
+				</Megnor_Newproducts>
+				<Megnor_Specialproducts>
+					<files><default>Megnor_Specialproducts.csv</default></files>
+				</Megnor_Specialproducts>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Olark_Chatbox>
+					<files><rm>Olark_Chatbox.csv</rm></files>
+				</Olark_Chatbox>
+				<!--
+					2015-09-05
+					Оформительская тема Porto (ThemeForest 9725864)
+					http://themeforest.net/item/porto-ultimate-responsive-magento-theme/9725864
+					http://magento-forum.ru/forum/371/
+				-->
+				<Smartwave_Ajaxcart>
+					<files><rm>Smartwave/Ajaxcart.csv</rm></files>
+				</Smartwave_Ajaxcart>
+				<Smartwave_Ajaxcatalog>
+					<files><rm>Smartwave/Ajaxcatalog.csv</rm></files>
+				</Smartwave_Ajaxcatalog>
+				<Smartwave_All>
+					<files><rm>Smartwave/All.csv</rm></files>
+				</Smartwave_All>
+				<Smartwave_Blog>
+					<files><rm>Smartwave/Blog.csv</rm></files>
+				</Smartwave_Blog>
+				<Smartwave_CatalogCategorySearch>
+					<files><rm>Smartwave/CatalogCategorySearch.csv</rm></files>
+				</Smartwave_CatalogCategorySearch>
+				<Smartwave_Filterproducts>
+					<files><rm>Smartwave/Filterproducts.csv</rm></files>
+				</Smartwave_Filterproducts>
+				<Smartwave_Fullajax>
+					<files><rm>Smartwave/Fullajax.csv</rm></files>
+				</Smartwave_Fullajax>
+				<Smartwave_Homeslider>
+					<files><rm>Smartwave/Homeslider.csv</rm></files>
+				</Smartwave_Homeslider>
+				<Smartwave_Megamenu>
+					<files><rm>Smartwave/Megamenu.csv</rm></files>
+				</Smartwave_Megamenu>
+				<Smartwave_Porto>
+					<files><rm>Smartwave/Porto.csv</rm></files>
+				</Smartwave_Porto>
+				<Smartwave_QuickView>
+					<files><rm>Smartwave/QuickView.csv</rm></files>
+				</Smartwave_QuickView>
+				<Smartwave_Socialfeeds>
+					<files><rm>Smartwave/Socialfeeds.csv</rm></files>
+				</Smartwave_Socialfeeds>
+				<Smartwave_Socialicons>
+					<files><rm>Smartwave/Socialicons.csv</rm></files>
+				</Smartwave_Socialicons>
+				<!--
+				 	SNS Xsport
+				 	http://themeforest.net/item/sns-xsport-premium-responsive-magento-theme/8205296
+				 	http://demo.snstheme.com/theme/xsport/
+				 	http://magento-forum.ru/forum/355/
+				-->
+				<Sns_Ajaxcart>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Ajaxcart.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_ajaxcart>SNS/Ajaxcart.csv</sns_ajaxcart>
+						<catalog>Mage_Catalog.csv</catalog>
+						<checkout>Mage_Checkout.csv</checkout>
+					</files>
+				</Sns_Ajaxcart>
+				<Sns_Ajaxfilter>
+					<files>
+						<!--
+							В оригинале никакого языкового файла для модуля не указано.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_ajaxfilter>SNS/Ajaxfilter.csv</sns_ajaxfilter>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</Sns_Ajaxfilter>
+				<Sns_ProductList>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_ProductList.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_productlist>SNS/ProductList.csv</sns_productlist>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</Sns_ProductList>
+				<Sns_Producttabs>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Producttabs.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_producttabs>SNS/Producttabs.csv</sns_producttabs>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</Sns_Producttabs>
+				<Sns_Quickview>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Quickview.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_quickview>SNS/Quickview.csv</sns_quickview>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</Sns_Quickview>
+				<Sns_RevolutionSlider>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_RevolutionSlider.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_revolutionslider>SNS/RevolutionSlider.csv</sns_revolutionslider>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</Sns_RevolutionSlider>
+				<Sns_Slider>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Slider.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_slider>SNS/Slider.csv</sns_slider>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</Sns_Slider>
+				<Sns_Twitter>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Twitter.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<sns>SNS.csv</sns>
+						<sns_twitter>SNS/Twitter.csv</sns_twitter>
+					</files>
+				</Sns_Twitter>
+				<Sns_Xsport>
+					<files>
+						<!--
+							В оригинале указан отсутствующий языковой файл Sns_Xsport.csv.
+							Нам удобнее сделать единый языковой файл для всех модулей тем SNS.
+						-->
+						<default>SNS.csv</default>
+						<sns_xsport>SNS/Xsport.csv</sns_xsport>
+					</files>
+				</Sns_Xsport>
+				<Thirty4_CatalogSale>
+					<files><default>Thirty4_CatalogSale.csv</default></files>
+				</Thirty4_CatalogSale>
+				<!--
+					2015-10-17
+					Приставку «TM_» имеют модули TemplateMonster.
+					Какой именно оформительской теме принадлежат перечисленные ниже модули,
+					для которых оформительская тема я вно не указана — я не помню.
+				-->
+				<TM_AjaxSearch>
+					<files><rm>TM/AjaxSearch.csv</rm></files>
+				</TM_AjaxSearch>
+				<TM_AskIt>
+					<files><rm>TM/AskIt.csv</rm></files>
+				</TM_AskIt>
+				<TM_CustomMenu>
+					<files><rm>TM/CustomMenu.csv</rm></files>
+				</TM_CustomMenu>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_Facebook>
+					<files><rm>TM/Facebook.csv</rm></files>
+				</TM_Facebook>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_GoogleMap>
+					<files><rm>TM/GoogleMap.csv</rm></files>
+				</TM_GoogleMap>
+				<TM_Highlight>
+					<files><rm>TM/Highlight.csv</rm></files>
+				</TM_Highlight>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_Instagram>
+					<files><rm>TM/Instagram.csv</rm></files>
+				</TM_Instagram>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_NewsletterPopup>
+					<files><rm>TM/NewsletterPopup.csv</rm></files>
+				</TM_NewsletterPopup>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_SpecialPriceCountdown>
+					<files><rm>TM/SpecialPriceCountdown.csv</rm></files>
+				</TM_SpecialPriceCountdown>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<TM_Twitter>
+					<files><rm>TM/Twitter.csv</rm></files>
+				</TM_Twitter>
+				<!--
+				 	2015-10-17
+				 	Оформительская тема TemplateMonster Kids Fashion (53174)
+					http://www.templatemonster.com/demo/53174.html
+					http://www.templatemonster.com/magento-themes/53174.html
+					http://magento-forum.ru/forum/372/
+				-->
+				<Youama_Ajaxlogin>
+					<files><rm>Youama_Ajaxlogin.csv</rm></files>
+				</Youama_Ajaxlogin>
+				<Vinagento_Vpager>
+					<!-- Этот модуль содержится в оформительской теме TemplateMonster #43373 -->
+					<files>
+						<catalog>Mage_Catalog.csv</catalog>
+					</files>
+				</Vinagento_Vpager>
+				<!--
+					2015-08-21
+					Элементы с приставкой Ves_* содержат перевод
+					для модулей оформительской темы Ves Super Store (ThemeForest 8002349)
+					http://themeforest.net/item/ves-super-store-responsive-magento-theme-/8002349?ref=dfediuk
+					http://demoleotheme.com/superstore/
+					http://magento-forum.ru/forum/370/
+
+					Обратите внимание, что языковые файлы уже объявлены
+					в аналогичных секциях «translate» этих модулей,
+					однако языковые файлы отсутствуют в дистрибутиве оформительской темы
+					(и уж тем более не стоит когда-либо ожидать от разработчиков
+					перевода на русский язык).
+					Мы объвляем языковые файлы заново, чтобы сгруппировать их в подпапке Ves,
+					вместо пихания в корневую папку языковых файлов
+					вперемешку с языковыми файлами ядра.
+
+					Обратите внимание, что мы используем ключ «rm», а не «default»,
+					потому что настроечные файлы модулей Ves_*
+					имеют приоритет перед нашим настроечным файлом при объединении их системой
+					(вообще, это странно, ибо модули Ves_* расположены в области comminity,
+					а наш — в области local, хоть и под другим именем).
+				-->
+				<Ves_Autosearch>
+					<files><rm>Ves/Autosearch.csv</rm></files>
+				</Ves_Autosearch>
+				<Ves_Base>
+					<files><rm>Ves/Base.csv</rm></files>
+				</Ves_Base>
+				<Ves_BlockBuilder>
+					<files><rm>Ves/BlockBuilder.csv</rm></files>
+				</Ves_BlockBuilder>
+				<Ves_Blog>
+					<files><rm>Ves/Blog.csv</rm></files>
+				</Ves_Blog>
+				<Ves_Brand>
+					<files><rm>Ves/Brand.csv</rm></files>
+				</Ves_Brand>
+				<Ves_Deals>
+					<files><rm>Ves/Deals.csv</rm></files>
+				</Ves_Deals>
+				<Ves_Layerslider>
+					<files><rm>Ves/Layerslider.csv</rm></files>
+				</Ves_Layerslider>
+				<Ves_Megamenu>
+					<files><rm>Ves/Megamenu.csv</rm></files>
+				</Ves_Megamenu>
+				<Ves_Parallax>
+					<files><rm>Ves/Parallax.csv</rm></files>
+				</Ves_Parallax>
+				<Ves_ProductCarousel>
+					<files><rm>Ves/ProductCarousel.csv</rm></files>
+				</Ves_ProductCarousel>
+				<Ves_ProductCarousel2>
+					<files><rm>Ves/ProductCarousel2.csv</rm></files>
+				</Ves_ProductCarousel2>
+				<Ves_Socialsidebar>
+					<files><rm>Ves/Socialsidebar.csv</rm></files>
+				</Ves_Socialsidebar>
+				<Ves_TabsHome>
+					<files><rm>Ves/TabsHome.csv</rm></files>
+				</Ves_TabsHome>
+				<Ves_Tempcp>
+					<files><rm>Ves/Tempcp.csv</rm></files>
+				</Ves_Tempcp>
+				<Ves_Verticalmenu>
+					<files><rm>Ves/Verticalmenu.csv</rm></files>
+				</Ves_Verticalmenu>
+			</modules>
+		</translate>
+	</frontend>
+	<default>
+		<!--
+			2015-09-18
+			Оформительская тема Porto.
+			Модуль Smartwave_Ajaxcatalog
+		-->
+		<ajax_catalog>
+			<price_slider_conf>
+				<goBtnText>применить</goBtnText>
+			</price_slider_conf>
+		</ajax_catalog>
+		<ajaxfilter_cfg>
+			<price_slider>
+				<goBtnText>применить</goBtnText>
+			</price_slider>
+		</ajaxfilter_cfg>
+		<!--
+			2015-10-20
+			Оформительская тема TemplateMonster Kids Fashion (53174).
+			Модуль Cmsmart_Ajaxsearch
+		-->
+		<ajaxsearch>
+			<settings>
+				<noti_no_result>Ничего не найдено.</noti_no_result>
+			</settings>
+		</ajaxsearch>
+		<!-- Оформительские темы TemplateMela:
+			Classy Shop (MAG090171)
+			Minimal Multi Purpose (MAG090180)
+		-->
+		<bestseller>
+			<sidebar>
+				<heading>Популярное</heading>
+			</sidebar>
+			<standalone>
+				<heading>Популярное</heading>
+			</standalone>
+			<listing_home>
+				<heading>Популярное</heading>
+			</listing_home>
+		</bestseller>
+		<cmspage>
+			<heading_block>Обратите внимание</heading_block>
+		</cmspage>
+		<featuredproducts>
+			<standalone>
+				<heading>Обратите внимание</heading>
+			</standalone>
+		</featuredproducts>
+		<manufacturer>
+			<sidebar>
+				<blocktitle>Производители</blocktitle>
+			</sidebar>
+		</manufacturer>
+		<!-- Оформительская тема «Blanco» -->
+		<mygeneral>
+			<generaloptions>
+				<additional_nav>Распродажа</additional_nav>
+			</generaloptions>
+		</mygeneral>
+		<!-- SNS Xsport -->
+		<productlist_cfg>
+			<general>
+				<!-- Best Seller -->
+				<title>Популярные товары</title>
+			</general>
+		</productlist_cfg>
+		<producttabs_cfg>
+			<general>
+				<!-- New Products -->
+				<title>Новинки</title>
+			</general>
+		</producttabs_cfg>
+		<!--
+			Оформительская тема Argento
+			http://argentotheme.com/
+		-->
+		<tm_ajaxsearch>
+			<general>
+				<searchfieldtext>что будем искать?</searchfieldtext>
+				<headertext>все товары по запросу</headertext>
+				<footertext>все товары по запросу</footertext>
+			</general>
+		</tm_ajaxsearch>
+		<!--
+			Оформительские темы Infortis Ultimo и Infortis Fortis
+			http://themeforest.net/item/ultimo-fluid-responsive-magento-theme/3231798?WT.ac=category_item&WT.seg_1=category_item&WT.z_author=infortis
+			Обратите внимание, что для перевода демо-данных
+			(когда англоязычные значения уже попали в БД и система не использует сначения по умолчанию ниже),
+			перевод осуществляется по словарю:
+			app/code/local/Df/Localization/etc/rm/dictionaries/onetime/Infortis/Fortis.xml
+		-->
+		<ultramegamenu>
+			<category_labels>
+				<label1>новинки</label1>
+				<label2>лучшие цены</label2>
+			</category_labels>
+		</ultramegamenu>
+	</default>
+</config>

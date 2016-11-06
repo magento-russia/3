@@ -1,0 +1,36 @@
+# http://stackoverflow.com/questions/987142/make-gitignore-ignore-everything-except-a-few-files
+# http://stackoverflow.com/questions/9162919/whitelisting-and-subdirectories-in-git
+# http://stackoverflow.com/questions/8024924#comment15884195_8025106
+*
+!*/
+!.gitignore
+!app/code/local/Df/**/*
+!app/code/local/Mage/1930/**/*
+!app/code/local/Mage/Core/Block/Abstract.php
+!app/code/local/Mage/Core/Helper/Abstract.php
+!app/code/local/Varien/**/*
+!app/code/local/Zend/**/*
+!app/design/adminhtml/rm/**/*
+!app/design/frontend/rm/**/*
+!app/etc/licenses/localhost.com.xml
+!app/etc/modules/Df_*
+!app/etc/modules/Find_Feed.xml
+!app/locale/en_US/templates/email/df/**/*
+!app/locale/ru_DF/**/*
+!js/df/**/*
+!skin/adminhtml/rm/**/*
+!skin/frontend/rm/**/*
+dev/
+mail/
+# 2015-12-22
+# Раньше я исключал ещё файлы *.css.map,
+# однако эти файлы предназначены для сопоставления *.css и *.scss,
+# и Google Chrome Developer Tools использует их,
+# чтобы показать файл *.scss вместо скомпилированного *.css:
+# http://thesassway.com/intermediate/using-source-maps-with-sass
+
+# 2016-07-08
+app/design/frontend/rm/default/layout/alvosoft/
+app/design/frontend/rm/default/template/alvosoft/
+skin/frontend/rm/default/alvosoft/
+app/locale/ru_DF/Alvosoft/

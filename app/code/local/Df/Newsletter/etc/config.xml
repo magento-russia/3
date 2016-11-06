@@ -1,0 +1,41 @@
+<?xml version='1.0'?>
+<config>
+	<modules>
+		<Df_Newsletter>
+			<author>Дмитрий Федюк</author>
+			<title>Новостная рассылка</title>
+			<version>1.0.0</version>
+		</Df_Newsletter>
+	</modules>
+	<global>
+		<blocks><df_newsletter><class>Df_Newsletter_Block</class></df_newsletter></blocks>
+		<helpers><df_newsletter><class>Df_Newsletter_Helper</class></df_newsletter></helpers>
+		<models><df_newsletter><class>Df_Newsletter_Model</class></df_newsletter></models>
+		<events>
+			<newsletter_subscriber_save_before>
+				<observers>
+					<Df_Newsletter>
+						<class>Df_Newsletter_Observer</class>
+						<method>newsletter_subscriber_save_before</method>
+					</Df_Newsletter>
+				</observers>
+			</newsletter_subscriber_save_before>
+		</events>
+	</global>
+	<df>
+		<features>
+			<df-newsletter>
+				<module>df_newsletter</module>
+				<title>Новостная рассылка</title>
+				<url>http://magento-forum.ru/forum/186/</url>
+			</df-newsletter>
+		</features>
+	</df>
+	<default>
+		<df_newsletter>
+			<subscription>
+				<fix_subscriber_store>1</fix_subscriber_store>
+			</subscription>
+		</df_newsletter>
+	</default>
+</config>

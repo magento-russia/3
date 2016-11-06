@@ -1,0 +1,32 @@
+.df {
+	div.df-config {
+	    .df-form {
+			.df-field {
+				color: rgb(111, 137, 146);
+				font-size: 0.9em;
+				margin: 0 0 0 2em;
+				.df-service {
+					width: 100%;
+					display: block;
+					overflow: hidden;
+                    .df-param {
+                        display: block;
+                        float: left;
+                        margin: 0.63em 0 0 1em;
+                        .df-disabled {
+                        	color: red;
+                        }
+                        .df-enabled {
+                        	color: green;
+                        }
+                    }
+                    .df-title {
+                        display: block;
+                        float: left;
+                        margin-left: 0;
+                    }
+				}
+			}
+	    }
+	}
+}
