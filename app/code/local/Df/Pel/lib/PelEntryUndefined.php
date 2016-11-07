@@ -113,7 +113,7 @@ class PelEntryUndefined extends PelEntry {
 	  case 0x03:
 		return 'DSC';
 	  default:
-		return rm_sprintf('0x%02X', ord($this->bytes{0}));
+		return sprintf('0x%02X', ord($this->bytes{0}));
 	  }
    
 	case PelTag::SCENE_TYPE:
@@ -122,7 +122,7 @@ class PelEntryUndefined extends PelEntry {
 	  case 0x01:
 		return 'Directly photographed';
 	  default:
-		return rm_sprintf('0x%02X', ord($this->bytes{0}));
+		return sprintf('0x%02X', ord($this->bytes{0}));
 	  }
    
 	case PelTag::COMPONENTS_CONFIGURATION:
@@ -337,7 +337,7 @@ class PelEntryVersion extends PelEntryUndefined {
 	$this->version = $version;
 	$major = floor($version);
 	$minor = ($version - $major)*100;
-	parent::setValue(rm_sprintf('%02.0f%02.0f', $major, $minor));
+	parent::setValue(sprintf('%02.0f%02.0f', $major, $minor));
   }
 
 

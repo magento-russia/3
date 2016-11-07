@@ -282,7 +282,7 @@ class Pel {
    *
    * @param mixed $args,... any number of arguments can be given.  The
    * arguments will be available for the format string as usual with
-   * rm_sprintf().
+   * sprintf().
    */
   static function debug() {
 	if (self::$debug) {
@@ -305,7 +305,7 @@ class Pel {
    *
    * @param mixed $args,... any number of arguments can be given.  The
    * arguments will be available for the format string as usual with
-   * rm_sprintf().
+   * sprintf().
    */
   static function warning() {
 	if (self::$debug) {
@@ -349,7 +349,7 @@ class Pel {
    *
    * @param mixed $args,... any number of arguments can be given.  The
    * arguments will be available for the format string as usual with
-   * rm_sprintf().
+   * sprintf().
    *
    * @return string the translated string, or the original string if
    * no translation could be found.
@@ -357,7 +357,7 @@ class Pel {
   static function fmt() {
 	$args = func_get_args();
 	$str = array_shift($args);
-	return rm_sprintf(dgettext('pel', $str), $args);
+	return sprintf(dgettext('pel', $str), $args);
   }
 
 }

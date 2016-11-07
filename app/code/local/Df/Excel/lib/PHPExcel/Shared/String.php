@@ -96,7 +96,7 @@ class PHPExcel_Shared_String
 	private static function _buildControlCharacters() {
 		for ($i = 0; $i <= 31; ++$i) {
 			if ($i != 9 && $i != 10 && $i != 13) {
-				$find = '_x' . rm_sprintf('%04s' , strtoupper(dechex($i))) . '_';
+				$find = '_x' . sprintf('%04s' , strtoupper(dechex($i))) . '_';
 				$replace = chr($i);
 				self::$_controlCharacters[$find] = $replace;
 			}

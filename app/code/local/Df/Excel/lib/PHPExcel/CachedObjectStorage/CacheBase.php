@@ -183,7 +183,7 @@ abstract class PHPExcel_CachedObjectStorage_CacheBase {
 		$sortKeys = [];
 		foreach ($this->getCellList() as $coord) {
 			sscanf($coord,'%[A-Z]%d', $column, $row);
-			$sortKeys[rm_sprintf('%09d%3s',$row,$column)] = $coord;
+			$sortKeys[sprintf('%09d%3s',$row,$column)] = $coord;
 		}
 		ksort($sortKeys);
 

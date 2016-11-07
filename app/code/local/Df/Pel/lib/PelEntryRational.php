@@ -154,7 +154,7 @@ class PelEntryRational extends PelEntryLong {
 	  $degrees = $this->value[0][0]/$this->value[0][1];
 	  $minutes = $this->value[1][0]/$this->value[1][1];
 	  $seconds = $this->value[2][0]/$this->value[2][1];
-		return rm_sprintf('%s� %s\' %s" (%.2f�)', $degrees, $minutes, $seconds, $degrees + $minutes/60 + $seconds/3600);
+		return sprintf('%s� %s\' %s" (%.2f�)', $degrees, $minutes, $seconds, $degrees + $minutes/60 + $seconds/3600);
 	default:
 	  return parent::getText($brief);
 	}
@@ -253,13 +253,13 @@ class PelEntrySRational extends PelEntrySLong {
 	  //
 	  // TODO: figure out the APEX thing, or remove this so that it is
 	  // handled by the default clause at the bottom.
-	  return rm_sprintf('%d/%d', $v[0], $v[1]);
+	  return sprintf('%d/%d', $v[0], $v[1]);
 	  //FIXME: How do I calculate the APEX value?
 
 	case PelTag::EXPOSURE_BIAS_VALUE:
 	  //CC (e->components, 1, v);
 	  //if (!v_srat.denominator) return (null);
-	  return rm_sprintf('%s%.01f', $v[0]*$v[1] > 0 ? '+' : '', $v[0]/$v[1]);
+	  return sprintf('%s%.01f', $v[0]*$v[1] > 0 ? '+' : '', $v[0]/$v[1]);
 	default:
 	  return parent::getText($brief);
 	}

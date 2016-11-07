@@ -468,7 +468,7 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
 			}
 			$format = '%' . str_replace('%', 'f%%', $format);
 
-			$value = rm_sprintf($format, 100 * $value);
+			$value = sprintf($format, 100 * $value);
 		}
 	}
 
@@ -515,7 +515,7 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
 				$size = strlen($block[0]);
 				$offset = $block[1];
 
-				$blockValue = rm_sprintf(
+				$blockValue = sprintf(
 					'%0' . $size . 'd',
 					fmod($number, $divisor)
 				);
@@ -606,7 +606,7 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
 			self::_formatAsPercentage($value, $format);
 		} else {
 			if ($format === self::FORMAT_CURRENCY_EUR_SIMPLE) {
-				$value = 'EUR ' . rm_sprintf('%1.2f', $value);
+				$value = 'EUR ' . sprintf('%1.2f', $value);
 			} else {
 				// In Excel formats, "_" is used to add spacing, which we can't do in HTML
 				$format = preg_replace('/_./', '', $format);
@@ -676,8 +676,8 @@ class PHPExcel_Style_NumberFormat extends PHPExcel_Style_Supervisor implements P
 							if (preg_match('/0([^\d\.]+)0/', $format, $matches)) {
 								$value = self::_complexNumberFormatMask($value, $format);
 							} else {
-								$rm_sprintf_pattern = "%0$minWidth." . strlen($right) . "f";
-								$value = rm_sprintf($rm_sprintf_pattern, $value);
+								$sprintf_pattern = "%0$minWidth." . strlen($right) . "f";
+								$value = sprintf($sprintf_pattern, $value);
 								$value = preg_replace($number_regex, $value, $format);
 							}
 						}

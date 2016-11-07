@@ -260,7 +260,7 @@ class PelEntryTime extends PelEntryAscii {
 	  $hours   = (int)($this->seconds / 3600);
 	  $minutes = (int)($this->seconds % 3600 / 60);
 	  $seconds = $this->seconds % 60;
-	  return rm_sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds);
+	  return sprintf('%04d:%02d:%02d %02d:%02d:%02d', $year, $month, $day, $hours, $minutes, $seconds);
 	case self::JULIAN_DAY_COUNT:
 	  return $this->day_count + $this->seconds / 86400;
 	default:

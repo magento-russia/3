@@ -2095,7 +2095,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -2111,7 +2111,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -2127,7 +2127,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -2143,7 +2143,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -2159,7 +2159,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -2175,7 +2175,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -2191,7 +2191,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -2207,7 +2207,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 						$xclrValue = substr($extData, 4, 4); // color value (value based on color type)
 
 						if ($xclfType == 2) {
-							$rgb = rm_sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
+							$rgb = sprintf('%02X%02X%02X', ord($xclrValue{0}), ord($xclrValue{1}), ord($xclrValue{2}));
 
 							// modify the relevant style property
 							if ( isset($this->_mapCellXfIndex[$ixfe]) ) {
@@ -5746,7 +5746,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 			break;
 		// Unknown cases	// don't know how to deal with
 		default:
-			throw new PHPExcel_Reader_Exception('Unrecognized token ' . rm_sprintf('%02X', $id) . ' in formula');
+			throw new PHPExcel_Reader_Exception('Unrecognized token ' . sprintf('%02X', $id) . ' in formula');
 			break;
 		}
 
@@ -6270,7 +6270,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 		$b = ord($rgb{2});
 
 		// HEX notation, e.g. 'FF00FC'
-		$rgb = rm_sprintf('%02X%02X%02X', $r, $g, $b);
+		$rgb = sprintf('%02X%02X%02X', $r, $g, $b);
 
 		return array('rgb' => $rgb);
 	}

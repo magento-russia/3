@@ -855,7 +855,7 @@ class PHPExcel_Cell
 		$sortKeys = [];
 		foreach (array_unique($returnValue) as $coord) {
 			sscanf($coord,'%[A-Z]%d', $column, $row);
-			$sortKeys[rm_sprintf('%3s%09d',$column,$row)] = $coord;
+			$sortKeys[sprintf('%3s%09d',$column,$row)] = $coord;
 		}
 		ksort($sortKeys);
 
