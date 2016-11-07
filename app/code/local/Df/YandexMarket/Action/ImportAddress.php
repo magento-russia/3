@@ -41,9 +41,7 @@ class ImportAddress extends \Df_Core_Model_Action {
 	 * @param string $name
 	 * @return string|null
 	 */
-	private function cookie($name) {return
-		$this->request()->getCookie("rm_yandex_market_address_{$name}")
-	;}
+	private function cookie($name) {return df_cookie("rm_yandex_market_address_{$name}");}
 
 	/** @return array(string => string) */
 	private function getAddressData() {return df_clean([

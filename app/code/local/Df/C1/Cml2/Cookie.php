@@ -2,13 +2,7 @@
 namespace Df\C1\Cml2;
 class Cookie {
 	/** @return string|null */
-	public function getSessionId() {return $this->get(self::SESSION_ID);}
-
-	/**
-	 * @param string $cookieName
-	 * @return string|null
-	 */
-	private function get($cookieName) {return \Mage::app()->getRequest()->getCookie($cookieName);}
+	public function getSessionId() {return df_cookie(self::SESSION_ID);}
 
 	/**
 	 * Имя (идентификатор) cookie, которая содержит идентификатор сессии.
