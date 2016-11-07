@@ -41,6 +41,14 @@ abstract class Df_Core_Model_Session_Custom extends Mage_Core_Model_Session_Abst
 	public function start($sessionName = null) {
 		self::$_currentSession = $this;
 		parent::start($sessionName);
+		/**
+		 * 2016-11-07
+		 * Ключ @see Mage_Core_Model_Session_Abstract_Varien::SECURE_COOKIE_CHECK_KEY
+		 * появился в Magento CE 1.9.1.0: https://github.com/OpenMage/magento-mirror/blob/1.9.1.0/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php#L35
+		 * Удаляем его для наших сессий, потому что тупологовая 1С игнорирует дополнительные куки
+		 * и не будет нам их присылать.
+		 */
+		unset($_SESSION['_secure_cookie_check']);
 		return $this;
 	}
 

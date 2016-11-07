@@ -1,6 +1,6 @@
 <?php
 abstract class Df_Core_Model_Session_Custom_Additional extends Df_Core_Model_Session_Custom {
-	/** @return Df_Core_Model_Session_Custom_Additional */
+	/** @return void */
 	public function begin() {
 		if (self::$_currentSession) {
 			$this->_previousSession = self::$_currentSession;
@@ -12,10 +12,9 @@ abstract class Df_Core_Model_Session_Custom_Additional extends Df_Core_Model_Ses
 		}
 		$this->start($this->getName());
 		$this->init($this->getNamespace());
-		return $this;
 	}
 
-	/** @return Df_Core_Model_Session_Custom_Additional */
+	/** @return void */
 	public function end() {
 		session_write_close();
 		$_SESSION = [];
@@ -31,7 +30,6 @@ abstract class Df_Core_Model_Session_Custom_Additional extends Df_Core_Model_Ses
 			}
 			$this->_previousName = null;
 		}
-		return $this;
 	}
 	/** @return string */
 	protected function getName() {return get_class($this);}

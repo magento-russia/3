@@ -129,7 +129,7 @@ class Import extends \Df_Core_Model {
 		 * import_files/cb/cbcf4934-55bc-11d9-848a-00112f43529a_b5cfbe1a-c400-11e1-a851-4061868fc6eb.jpeg
 		 * @var string $relativePath
 		 */
-		$relativePath = \Mage::app()->getRequest()->getParam('filename');
+		$relativePath = df_request('filename');
 		if (!df_check_string_not_empty($relativePath)) {
 			df_error(
 				'Учётная система нарушает протокол обмена данными.'
