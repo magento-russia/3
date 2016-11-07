@@ -4,6 +4,21 @@ abstract class Df_Core_Model_Session_Custom extends Mage_Core_Model_Session_Abst
 	abstract protected function getSessionIdCustom();
 
 	/**
+	 * 2016-11-07
+	 * Этот метод появился в родительском классе в Magent CE 1.9.3.0:
+	 * https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php#L381-L389
+	 * https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php#L35
+	 * Перекрыаем его значением false по той же причине, которая указана в комментарии к методу
+	 * @see \Df\C1\Cml2\Session\ByCookie\MagentoAPI::isSessionExpired():
+	 * обмен с 1С может занимать долгое время, и нам не нужно, чтобы сессия при этом обрывалась.
+	 * @override
+	 * @see Mage_Core_Model_Session_Abstract_Varien::useValidateSessionExpire()
+	 * @used-by Mage_Core_Model_Session_Abstract_Varien::_validate()
+	 * @return bool
+	 */
+	public function useValidateSessionExpire() {return false;}
+
+	/**
 	 * @override
 	 * @return bool
 	 * @see Mage_Core_Model_Session_Abstract_Varien::start():
