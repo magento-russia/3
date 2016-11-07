@@ -17,7 +17,7 @@ function df_file_ext($fileName) {return pathinfo($fileName, PATHINFO_EXTENSION);
  * @used-by Autostyler_Import_Model_Action::getLogFilePath()
  * @used-by Df_C1_Helper_Data::logger()
  * @used-by df_report()
- * @used-by Df_Core_Model_Action::responseLogName()
+ * @used-by Df_Core_Model_Action::rrLogName()
  * @used-by \Df\Xml\Generator\Document::createLogger()
  * @used-by Df_YandexMarket_Helper_Data::getLogger()
  * @param string $directory
@@ -25,9 +25,9 @@ function df_file_ext($fileName) {return pathinfo($fileName, PATHINFO_EXTENSION);
  * @param string $datePartsSeparator [optional]
  * @return string
  */
-function df_file_name($directory, $template, $datePartsSeparator = '-') {
-	return Df_Core_Model_Fs_GetNotUsedFileName::r($directory, $template, $datePartsSeparator);
-}
+function df_file_name($directory, $template, $datePartsSeparator = '-') {return
+	Df_Core_Model_Fs_GetNotUsedFileName::r($directory, $template, $datePartsSeparator)
+;}
 
 /**
  * @param string $filePath

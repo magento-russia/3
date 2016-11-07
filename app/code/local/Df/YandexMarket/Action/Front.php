@@ -28,23 +28,9 @@ class Front extends \Df\YandexMarket\Action {
 
 	/**
 	 * @override
-	 * @return string
-	 */
-	protected function responseLogName() {return 'yandex.market.xml';}
-
-	/**
-	 * @override
 	 * @return bool
 	 */
 	protected function needBenchmark() {return df_my_local();}
-
-	/**
-	 * @override
-	 * @see Df_Core_Model_Action::needLogResponse()
-	 * @used-by Df_Core_Model_Action::processFinish()
-	 * @return bool
-	 */
-	protected function needLogResponse() {return df_my_local();}
 
 	/**
 	 * @override

@@ -14,7 +14,7 @@ abstract class GenericExport extends \Df\C1\Cml2\Action {
 	 * @return string
 	 */
 	protected function generateResponseBody() {return
-		$this->getDocument()->getXml($reformat = $this->needLogResponse())
+		$this->getDocument()->getXml($reformat = $this->needLogRR())
 	;}
 
 	/**
@@ -38,14 +38,6 @@ abstract class GenericExport extends \Df\C1\Cml2\Action {
 	 * @return string
 	 */
 	protected function contentType() {return 'UTF-8';}
-
-	/**
-	 * @override
-	 * @see Df_Core_Model_Action::needLogResponse()
-	 * @used-by Df_Core_Model_Action::processFinish()
-	 * @return bool
-	 */
-	protected function needLogResponse() {return df_my_local();}
 
 	/** @return \Df\Xml\Generator\Document */
 	private function getDocument() {return dfc($this, function() {return

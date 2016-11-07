@@ -82,10 +82,10 @@ abstract class Df_Core_Model_Action extends Df_Core_Model {
 	protected function needGenerateFakeResponse() {return false;}
 
 	/**
-	 * @used-by processFinish()
+	 * @used-by process()
 	 * @return bool
 	 */
-	protected function needLogResponse() {return false;}
+	protected function needLogRR() {return df_my();}
 
 	/**
 	 * @used-by needAddExceptionToSession()
@@ -172,9 +172,6 @@ abstract class Df_Core_Model_Action extends Df_Core_Model {
 	 */
 	protected function processFinish() {
 		$this->benchmarkLog();
-		if ($this->needLogResponse()) {
-			$this->logResponse();
-		}
 		/**
 		 * Используем @, чтобы избежать сбоя «Failed to delete buffer zlib output compression».
 		 * Такой сбой у меня возник на сервере moysklad.magento-demo.ru
@@ -270,33 +267,6 @@ abstract class Df_Core_Model_Action extends Df_Core_Model {
 	}
 
 	/**
-	 * «\Df\C1\Cml2\Action\Catalog\Export\Process» => «cml2.action.catalog.export.process»
-	 * @used-by responseLogName()
-	 * @return string
-	 */
-	protected function responseLogActionName() {return df_cts_lc_camel($this, '.');}
-
-	/**
-	 * @used-by logResponse()
-	 * @return string
-	 */
-	protected function responseLogName() {
-		if (!isset($this->{__METHOD__})) {
-			/** @var string $prefix */
-			$prefix = implode('-', array_filter(array(
-				df_module_id($this, '.'), $this->responseLogActionName()
-			)));
-			/** @var string $template */
-			$template = strtr('rm-{prefix}-{date}-{time}.{extension}', array(
-				'{prefix}' => $prefix
-				,'{extension}' => df_contains($this->contentType(), 'xml') ? 'xml' : 'txt'
-			));
-			$this->{__METHOD__} = df_file_name(df_cc_path(Mage::getBaseDir('var'), 'log'), $template, '.');
-		}
-		return $this->{__METHOD__};
-	}
-
-	/**
 	 * @used-by \Df\C1\Cml2\Action\Front::_process()
 	 * @used-by \Df\YandexMarket\Action\Category_Suggest::getQuery()
 	 * @return Df_Core_Model_InputRequest
@@ -388,22 +358,13 @@ abstract class Df_Core_Model_Action extends Df_Core_Model {
 	private function controller() {return $this[self::$P__CONTROLLER];}
 
 	/**
-	 * @used-by processFinish()
-	 * @return void
-	 */
-	private function logResponse() {
-		df_file_put_contents($this->responseLogName(), $this->responseBody($real = true));
-	}
-
-	/**
 	 * @used-by pc()
 	 * @return void
 	 */
 	private function process() {
 		/** @var string $logName */
-		if (df_my()) {
-			$logName = df_module_name($this) . "-{date}-{time}";
-			df_report("{$logName}.log", df_json_encode_pretty($this->params()));
+		if ($this->needLogRR()) {
+			$this->rrLog(df_json_encode_pretty($this->params()), 'json', 'request');
 		}
 		try {
 			$this->processPrepare();
@@ -414,11 +375,30 @@ abstract class Df_Core_Model_Action extends Df_Core_Model {
 			$this->processException($e);
 		}
 		$this->processBeforeRedirect();
-		if (df_my()) {
-			df_report("{$logName}-response.log", $this->response()->getBody());
+		if ($this->needLogRR()) {
+			$this->rrLog(
+				$this->response()->getBody()
+				,df_contains($this->contentType(), 'xml') ? 'xml' : (
+					df_contains($this->contentType(), 'json') ? 'json' : 'txt'
+				)
+				,'response'
+			);
 		}
 		$this->processRedirect();
 	}
+
+	/**
+	 * @used-by process()
+	 * @param string $data
+	 * @param string $ext
+	 * @param string $suffix
+	 * @return string
+	 */
+	private function rrLog($data, $ext, $suffix) {return df_report(
+		df_ccc('-', [df_cts_lc_camel($this, '.'), '{date}-{time}', $suffix]) . ".{$ext}"
+		,$data
+		,'.'
+	);}
 
 	/**
 	 * @override

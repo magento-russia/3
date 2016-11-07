@@ -21,12 +21,4 @@ class Process extends \Df\C1\Cml2\Action\GenericExport {
 			])->getResult()
 		)
 	;}
-
-	/**
-	 * @override
-	 * @see Df_Core_Model_Action::responseLogActionName()
-	 * @used-by Df_Core_Model_Action::responseLogName()
-	 * @return string
-	 */
-	protected function responseLogActionName() {return 'catalog.export';}
 }

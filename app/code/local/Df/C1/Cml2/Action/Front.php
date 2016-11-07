@@ -31,6 +31,17 @@ class Front extends Action {
 		}
 	}
 
+	/**
+	 * 2016-11-07
+	 * Логирование этого класса отключаем,
+	 * потому что класс делегирует обработку другим классам, где и будет логирование.
+	 * @override
+	 * @see Df_Core_Model_Action::needLogRR()
+	 * @used-by Df_Core_Model_Action::process()
+	 * @return bool
+	 */
+	protected function needLogRR() {return false;}
+
 	/** @return void */
 	private function action_catalog() {
 		switch($this->rmRequest()->getMode()) {
