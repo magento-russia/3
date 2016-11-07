@@ -96,7 +96,7 @@ abstract class Df_Reward_Model_Action_Abstract extends Varien_Object {
 	 * @param array $args Additional history data
 	 * @return string
 	 */
-	abstract public function getHistoryMessage($args = array());
+	abstract public function getHistoryMessage($args = []);
 
 	/**
 	 * Setter for $_reward

@@ -76,7 +76,7 @@ abstract class Df_Localization_Onetime_Processor_Entity extends Df_Core_Model {
 	 *
 	 * @return string[]
 	 */
-	protected function getTranslatablePropertiesCustom() {return array();}
+	protected function getTranslatablePropertiesCustom() {return [];}
 
 	/**
 	 * @param Df_Localization_Onetime_Dictionary_Term $term

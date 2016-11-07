@@ -230,10 +230,10 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
 
 		$this->_phpSheet = $phpSheet;
 
-		//$this->ext_sheets		= array();
+		//$this->ext_sheets		= [];
 		//$this->offset			= 0;
 		$this->_xls_strmax		= 255;
-		$this->_colinfo			= array();
+		$this->_colinfo			= [];
 		$this->_selection		= array(0,0,0,0);
 		$this->_active_pane		= 3;
 
@@ -244,7 +244,7 @@ class PHPExcel_Writer_Excel5_Worksheet extends PHPExcel_Writer_Excel5_BIFFwriter
 		$this->_outline_right		= 1;
 		$this->_outline_on			= 1;
 
-		$this->_fntHashIndex	= array();
+		$this->_fntHashIndex	= [];
 
 		// calculate values for DIMENSIONS record
 		$minR = 1;

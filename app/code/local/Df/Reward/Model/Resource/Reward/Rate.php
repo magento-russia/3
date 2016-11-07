@@ -48,7 +48,7 @@ class Df_Reward_Model_Resource_Reward_Rate extends Df_Core_Model_Resource {
 		if ($data) {
 			return $data;
 		}
-		return array();
+		return [];
 	}
 
 	/**

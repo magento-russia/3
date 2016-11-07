@@ -304,7 +304,7 @@ class phpQueryObject
 				preg_replace('@\s*(>|\\+|~)\s*@', '\\1', $query)
 			)
 		);
-		$queries = array(array());
+		$queries = array([]);
 		if (! $query)
 			return $queries;
 		$return =& $queries[0];
@@ -356,7 +356,7 @@ class phpQueryObject
 				$i++;
 			// COMMA
 			} else if ($c == ',') {
-				$queries[]= array();
+				$queries[]= [];
 				$return =& $queries[ count($queries)-1 ];
 				$i++;
 				while( isset($query[$i]) && $query[$i] == ' ')
@@ -858,7 +858,7 @@ class phpQueryObject
 				$k = intval($args);
 				$this->elements = isset( $this->elements[$k] )
 					? array( $this->elements[$k] )
-					: array();
+					: [];
 				break;
 			case 'gt':
 				/** @noinspection PhpWrongStringConcatenationInspection */
@@ -1373,7 +1373,7 @@ class phpQueryObject
 	 * @return phpQueryObject|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
 	 * @TODO support more than event in $type (space-separated)
 	 */
-	public function trigger($type, $data = array()) {
+	public function trigger($type, $data = []) {
 		foreach ($this->elements as $node)
 			phpQueryEvents::trigger($this->getDocumentID(), $type, $data, $node);
 		return $this;
@@ -1386,7 +1386,7 @@ class phpQueryObject
 	 * @return phpQueryObject|QueryTemplatesSource|QueryTemplatesParse|QueryTemplatesSourceQuery
 	 * @TODO
 	 */
-	public function triggerHandler($type, $data = array()) {
+	public function triggerHandler($type, $data = []) {
 		// TODO;
 	}
 	/**
@@ -2180,7 +2180,7 @@ class phpQueryObject
 //		if ($start < 0)
 //			$start = $last+$start;
 //		if ($start > $last)
-//			return array();
+//			return [];
 		if ($end > 0)
 			$end = $end-$start;
 		return $this->newInstance(
@@ -2884,7 +2884,7 @@ class phpQueryObject
 			? 1 : 0;
 // 		$this->elements = $this->valid
 // 			? array($this->elements[0])
-// 			: array();
+// 			: [];
 		$this->current = 0;
 	}
 	/**

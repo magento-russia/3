@@ -89,7 +89,7 @@ abstract class Secondary extends \Df\Payment\Request\Transaction {
 		/** @var \Zend_Http_Client $httpClient */
 		$httpClient = new \Zend_Http_Client();
 		$httpClient
-			->setHeaders(array())
+			->setHeaders([])
 			->setUri($this->getUri())
 			->setConfig(array('timeout' => 10))
 			->setMethod(\Zend_Http_Client::GET)

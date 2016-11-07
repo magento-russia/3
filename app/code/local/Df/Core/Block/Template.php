@@ -440,7 +440,7 @@ class Df_Core_Block_Template extends Mage_Core_Block_Template {
 	 * @used-by getCacheKeyInfo()
 	 * @return string|string[]
 	 */
-	protected function cacheKeySuffix() {return array();}
+	protected function cacheKeySuffix() {return [];}
 
 	/**
 	 * @used-by getTemplate()
@@ -512,7 +512,7 @@ class Df_Core_Block_Template extends Mage_Core_Block_Template {
 	private function _applyFilters($key, $value) {
 		/** @var Zend_Filter_Interface[] $filters */
 		/** @noinspection PhpParamsInspection */
-		$filters = dfa($this->_filters, $key, array());
+		$filters = dfa($this->_filters, $key, []);
 		foreach ($filters as $filter) {
 			/** @var Zend_Filter_Interface $filter */
 			$value = $filter->filter($value);
@@ -563,7 +563,7 @@ class Df_Core_Block_Template extends Mage_Core_Block_Template {
 	private function _validate($key, $value) {
 		/** @var @var array(Zend_Validate_Interface|\Df\Zf\Validate\Type) $validators */
 		/** @noinspection PhpParamsInspection */
-		$validators = dfa($this->_validators, $key, array());
+		$validators = dfa($this->_validators, $key, []);
 		foreach ($validators as $validator) {
 			/** @var Zend_Validate_Interface|\Df\Zf\Validate\Type $validator */
 			\Df\Core\Validator::checkProperty($this, $key, $value, $validator);

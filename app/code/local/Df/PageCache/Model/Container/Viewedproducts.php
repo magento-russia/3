@@ -10,7 +10,7 @@ class Df_PageCache_Model_Container_Viewedproducts extends Df_PageCache_Model_Con
 	 */
 	protected function _getProductIds()
 	{
-		$result = $this->_getCookieValue(self::COOKIE_NAME, array());
+		$result = $this->_getCookieValue(self::COOKIE_NAME, []);
 		if ($result) {
 			$result = explode(',', $result);
 		}

@@ -12,17 +12,17 @@ class Cond extends \Df\Shipping\Request {
 		$ra = $this->response()->json();
 		try {
 			/** @var float[] $add */
-			$add = dfa($ra, 'ADD', array());
+			$add = dfa($ra, 'ADD', []);
 			df_assert_array($add);
 			/** @var float $addRate */
 			$addRate = df_float(dfa($add, 2));
 			/** @var float[] $take */
-			$take = dfa($ra, 'take', array());
+			$take = dfa($ra, 'take', []);
 			df_assert_array($take);
 			/** @var float $takeRate */
 			$takeRate = df_float(dfa($take, 2));
 			/** @var float[] $deliver */
-			$deliver = dfa($ra, 'deliver', array());
+			$deliver = dfa($ra, 'deliver', []);
 			df_assert_array($deliver);
 			/** @var float $deliverRate */
 			$deliverRate = df_float(dfa($deliver, 2));

@@ -9,7 +9,7 @@ class Df_Paypal_Model_Config extends Mage_Paypal_Model_Config {
 	 * @see Mage_Paypal_Model_Config::__construct()
 	 * @param mixed[] $params
 	 */
-	public function __construct($params = array()) {
+	public function __construct($params = []) {
 		$this->_supportedCountryCodes[]= 'RU';
 		$this->_supportedCurrencyCodes[]= 'RUB';
 		parent::__construct($params);

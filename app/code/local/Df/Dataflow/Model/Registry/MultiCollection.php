@@ -54,7 +54,7 @@ abstract class Df_Dataflow_Model_Registry_MultiCollection
 	/** @return Mage_Core_Model_Abstract[] */
 	private function getEntities() {
 		if (!isset($this->{__METHOD__})) {
-			/** @uses iterator_to_array() */
+			/** @uses iterator_to_[] */
 			$this->{__METHOD__} = df_merge_single(array_map('iterator_to_array', $this->getCollections()));
 		}
 		return $this->{__METHOD__};

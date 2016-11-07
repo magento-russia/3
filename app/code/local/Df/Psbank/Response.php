@@ -441,7 +441,7 @@ class Response extends \Df\Payment\Response {
 	 * @param string|mixed[] $parameters [optional]
 	 * @return \Df\Psbank\Response
 	 */
-	public static function i($parameters = array()) {
+	public static function i($parameters = []) {
 		return new self(
 			is_array($parameters) ? $parameters : array(self::P__RM_TRANSACTION_TYPE => $parameters)
 		);

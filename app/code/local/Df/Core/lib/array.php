@@ -12,7 +12,7 @@ function df_array($value) {return is_array($value) ? $value : [$value];}
  * http://php.net/manual/function.array-filter.php
  * @see array_filter() с единственным параметром удалит из массива все элементы,
  * чьи значения приводятся к логическому «false».
- * Т.е., помимо наших array('', null, array()),
+ * Т.е., помимо наших array('', null, []),
  * @see array_filter() будет удалять из массива также элементы со значениями «false» и «0».
  * Если это соответствует требуемому поведению в конретной точке программного кода,
  * то используйте именно @see array_filter(),
@@ -334,7 +334,7 @@ function df_is_multi(array $array) {
 
 /**
  * 2015-02-11
- * Эта функция отличается от @see iterator_to_array() тем, что допускает в качестве параметра
+ * Эта функция отличается от @see iterator_to_[] тем, что допускает в качестве параметра
  * не только @see \Traversable, но и массив.
  * @param \Traversable|array $traversable
  * @return array
@@ -875,8 +875,8 @@ function dfa_prepend(array $source, array $priorityItems) {return $priorityItems
 	 )
  * http://3v4l.org/QYffO
  * Обратите внимание, что @uses array_flip() корректно работает с пустыми массивами:
-	print_r(array_flip(array()));
- * вернёт array()
+	print_r(array_flip([]));
+ * вернёт []
  * http://3v4l.org/Kd01X
  * @uses dfa_prepend()
  * @used-by Df_Directory_Model_Resource_Country_Collection::toOptionArrayRm()

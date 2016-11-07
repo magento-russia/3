@@ -47,7 +47,7 @@ class PHPExcel_Writer_Excel2007 extends PHPExcel_Writer_Abstract implements PHPE
 	 *
 	 * @var PHPExcel_Writer_Excel2007_WriterPart[]
 	 */
-	private $_writerParts	= array();
+	private $_writerParts	= [];
 
 	/**
 	 * Private PHPExcel
@@ -61,7 +61,7 @@ class PHPExcel_Writer_Excel2007 extends PHPExcel_Writer_Abstract implements PHPE
 	 *
 	 * @var string[]
 	 */
-	private $_stringTable	= array();
+	private $_stringTable	= [];
 
 	/**
 	 * Private unique PHPExcel_Style_Conditional HashTable

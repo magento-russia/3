@@ -225,7 +225,7 @@ class Df_PageCache_Observer {
 		if (!$this->_getCookie()->get(Df_PageCache_Model_Cookie::COOKIE_CUSTOMER)) {
 			$this->_getCookie()->delete(Df_PageCache_Model_Cookie::COOKIE_RECENTLY_COMPARED);
 			$this->_getCookie()->delete(Df_PageCache_Model_Cookie::COOKIE_COMPARE_LIST);
-			Df_PageCache_Model_Cookie::registerViewedProducts(array(), 0, false);
+			Df_PageCache_Model_Cookie::registerViewedProducts([], 0, false);
 		}
 
 		return $this;
@@ -460,7 +460,7 @@ class Df_PageCache_Observer {
 
 		$listItems = Mage::helper('catalog/product_compare')->getItemCollection();
 		$previouseList = $this->_getCookie()->get(Df_PageCache_Model_Cookie::COOKIE_COMPARE_LIST);
-		$previouseList = (empty($previouseList)) ? array() : explode(',', $previouseList);
+		$previouseList = (empty($previouseList)) ? [] : explode(',', $previouseList);
 
 		$ids = [];
 		foreach ($listItems as $item) {
@@ -472,7 +472,7 @@ class Df_PageCache_Observer {
 		//Recenlty compared products processing
 		$recentlyComparedProducts = $this->_getCookie()
 			->get(Df_PageCache_Model_Cookie::COOKIE_RECENTLY_COMPARED);
-		$recentlyComparedProducts = (empty($recentlyComparedProducts)) ? array()
+		$recentlyComparedProducts = (empty($recentlyComparedProducts)) ? []
 			: explode(',', $recentlyComparedProducts);
 
 		//Adding products deleted from compare list to "recently compared products"
@@ -872,7 +872,7 @@ class Df_PageCache_Observer {
 			->load(Df_PageCache_Model_Processor::DESIGN_EXCEPTION_KEY)
 		;
 		$exceptions = @unserialize($exceptions);
-		return is_array($exceptions) ? $exceptions : array();
+		return is_array($exceptions) ? $exceptions : [];
 	}
 
 	/**
@@ -969,7 +969,7 @@ class Df_PageCache_Observer {
 	/**
 	 * Class constructor
 	 */
-	public function __construct(array $args = array())
+	public function __construct(array $args = [])
 	{
 		$this->_processor = isset($args['processor'])
 			? $args['processor']

@@ -12,7 +12,7 @@ class Df_Catalog_Model_Resource_Installer_Attribute extends Mage_Catalog_Model_R
 		$attributeId
 		, $attributeLabel
 		, $groupName = null
-		, array $attributeCustomProperties = array()
+		, array $attributeCustomProperties = []
 		, $ordering = 10
 	) {
 		$this->addAdministrativeAttribute(
@@ -217,7 +217,7 @@ class Df_Catalog_Model_Resource_Installer_Attribute extends Mage_Catalog_Model_R
 		, $attributeId
 		, $attributeLabel
 		, $groupName = null
-		, array $attributeCustomProperties = array()
+		, array $attributeCustomProperties = []
 		, $ordering = 10
 	) {
 		df_param_string($entityType, 0);

@@ -144,7 +144,7 @@ class Df_Core_Model_Cache extends Df_Core_Model {
 				$result = $this->loadDataGeneric($key, $complex);
 			}
 			if (false === $result) {
-				$params = is_null($params) ? array() : (!$paramsIsArray ? array($params) : $params);
+				$params = is_null($params) ? [] : (!$paramsIsArray ? array($params) : $params);
 				$function .= '_';
 				/** @var callable $callback */
 				$callback = $object ? array($object, $function) : $function;
@@ -302,7 +302,7 @@ class Df_Core_Model_Cache extends Df_Core_Model {
 
 	/** @return string[] */
 	protected function getTags() {
-		return $this->cfg(self::P__TAGS, $this->getType() ? array($this->getType()) : array());
+		return $this->cfg(self::P__TAGS, $this->getType() ? array($this->getType()) : []);
 	}
 
 	/** @return string */
@@ -420,7 +420,7 @@ class Df_Core_Model_Cache extends Df_Core_Model {
 		$tags =
 			$tags
 		 	? df_array($tags)
-			: ($type ? array($type) : array())
+			: ($type ? array($type) : [])
 		;
 		return new self(array(
 			self::$P__TYPE => $type, self::P__LIFETIME => $lifetime, self::P__TAGS => $tags

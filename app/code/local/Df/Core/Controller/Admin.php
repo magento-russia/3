@@ -17,7 +17,7 @@ abstract class Df_Core_Controller_Admin extends Mage_Adminhtml_Controller_Action
 	 * @param array $arguments
 	 * @return void
 	 */
-	public function redirect($path, $arguments = array()) {$this->_redirect($path, $arguments);}
+	public function redirect($path, $arguments = []) {$this->_redirect($path, $arguments);}
 
 	/**
 	 * @param string $menuPath

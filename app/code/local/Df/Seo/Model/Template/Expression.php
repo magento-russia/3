@@ -82,5 +82,5 @@ class Df_Seo_Model_Template_Expression extends Df_Core_Model {
 	 * @param array $parameters
 	 * @return Df_Seo_Model_Template_Expression
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

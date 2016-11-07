@@ -10,7 +10,7 @@ class Df_Adminhtml_Model_Config_Data_1401 extends Df_Adminhtml_Model_Config_Data
 	 * @param array(string => string|array(string => string|int)) $oldConfig [optional]
 	 * @return array(string => string|array(string => string|int))
 	 */
-	public function extendConfig($path, $full = true, $oldConfig = array()) {
+	public function extendConfig($path, $full = true, $oldConfig = []) {
 		/** @var array(string => string|array(string => string|int)) $result */
 		$result = $this->_getPathConfig($path, $full);
 		if (is_array($oldConfig) && !empty($oldConfig)) {

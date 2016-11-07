@@ -53,5 +53,5 @@ class Df_Reports_Model_Config_Source_Duration extends Df_Admin_Config_Source {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Reports_Model_Config_Source_Duration
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

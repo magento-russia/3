@@ -18,7 +18,7 @@ abstract class phpQueryEvents {
 	 * @TODO global events (test)
 	 * @TODO support more than event in $type (space-separated)
 	 */
-	public static function trigger($document, $type, $data = array(), $node = null) {
+	public static function trigger($document, $type, $data = [], $node = null) {
 		// trigger: function(type, data, elem, donative, extra) {
 		$documentID = phpQuery::getDocumentID($document);
 		$namespace = null;

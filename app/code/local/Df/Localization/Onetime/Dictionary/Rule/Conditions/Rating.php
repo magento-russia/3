@@ -12,5 +12,5 @@ class Df_Localization_Onetime_Dictionary_Rule_Conditions_Rating
 	 * @param Mage_Core_Model_Abstract|Df_Rating_Model_Rating $entity
 	 * @return array(string => string)
 	 */
-	protected function getTestMap(Mage_Core_Model_Abstract $entity) {return array();}
+	protected function getTestMap(Mage_Core_Model_Abstract $entity) {return [];}
 }

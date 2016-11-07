@@ -6,7 +6,7 @@ use Mage_Core_Model_Abstract as M;
  * @param string[] $absentProperties [optional]
  * @return Varien_Object
  */
-function df_adapt_legacy_object(Varien_Object $object, $absentProperties = array()) {
+function df_adapt_legacy_object(Varien_Object $object, $absentProperties = []) {
 	foreach ($object->getData() as $key => $value) {
 		/** @var string $key */
 		/** @var mixed $value */

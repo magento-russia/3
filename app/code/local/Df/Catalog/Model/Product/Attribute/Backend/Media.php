@@ -141,7 +141,7 @@ class Df_Catalog_Model_Product_Attribute_Backend_Media
 								[disabled_default] => 0
 							)
 						)
-						[values] => array()
+						[values] => []
 						[duplicate] => array(
 							[1695] => d/e/detskij-bassejn-samolety-intex-168h40-58425_5.jpg
 						)

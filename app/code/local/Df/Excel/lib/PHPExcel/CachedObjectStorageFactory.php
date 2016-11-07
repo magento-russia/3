@@ -184,7 +184,7 @@ class PHPExcel_CachedObjectStorageFactory
      *                                        when instantiating
      * @return boolean
      **/
-    public static function initialize($method = self::cache_in_memory, $arguments = array())
+    public static function initialize($method = self::cache_in_memory, $arguments = [])
     {
         if (!in_array($method,self::$_storageMethods)) {
             return FALSE;

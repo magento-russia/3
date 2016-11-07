@@ -171,7 +171,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 		if (!isset($this->{__METHOD__})) {
 			/** @var int[] $productIds */
 			$productIds = array_keys($this->getItems());
-			$this->{__METHOD__} = !$productIds ? array() : df_fetch_col_int_unique(
+			$this->{__METHOD__} = !$productIds ? [] : df_fetch_col_int_unique(
 				$this->_productCategoryTable, 'category_id', 'product_id', $productIds
 			);
 		}
@@ -333,7 +333,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 					array('cat_index' => $this->getTable('catalog/category_product_index'))
 					,$joinCond
 					/**
-					 * Обратите внимание, что синтаксис array() указывает на то,
+					 * Обратите внимание, что синтаксис [] указывает на то,
 					 * что система не должна выбирать данные из связанной таблицы.
 					 *
 					 * Если при выборке по нескольким товарным разделам
@@ -360,7 +360,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 					 * что приводит к выборке одного и того же товара несколько раз подряд.
 					 */
 					,$this->hasCategoriesFilter()
-					? array()
+					? []
 					: array('cat_index_position' => 'position')
 				);
 			}
@@ -417,7 +417,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 				array('cat_pro' => df_table('catalog/category_product'))
 				,$joinCond
 				/**
-				 * Обратите внимание, что синтаксис array() указывает на то,
+				 * Обратите внимание, что синтаксис [] указывает на то,
 				 * что система не должна выбирать данные из связанной таблицы.
 				 *
 				 * Если при выборке по нескольким товарным разделам
@@ -444,7 +444,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 				 * что приводит к выборке одного и того же товара несколько раз подряд.
 				 */
 				,!$this->_catIndexPositionIsAvailable
-				? array()
+				? []
 				/**
 				 * 2014-10-07
 				 * Раньше тут стояло:
@@ -608,5 +608,5 @@ class Df_Catalog_Model_Resource_Product_Collection
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Catalog_Model_Resource_Product_Collection
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

@@ -30,7 +30,7 @@ class Df_Admin_Model_Mode extends Df_Core_Model {
 	 * @return mixed
 	 * @throws Exception
 	 */
-	public function call($object, $method, array $parameters = array()) {
+	public function call($object, $method, array $parameters = []) {
 		/** @var mixed $result */
 		$this->begin();
 		try {

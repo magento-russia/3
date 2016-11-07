@@ -46,7 +46,7 @@ class Df_Reward_Model_Action_Newsletter extends Df_Reward_Model_Action_Abstract 
 	 * @param array $args Additional history data
 	 * @return string
 	 */
-	public function getHistoryMessage($args = array())
+	public function getHistoryMessage($args = [])
 	{
 		$email = isset($args['email']) ? $args['email'] : '';
 		return df_h()->reward()->__('Signed up for newsletter with email %s.', $email);

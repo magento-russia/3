@@ -5,7 +5,7 @@ abstract class Df_Parser_Model_Pq_Page extends Df_Parser_Model_Pq implements Zen
 	 * @see Zend_Validate_Interface
 	 * @return string[]
 	 */
-	public function getMessages() {return array();}
+	public function getMessages() {return [];}
 	
 	/** @return Zend_Uri_Http */
 	public function getUri() {return $this->cfg(self::P__URI);}

@@ -1536,7 +1536,7 @@ class PHPExcel_Writer_Excel5_Parser
 	 * @param array $tree The optional tree to convert.
 	 * @return string The tree in reverse polish notation
 	 */
-	function toReversePolish($tree = array())
+	function toReversePolish($tree = [])
 	{
 		$polish = ""; // the string we are going to return
 		if (empty($tree)) { // If it's the first call use _parse_tree

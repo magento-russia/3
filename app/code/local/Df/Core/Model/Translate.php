@@ -132,7 +132,7 @@ class Df_Core_Model_Translate extends Mage_Core_Model_Translate {
 	 * @param mixed[] $variables [optional]
 	 * @return string
 	 */
-	public function translateFast($text, $moduleName, array $variables = array()) {
+	public function translateFast($text, $moduleName, array $variables = []) {
 		/** @var string $code */
 		$code = $moduleName . self::SCOPE_SEPARATOR . $text;
 		/** @var string $result */

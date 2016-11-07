@@ -263,7 +263,7 @@ class Df_Catalog_Model_Convert_Adapter_Product extends Mage_Catalog_Model_Conver
 		$stockData = [];
 		$inventoryFields = isset($this->_inventoryFieldsProductTypes[$product->getTypeId()])
 			? $this->_inventoryFieldsProductTypes[$product->getTypeId()]
-			: array();
+			: [];
 		foreach ($inventoryFields as $field) {
 			if (isset($importData[$field])) {
 				if (in_array($field, $this->_toNumber)) {

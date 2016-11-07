@@ -215,7 +215,7 @@ class Df_Catalog_Model_Product_Exporter extends Df_Core_Model {
 	 * @return string|string[]
 	 */
 	protected function additionalAttributes() {
-		return $this->cfg(self::P__ADDITIONAL_ATTRIBUTES, array());
+		return $this->cfg(self::P__ADDITIONAL_ATTRIBUTES, []);
 	}
 
 	/** @return string|string[] */
@@ -412,5 +412,5 @@ class Df_Catalog_Model_Product_Exporter extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Catalog_Model_Product_Exporter
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

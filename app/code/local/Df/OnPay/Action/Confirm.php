@@ -51,7 +51,7 @@ class Confirm extends \Df\Payment\Action\Confirm {
 					,$this->rkSignature() => $this->getResponseSignature(3)
 				)
 				,!$this->needInvoice()
-				? array()
+				? []
 				: array(
 					$this->rkExternalId() => $this->rExternalId()
 					,'order_id' => $this->rOII()
@@ -79,7 +79,7 @@ class Confirm extends \Df\Payment\Action\Confirm {
 					,$this->rkSignature() => $this->getResponseSignature(0)
 				)
 				,!$this->needInvoice()
-				? array()
+				? []
 				: array(
 					$this->rkExternalId() => $this->rExternalId()
 					,'order_id' => $this->rOII()
@@ -174,7 +174,7 @@ class Confirm extends \Df\Payment\Action\Confirm {
 	 */
 	private function responseObjectToXml(\Varien_Object $responseAsVarienObject) {
 		return $responseAsVarienObject->toXml(
-			array()  // все свойства
+			[]  // все свойства
 			, 'result' // корневой тэг
 			, true /** добавить <?xml version="1.0" encoding="UTF-8"?>  */
 			, false  // Запрещаем добавление CDATA

@@ -13,7 +13,7 @@ class Df_Dataflow_Model_Convert_Adapter_Product
 		/**
 		 * Back compatibility event
 		 */
-		Mage::dispatchEvent('catalog_product_import_after', array());
+		Mage::dispatchEvent('catalog_product_import_after', []);
 		$entity = new Varien_Object();
 		df_mage()->index()->indexer()
 			->processEntityAction(

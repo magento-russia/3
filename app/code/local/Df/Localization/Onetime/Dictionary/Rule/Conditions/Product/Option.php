@@ -12,5 +12,5 @@ class Df_Localization_Onetime_Dictionary_Rule_Conditions_Product_Option
 	 * @param Mage_Core_Model_Abstract|Df_Catalog_Model_Product_Option_Title $entity
 	 * @return array(string => string)
 	 */
-	protected function getTestMap(Mage_Core_Model_Abstract $entity) {return array();}
+	protected function getTestMap(Mage_Core_Model_Abstract $entity) {return [];}
 }

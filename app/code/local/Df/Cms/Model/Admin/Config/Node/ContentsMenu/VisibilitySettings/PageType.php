@@ -160,5 +160,5 @@ class Df_Cms_Model_Admin_Config_Node_ContentsMenu_VisibilitySettings_PageType
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Cms_Model_Admin_Config_Node_ContentsMenu_VisibilitySettings_PageType
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

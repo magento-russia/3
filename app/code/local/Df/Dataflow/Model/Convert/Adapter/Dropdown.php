@@ -73,7 +73,7 @@ class Df_Dataflow_Model_Convert_Adapter_Dropdown
 	 * @return Df_Catalog_Model_Resource_Eav_Attribute
 	 */
 	private function getAttributeByCode($code) {
-		$attributes = $this->getSessionParam('attributes', array());
+		$attributes = $this->getSessionParam('attributes', []);
 		if (!isset($attributes[$code])) {
 			$attributes[$code] =
 				Df_Catalog_Model_Resource_Eav_Attribute::i()->loadByCode(df_eav_id_product(), $code)

@@ -6,7 +6,7 @@ class Df_Eav_Model_Entity extends Mage_Eav_Model_Entity {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Eav_Model_Entity
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 
 	/** @return Df_Eav_Model_Entity */
 	public static function product() {return self::getSingletonByType('catalog_product');}

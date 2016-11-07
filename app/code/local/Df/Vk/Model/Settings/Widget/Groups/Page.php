@@ -36,5 +36,5 @@ class Df_Vk_Model_Settings_Widget_Groups_Page extends Df_Core_Model_Settings {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Vk_Model_Settings_Widget_Groups_Page
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

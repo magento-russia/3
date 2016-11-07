@@ -30,5 +30,5 @@ class Df_Sms_Model_Message extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Sms_Model_Gate_Sms16Ru
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

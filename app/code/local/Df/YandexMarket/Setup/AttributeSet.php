@@ -74,7 +74,7 @@ class AttributeSet extends \Df_Core_Setup_AttributeSet {
 	 * @param array(string => string) $params [optional]
 	 * @return \Df_Catalog_Model_Resource_Eav_Attribute
 	 */
-	private function getAttributeAdministrative($code, $label, $ordering, array $params = array()) {
+	private function getAttributeAdministrative($code, $label, $ordering, array $params = []) {
 		if (!isset($this->{__METHOD__}[$code])) {
 			$this->{__METHOD__}[$code] = df_attributes()->createOrUpdate(
 				\Df_Catalog_Model_Attribute_Preset::administrative($params + array(

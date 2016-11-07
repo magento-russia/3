@@ -108,7 +108,7 @@ class Df_Catalog_Model_Processor_Menu extends Df_Core_Model {
 		if (is_null($map)) {
 			$map =
 				!df_state()->hasCategory()
-				? array()
+				? []
 				: array_flip(df_csv_parse_int(df_state()->getCurrentCategory()->getPathInStore()))
 			;
 		}

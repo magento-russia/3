@@ -19,7 +19,7 @@ class Df_Cms_Model_Resource_Block extends Mage_Cms_Model_Resource_Block {
 				->joinLeft(
 					array('bs' => df_table('cms_block_store'))
 					,'b.block_id = bs.block_id'
-					,array()
+					,[]
 				)
 				// Отфильтровываем блоки, которые привязаны к ранее удалённым витринам.
 				->where(df_conn()->prepareSqlCondition('bs.store_id', array(

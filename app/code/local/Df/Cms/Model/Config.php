@@ -56,7 +56,7 @@ class Df_Cms_Model_Config extends Df_Core_Model {
 		if (isset($this->_revisionControlledAttributes[$type])) {
 			return $this->_revisionControlledAttributes[$type];
 		}
-		return array();
+		return [];
 	}
 
 	/**

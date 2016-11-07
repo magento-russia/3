@@ -29,7 +29,7 @@ class Df_Reward_Model_Action_Tag extends Df_Reward_Model_Action_Abstract {
 	 * @param array $args Additional history data
 	 * @return string
 	 */
-	public function getHistoryMessage($args = array())
+	public function getHistoryMessage($args = [])
 	{
 		$tag = isset($args['tag']) ? $args['tag'] : '';
 		return df_h()->reward()->__('For submitting tag (%s).', $tag);

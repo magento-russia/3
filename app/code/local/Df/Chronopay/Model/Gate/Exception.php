@@ -8,7 +8,7 @@ class Df_Chronopay_Model_Gate_Exception extends Mage_Core_Exception {
 	 * @override
 	 * @param mixed[] $params
 	 */
-	public function __construct(array $params = array()) {
+	public function __construct(array $params = []) {
 		$this->_params = $params;
 		parent::__construct($this->getMessageForCustomer());
 	}

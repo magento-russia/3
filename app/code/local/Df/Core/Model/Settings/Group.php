@@ -7,7 +7,7 @@ class Df_Core_Model_Settings_Group extends Df_Core_Model {
 	 * @param Df_Core_Model_StoreM|int|string|bool|null $store [optional]
 	 * @return mixed
 	 */
-	public function getValue($configKeySuffix, $prefixes = array(), $defaultValue = null, $store = null) {
+	public function getValue($configKeySuffix, $prefixes = [], $defaultValue = null, $store = null) {
 		df_param_string($configKeySuffix, 0);
 		/**
 		 * country_id => country
@@ -45,7 +45,7 @@ class Df_Core_Model_Settings_Group extends Df_Core_Model {
 	 */
 	protected function getYesNo(
 		$configKeySuffix
-		,$prefixes = array()
+		,$prefixes = []
 		,$defaultValue = null
 		,$store = null
 	) {
@@ -97,7 +97,7 @@ class Df_Core_Model_Settings_Group extends Df_Core_Model {
 	/** @return array */
 	private function getPrefixesAsArray() {
 		/** @var array $result */
-		$result = $this->cfg(self::P__PREFIXES, array());
+		$result = $this->cfg(self::P__PREFIXES, []);
 		if (is_string($result)) {
 			$result = array($result);
 		}

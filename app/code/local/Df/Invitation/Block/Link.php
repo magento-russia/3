@@ -23,7 +23,7 @@ class Df_Invitation_Block_Link extends Df_Core_Block_Template_NoCache {
 		,$url=''
 		,$title=''
 		,$prepare=false
-		,$urlParams=array()
+		,$urlParams=[]
 		,$position=null
 		,$liParams=null
 		,$aParams=null
@@ -51,7 +51,7 @@ class Df_Invitation_Block_Link extends Df_Core_Block_Template_NoCache {
 	 * @param array $urlParams
 	 * @return Df_Invitation_Block_Link
 	 */
-	public function addDashboardLink($block, $name, $path, $label, $urlParams = array())
+	public function addDashboardLink($block, $name, $path, $label, $urlParams = [])
 	{
 		if (df_h()->invitation()->config()->isEnabledOnFront()) {
 			$blockInstance = $this->getLayout()->getBlock($block);

@@ -345,7 +345,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 			 */
 			$this->{__METHOD__} =
 				$this->isConfigurable()
-				? array()
+				? []
 				: Df_Catalog_Model_Product_Type_Configurable::s()->getParentIdsByChild($this->getId())
 			;
 		}
@@ -1125,7 +1125,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 
 	/**
 	 * @see app/code/core/Mage/Catalog/sql/catalog_setup/install-1.6.0.0.php:
-		->addColumn('sku', Varien_Db_Ddl_Table::TYPE_TEXT, 64, array(), 'SKU')
+		->addColumn('sku', Varien_Db_Ddl_Table::TYPE_TEXT, 64, [], 'SKU')
 	 */
 	const MAX_LENGTH__SKU = 64;
 	const P__ATTRIBUTE_SET_ID = 'attribute_set_id';
@@ -1210,7 +1210,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Catalog_Model_Product
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * В качестве $id можно передавать не только идентификатор, но и артикул.

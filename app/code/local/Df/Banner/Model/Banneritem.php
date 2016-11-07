@@ -47,7 +47,7 @@ class Df_Banner_Model_Banneritem extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Banner_Model_Banneritem
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @used-by Df_Banner_Adminhtml_BanneritemController::massDeleteAction()
 	 * @used-by Df_Banner_Adminhtml_BanneritemController::massStatusAction()

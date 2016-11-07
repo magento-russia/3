@@ -308,7 +308,7 @@ class Df_Sales_Model_Order extends Mage_Sales_Model_Order {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Sales_Model_Order
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id

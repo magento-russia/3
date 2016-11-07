@@ -453,7 +453,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
         if ($this->_cellCollection !== NULL) {
             return $this->_cellCollection->getCellList();
         }
-        return array();
+        return [];
     }
 
     /**
@@ -466,7 +466,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
         if ($this->_cellCollection !== NULL) {
             return $this->_cellCollection->getSortedCellList();
         }
-        return array();
+        return [];
     }
 
     /**
@@ -1753,7 +1753,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
      *
      * @param array
      */
-    public function setMergeCells($pValue = array())
+    public function setMergeCells($pValue = [])
     {
         $this->_mergeCells = $pValue;
 
@@ -2185,7 +2185,7 @@ class PHPExcel_Worksheet implements PHPExcel_IComparable
 	 * @param array of PHPExcel_Comment
      * @return PHPExcel_Worksheet
      */
-    public function setComments($pValue = array())
+    public function setComments($pValue = [])
     {
         $this->_comments = $pValue;
 

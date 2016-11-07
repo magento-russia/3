@@ -19,5 +19,5 @@ class Df_Admin_Config_Source_NoYes extends Df_Admin_Config_Source {
 	 * @param array $arrAttributes
 	 * @return array(int => string)
 	 */
-	public function toArray(array $arrAttributes = array()) {return $this->toOptionArrayAssoc();}
+	public function toArray(array $arrAttributes = []) {return $this->toOptionArrayAssoc();}
 }

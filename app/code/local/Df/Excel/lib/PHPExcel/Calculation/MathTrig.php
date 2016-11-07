@@ -1152,7 +1152,7 @@ class PHPExcel_Calculation_MathTrig {
 	 * @param	string		$condition		The criteria that defines which cells will be summed.
 	 * @return	float
 	 */
-	public static function SUMIF($aArgs,$condition,$sumArgs = array()) {
+	public static function SUMIF($aArgs,$condition,$sumArgs = []) {
 		// Return value
 		$returnValue = 0;
 

@@ -265,5 +265,5 @@ class Df_Eav_Model_Entity_Attribute_Option_Calculator extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Eav_Model_Entity_Attribute_Option_Calculator
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

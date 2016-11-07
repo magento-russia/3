@@ -421,7 +421,7 @@ function df_assert_traversable($v, $message = null) {
 function df_bool($v) {
 	/**
 	 * Хотелось бы ради оптимизации использовать
-	 * @see array_flip() + @see isset() вместо @uses in_array(),
+	 * @see array_flip() + @see isset() вместо @uses in_[],
 	 * однако прямой вызов в лоб @see array_flip() приводит к предупреждению:
 	 * «Warning: array_flip(): Can only flip STRING and INTEGER values!».
 	 * Более того, следующий тест не проходит:
@@ -437,7 +437,7 @@ function df_bool($v) {
 	static $allowedVariantsForYes = [1, '1', 'true', true, 'да', 'yes', 'on'];
 	/**
 	 * Обратите внимание, что здесь использование $strict = true
-	 * для функции @uses in_array() обязательно,
+	 * для функции @uses in_[] обязательно,
 	 * иначе любое значение, приводимое к true (например, любая непустая строка),
 	 * будет удовлетворять условию.
 	 */
@@ -518,7 +518,7 @@ function df_check_string_not_empty($v) {
 /**
  * 2016-08-09
  * @see df_assert_traversable()
- * @see df_check_array()
+ * @see df_check_[]
  * @used-by df_map_k()
  * http://stackoverflow.com/questions/31701517#comment59189177_31701556
  * @param mixed $v

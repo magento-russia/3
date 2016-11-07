@@ -7,5 +7,5 @@ class Payment extends \Df\Payment\Request\Payment {
 	 * @used-by \Df\Payment\Request\Payment::params()
 	 * @return array(string => string|int)
 	 */
-	protected function _params() {return array();}
+	protected function _params() {return [];}
 }

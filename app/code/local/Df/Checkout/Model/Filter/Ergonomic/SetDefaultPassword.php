@@ -55,5 +55,5 @@ class Df_Checkout_Model_Filter_Ergonomic_SetDefaultPassword
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Checkout_Model_Filter_Ergonomic_SetDefaultPassword
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

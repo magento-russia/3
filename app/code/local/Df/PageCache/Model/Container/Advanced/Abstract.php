@@ -41,7 +41,7 @@ abstract class Df_PageCache_Model_Container_Advanced_Abstract
 	 * @param null|int $lifetime
 	 * @return Df_PageCache_Model_Container_Advanced_Abstract
 	 */
-	protected function _saveCache($data, $id, $tags = array(), $lifetime = null)
+	protected function _saveCache($data, $id, $tags = [], $lifetime = null)
 	{
 		$additionalCacheId = $this->_getAdditionalCacheId();
 		if (!$additionalCacheId) {

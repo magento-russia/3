@@ -55,7 +55,7 @@ class Df_Catalog_Model_Product_Option extends Mage_Catalog_Model_Product_Option 
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Catalog_Model_Product_Option
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id

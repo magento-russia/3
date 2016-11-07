@@ -82,13 +82,13 @@ class Df_Logging_Model_Config extends Df_Core_Model {
 	 */
 	private function _getNodesByFullActionName($fullActionName) {
 		if (!$fullActionName) {
-			return array();
+			return [];
 		}
 		$actionNodes = $this->_xmlConfig->getXpath("/logging/*/actions/{$fullActionName}[1]");
 		if ($actionNodes) {
 			return $actionNodes;
 		}
-		return array();
+		return [];
 	}
 
 	/**

@@ -39,6 +39,6 @@ class AddPaymentMethods extends \Df_Varien_Data_Form_Processor {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return self
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 
 }

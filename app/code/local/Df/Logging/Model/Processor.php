@@ -20,7 +20,7 @@ class Df_Logging_Model_Processor extends Df_Core_Model {
 	 */
 	public function cleanupData($data) {
 		if (!$data && !is_array($data)) {
-			return array();
+			return [];
 		}
 		$clearData = [];
 		foreach ($data as $key=>$value) {

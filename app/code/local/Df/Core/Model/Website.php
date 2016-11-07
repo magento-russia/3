@@ -37,7 +37,7 @@ class Df_Core_Model_Website extends Mage_Core_Model_Website {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Core_Model_Website
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
 	public static function s() {static $r; return $r ? $r : $r = new self;}
 }

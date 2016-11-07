@@ -28,7 +28,7 @@ class Df_Catalog_Model_Field_Conditions extends Df_Core_Model {
 	 */
 	private function createFieldset(Varien_Data_Form $form) {
 		/** @var Varien_Data_Form_Element_Fieldset $result */
-		$result = $form->addFieldset('conditions_fieldset', array());
+		$result = $form->addFieldset('conditions_fieldset', []);
 		$result->setRenderer($this->createRendererFieldset());
 		$this->createFieldConditions($result);
 		return $result;

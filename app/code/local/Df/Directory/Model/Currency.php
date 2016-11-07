@@ -122,7 +122,7 @@ class Df_Directory_Model_Currency extends Mage_Directory_Model_Currency {
 	 * @param bool $addBrackets [optional]
 	 * @return string
 	 */
-	public function format($price, $options=array(), $includeContainer = true, $addBrackets = false) {
+	public function format($price, $options=[], $includeContainer = true, $addBrackets = false) {
 		return
 			df_loc()->needHideDecimals()
 			? $this->formatDf($price, $options, $includeContainer, $addBrackets)
@@ -136,7 +136,7 @@ class Df_Directory_Model_Currency extends Mage_Directory_Model_Currency {
 	 * @param array $options
 	 * @return string
 	 */
-	public function formatTxt($price, $options=array()) {
+	public function formatTxt($price, $options=[]) {
 		return
 			df_loc()->needHideDecimals()
 			? $this->formatTxtDf($price, $options)
@@ -263,7 +263,7 @@ class Df_Directory_Model_Currency extends Mage_Directory_Model_Currency {
 	 * @param bool $addBrackets
 	 * @return string
 	 */
-	private function formatDf($price, $options = array(), $includeContainer = true, $addBrackets = false) {
+	private function formatDf($price, $options = [], $includeContainer = true, $addBrackets = false) {
 		return $this->formatPrecision(
 			$price, df_currency_precision(), $options, $includeContainer, $addBrackets
 		);
@@ -274,7 +274,7 @@ class Df_Directory_Model_Currency extends Mage_Directory_Model_Currency {
 	 * @param array $options
 	 * @return string
 	 */
-	private function formatTxtDf($price, $options = array()) {
+	private function formatTxtDf($price, $options = []) {
 		return parent::formatTxt($price, array('precision' => df_currency_precision()) + $options);
 	}
 
@@ -289,7 +289,7 @@ class Df_Directory_Model_Currency extends Mage_Directory_Model_Currency {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Directory_Model_Currency
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param string $code

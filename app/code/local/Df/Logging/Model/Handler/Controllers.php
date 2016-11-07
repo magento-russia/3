@@ -94,7 +94,7 @@ class Df_Logging_Model_Handler_Controllers
 
 				$processor->addEventChanges(
 					clone $change->setSourceName($groupName)
-								 ->setOriginalData(array())
+								 ->setOriginalData([])
 								 ->setResultData($groupFieldsData)
 				);
 				$groupFieldsData = [];
@@ -225,7 +225,7 @@ class Df_Logging_Model_Handler_Controllers
 			/** @var Df_Logging_Model_Event_Changes $change */
 			$change = Df_Logging_Model_Event_Changes::i();
 			$processor->addEventChanges($change->setSourceName('params')
-				->setOriginalData(array())
+				->setOriginalData([])
 				->setResultData($data));
 		}
 		return $eventModel->setInfo($fullActionNameParts[1]);
@@ -325,32 +325,32 @@ class Df_Logging_Model_Handler_Controllers
 		$products = Mage::helper('adminhtml/catalog_product_edit_action_attribute')->getProductIds();
 		if ($products) {
 			$processor->addEventChanges(clone $change->setSourceName('product')
-				->setOriginalData(array())
+				->setOriginalData([])
 				->setResultData(array('ids' => df_csv($products))));
 		}
 
 		$processor->addEventChanges(clone $change->setSourceName('inventory')
-				->setOriginalData(array())
-				->setResultData($request->getParam('inventory', array())));
-		$attributes = $request->getParam('attributes', array());
+				->setOriginalData([])
+				->setResultData($request->getParam('inventory', [])));
+		$attributes = $request->getParam('attributes', []);
 		$status = $request->getParam('status', null);
 		if (!$attributes && $status) {
 			$attributes['status'] = $status;
 		}
 		$processor->addEventChanges(clone $change->setSourceName('attributes')
-				->setOriginalData(array())
+				->setOriginalData([])
 				->setResultData($attributes));
-		$websiteIds = $request->getParam('remove_website', array());
+		$websiteIds = $request->getParam('remove_website', []);
 		if ($websiteIds) {
 			$processor->addEventChanges(clone $change->setSourceName('remove_website_ids')
-				->setOriginalData(array())
+				->setOriginalData([])
 				->setResultData(array('ids' => df_csv($websiteIds))));
 		}
 
-		$websiteIds = $request->getParam('add_website', array());
+		$websiteIds = $request->getParam('add_website', []);
 		if ($websiteIds) {
 			$processor->addEventChanges(clone $change->setSourceName('add_website_ids')
-				->setOriginalData(array())
+				->setOriginalData([])
 				->setResultData(array('ids' => df_csv($websiteIds))));
 		}
 		return $eventModel->setInfo(Df_Logging_Helper_Data::s()->__('Attributes Updated'));
@@ -503,7 +503,7 @@ class Df_Logging_Model_Handler_Controllers
 		}
 
 		$processor->addEventChanges($change->setSourceName('rates')
-			->setOriginalData(array())
+			->setOriginalData([])
 			->setResultData(array('rates' => df_csv($values))));
 		$success = true;
 		$messages = df_session()->getMessages()->getLastAddedMessage();
@@ -574,16 +574,16 @@ class Df_Logging_Model_Handler_Controllers
 		}
 
 		$processor->addEventChanges(clone $change->setSourceName('enable')
-				->setOriginalData(array())
+				->setOriginalData([])
 				->setResultData($enable));
 		if (!empty($clean)) {
 			$processor->addEventChanges(clone $change->setSourceName('clean')
-				->setOriginalData(array())
+				->setOriginalData([])
 				->setResultData($clean));
 		}
 		if ($catalogAction) {
 			$processor->addEventChanges(clone $change->setSourceName('catalog')
-					->setOriginalData(array())
+					->setOriginalData([])
 					->setResultData(array('action' => $catalogAction)));
 		}
 		$success = true;

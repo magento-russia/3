@@ -12,7 +12,7 @@ class Df_ImportExport_Model_Export_Entity_Product
 	 * @return array(int => array(string => string))
 	 */
 	protected function _prepareCatalogInventory(array $productIds) {
-		return parent::_prepareCatalogInventory($productIds) + array_fill_keys($productIds, array());
+		return parent::_prepareCatalogInventory($productIds) + array_fill_keys($productIds, []);
 	}
 
 	/**

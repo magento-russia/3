@@ -106,7 +106,7 @@ abstract class Df_PageCache_Model_Container_Abstract
 	 * @param array $tags
 	 * @return Df_PageCache_Model_Container_Abstract
 	 */
-	public function saveCache($blockContent, $tags = array())
+	public function saveCache($blockContent, $tags = [])
 	{
 		$cacheId = $this->_getCacheId();
 		if ($cacheId !== false) {
@@ -157,7 +157,7 @@ abstract class Df_PageCache_Model_Container_Abstract
 	 * @param null|int $lifetime
 	 * @return Df_PageCache_Model_Container_Abstract
 	 */
-	protected function _saveCache($data, $id, $tags = array(), $lifetime = null)
+	protected function _saveCache($data, $id, $tags = [], $lifetime = null)
 	{
 		$tags[] = Df_PageCache_Model_Processor::CACHE_TAG;
 		$tags = array_merge($tags, $this->_getPlaceHolderBlock()->getCacheTags());

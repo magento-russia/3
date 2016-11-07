@@ -106,7 +106,7 @@ function df_product_id($product) {
  * @param mixed[]|Df_Core_Model_StoreM[] $stores [optional]
  * @return void
  */
-function df_products_update(array $data, array $ids = array(), array $stores = array()) {
+function df_products_update(array $data, array $ids = [], array $stores = []) {
 	df_admin_begin();
 	try {
 		// Если витрины не указаны — то обновляем свойства для всех витрин.

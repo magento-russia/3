@@ -28,7 +28,7 @@ abstract class Df_Core_Model_Event extends Df_Core_Model {
 	 * @param array $additionalParams
 	 * @return Df_Core_Model_Event
 	 */
-	public static function create($class, Varien_Event_Observer $observer, $additionalParams = array()) {
+	public static function create($class, Varien_Event_Observer $observer, $additionalParams = []) {
 		df_param_string($class, 0);
 		df_param_array($additionalParams, 2);
 		$result =

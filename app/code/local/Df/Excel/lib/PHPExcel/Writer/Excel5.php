@@ -61,7 +61,7 @@ class PHPExcel_Writer_Excel5 extends PHPExcel_Writer_Abstract implements PHPExce
 	 *
 	 * @var array
 	 */
-	private $_str_table		= array();
+	private $_str_table		= [];
 
 	/**
 	 * Color cache. Mapping between RGB value and color index.

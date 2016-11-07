@@ -29,7 +29,7 @@ class Df_Reward_Model_Action_Review extends Df_Reward_Model_Action_Abstract {
 	 * @param array $args Additional history data
 	 * @return string
 	 */
-	public function getHistoryMessage($args = array())
+	public function getHistoryMessage($args = [])
 	{
 		return df_h()->reward()->__('For submitting a product review.');
 	}

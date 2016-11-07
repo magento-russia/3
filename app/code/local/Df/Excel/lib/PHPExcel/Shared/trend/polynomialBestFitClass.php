@@ -206,7 +206,7 @@ class PHPExcel_Polynomial_Best_Fit extends PHPExcel_Best_Fit
 	 * @param	float[]		$xValues	The set of X-values for this regression
 	 * @param	boolean		$const
 	 */
-	function __construct($order, $yValues, $xValues=array(), $const=True) {
+	function __construct($order, $yValues, $xValues=[], $const=True) {
 		if (parent::__construct($yValues, $xValues) !== False) {
 			if ($order < $this->_valueCount) {
 				$this->_bestFitType .= '_'.$order;

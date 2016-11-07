@@ -113,7 +113,7 @@ abstract class Response extends \Df_Core_Model {
 	protected function getIdInPaymentInfo() {return df_cts_lc_camel($this, '_');}
 
 	/** @return string[] */
-	protected function getKeysToSuppress() {return array();}
+	protected function getKeysToSuppress() {return [];}
 
 	/** @return bool */
 	protected function isFailed() {return !$this->isSuccessful();}

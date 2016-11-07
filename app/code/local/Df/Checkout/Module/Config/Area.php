@@ -99,7 +99,7 @@ abstract class Area extends \Df\Checkout\Module\Bridge {
 	 * которые она в состоянии обрабатывать.
 	 * @return array
 	 */
-	protected function getStandardKeys() {return array();}
+	protected function getStandardKeys() {return [];}
 
 	/**
 	 * 2015-04-05

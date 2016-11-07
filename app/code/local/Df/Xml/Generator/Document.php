@@ -225,7 +225,7 @@ class Document extends Element {
 	protected function getContentsAsArray() {
 		/** @var array(string => mixed) $result */
 		$result = $this->mixin(__FUNCTION__);
-		return !is_null($result) ? $result : $this->cfg(self::P__CONTENTS_AS_ARRAY, array());
+		return !is_null($result) ? $result : $this->cfg(self::P__CONTENTS_AS_ARRAY, []);
 	}
 
 	/** @return string */
@@ -361,5 +361,5 @@ class Document extends Element {
 	 * @param array(string => mixed) $parameters
 	 * @return \Df\Xml\Generator\Document
 	 */
-	public static function _i(array $parameters = array()) {return new self($parameters);}
+	public static function _i(array $parameters = []) {return new self($parameters);}
 }

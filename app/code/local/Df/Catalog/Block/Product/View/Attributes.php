@@ -11,7 +11,7 @@ class Df_Catalog_Block_Product_View_Attributes extends Mage_Catalog_Block_Produc
 	 * @param string[] $excludeAttr
 	 * @return array(string => array(string => string))
 	 */
-	public function getAdditionalData(array $excludeAttr = array()) {
+	public function getAdditionalData(array $excludeAttr = []) {
 		/** @var string $cacheKey */
 		$cacheKey = $this->getCacheRm()->makeKey(
 			__METHOD__, $this->getProduct()->getId() . implode($excludeAttr)
@@ -48,7 +48,7 @@ class Df_Catalog_Block_Product_View_Attributes extends Mage_Catalog_Block_Produc
 	 * @param string[] $excludeAttr
 	 * @return array(string => array(string => string))
 	 */
-	private function getAdditionalDataWithoutEmptyAttributes(array $excludeAttr = array()) {
+	private function getAdditionalDataWithoutEmptyAttributes(array $excludeAttr = []) {
 		/** @var array $data */
 		$data = [];
 		/** @var Mage_Catalog_Model_Product $product */

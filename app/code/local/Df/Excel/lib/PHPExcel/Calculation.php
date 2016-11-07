@@ -2291,9 +2291,9 @@ class PHPExcel_Calculation {
 		//	Basic validation that this is indeed a formula
 		//	We return an empty array if not
 		$formula = trim($formula);
-		if ((!isset($formula{0})) || ($formula{0} != '=')) return array();
+		if ((!isset($formula{0})) || ($formula{0} != '=')) return [];
 		$formula = ltrim(substr($formula,1));
-		if (!isset($formula{0})) return array();
+		if (!isset($formula{0})) return [];
 
 		//	Parse the formula and return the token stack
 		return $this->_parseFormula($formula);

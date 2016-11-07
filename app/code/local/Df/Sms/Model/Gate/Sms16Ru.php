@@ -97,5 +97,5 @@ class Df_Sms_Model_Gate_Sms16Ru extends Df_Sms_Model_Gate {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Sms_Model_Gate_Sms16Ru
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

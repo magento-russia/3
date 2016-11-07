@@ -102,21 +102,21 @@ class PHPExcel_Writer_HTML extends PHPExcel_Writer_Abstract implements PHPExcel_
 	 *
 	 * @var array
 	 */
-	private $_isSpannedCell	= array();
+	private $_isSpannedCell	= [];
 
 	/**
 	 * Excel cells that are upper-left corner in a cell merge
 	 *
 	 * @var array
 	 */
-	private $_isBaseCell	= array();
+	private $_isBaseCell	= [];
 
 	/**
 	 * Excel rows that should not be written as HTML rows
 	 *
 	 * @var array
 	 */
-	private $_isSpannedRow	= array();
+	private $_isSpannedRow	= [];
 
 	/**
 	 * Is the current writer creating PDF?
@@ -1309,7 +1309,7 @@ class PHPExcel_Writer_HTML extends PHPExcel_Writer_Abstract implements PHPExcel_
 	 * @param array
 	 * @return string
 	 */
-	private function _assembleCSS($pValue = array())
+	private function _assembleCSS($pValue = [])
 	{
 		$pairs = [];
 		foreach ($pValue as $property => $value) {

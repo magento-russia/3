@@ -579,7 +579,7 @@ abstract class phpQuery {
 				self::$pluginsStaticMethods[$method] = $class;
 			}
 			if (method_exists($realClass, '__initialize'))
-				call_user_func_array(array($realClass, '__initialize'), array());
+				call_user_func_array(array($realClass, '__initialize'), []);
 		}
 		// object methods
 		if (class_exists('phpQueryObjectPlugin_'.$class)) {
@@ -667,7 +667,7 @@ abstract class phpQuery {
 	 * @TODO $options['data'] as string
 	 * @TODO XHR interface
 	 */
-	public static function ajax($options = array(), $xhr = null) {
+	public static function ajax($options = [], $xhr = null) {
 		$options = array_merge(
 			self::$ajaxSettings, $options
 		);
@@ -1068,7 +1068,7 @@ abstract class phpQuery {
 	 * @param $paramStructure
 	 * @return unknown_type
 	 */
-	public static function callbackRun($callback, $params = array(), $paramStructure = null) {
+	public static function callbackRun($callback, $params = [], $paramStructure = null) {
 		if (! $callback)
 			return;
 		if ($callback instanceof CallbackParameterToReference) {

@@ -226,7 +226,7 @@ class Service extends \Df\Payment\Config\Area {
 					dfa(
 						$this->constManager()->methodsCA()
 						,$this->getSelectedPaymentMethod()
-						,array()
+						,[]
 					)
 					,'code'
 				)

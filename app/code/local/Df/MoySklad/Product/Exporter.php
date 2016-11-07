@@ -9,7 +9,7 @@ class Exporter extends \Df_Catalog_Model_Product_Exporter {
 	 * @used-by Df_Catalog_Product_Exporter::getAttributesToSelect()
 	 * @return string|string[]
 	 */
-	protected function additionalAttributes() {return array();}
+	protected function additionalAttributes() {return [];}
 
 	/**
 	 * 2016-10-09
@@ -67,6 +67,6 @@ class Exporter extends \Df_Catalog_Model_Product_Exporter {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return self
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }
 

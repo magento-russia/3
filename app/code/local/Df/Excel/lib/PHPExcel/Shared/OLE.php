@@ -276,12 +276,12 @@ class PHPExcel_Shared_OLE
 			$type = self::_readInt1($fh);
 			switch ($type) {
 			case self::OLE_PPS_TYPE_ROOT:
-				$pps = new PHPExcel_Shared_OLE_PPS_Root(null, null, array());
+				$pps = new PHPExcel_Shared_OLE_PPS_Root(null, null, []);
 				$this->root = $pps;
 				break;
 			case self::OLE_PPS_TYPE_DIR:
 				$pps = new PHPExcel_Shared_OLE_PPS(null, null, null, null, null,
-								   null, null, null, null, array());
+								   null, null, null, null, []);
 				break;
 			case self::OLE_PPS_TYPE_FILE:
 				$pps = new PHPExcel_Shared_OLE_PPS_File($name);

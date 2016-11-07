@@ -19,7 +19,7 @@ abstract class Df_Core_Model_Geo_Locator_Real extends Df_Core_Model_Geo_Locator 
 	protected function convertXml($text) {
 		/** @var \Df\Xml\X|null $xml */
 		$xml = df_xml_parse($text, $throw = false);
-		return !$xml ? array() : $xml->asCanonicalArray();
+		return !$xml ? [] : $xml->asCanonicalArray();
 	}
 
 	/** @return string */
@@ -78,7 +78,7 @@ abstract class Df_Core_Model_Geo_Locator_Real extends Df_Core_Model_Geo_Locator 
 	}
 
 	/** @return array(string => string) */
-	protected function getUrlParamsAdditional() {return array();}
+	protected function getUrlParamsAdditional() {return [];}
 
 	/**
 	 * @param string $propertyName

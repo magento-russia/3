@@ -42,10 +42,10 @@ class Df_Core_Block_FormattedText extends Df_Core_Block_Template_NoCache {
 			$result = $this->font()->applyLetterCase($this->getRawText());
 			if ($this->font()->needSetup()) {
 				if ($this->font()->useBold()) {
-					$result = df_tag('strong', array(), $result);
+					$result = df_tag('strong', [], $result);
 				}
 				if ($this->font()->useItalic()) {
-					$result = df_tag('em', array(), $result);
+					$result = df_tag('em', [], $result);
 				}
 				$result = df_tag('span', $this->getSpanAttributes(), $result);
 			}

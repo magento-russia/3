@@ -62,7 +62,7 @@ class Df_Catalog_Block_Product_List extends Mage_Catalog_Block_Product_List {
 	 * @param array $additional
 	 * @return string
 	 */
-	public function getAddToCartUrl($product, $additional = array()) {
+	public function getAddToCartUrl($product, $additional = []) {
 		return
 			(
 					df_module_enabled(Df_Core_Module::TWEAKS)

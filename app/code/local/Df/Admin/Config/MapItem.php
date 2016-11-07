@@ -9,7 +9,7 @@ abstract class Df_Admin_Config_MapItem extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Admin_Config_MapItem
 	 */
-	public static function ic($class, array $parameters = array()) {
+	public static function ic($class, array $parameters = []) {
 		return df_ic($class, __CLASS__, $parameters);
 	}
 }

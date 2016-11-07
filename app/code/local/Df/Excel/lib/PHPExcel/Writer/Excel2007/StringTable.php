@@ -300,7 +300,7 @@ class PHPExcel_Writer_Excel2007_StringTable extends PHPExcel_Writer_Excel2007_Wr
 	 * @param 	array	$stringTable	Stringtable
 	 * @return 	array
 	 */
-	public function flipStringTable($stringTable = array()) {
+	public function flipStringTable($stringTable = []) {
 		// Return value
 		$returnValue = [];
 

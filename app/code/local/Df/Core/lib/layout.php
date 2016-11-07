@@ -12,7 +12,7 @@
  * @return Mage_Core_Block_Abstract
  * @throws Exception
  */
-function df_block($block = null, $params = array()) {
+function df_block($block = null, $params = []) {
 	/** @var Mage_Core_Block_Abstract $result */
 	if (is_string($params)) {
 		$params = array('template' => $params);
@@ -99,7 +99,7 @@ function df_block_head() {
  * @return Mage_Core_Block_Abstract
  * @throws Exception
  */
-function df_block_l($block, $params = array()) {
+function df_block_l($block, $params = []) {
 	/** @var Mage_Core_Block_Abstract $result */
 	$result = df_layout()->createBlock(df_block($block, $params));
 	if (!$result) {
@@ -235,7 +235,7 @@ function df_block_remove($block) {
  * @return bool
  */
 function df_handle($handle) {
-	/** @uses array_flip() / @uses isset() работает быстрее, чем @see in_array() */
+	/** @uses array_flip() / @uses isset() работает быстрее, чем @see in_[] */
 	/** @var bool[] $cache */
 	static $handles;
 	if (is_null($handles)) {
@@ -332,7 +332,7 @@ function df_page_skin_js($file) {
  * @return string
  * @throws Exception
  */
-function df_render($block, $params = array()) {return df_block($block, $params)->toHtmlFast();}
+function df_render($block, $params = []) {return df_block($block, $params)->toHtmlFast();}
 
 /**
  * 2015-04-01
@@ -342,7 +342,7 @@ function df_render($block, $params = array()) {return df_block($block, $params)-
  * @return string
  * @throws Exception
  */
-function df_render_child(Mage_Core_Block_Abstract $parent, $block, $params = array()) {
+function df_render_child(Mage_Core_Block_Abstract $parent, $block, $params = []) {
 	return df_block($block, $params)->setParentBlock($parent)->toHtmlFast();
 }
 
@@ -359,7 +359,7 @@ function df_render_child(Mage_Core_Block_Abstract $parent, $block, $params = arr
  * @return string
  * @throws Exception
  */
-function df_render_l($block, $params = array()) {
+function df_render_l($block, $params = []) {
 	return df_render(df_block($block, $params)->setLayout(df_layout()));
 }
 
@@ -376,7 +376,7 @@ function df_render_l($block, $params = array()) {
  * @param string|array(string => mixed) $params [optional]
  * @return string
  */
-function df_render_simple($template, array $params = array()) {
+function df_render_simple($template, array $params = []) {
 	return df_render(null, array('template' => $template) + $params);
 }
 
@@ -387,7 +387,7 @@ function df_render_simple($template, array $params = array()) {
  * @param string|array(string => mixed) $params [optional]
  * @return string
  */
-function df_render_simple_child(Mage_Core_Block_Template $parent, $templateShort, array $params = array()) {
+function df_render_simple_child(Mage_Core_Block_Template $parent, $templateShort, array $params = []) {
 	return df_render_simple(Mage::getDesign()->getTemplateFilename(
 		/**
 		 * Обратите внимание, что мы намеренно используем @uses Mage_Core_Block_Template::getTemplate()

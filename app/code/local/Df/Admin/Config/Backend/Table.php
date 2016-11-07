@@ -236,14 +236,14 @@ class Df_Admin_Config_Backend_Table extends Df_Admin_Config_Backend {
 			 * к двумерному (ручной формат JSON):
 			 * array("RU", "UA") => array(array("RU"), array("UA")))
 			 */
-			/** @uses df_array() */
+			/** @uses df_[] */
 			$result = array_map('df_array', $result);
 			/**
 			 * Теперь добавляем названия колонок:
 			 * array(array("RU"), array("UA"))) =>
 			 * array(array("code" => "RU"), array("code" => "UA")))
 			 */
-			$result = df_map('array_combine', $result, array(), array($fields));
+			$result = df_map('array_combine', $result, [], array($fields));
 			/**
 			 * Теперь добавляем идентификаторы строк:
 			 * array(array("code" => "RU"), array("code" => "UA"))) =>

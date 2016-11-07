@@ -218,11 +218,11 @@ class Df_Catalog_Model_Resource_Url extends Mage_Catalog_Model_Resource_Url {
 		$table = df_table('catalog_category_entity_int');
 		$select->joinLeft(array('d' => $table),
 				'd.attribute_id = :attribute_id AND d.store_id = 0 AND d.entity_id = main_table.entity_id',
-				array()
+				[]
 			)
 			->joinLeft(array('c' => $table),
 				'c.attribute_id = :attribute_id AND c.store_id = :store_id AND c.entity_id = main_table.entity_id',
-				array()
+				[]
 			)
 		;
 		if ($storeId !== null) {

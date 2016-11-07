@@ -61,5 +61,5 @@ class Df_Sales_Model_Order_Address extends Mage_Sales_Model_Order_Address {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Sales_Model_Order_Address
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

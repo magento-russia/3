@@ -15,7 +15,7 @@ class Df_Eav_Model_Entity_Attribute_Namer extends Df_Core_Model {
 				if (0 === df_nat0($attribute->getId())) {
 					break;
 				}
-				$attribute->setData(array());
+				$attribute->setData([]);
 				$attempt++;
 			};
 			df_result_string_not_empty($result);
@@ -52,7 +52,7 @@ class Df_Eav_Model_Entity_Attribute_Namer extends Df_Core_Model {
 	}
 
 	/** @return string[] */
-	private function getPrefixes() {return $this->cfg(self::P__PREFIXES, array());}
+	private function getPrefixes() {return $this->cfg(self::P__PREFIXES, []);}
 
 	/** @return string[] */
 	private function getPrefixesAdjusted() {
@@ -113,7 +113,7 @@ class Df_Eav_Model_Entity_Attribute_Namer extends Df_Core_Model {
 	 * @param int $entityTypeId [optional]
 	 * @return Df_Eav_Model_Entity_Attribute_Namer
 	 */
-	public static function i($nameDesired, array $prefixes = array(), $entityTypeId = null) {
+	public static function i($nameDesired, array $prefixes = [], $entityTypeId = null) {
 		return new self(array(
 			self::P__NAME_DESIRED => $nameDesired
 			, self::P__PREFIXES => $prefixes

@@ -58,7 +58,7 @@ class Df_PageCache_Model_Container_Catalognavigation extends Df_PageCache_Model_
 	 * @param array $tags
 	 * @return Df_PageCache_Model_Container_Abstract
 	 */
-	public function saveCache($blockContent, $tags = array())
+	public function saveCache($blockContent, $tags = [])
 	{
 		$blockCacheId = $this->_getBlockCacheId();
 		if ($blockCacheId) {

@@ -257,5 +257,5 @@ class Df_Chronopay_Model_Standard extends Mage_Payment_Model_Method_Abstract {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Chronopay_Model_Standard
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

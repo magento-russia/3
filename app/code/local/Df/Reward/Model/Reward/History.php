@@ -10,7 +10,7 @@ class Df_Reward_Model_Reward_History extends Df_Core_Model {
 	 */
 	public function addAdditionalData($data) {
 		if (is_array($data)) {
-			$additional = $this->getDataSetDefault('additional_data', array());
+			$additional = $this->getDataSetDefault('additional_data', []);
 			if (!is_array($additional)) {
 				if (is_string($additional)) {
 					$additional = @unserialize($additional);
@@ -204,7 +204,7 @@ class Df_Reward_Model_Reward_History extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Reward_Model_Reward_History
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id

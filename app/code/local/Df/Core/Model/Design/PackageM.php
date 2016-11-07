@@ -61,7 +61,7 @@ class Df_Core_Model_Design_PackageM extends Mage_Core_Model_Design_Package {
 			//Mage::log('cache miss!');
 			/** @noinspection PhpDeprecationInspection */
 			$result = $this->_fallback($file, $params, array(
-				array(),
+				[],
 				array('_theme' => $this->getFallbackTheme()),
 				array('_theme' => self::DEFAULT_THEME),
 			));
@@ -105,7 +105,7 @@ class Df_Core_Model_Design_PackageM extends Mage_Core_Model_Design_Package {
 	 * @param array(string => mixed) $params [optional]
 	 * @return string
 	 */
-	public function getSkinUrl($file = null, array $params = array()) {
+	public function getSkinUrl($file = null, array $params = []) {
 		/** @var string $result */
 		$result = parent::getSkinUrl($file, $params);
 		if (df_contains($result, '/rm/')) {
@@ -147,7 +147,7 @@ class Df_Core_Model_Design_PackageM extends Mage_Core_Model_Design_Package {
 	 * @param array $fallbackScheme
 	 * @return string
 	 */
-	protected function _fallback($file, array &$params, array $fallbackScheme = array(array())) {
+	protected function _fallback($file, array &$params, array $fallbackScheme = array([])) {
 		/**
 		 * Раньше здесь стояло:
 		 *

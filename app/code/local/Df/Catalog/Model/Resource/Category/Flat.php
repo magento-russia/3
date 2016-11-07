@@ -31,7 +31,7 @@ class Df_Catalog_Model_Resource_Category_Flat extends Mage_Catalog_Model_Resourc
 	protected function _getAttributeValues($entityIds, $store_id) {
 		$entityIds = df_array($entityIds);
 		/** @var array(int => mixed[]) $values */
-		$values = array_fill_keys($entityIds, array());
+		$values = array_fill_keys($entityIds, []);
 		$attributes = $this->_getAttributes();
 		foreach (self::getAttributeTypes() as $type) {
 			foreach ($this->_getAttributeTypeValues($type, $entityIds, $store_id) as $row) {

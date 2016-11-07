@@ -226,7 +226,7 @@ class Df_Cms_Model_Tree extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Cms_Model_Tree
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 
 	/**
 	 * TemplateMela использует старую схему работы с меню: http://magento-forum.ru/forum/317/

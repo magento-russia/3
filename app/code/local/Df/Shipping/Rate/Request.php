@@ -675,7 +675,7 @@ class Request extends \Mage_Shipping_Model_Rate_Request {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return self
 	 */
-	public static function i(\Df\Shipping\Carrier $carrier, array $parameters = array()) {
+	public static function i(\Df\Shipping\Carrier $carrier, array $parameters = []) {
 		$result = new self($parameters);
 		$result->_carrier = $carrier;
 		return $result;

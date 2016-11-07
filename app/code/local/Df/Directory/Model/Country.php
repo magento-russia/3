@@ -108,7 +108,7 @@ class Df_Directory_Model_Country extends Mage_Directory_Model_Country {
 				dfa(
 					df_h()->directory()->country()->getMapFromIso2CodeToNameCases()
 					,$this->getIso2Code()
-					,array()
+					,[]
 				)
 			;
 		}
@@ -139,7 +139,7 @@ class Df_Directory_Model_Country extends Mage_Directory_Model_Country {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Directory_Model_Country
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param string $isoCode

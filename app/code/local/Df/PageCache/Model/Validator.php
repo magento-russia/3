@@ -124,6 +124,6 @@ class Df_PageCache_Model_Validator
 	protected function _getDataDependencies($xpath)
 	{
 		$node = Mage::getConfig()->getNode($xpath);
-		return (!$node)? array() : array_values($node->asArray());
+		return (!$node)? [] : array_values($node->asArray());
 	}
 }

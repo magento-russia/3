@@ -417,7 +417,7 @@ class Api extends \Df_Core_Model {
 	 * @return mixed[]
 	 */
 	private function call(
-		$method, $requestKey = null, $authKey = null, $responseKey = null, array $params = array()
+		$method, $requestKey = null, $authKey = null, $responseKey = null, array $params = []
 	) {
 		if (!$authKey) {
 			$authKey = 'Auth';

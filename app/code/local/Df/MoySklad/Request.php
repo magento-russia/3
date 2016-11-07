@@ -9,7 +9,7 @@ class Request extends \Df_Core_Model {
 	 * @param array[string => mixed] $data [optional]
 	 * @return \Zend_Http_Response
 	 */
-	private function response($method, $suffix = '', array $data = array()) {
+	private function response($method, $suffix = '', array $data = []) {
 		/** @var \Df\MoySklad\Settings\General $s */
 		$s = \Df\MoySklad\Settings\General::s();
 		/** @var \Zend_Http_Client $c */

@@ -46,7 +46,7 @@ function df_admin_button_location($url) {
  * @return void
  * @throws Exception
  */
-function df_admin_call($object, $method, array $parameters = array()) {
+function df_admin_call($object, $method, array $parameters = []) {
 	Df_Admin_Model_Mode::s()->call($object, $method, $parameters);
 }
 

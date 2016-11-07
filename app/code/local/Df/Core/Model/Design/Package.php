@@ -20,7 +20,7 @@ class Df_Core_Model_Design_Package extends Df_Core_Model {
 	/** @return array(string => mixed) */
 	private function getPackageConfig() {
 		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = !$this->isCustom() ? array() : df_config_a(
+			$this->{__METHOD__} = !$this->isCustom() ? [] : df_config_a(
 				'rm/design/package', df_design_package()->getPackageName()
 			);
 		}

@@ -107,7 +107,7 @@ class PHPExcel_Style extends PHPExcel_Style_Supervisor implements PHPExcel_IComp
         $this->_isSupervisor = $isSupervisor;
 
         // Initialise values
-        $this->_conditionalStyles	= array();
+        $this->_conditionalStyles	= [];
         $this->_font              = new PHPExcel_Style_Font($isSupervisor, $isConditional);
         $this->_fill              = new PHPExcel_Style_Fill($isSupervisor, $isConditional);
         $this->_borders           = new PHPExcel_Style_Borders($isSupervisor, $isConditional);

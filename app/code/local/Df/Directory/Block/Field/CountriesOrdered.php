@@ -18,7 +18,7 @@ class Df_Directory_Block_Field_CountriesOrdered extends Df_Admin_Block_Field_Dyn
 			Df_Directory_Config_MapItem_Country::P__ISO2
 			, 'страна'
 			, df_countries_options('-- выберите страну --')
-			, array()
+			, []
 			, array('width' => 180, 'dropdownCss' => array('width' => 200))
 		));
 		$this->_addAfter = false;

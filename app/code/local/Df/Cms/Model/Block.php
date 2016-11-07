@@ -56,7 +56,7 @@ class Df_Cms_Model_Block extends Mage_Cms_Model_Block {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Cms_Model_Block
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id

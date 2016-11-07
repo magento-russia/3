@@ -56,7 +56,7 @@ class Df_Cms_Block_Admin_Page_Edit_Tab_Hierarchy
 					);
 					/** @var Df_Cms_Model_Hierarchy_Node $item */
 					$item = $collection->getItemById($v['node_id']);
-					$node['assigned_to_stores'] = !$item ? array() : $this->getPageStoreIds($item);
+					$node['assigned_to_stores'] = !$item ? [] : $this->getPageStoreIds($item);
 					$this->_nodes[]= $node;
 				}
 			} else {
@@ -84,7 +84,7 @@ class Df_Cms_Block_Admin_Page_Edit_Tab_Hierarchy
 	public function getPageStoreIds(Df_Cms_Model_Hierarchy_Node $node) {
 		return
 			(!$node->getPageId() || !$node->getPageInStores())
-			? array()
+			? []
 			: df_csv_parse_int($node->getPageInStores())
 		;
 	}

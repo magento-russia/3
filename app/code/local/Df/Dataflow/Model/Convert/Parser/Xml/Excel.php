@@ -7,7 +7,7 @@ class Df_Dataflow_Model_Convert_Parser_Xml_Excel extends Mage_Dataflow_Model_Con
 	 * @param array $fields
 	 * @return string
 	 */
-	protected function _getXmlString(array $fields = array()) {
+	protected function _getXmlString(array $fields = []) {
 		/** @var bool $patchNeeded */
 		static $patchNeeded;
 		if (is_null($patchNeeded)) {
@@ -24,7 +24,7 @@ class Df_Dataflow_Model_Convert_Parser_Xml_Excel extends Mage_Dataflow_Model_Con
 	 * @param array $fields
 	 * @return string
 	 */
-	private function _getXmlStringDf(array $fields = array()) {
+	private function _getXmlStringDf(array $fields = []) {
 		$xmlData = [];
 		$xmlData[]= '<Row>';
 		foreach ($fields as $value) {

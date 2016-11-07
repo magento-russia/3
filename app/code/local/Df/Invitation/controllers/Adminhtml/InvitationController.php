@@ -179,7 +179,7 @@ class Df_Invitation_Adminhtml_InvitationController extends Mage_Adminhtml_Contro
 	public function massResendAction()
 	{
 		try {
-			$invitationsPost = $this->getRequest()->getParam('invitations', array());
+			$invitationsPost = $this->getRequest()->getParam('invitations', []);
 			if (empty($invitationsPost) || !is_array($invitationsPost)) {
 				Mage::throwException(df_h()->invitation()->__('Please select invitations.'));
 			}
@@ -238,7 +238,7 @@ class Df_Invitation_Adminhtml_InvitationController extends Mage_Adminhtml_Contro
 	public function massCancelAction()
 	{
 		try {
-			$invitationsPost = $this->getRequest()->getParam('invitations', array());
+			$invitationsPost = $this->getRequest()->getParam('invitations', []);
 			if (empty($invitationsPost) || !is_array($invitationsPost)) {
 				Mage::throwException(df_h()->invitation()->__('Please select invitations.'));
 			}

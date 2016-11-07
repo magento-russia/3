@@ -13,7 +13,7 @@ class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Js ex
 				'name' => $website->getName()
 				,'website_id' => $websiteId
 				,'currency_code' => $website->getBaseCurrencyCode()
-				,'groups' => array()
+				,'groups' => []
 			);
 			foreach ($website->getGroups() as $groupId => $group) {
 				$result[$websiteId]['groups'][$groupId] = array(

@@ -64,7 +64,7 @@ function df_load($model, $id, $field = null, $throwOnError = true) {
  * @return Mage_Core_Model_Abstract
  * @throws Exception
  */
-function df_model($modelClass = '', $parameters = array()) {
+function df_model($modelClass = '', $parameters = []) {
 	/**
 	 * Удаление df_param_string
 	 * ускорило загрузку главной страницы на эталонном тесте
@@ -124,7 +124,7 @@ function df_model($modelClass = '', $parameters = array()) {
  * @return Mage_Core_Model_Abstract
  * @throws Exception
  */
-function df_model_insert($modelClass = '', $parameters = array()) {
+function df_model_insert($modelClass = '', $parameters = []) {
 	/** @var Mage_Core_Model_Abstract $result */
 	$result = df_model($modelClass, $parameters);
 	/**

@@ -61,7 +61,7 @@ class Df_Catalog_Model_Convert_Adapter_Category extends Mage_Eav_Model_Convert_A
 
 		$rootId = $store->getRootCategoryId();
 		if (!$rootId) {
-			return array();
+			return [];
 		}
 		$rootPath = '1/'.$rootId;
 		if (empty($this->_categoryCache[$store->getId()])) {

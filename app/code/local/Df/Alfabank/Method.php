@@ -58,7 +58,7 @@ class Method extends \Df\Payment\Method\WithRedirect {
 	 * @used-by \Df\Payment\Block\Redirect::getFormFields()
 	 * @return array(string => string|int)
 	 */
-	public function getPaymentPageParams() {return array();}
+	public function getPaymentPageParams() {return [];}
 
 	/**
 	 * @override

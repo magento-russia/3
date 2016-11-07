@@ -118,7 +118,7 @@ class Df_Catalog_Model_Resource_Eav_Attribute extends Mage_Catalog_Model_Resourc
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Catalog_Model_Resource_Eav_Attribute
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return Df_Catalog_Model_Resource_Product_Attribute_Collection */
 	public static function c() {return new Df_Catalog_Model_Resource_Product_Attribute_Collection;}
 }

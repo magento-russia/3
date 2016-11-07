@@ -67,7 +67,7 @@ class Df_Cms_Block_Frontend_Menu_Contents extends Df_Core_Block_Abstract {
 	 * @param array $attributes [optional]
 	 * @return string
 	 */
-	private function createHtmlList($content, array $attributes = array()) {
+	private function createHtmlList($content, array $attributes = []) {
 		return df_tag('ul', $attributes, $content);
 	}
 
@@ -76,7 +76,7 @@ class Df_Cms_Block_Frontend_Menu_Contents extends Df_Core_Block_Abstract {
 	 * @param array $attributes [optional]
 	 * @return string
 	 */
-	private function createHtmlListItem($content, array $attributes = array()) {
+	private function createHtmlListItem($content, array $attributes = []) {
 		return df_tag('li', $attributes, $content);
 	}
 
@@ -141,7 +141,7 @@ class Df_Cms_Block_Frontend_Menu_Contents extends Df_Core_Block_Abstract {
 					df_h()->cms()->getCurrentNode()
 				&&
 					($cmsNode->getId() === df_h()->cms()->getCurrentNode()->getId())
-			? df_tag('span', array(), df_tag('strong', array(), $cmsNode->getLabel()))
+			? df_tag('span', [], df_tag('strong', [], $cmsNode->getLabel()))
 			: df_tag('a', array('href' => $cmsNode->getUrl()), $cmsNode->getLabel())
 		;
 	}

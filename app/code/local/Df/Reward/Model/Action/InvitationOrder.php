@@ -38,7 +38,7 @@ class Df_Reward_Model_Action_InvitationOrder extends Df_Reward_Model_Action_Abst
 	 * @param array $args Additional history data
 	 * @return string
 	 */
-	public function getHistoryMessage($args = array())
+	public function getHistoryMessage($args = [])
 	{
 		$email = isset($args['email']) ? $args['email'] : '';
 		return df_h()->reward()->__('Invitation to %s converted into an order.', $email);

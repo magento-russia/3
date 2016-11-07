@@ -815,7 +815,7 @@ class Df_PageCache_Model_Processor
 			if ($cacheMetadata) {
 				$cacheMetadata = unserialize($cacheMetadata);
 			}
-			$this->_metaData = (empty($cacheMetadata) || !is_array($cacheMetadata)) ? array() : $cacheMetadata;
+			$this->_metaData = (empty($cacheMetadata) || !is_array($cacheMetadata)) ? [] : $cacheMetadata;
 		}
 	}
 

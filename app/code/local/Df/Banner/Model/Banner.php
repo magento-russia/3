@@ -97,7 +97,7 @@ class Df_Banner_Model_Banner extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Banner_Model_Banner
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @used-by Df_Banner_Block_Banner::getBanner()
 	 * @used-by Df_Banner_Adminhtml_BannerController::massDeleteAction()

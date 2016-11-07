@@ -22,7 +22,7 @@ abstract class Df_Admin_Block_Column extends Df_Core_Block_Admin {
 	 * @used-by getRenderOptions()
 	 * @return array(string => mixed)
 	 */
-	protected function getDefaultRenderOptions() {return array();}
+	protected function getDefaultRenderOptions() {return [];}
 
 	/** @return Varien_Data_Form_Element_Abstract */
 	private function getField() {return $this->cfg(self::$P__FIELD);}

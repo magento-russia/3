@@ -317,7 +317,7 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 	 * @return Df_Catalog_Model_Category
 	 * @throws Exception
 	 */
-	public static function i(array $parameters = array()) {
+	public static function i(array $parameters = []) {
 		/**
 		 * Перед созданием и сохранением товарного раздела
 		 * надо обязательно надо установить текущим магазином административный,

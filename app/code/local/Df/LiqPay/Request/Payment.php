@@ -56,7 +56,7 @@ class Payment extends \Df\Payment\Request\Payment {
 			$object = new \Varien_Object($this->getParamsForXml());
 			$this->{__METHOD__} = $object->toXml(
 				// все свойства
-				$arrAttributes = array()
+				$arrAttributes = []
 				// корневой тег
 				, $rootName = 'request'
 				/* не добавлять <?xml version="1.0" encoding="UTF-8"?> */

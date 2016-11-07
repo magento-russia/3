@@ -70,7 +70,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 	 * @param int[] $value [optional]
 	 * @return Df_Review_Model_Review
 	 */
-	public function setStores(array $value = array()) {
+	public function setStores(array $value = []) {
 		$this->setData(self::P__STORES, $value);
 		return $this;
 	}
@@ -113,7 +113,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Review_Model_Review
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
 	public static function s() {static $r; return $r ? $r : $r = new self;}
 }

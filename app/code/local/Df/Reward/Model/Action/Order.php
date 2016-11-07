@@ -9,7 +9,7 @@ class Df_Reward_Model_Action_Order extends Df_Reward_Model_Action_Abstract {
 	 * @param array $args Additional history data
 	 * @return string
 	 */
-	public function getHistoryMessage($args = array())
+	public function getHistoryMessage($args = [])
 	{
 		$incrementId = isset($args['increment_id']) ? $args['increment_id'] : '';
 		return df_h()->reward()->__('Redeemed for order #%s.', $incrementId);

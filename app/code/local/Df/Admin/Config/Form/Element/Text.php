@@ -8,7 +8,7 @@ class Df_Admin_Config_Form_Element_Text extends Varien_Data_Form_Element_Text {
 	 * @param string $quote
 	 * @return string
 	 */
-	public function serialize($attributes = array(), $valueSeparator='=', $fieldSeparator=' ', $quote='"') {
+	public function serialize($attributes = [], $valueSeparator='=', $fieldSeparator=' ', $quote='"') {
 		if (!$this->needAutocomplete()) {
 			$this->setData('autocomplete', 'off');
 			$attributes[]= 'autocomplete';

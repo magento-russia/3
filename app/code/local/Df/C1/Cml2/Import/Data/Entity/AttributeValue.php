@@ -88,7 +88,7 @@ abstract class AttributeValue extends \Df\C1\Cml2\Import\Data\Entity {
 	}
 
 	/** @return array(string => string|int) */
-	protected function getCreationParamsCustom() {return array();}
+	protected function getCreationParamsCustom() {return [];}
 
 	/**
 	 * @param Attribute $attribute

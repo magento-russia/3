@@ -31,7 +31,7 @@ class Df_Dataflow_Model_Import_Config extends Df_Core_Model {
 		$result =
 				is_null(df_mage()->dataflow()->batch()->getId())
 			?
-				array()
+				[]
 			:
 				df_mage()->dataflow()->batch()->getParams()
 		;
@@ -45,7 +45,7 @@ class Df_Dataflow_Model_Import_Config extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Dataflow_Model_Import_Config
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 
 	const DATAFLOW_PARAM__STORE = 'store';
 	const DATAFLOW_PARAM__PRODUCT_TYPE = 'type';

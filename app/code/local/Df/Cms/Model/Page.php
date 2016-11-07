@@ -79,7 +79,7 @@ class Df_Cms_Model_Page extends Mage_Cms_Model_Page {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Cms_Model_Page
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id

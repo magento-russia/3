@@ -137,5 +137,5 @@ class Df_Sales_Block_Admin_Grid_OrderItem_Collection extends Df_Varien_Data_Coll
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Sales_Block_Admin_Grid_OrderItem_Collection
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

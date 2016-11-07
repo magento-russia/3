@@ -133,5 +133,5 @@ class Df_Dataflow_Model_Exporter_Product_Categories extends Df_Core_Model {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Dataflow_Model_Exporter_Product_Categories
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

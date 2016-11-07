@@ -34,7 +34,7 @@ abstract class Df_Core_Model_Resource_Collection extends Mage_Core_Model_Resourc
 	 * @param mixed $args [optional]
 	 * @return void
 	 */
-	public function getModelName($args = array()) {df_should_not_be_here();}
+	public function getModelName($args = []) {df_should_not_be_here();}
 
 	/**
 	 * 2015-02-09

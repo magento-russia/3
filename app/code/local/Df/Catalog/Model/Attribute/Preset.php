@@ -4,7 +4,7 @@ class Df_Catalog_Model_Attribute_Preset extends Df_Core_Model {
 	 * @param array(string => string|int|bool) $params [optional]
 	 * @return array(string => string|int|bool)
 	 */
-	public static function administrative(array $params = array()) {
+	public static function administrative(array $params = []) {
 		return self::preset($params, array(
 			/**
 			 * В Magento CE 1.4, если поле «attribute_model» присутствует,

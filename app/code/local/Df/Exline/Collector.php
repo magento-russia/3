@@ -54,7 +54,7 @@ class Collector extends \Df\Shipping\Collector\Kz {
 	 * @param array(string => string) $additional [optional]
 	 * @return array(string => string)
 	 */
-	private function json($uriSuffix, $serviceId, $jsonPath, array $additional = array()) {
+	private function json($uriSuffix, $serviceId, $jsonPath, array $additional = []) {
 		/** @var array(string => string) $result */
 		$result = Request::i($uriSuffix, $additional + array(
 			'origin' => $this->locationOrigId()

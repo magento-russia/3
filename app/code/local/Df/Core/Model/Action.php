@@ -299,7 +299,7 @@ abstract class Df_Core_Model_Action extends Df_Core_Model {
 	 * @param array(string => mixed) $arguments [optional]
 	 * @return void
 	 */
-	protected function redirect($path, array $arguments = array()) {
+	protected function redirect($path, array $arguments = []) {
 		$this->controller()->setRedirectWithCookieCheck($path, $arguments);
 	}
 

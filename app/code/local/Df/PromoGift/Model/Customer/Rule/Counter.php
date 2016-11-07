@@ -10,7 +10,7 @@ class Df_PromoGift_Model_Customer_Rule_Counter extends Df_Core_Model {
 		foreach ($dataContainer as $ruleData) {
 			/** @var array $ruleData */
 			df_assert_array($ruleData);
-			$ruleQuoteItems= dfa($ruleData, self::KEY_RULE_QUOTE_ITEMS, array());
+			$ruleQuoteItems= dfa($ruleData, self::KEY_RULE_QUOTE_ITEMS, []);
 			df_assert_array($ruleQuoteItems);
 			$result = array_merge ($result, array_values($ruleQuoteItems));
 		}
@@ -42,7 +42,7 @@ class Df_PromoGift_Model_Customer_Rule_Counter extends Df_Core_Model {
 		/**
 		 * Учитываем подарочный товар
 		 */
-		$ruleQuoteItems = dfa($ruleData, self::KEY_RULE_QUOTE_ITEMS, array());
+		$ruleQuoteItems = dfa($ruleData, self::KEY_RULE_QUOTE_ITEMS, []);
 		$ruleQuoteItems[]= $quoteItemId;
 		$ruleData[self::KEY_RULE_QUOTE_ITEMS] = $ruleQuoteItems;
 		$ruleData[self::KEY_RULE_COUNTER] = $counterValue;

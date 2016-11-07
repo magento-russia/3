@@ -19,7 +19,7 @@ class Df_Page_Block_Template_Links extends Mage_Page_Block_Template_Links {
 	 * @return Df_Page_Block_Template_Links
 	 */
 	public function addLink(
-		$label, $url='', $title='', $prepare=false, $urlParams=array()
+		$label, $url='', $title='', $prepare=false, $urlParams=[]
 		, $position=null, $liParams=null, $aParams=null, $beforeText='', $afterText=''
 	) {
 		/**

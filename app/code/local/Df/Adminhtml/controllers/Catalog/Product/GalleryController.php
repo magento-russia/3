@@ -35,7 +35,7 @@ class Df_Adminhtml_Catalog_Product_GalleryController extends Mage_Adminhtml_Cata
 			$uploader->setAllowRenameFiles(true);
 			$uploader->setFilesDispersion(true);
 			/** @var string $imageName */
-			$imageName = dfa(dfa($_FILES, 'image', array()), 'name', '');
+			$imageName = dfa(dfa($_FILES, 'image', []), 'name', '');
 			// Начало заплатки
 			/** @var string $imageName */
 			/**

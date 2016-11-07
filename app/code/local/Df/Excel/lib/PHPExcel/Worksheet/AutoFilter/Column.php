@@ -244,7 +244,7 @@ class PHPExcel_Worksheet_AutoFilter_Column
 	 *	@throws	PHPExcel_Exception
 	 *	@return PHPExcel_Worksheet_AutoFilter_Column
 	 */
-	public function setAttributes($pAttributes = array()) {
+	public function setAttributes($pAttributes = []) {
 		$this->_attributes = $pAttributes;
 
 		return $this;

@@ -25,7 +25,7 @@ function df_bt($levelsToSkip = 0) {
 		/** @var array $currentState */
 		$currentState = dfa($bt, $traceIndex);
 		/** @var array(string => string) $nextState */
-		$nextState = dfa($bt, 1 + $traceIndex, array());
+		$nextState = dfa($bt, 1 + $traceIndex, []);
 		/** @var string $file */
 		$file = str_replace($bp, '', dfa($currentState, 'file'));
 		if ($nonStandardDS) {
@@ -60,7 +60,7 @@ function df_context() {
 	$count = func_num_args();
 	df_assert_gt0($count);
 	if (is_array($args[0])) {
-		df_map('call_user_func_array', $args, array(), __FUNCTION__);
+		df_map('call_user_func_array', $args, [], __FUNCTION__);
 	}
 	else {
 		df_assert_between($count, 2, 3);

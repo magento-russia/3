@@ -158,7 +158,7 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Rating_Model_Rating
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
 	public static function s() {static $r; return $r ? $r : $r = new self;}
 }

@@ -34,7 +34,7 @@ class Df_Admin_Config_DynamicTable_Column_Select
 	 * @return Df_Admin_Config_DynamicTable_Column
 	 */
 	public static function i(
-		$name, $label, array $options, array $htmlAttributes = array(), array $renderOptions = array()
+		$name, $label, array $options, array $htmlAttributes = [], array $renderOptions = []
 	) {
 		df_param_string_not_empty($name, 0);
 		df_param_string_not_empty($label, 1);

@@ -99,7 +99,7 @@ class PHPExcel_Style_Conditional implements PHPExcel_IComparable
     	$this->_conditionType		= PHPExcel_Style_Conditional::CONDITION_NONE;
     	$this->_operatorType		= PHPExcel_Style_Conditional::OPERATOR_NONE;
     	$this->_text    			= null;
-    	$this->_condition			= array();
+    	$this->_condition			= [];
     	$this->_style				= new PHPExcel_Style(FALSE, TRUE);
     }
 

@@ -287,7 +287,7 @@ class Df_Localization_Realtime_Dictionary extends Df_Localization_Dictionary {
 	 * @used-by Df_Localization_Realtime_Dictionary::translate()
 	 *
 	 * Метод реализован именно таким способом ради ускорения.
-	 * Данная реализация работает быстрее, нежели использование @see in_array()
+	 * Данная реализация работает быстрее, нежели использование @see in_[]
 	 * http://stackoverflow.com/a/5036972
 	 *
 	 * @param string $text

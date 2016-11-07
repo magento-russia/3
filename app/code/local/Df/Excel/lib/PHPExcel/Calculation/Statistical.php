@@ -837,7 +837,7 @@ class PHPExcel_Calculation_Statistical {
 	 * @param	mixed[]		$averageArgs	Data values
 	 * @return	float
 	 */
-	public static function AVERAGEIF($aArgs,$condition,$averageArgs = array()) {
+	public static function AVERAGEIF($aArgs,$condition,$averageArgs = []) {
 		// Return value
 		$returnValue = 0;
 
@@ -1731,7 +1731,7 @@ class PHPExcel_Calculation_Statistical {
 	 * @param	boolean				A logical value specifying whether to force the intersect to equal 0.
 	 * @return	array of float
 	 */
-	public static function GROWTH($yValues,$xValues=array(),$newValues=array(),$const=True) {
+	public static function GROWTH($yValues,$xValues=[],$newValues=[],$const=True) {
 		$yValues = PHPExcel_Calculation_Functions::flattenArray($yValues);
 		$xValues = PHPExcel_Calculation_Functions::flattenArray($xValues);
 		$newValues = PHPExcel_Calculation_Functions::flattenArray($newValues);
@@ -2204,7 +2204,7 @@ class PHPExcel_Calculation_Statistical {
 	 * @param	string		$condition		The criteria that defines which cells will be checked.
 	 * @return	float
 	 */
-	public static function MAXIF($aArgs,$condition,$sumArgs = array()) {
+	public static function MAXIF($aArgs,$condition,$sumArgs = []) {
 		// Return value
 		$returnValue = null;
 
@@ -2366,7 +2366,7 @@ class PHPExcel_Calculation_Statistical {
 	 * @param	string		$condition		The criteria that defines which cells will be checked.
 	 * @return	float
 	 */
-	public static function MINIF($aArgs,$condition,$sumArgs = array()) {
+	public static function MINIF($aArgs,$condition,$sumArgs = []) {
 		// Return value
 		$returnValue = null;
 
@@ -3333,7 +3333,7 @@ class PHPExcel_Calculation_Statistical {
 	 * @param	boolean				A logical value specifying whether to force the intersect to equal 0.
 	 * @return	array of float
 	 */
-	public static function TREND($yValues,$xValues=array(),$newValues=array(),$const=True) {
+	public static function TREND($yValues,$xValues=[],$newValues=[],$const=True) {
 		$yValues = PHPExcel_Calculation_Functions::flattenArray($yValues);
 		$xValues = PHPExcel_Calculation_Functions::flattenArray($xValues);
 		$newValues = PHPExcel_Calculation_Functions::flattenArray($newValues);

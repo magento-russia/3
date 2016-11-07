@@ -128,7 +128,7 @@ class Df_MoySklad_ExportController extends Df_Core_Controller_Admin {
 	 * @param array[string => mixed] $data [optional]
 	 * @return Zend_Http_Response
 	 */
-	private function request($method, $suffix = '', array $data = array()) {
+	private function request($method, $suffix = '', array $data = []) {
 		/** @var \Df\MoySklad\Settings\General $s */
 		$s = \Df\MoySklad\Settings\General::s();
 		/** @var Zend_Http_Client $c */

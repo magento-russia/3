@@ -51,7 +51,7 @@ class Df_Seo_Model_Template_Processor extends Df_Core_Model {
 					,PREG_SET_ORDER
 				)
 				? $matches
-				: array()
+				: []
 			)
 		;
 		return $result;

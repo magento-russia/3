@@ -33,5 +33,5 @@ class Df_Core_Model_Url extends Mage_Core_Model_Url {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Core_Model_Url
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 }

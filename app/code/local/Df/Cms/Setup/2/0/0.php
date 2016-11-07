@@ -145,7 +145,7 @@ class Df_Cms_Setup_2_0_0 extends Df_Core_Setup {
 			$this->conn()->query(
 				$this->conn()->select()
 					->from(array('p' => $t_PAGE))
-					->joinLeft(array('v' => $t_PAGE_REVISION), 'v.page_id = p.page_id', array())
+					->joinLeft(array('v' => $t_PAGE_REVISION), 'v.page_id = p.page_id', [])
 					->where('v.page_id is null')
 			)
 		;

@@ -27,8 +27,8 @@ abstract class Df_Localization_Block_Admin_Theme_Processor extends Df_Core_Block
 				, array_keys($this->getLinksParameters())
 				, array_values($this->getLinksParameters())
 			)
-			,$paramsToAppend = array()
-			,$paramsToPrepend = array('div', array())
+			,$paramsToAppend = []
+			,$paramsToPrepend = array('div', [])
 		));
 	}
 
@@ -58,7 +58,7 @@ abstract class Df_Localization_Block_Admin_Theme_Processor extends Df_Core_Block
 			$resultAsString = df_trim(df_nts(dfa($this->getProcessor()->getUrl(), 'demo')));
 			$this->{__METHOD__} =
 				!$resultAsString
-				? array()
+				? []
 				: df_t()->parseTextarea($resultAsString)
 			;
 		}
@@ -145,12 +145,12 @@ abstract class Df_Localization_Block_Admin_Theme_Processor extends Df_Core_Block
 							, df_map(
 								'df_tag'
 								, self::getDemoLinksParameters($href)
-								, $paramsToAppend = array()
+								, $paramsToAppend = []
 								, $paramsToPrepend = array('a')
 								, $keyPosition = DF_AFTER
 							)
-							, $paramsToAppend = array()
-							, $paramsToPrepend = array('li', array())
+							, $paramsToAppend = []
+							, $paramsToPrepend = array('li', [])
 						))
 					)
 				)

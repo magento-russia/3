@@ -20,7 +20,7 @@ abstract class Df_Yandex_OAuth extends Df_Core_Model {
 	}
 
 	/** @return array(string => string) */
-	protected function getAdditionalParams() {return array();}
+	protected function getAdditionalParams() {return [];}
 
 	/** @return string */
 	private function getAppId() {return $this->cfg(self::P__APP_ID);}

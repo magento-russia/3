@@ -437,7 +437,7 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 		$this->_dataSize = strlen($this->_data);
 
 		$this->_pos		= 0;
-		$this->_sheets	= array();
+		$this->_sheets	= [];
 
 		// Parse Workbook Global Substream
 		while ($this->_pos < $this->_dataSize) {
@@ -590,18 +590,18 @@ class PHPExcel_Reader_Excel5 extends PHPExcel_Reader_Abstract implements PHPExce
 		// initialize
 		$this->_pos					= 0;
 		$this->_codepage			= 'CP1252';
-		$this->_formats				= array();
-		$this->_objFonts			= array();
-		$this->_palette				= array();
-		$this->_sheets				= array();
-		$this->_externalBooks		= array();
-		$this->_ref					= array();
-		$this->_definedname			= array();
-		$this->_sst					= array();
+		$this->_formats				= [];
+		$this->_objFonts			= [];
+		$this->_palette				= [];
+		$this->_sheets				= [];
+		$this->_externalBooks		= [];
+		$this->_ref					= [];
+		$this->_definedname			= [];
+		$this->_sst					= [];
 		$this->_drawingGroupData	= '';
 		$this->_xfIndex				= '';
-		$this->_mapCellXfIndex		= array();
-		$this->_mapCellStyleXfIndex	= array();
+		$this->_mapCellXfIndex		= [];
+		$this->_mapCellStyleXfIndex	= [];
 
 		// Parse Workbook Global Substream
 		while ($this->_pos < $this->_dataSize) {

@@ -138,7 +138,7 @@ abstract class Carrier
 	 * @used-by \Df\Checkout\Module\Config\Manager::getTemplates()
 	 * @return array(string => string)
 	 */
-	public function getConfigTemplates() {return array();}
+	public function getConfigTemplates() {return [];}
 
 	/**
 	 * @see \Df\Checkout\Module\Main::getTitle()

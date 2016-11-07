@@ -33,7 +33,7 @@ class Df_Admin_Model_User extends Mage_Admin_Model_User {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Admin_Model_User
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @used-by Df_Cms_Block_Admin_Page_Revision_Edit_Info::getAuthor()
 	 * @param int|string $id

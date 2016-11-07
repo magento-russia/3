@@ -13,7 +13,7 @@ abstract class Area extends \Df\Checkout\Module\Config\Area {
 	 * а не по пути df_shipping/ems/title
 	 * @return array
 	 */
-	protected function getLegacyKeys() {return array();}
+	protected function getLegacyKeys() {return [];}
 
 	/**
 	 * @override

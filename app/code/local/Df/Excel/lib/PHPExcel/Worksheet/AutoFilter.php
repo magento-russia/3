@@ -741,7 +741,7 @@ class PHPExcel_Worksheet_AutoFilter
 									'method' => '_filterTestInPeriodDateSet',
 									'arguments' => $ruleValues
 								);
-								$filterColumn->setAttributes(array());
+								$filterColumn->setAttributes([]);
 							} else {
 								//	Date Range
 								$columnFilterTests[$columnID] = $this->_dynamicFilterDateRange($dynamicRuleType, $filterColumn);

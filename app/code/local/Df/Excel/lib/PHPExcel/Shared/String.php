@@ -431,7 +431,7 @@ class PHPExcel_Shared_String
 	 * @param mixed[] $arrcRuns Details of rich text runs in $value
 	 * @return string
 	 */
-	public static function UTF8toBIFF8UnicodeShort($value, $arrcRuns = array())
+	public static function UTF8toBIFF8UnicodeShort($value, $arrcRuns = [])
 	{
 		// character count
 		$ln = self::CountCharacters($value, 'UTF-8');

@@ -7,7 +7,7 @@ class Df_Core_Model_Layout extends Mage_Core_Model_Layout {
 	 * @param array(string => mixed) $attributes
 	 * @return Mage_Core_Block_Abstract
 	 */
-	public function getBlockInstance($block, array $attributes=array()) {
+	public function getBlockInstance($block, array $attributes=[]) {
 		return $this->_getBlockInstance($block, $attributes);
 	}
 
@@ -29,7 +29,7 @@ class Df_Core_Model_Layout extends Mage_Core_Model_Layout {
 	 * @return Mage_Core_Block_Abstract
 	 * @throws Exception
 	 */
-	protected function _getBlockInstance($block, array $attributes=array()) {
+	protected function _getBlockInstance($block, array $attributes=[]) {
 		/** @var Mage_Core_Block_Abstract $result */
 		try {
 			$result = parent::_getBlockInstance($block, $attributes);

@@ -81,7 +81,7 @@ class Df_AccessControl_Block_Admin_Tab_Tree	extends Mage_Adminhtml_Block_Catalog
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} =
 				!$this->roleId()
-				? array()
+				? []
 				: Df_AccessControl_Model_Role::ld($this->roleId())->getCategoryIds()
 			;
 		}

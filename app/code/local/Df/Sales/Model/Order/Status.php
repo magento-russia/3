@@ -41,7 +41,7 @@ class Df_Sales_Model_Order_Status extends Mage_Sales_Model_Order_Status {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Sales_Model_Order_Status
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
 	public static function s() {static $r; return $r ? $r : $r = new self;}
 }

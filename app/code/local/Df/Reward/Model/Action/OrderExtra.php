@@ -16,7 +16,7 @@ class Df_Reward_Model_Action_OrderExtra extends Df_Reward_Model_Action_Abstract 
 	 * @param array $args Additional history data
 	 * @return string
 	 */
-	public function getHistoryMessage($args = array())
+	public function getHistoryMessage($args = [])
 	{
 		$incrementId = isset($args['increment_id']) ? $args['increment_id'] : '';
 		return df_h()->reward()->__('Earned points for order #%s.', $incrementId);
@@ -87,7 +87,7 @@ class Df_Reward_Model_Action_OrderExtra extends Df_Reward_Model_Action_Abstract 
 			/** @var array $rewardRules */
 			$rewardRules = Df_Reward_Model_Resource_Reward::s()->getRewardSalesrule($ruleIds);
 			/** @var array $rulesPoints */
-			$rulesPoints= array();
+			$rulesPoints= [];
 			foreach ($rewardRules as $rewardRule) {
 				/** @var array|object $rewardRule */
 				/** @var int $ruleId */

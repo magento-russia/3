@@ -149,7 +149,7 @@ abstract class Request extends \Df_Core_Model {
 	protected function needPostKeysWithSameName() {return false;}
 
 	/** @return array(string => string) */
-	protected function post() {return $this->cfg(self::P__POST, array());}
+	protected function post() {return $this->cfg(self::P__POST, []);}
 
 	/** @return string */
 	protected function postRaw() {return '';}

@@ -76,7 +76,7 @@ class Df_Localization_Onetime_Processor extends Df_Core_Model {
 	}
 
 	/** @return array(string => string) */
-	public function getUrl() {return $this->cfg(self::$P__URL, array());}
+	public function getUrl() {return $this->cfg(self::$P__URL, []);}
 
 	/** @return bool */
 	public function isApplicable() {return self::$TYPE__APPLICABLE === $this->getType();}

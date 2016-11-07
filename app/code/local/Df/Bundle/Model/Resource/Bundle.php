@@ -6,7 +6,7 @@ class Df_Bundle_Model_Resource_Bundle extends Mage_Bundle_Model_Resource_Bundle 
 	 */
 	public function deleteAllOptions($productId) {
 		df_param_integer($productId, 0);
-		//$this->dropAllUnneededSelections($productId, array());
+		//$this->dropAllUnneededSelections($productId, []);
 		// При удалении опции все данные опции из других таблиц удаляться автоматически
 		// (ON DELETE CASCADE)
 		df_table_delete('bundle/option', 'parent_id', $productId);

@@ -49,7 +49,7 @@ class Df_Directory_Model_Region extends Mage_Directory_Model_Region {
 	 * @param array(string => mixed) $parameters [optional]
 	 * @return Df_Directory_Model_Region
 	 */
-	public static function i(array $parameters = array()) {return new self($parameters);}
+	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id
