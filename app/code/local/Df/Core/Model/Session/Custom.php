@@ -15,6 +15,7 @@ abstract class Df_Core_Model_Session_Custom extends Mage_Core_Model_Session_Abst
 
 	/**
 	 * @override
+	 * @see Mage_Core_Model_Session_Abstract_Varien::setSessionId()
 	 * @param string|null $id [optional]
 	 * @return \Df\C1\Cml2\Session\ByCookie\C1
 	 */

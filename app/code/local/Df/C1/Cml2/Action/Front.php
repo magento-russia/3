@@ -1,6 +1,7 @@
 <?php
 namespace Df\C1\Cml2\Action;
-class Front extends \Df\C1\Cml2\Action {
+use Df\C1\Cml2\Action;
+class Front extends Action {
 	/**
 	 * @override
 	 * @see Df_Core_Model_Action::_process()
@@ -9,8 +10,7 @@ class Front extends \Df\C1\Cml2\Action {
 	 */
 	protected function _process() {
 		if ($this->rmRequest()->isCheckAuth()) {
-			/** @uses \Df\C1\Cml2\Action\Login */
-			$this->delegate('Login');
+			$this->delegate(Action\Login::class);
 		}
 		else {
 			$this->checkLoggedIn();
@@ -51,15 +51,13 @@ class Front extends \Df\C1\Cml2\Action {
 			 * «Деактивация элементов, не попавшие в полную пакетную выгрузку.»
 			 */
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__DEACTIVATE:
-				/** @uses \Df\C1\Cml2\Action\Catalog\Deactivate */
-				$this->delegate('Catalog\Deactivate');
+				$this->delegate(Action\Catalog\Deactivate::class);
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__FILE:
 				$this->action_upload();
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__IMPORT:
-				/** @uses \Df\C1\Cml2\Action\Catalog\Import */
-				$this->delegate('Catalog\Import');
+				$this->delegate(Action\Catalog\Import::class);
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__INIT:
 				$this->action_init();
@@ -85,7 +83,11 @@ class Front extends \Df\C1\Cml2\Action {
 					 * @uses \Df\C1\Cml2\Action\Catalog\Export\Finish
 					 * @uses \Df\C1\Cml2\Action\Catalog\Export\Process
 					 */
-					$this->delegate('Catalog\Export\\' . $process ? 'Process' : 'Finish');
+					$this->delegate(
+						$process
+						? Action\Catalog\Export\Process::class
+						: Action\Catalog\Export\Finish::class
+					);
 					$this->flag_catalogHasJustBeenExported($process);
 				}
 				catch (\Exception $e) {
@@ -100,21 +102,19 @@ class Front extends \Df\C1\Cml2\Action {
 	 * @uses \Df\C1\Cml2\Action\Init
 	 * @return void
 	 */
-	private function action_init() {$this->delegate('Init');}
+	private function action_init() {$this->delegate(Action\Init::class);}
 
 	/** @return void */
 	private function action_orders() {
 		switch($this->rmRequest()->getMode()) {
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__FILE:
-				/** @uses \Df\C1\Cml2\Action\Orders\Import */
-				$this->delegate('Orders\Import');
+				$this->delegate(Action\Orders\Import::class);
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__INIT:
 				$this->action_init();
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__QUERY:
-				/** @uses \Df\C1\Cml2\Action\Orders\Export */
-				$this->delegate('Orders\Export');
+				$this->delegate(Action\Orders\Export::class);
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__SUCCESS:
 				$this->setResponseSuccess();
@@ -129,8 +129,7 @@ class Front extends \Df\C1\Cml2\Action {
 				$this->action_upload();
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__IMPORT:
-				/** @uses \Df\C1\Cml2\Action\Reference\Import */
-				$this->delegate('Reference\Import');
+				$this->delegate(Action\Reference\Import::class);
 				break;
 			case \Df\C1\Cml2\InputRequest\Generic::MODE__INIT:
 				$this->action_init();
@@ -142,7 +141,7 @@ class Front extends \Df\C1\Cml2\Action {
 	 * @uses \Df\C1\Cml2\Action\GenericImport\Upload
 	 * @return void
 	 */
-	private function action_upload() {$this->delegate('GenericImport\Upload');}
+	private function action_upload() {$this->delegate(Action\GenericImport\Upload::class);}
 
 	/** @return void */
 	private function checkLoggedIn() {

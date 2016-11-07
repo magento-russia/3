@@ -31,6 +31,10 @@ class Df_C1_Cml2Controller extends Mage_Core_Controller_Front_Action {
 	 * @return Df_C1_Cml2Controller
 	 */
 	public function preDispatch() {
+		/**
+		 * 2016-11-07
+		 * @see Df_Core_Model_Session_Custom_Primary::_construct()
+		 */
 		\Df\C1\Cml2\Session\ByCookie\C1::s();
 		parent::preDispatch();
 		return $this;

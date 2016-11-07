@@ -2,6 +2,7 @@
 abstract class Df_Core_Model_Session_Custom_Primary extends Df_Core_Model_Session_Custom {
 	/**
 	 * @override
+	 * @see Df_Core_Model_Session_Custom::_construct()
 	 * @return void
 	 */
 	protected function _construct() {
