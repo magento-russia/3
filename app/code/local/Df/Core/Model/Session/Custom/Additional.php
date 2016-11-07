@@ -1,7 +1,25 @@
 <?php
 abstract class Df_Core_Model_Session_Custom_Additional extends Df_Core_Model_Session_Custom {
-	/** @return void */
-	public function begin() {
+	/**
+	 * 2016-11-07
+	 * https://3v4l.org/Gm4M8
+	 * @param Closure $f
+	 * @return mixed
+	 */
+	public function run(\Closure $f) {
+		$this->begin();
+		try {return $f();}
+		finally {$this->end();}
+	}
+
+	/** @return string */
+	protected function getName() {return get_class($this);}
+
+	/**
+	 * @used-by run()
+	 * @return void
+	 */
+	private function begin() {
 		if (self::$_currentSession) {
 			$this->_previousSession = self::$_currentSession;
 		}
@@ -14,8 +32,11 @@ abstract class Df_Core_Model_Session_Custom_Additional extends Df_Core_Model_Ses
 		$this->init($this->getNamespace());
 	}
 
-	/** @return void */
-	public function end() {
+	/**
+	 * @used-by run()
+	 * @return void
+	 */
+	private function end() {
 		session_write_close();
 		$_SESSION = [];
 		if ($this->_previousName) {
@@ -31,8 +52,6 @@ abstract class Df_Core_Model_Session_Custom_Additional extends Df_Core_Model_Ses
 			$this->_previousName = null;
 		}
 	}
-	/** @return string */
-	protected function getName() {return get_class($this);}
 
 	/** @return bool */
 	private function isSessionStarted() {

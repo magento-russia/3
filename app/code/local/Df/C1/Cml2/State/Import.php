@@ -60,14 +60,16 @@ class Import extends \Df_Core_Model {
 			$result = $this->getFileCurrent();
 		}
 		else {
-			SessionByIp::s()->begin();
 			/** @var File $fileAttributes */
-			$fileAttributes = $this->getFileCatalogAttributes($preprareSession = false);
 			/** @var File $fileProducts */
-			$fileProducts = $this->getFileCatalogProducts($preprareSession = false);
 			/** @var File $fileStructure */
-			$fileStructure = $this->getFileCatalogStructure($preprareSession = false);
-			SessionByIp::s()->end();
+			list($fileAttributes, $fileProducts, $fileStructure) =
+				SessionByIp::s()->run(function() {return [
+					$this->getFileCatalogAttributes(false)
+					,$this->getFileCatalogProducts(false)
+					,$this->getFileCatalogStructure(false)
+				];});
+			;
 			$result =
 				$fileProducts->getPathRelative() === $fileStructure->getPathRelative()
 				&& $fileProducts->getPathRelative() === $fileAttributes->getPathRelative()
@@ -231,13 +233,9 @@ class Import extends \Df_Core_Model {
 	 * @param \Closure $f
 	 * @return mixed
 	 */
-	private static function prepareSession($flag, \Closure $f) {
-		/** mixed $result */
-		if ($flag) {SessionByIp::s()->begin();}
-		$result = $f();
-		if ($flag) {SessionByIp::s()->end();}
-		return $result;
-	}
+	private static function prepareSession($flag, \Closure $f) {return
+		!$flag ? $f() : SessionByIp::s()->run($f)
+	;}
 
 	/** @return self */
 	public static function s() {static $r; return $r ? $r : $r = new self;}

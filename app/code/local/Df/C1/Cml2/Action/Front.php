@@ -178,11 +178,9 @@ class Front extends Action {
 	 * @param bool|null $value [optional]
 	 * @return bool|null
 	 */
-	private function flag_catalogHasJustBeenExported($value = null) {
-		$this->session()->begin();
-		/** @var bool|null $result */
-		$result = $this->session()->flag_catalogHasJustBeenExported($value);
-		$this->session()->end();
-		return $result;
+	private function flag_catalogHasJustBeenExported($value = null) {return
+		$this->session()->run(function() use($value) {return
+			$this->session()->flag_catalogHasJustBeenExported($value)
+		;});
 	}
 }

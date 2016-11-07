@@ -91,8 +91,7 @@ class Catalog extends \Df\C1\Cml2\Import\Data\Document {
 	 * @override
 	 * @return void
 	 */
-	public function storeInSession() {
-		$this->session()->begin();
+	public function storeInSession() {$this->session()->run(function() {
 		/**
 		 * Начиная с ветки 4 модуля 1С-Битрикс
 		 * http://dev.1c-bitrix.ru/community/blogs/product_features/exchange-module-with-1cbitrix-40.php
@@ -128,8 +127,7 @@ class Catalog extends \Df\C1\Cml2\Import\Data\Document {
 				self::TYPE__ATTRIBUTES, $this->getIdAttributes(), $this->getPath()
 			);
 		}
-		$this->session()->end();
-	}
+	});}
 
 	/** @return string|null */
 	private function getIdAttributes() {return dfc($this, function() {return
