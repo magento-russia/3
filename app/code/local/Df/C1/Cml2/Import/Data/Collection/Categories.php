@@ -1,6 +1,7 @@
 <?php
 namespace Df\C1\Cml2\Import\Data\Collection;
 use Df\C1\Cml2\Import\Data\Entity\Category;
+use Df\Xml\X;
 class Categories extends \Df\C1\Cml2\Import\Data\Collection {
 	/**
 	 * @override
@@ -14,7 +15,7 @@ class Categories extends \Df\C1\Cml2\Import\Data\Collection {
 	 * @see \Df\Xml\Parser\Collection::itemPath()
 	 * @return string|string[]
 	 */
-	protected function itemPath() {return $this->cfg(self::$P__XML_PATH_AS_ARRAY, 'Группы/Группа');}
+	protected function itemPath() {return $this->cfg(self::$P__PATH, 'Группы/Группа');}
 
 	/**
 	 * @override
@@ -22,19 +23,19 @@ class Categories extends \Df\C1\Cml2\Import\Data\Collection {
 	 */
 	protected function _construct() {
 		parent::_construct();
-		$this->_prop(self::$P__XML_PATH_AS_ARRAY, DF_V_ARRAY, false);
+		$this->_prop(self::$P__PATH, DF_V_STRING, false);
 	}
 	/** @var string */
-	private static $P__XML_PATH_AS_ARRAY = 'xml_path_as_array';
+	private static $P__PATH = 'path';
 	/**
 	 * @used-by \Df\C1\Cml2\Import\Data\Entity\Category::getChildren()
 	 * @used-by \Df\C1\Cml2\State\Import\Collections::getCategories()
 	 * @static
-	 * @param \Df\Xml\X $xml
-	 * @param array|null $pathAsArray [optional]
+	 * @param X $xml
+	 * @param string|null $path [optional]
 	 * @return self
 	 */
-	public static function i(\Df\Xml\X $xml, $pathAsArray = null) {return new self([
-		self::$P__E => $xml, self::$P__XML_PATH_AS_ARRAY => $pathAsArray
+	public static function i(X $xml, $path = null) {return new self([
+		self::$P__E => $xml, self::$P__PATH => $path
 	]);}
 }

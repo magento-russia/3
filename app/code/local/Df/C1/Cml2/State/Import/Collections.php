@@ -27,9 +27,9 @@ class Collections extends \Df_Core_Model {
 
 	/** @return Categories */
 	public function getCategories() {return dfc($this, function() {return
-		Categories::i(I::s()->getFileCatalogStructure()->getXml(), [
-			'', 'КоммерческаяИнформация', 'Классификатор', 'Группы', 'Группа'
-		])				
+		Categories::i(I::s()->getFileCatalogStructure()->getXml(),
+			'/КоммерческаяИнформация/Классификатор/Группы/Группа'
+		)
 	;});}
 
 	/** @return Offers */
