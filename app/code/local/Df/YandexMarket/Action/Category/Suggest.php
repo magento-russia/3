@@ -13,9 +13,17 @@ class Suggest extends \Df_Core_Model_Action {
 		$q = df_request('query');
 		return df_json_encode(['query' => $q, 'suggestions' =>
 			df_cache_get_simple(md5($q), function() use ($q) {return
-				array_filter(C::paths(), function($path) use($q) {return
+				/**
+				 * 2016-11-07
+				 * @uses array_values() надо использовать обязательно,
+				 * иначе результат будет содержать ключи со случайными идентификаторами:
+				 * мы их создали функцией @see df_uid() в методе @see processRow()
+				 * Такие ключи приведут к сбою в JavaScript:
+				 * скрипт будет считать, что получил не массив результатов, а единственный результат-объект.
+				 */
+				array_values(array_filter(C::paths(), function($path) use($q) {return
 					df_contains($path, $q)
-				;})
+				;}))
 			;})
 		]);
 	}

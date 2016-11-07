@@ -40,7 +40,7 @@ class Categories extends \Df_Core_Model {
 				$node = $tree->findNodeByNameAndParent($nodeName, $parent);
 			}
 			if (is_null($node)) {
-				$node = new Node(['id' => df_uid(), 'name' => $nodeName],'id', $tree, $parent);
+				$node = new Node(['id' => df_uid(), 'name' => $nodeName], 'id', $tree, $parent);
 				$tree->addNode($node, $parent);
 				$parentHasBeenJustCreated = true;
 			}
