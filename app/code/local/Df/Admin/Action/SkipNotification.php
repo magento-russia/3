@@ -1,5 +1,6 @@
 <?php
-class Df_Admin_Action_SkipNotification extends Df_Core_Model_Action_Admin {
+namespace Df\Admin\Action;
+class SkipNotification extends \Df_Core_Model_Action_Admin {
 	/**
 	 * @override
 	 * @see Df_Core_Model_Action::_process()
@@ -7,10 +8,10 @@ class Df_Admin_Action_SkipNotification extends Df_Core_Model_Action_Admin {
 	 * @return void
 	 */
 	protected function _process() {
-		Mage::getConfig()->saveConfig(
-			Df_Admin_Model_Notifier::getConfigPathSkipByClass($this->param(self::$RP__CLASS)), 1
+		\Mage::getConfig()->saveConfig(
+			\Df_Admin_Model_Notifier::getConfigPathSkipByClass($this->param(self::$RP__CLASS)), 1
 		);
-		Mage::getConfig()->reinit();
+		\Mage::getConfig()->reinit();
 	}
 
 	/**
