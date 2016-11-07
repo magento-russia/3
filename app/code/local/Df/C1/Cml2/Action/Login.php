@@ -62,9 +62,9 @@ class Login extends \Df\C1\Cml2\Action {
 			 */
 			$this->setResponseLines(
 				'success'
-				, \Df\C1\Cml2\Cookie::SESSION_ID
-				, $this->sessionMagentoAPI()->getSessionId()
-				, ''
+				,self::$SESSION_KEY
+				,$this->sessionMagentoAPI()->getSessionId()
+				,''
 			);
 		}
 		catch (\Exception $e) {
@@ -74,4 +74,37 @@ class Login extends \Df\C1\Cml2\Action {
 			throw $e;
 		}
 	}
+
+	/**
+	 * 2016-11-07
+	 * @used-by \Df\C1\Cml2\Session\ByCookie\C1::getSessionIdCustom()
+	 * @used-by \Df\C1\Cml2\Action\Front::checkLoggedIn()
+	 * @return string|null
+	 */
+	public static function sessionId() {return df_cookie(self::$SESSION_KEY);}
+
+	/**
+	 * Имя (идентификатор) cookie, которая содержит идентификатор сессии.
+	 * Это имя, а также идентификатор сессии, модуль передаёт в 1С на запрос «mode=checkauth»:
+	 * A. Начало сеанса
+	 * Выгрузка каталога начинается с того, что система "1С:Предприятие"
+	 * отправляет http-запрос следующего вида:
+	 * 		http://<сайт>/<путь> /1c_exchange.php?type=catalog&mode=checkauth.
+	 * В ответ система управления сайтом передает системе «1С:Предприятие»
+	 * три строки (используется разделитель строк "\n"):
+		 слово "success";
+		 имя Cookie;
+		 значение Cookie.
+	 * Примечание. Все последующие запросы к системе управления сайтом со стороны "1С:Предприятия"
+	 * содержат в заголовке запроса имя и значение Cookie.
+	 * Так вот «имя Cookie» — это как раз наш SESSION_ID,
+	 * а «значение Cookie» — это идентификатор сессии
+	 * (на запрос «mode=checkauth» создаётся модулем PHP session автоматически).
+	 *
+	 * Обратите внимание, что в имени сессии нельзя использовать символ-точку («.»).
+	 *
+	 * @used-by _process()
+	 * @used-by sessionId()*
+	 */
+	private static $SESSION_KEY = 'df_c1_cml2_sessionId';
 }

@@ -146,7 +146,7 @@ class Front extends Action {
 	/** @return void */
 	private function checkLoggedIn() {
 		/** @var string|null $sessionId */
-		$sessionId = \Df\C1\Cml2\Cookie::s()->getSessionId();
+		$sessionId = Action\Login::sessionId();
 		if (!df_check_string_not_empty($sessionId)) {
 			df_error(
 				'1С должна была указать в запросе идентификатор сессии, однако не указала.'

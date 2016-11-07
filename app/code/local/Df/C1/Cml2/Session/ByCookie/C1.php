@@ -20,7 +20,7 @@ class C1 extends \Df_Core_Model_Session_Custom_Primary {
 	 * @used-by Df_Core_Model_Session_Custom_Primary::setSessionId()
 	 * @return string
 	 */
-	protected function getSessionIdCustom() {return \Df\C1\Cml2\Cookie::s()->getSessionId();}
+	protected function getSessionIdCustom() {return \Df\C1\Cml2\Action\Login::sessionId();}
 
 	/** @var string */
 	private static $P__FILE_NAME_LOG = 'file_name_log';
