@@ -52,6 +52,15 @@ abstract class Df_Core_Model_Session_Custom extends Mage_Core_Model_Session_Abst
 	 * Перекрыаем его значением false по той же причине, которая указана в комментарии к методу
 	 * @see \Df\C1\Cml2\Session\ByCookie\MagentoAPI::isSessionExpired():
 	 * обмен с 1С может занимать долгое время, и нам не нужно, чтобы сессия при этом обрывалась.
+	 *
+	 * Ключ @see Mage_Core_Model_Session_Abstract_Varien::VALIDATOR_SESSION_EXPIRE_TIMESTAMP
+	 * будет установлен куке даже если метод useValidateSessionExpire() возвращает false:
+	 * @see Mage_Core_Model_Session_Abstract_Varien::getValidatorData()
+	 * https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php#L501
+	 * @see Mage_Core_Model_Session_Abstract_Varien::_validate()
+	 * https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php#L464-L465
+	 * Просто в таком случае значение этого ключа не будет проверяться.
+	 *
 	 * @override
 	 * @see Mage_Core_Model_Session_Abstract_Varien::useValidateSessionExpire()
 	 * @used-by Mage_Core_Model_Session_Abstract_Varien::_validate()
