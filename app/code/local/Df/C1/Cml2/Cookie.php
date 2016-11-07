@@ -29,6 +29,9 @@ class Cookie {
 	 * (на запрос «mode=checkauth» создаётся модулем PHP session автоматически).
 	 *
 	 * Обратите внимание, что в имени сессии нельзя использовать символ-точку («.»).
+	 *
+	 * @used-by getSessionId()
+	 * @used-by \Df\C1\Cml2\Action\Login::_process()
 	 */
 	const SESSION_ID = 'df_c1_cml2_sessionId';
 
