@@ -49,9 +49,9 @@ class ByIp extends \Df_Core_Model_Session_Custom_Additional {
 		df_param_string_not_empty($type, 0);
 		df_param_string_not_empty($id, 1);
 		df_param_string_not_empty($path, 2);
-		$this->setData(self::$P__FILE_MAPS, array_merge($this->getFileMap(), array(
-			$type => array_merge($this->getFileMap($type), array($id => $path)))
-		));
+		$this->setData(self::$P__FILE_MAPS, array_merge($this->getFileMap(), [
+			$type => array_merge($this->getFileMap($type), [$id => $path])
+		]));
 	}
 
 	/**
@@ -77,9 +77,8 @@ class ByIp extends \Df_Core_Model_Session_Custom_Additional {
 	 */
 	private function getFileMap($type = null) {
 		/** @var array(string => string) $maps */
-		$maps = $this->getData(self::$P__FILE_MAPS);
-		$maps = $maps ? $maps : array();
-		return !$type ? $maps : dfa($maps, $type, array());
+		$maps = $this->getData(self::$P__FILE_MAPS) ?: [];
+		return !$type ? $maps : dfa($maps, $type, []);
 	}
 
 	const NAME = __CLASS__;
