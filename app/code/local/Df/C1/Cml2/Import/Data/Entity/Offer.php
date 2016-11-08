@@ -17,7 +17,7 @@ class Offer extends \Df\C1\Cml2\Import\Data\Entity {
 			}
 		}
 		else {
-			foreach ($this->getOptionValues() as $optionValue) {
+			foreach ($this->характеристики() as $optionValue) {
 				/** @var OptionValue $optionValue */
 				$result[$optionValue->getAttributeMagento()->getAttributeCode()] =
 					$optionValue->getAttributeMagento()
@@ -83,9 +83,9 @@ class Offer extends \Df\C1\Cml2\Import\Data\Entity {
 	});}
 
 	/** @return OptionValues */
-	public function getOptionValues() {return dfc($this, function() {return
+	public function характеристики() {return dfc($this, function() {return
 		!$this->isBase()
-		? $this->getBase()->getOptionValues()
+		? $this->getBase()->характеристики()
 		: OptionValues::i($this, $this->e())
 		/**
 		 * НЕЛЬЗЯ автоматически вызывать здесь

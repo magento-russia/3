@@ -25,7 +25,7 @@ class Configurable extends \Df\C1\Cml2\Import\Processor\Product\Type {
 		foreach ($this->getTypeInstance()->getConfigurableAttributesAsArray() as $attribute) {
 			/** @var array(string => string|int) $attribute */
 			/** @var \Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue $optionValue */
-			$optionValue = $offer->getOptionValues()->findByAttributeId($attribute['attribute_id']);
+			$optionValue = $offer->характеристики()->findByAttributeId($attribute['attribute_id']);
 			/** @var int $valueId */
 			$valueId = $optionValue->getValueId();
 			df_nat($valueId);

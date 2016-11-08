@@ -474,16 +474,16 @@ abstract class Type extends \Df\C1\Cml2\Import\Processor\Product {
 	private function getProductDataNewOrUpdateOptionValues() {
 		/** @var array(string => string|int|float|bool|null) $result */
 		$result = [];
-		if ($this->getEntityOffer()->getOptionValues()->hasItems()) {
+		if ($this->getEntityOffer()->характеристики()->hasItems()) {
 			df_c1()->create1CAttributeGroupIfNeeded(
 				$this->getEntityProduct()->getAttributeSet()->getId()
 			);
 		}
 		// Импорт значений настраиваемых опций
 		if ($this->getEntityOffer()->isTypeConfigurableChild()) {
-			$this->getEntityOffer()->getOptionValues()->addAbsentItems();
+			$this->getEntityOffer()->характеристики()->addAbsentItems();
 		}
-		foreach ($this->getEntityOffer()->getOptionValues() as $optionValue) {
+		foreach ($this->getEntityOffer()->характеристики() as $optionValue) {
 			/** @var \Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue $optionValue */
 			\Df_Catalog_Model_Installer_AddAttributeToSet::p(
 				$optionValue->getAttributeMagento()->getAttributeCode()

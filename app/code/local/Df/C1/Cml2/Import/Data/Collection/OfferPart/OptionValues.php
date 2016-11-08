@@ -61,7 +61,7 @@ class OptionValues extends \Df\C1\Cml2\Import\Data\Collection {
 	 * Тот метод содержит решение этой же проблемы для версии 4 модуля 1С-Битрикс.
 	 *
 	 * НЕЛЬЗЯ автоматически вызывать данный метод из метода @see getItems(),
-	 * потмоу что иначе мы попадём рекурсию.
+	 * потому что иначе мы попадём рекурсию.
 	 *
 	 * @return void
 	 */
@@ -155,7 +155,7 @@ class OptionValues extends \Df\C1\Cml2\Import\Data\Collection {
 	/** @var string */
 	private static $P__OFFER = 'offer';
 	/**
-	 * @used-by \Df\C1\Cml2\Import\Data\Entity\Offer::getOptionValues()
+	 * @used-by \Df\C1\Cml2\Import\Data\Entity\Offer::характеристики()
 	 * @param Offer $offer
 	 * @param \Df\Xml\X $e
 	 * @return self

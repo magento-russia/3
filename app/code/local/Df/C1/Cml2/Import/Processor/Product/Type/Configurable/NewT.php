@@ -70,7 +70,7 @@ class NewT extends Configurable {
 		/** @var Offer|null $firstChild */
 		$firstChild = df_first($this->getEntityOffer()->getConfigurableChildren());
 		if ($firstChild) {
-			foreach ($firstChild->getOptionValues() as $optionValue) {
+			foreach ($firstChild->характеристики() as $optionValue) {
 				/** @var OptionValue $optionValue */
 				/** @var \Df_Catalog_Model_Resource_Eav_Attribute $attribute */
 				$attribute = $optionValue->getAttributeMagento();
