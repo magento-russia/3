@@ -26,7 +26,7 @@ function df_file_ext($fileName) {return pathinfo($fileName, PATHINFO_EXTENSION);
  * @return string
  */
 function df_file_name($directory, $template, $datePartsSeparator = '-') {return
-	Df_Core_Model_Fs_GetNotUsedFileName::r($directory, $template, $datePartsSeparator)
+	\Df\Core\Fs\GetNotUsedFileName::r($directory, $template, $datePartsSeparator)
 ;}
 
 /**
