@@ -59,12 +59,14 @@ class Login extends \Df\C1\Cml2\Action {
 						СообщитьПодробно("CSRF токен не поддерживается. Для того, чтобы поддерживался - необходимо обновить БУС.", ПараметрыОбмена);
 						СообщитьПодробно("Ответ сервера: " + ОтветСервера, ПараметрыОбмена);
 					КонецПопытки;
+			 *
+			 * 2016-09-11
+			 * Указанного выше предупреждения не вижу.
 			 */
 			$this->setResponseLines(
 				'success'
 				,self::$SESSION_KEY
 				,$this->sessionMagentoAPI()->getSessionId()
-				,''
 			);
 		}
 		catch (\Exception $e) {
@@ -104,7 +106,7 @@ class Login extends \Df\C1\Cml2\Action {
 	 * Обратите внимание, что в имени сессии нельзя использовать символ-точку («.»).
 	 *
 	 * @used-by _process()
-	 * @used-by sessionId()*
+	 * @used-by sessionId()
 	 */
 	private static $SESSION_KEY = 'df_c1_cml2_sessionId';
 }

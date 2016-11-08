@@ -71,13 +71,14 @@ abstract class Action extends \Df_Core_Model_Action {
 	 * @used-by \Df\C1\Cml2\Action\Init::_process()
 	 * @used-by \Df\C1\Cml2\Action\Login::_process()
 	 * @used-by \Df\C1\Cml2\Action\Catalog\Export\Finish::_process()
-	 * @param string|string[] $lines
+	 * @param string[] $lines
 	 * @return void
 	 */
-	protected function setResponseLines($lines) {
+	protected function setResponseLines(...$lines) {
 		df_response_content_type($this->response(), 'text/plain; charset=windows-1251');
-		$lines = is_array($lines) ? $this->flatResponseLines($lines) : func_get_args();
-		$this->response()->setBody(df_1251_to(df_cc_n($lines)));
+		$this->response()->setBody(df_1251_to(df_cc_n(df_map_k(function($k, $v) {return
+			is_int($k) ? $v : "{$k}={$v}"
+		;}, dfa_flatten($lines)))));
 	}
 
 	/**
@@ -89,7 +90,7 @@ abstract class Action extends \Df_Core_Model_Action {
 	 * @used-by \Df\C1\Cml2\Action\Reference\Import::_process()
 	 * @return void
 	 */
-	protected function setResponseSuccess() {$this->setResponseLines('success', '');}
+	protected function setResponseSuccess() {$this->setResponseLines('success');}
 
 	/**
 	 * @override
@@ -99,24 +100,4 @@ abstract class Action extends \Df_Core_Model_Action {
 	 * @return \Df_Core_Model_StoreM
 	 */
 	protected function store() {return df_state()->getStoreProcessed();}
-
-	/**
-	 * 2015-03-13
-	 * Поддержка синтаксиса setResponseLines(array('paramName' => 'paramValue'))
-	 * @see \Df\C1\Cml2\Action\Init::_process()
-	 * @see \Df\C1\Cml2\Action\Catalog\Export\Finish::_process()
-	 * @used-by setResponseLines()
-	 * @param array(int|string => string) $lines
-	 * @return string[]
-	 */
-	private function flatResponseLines(array $lines) {
-		/** @var string[] $result */
-		$result = [];
-		foreach ($lines as $key => $value) {
-			/** @var string|int $key */
-			/** @var string $value */
-			$result[]= is_int($key) ?  $value : "{$key}={$value}";
-		}
-		return $result;
-	}
 }
