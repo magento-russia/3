@@ -44,8 +44,8 @@ class Df_Checkout_Block_Onepage_Shipping_Method_Available
 	 * @return string
 	 */
 	private function renderCarriers() {/** @noinspection PhpParamsInspection */ return
-		df_cc_n(df_map(function($code, array $rates) {return
+		df_cc_n(df_map_k(function($code, array $rates) {return
 			\Df\Shipping\Block\Carrier::r($this, $code, $rates)
-		;}, $this->getShippingRates(), [], [], DF_BEFORE))
+		;}, $this->getShippingRates()))
 	;}
 }

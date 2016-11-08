@@ -17,9 +17,9 @@ class Offer extends \Df\C1\Cml2\Import\Data\Entity {
 			}
 		}
 		else {
-			$result = df_map(function(OptionValue $o) {return [
-				$o->am()->getAttributeCode() => $o->am()
-			];}, $this->характеристики(), [], [], 0, true);
+			$result = df_map_r(function(OptionValue $o) {return [
+				$o->am()->getAttributeCode(), $o->am()
+			];}, $this->характеристики());
 		}
 		return $result;
 	});}

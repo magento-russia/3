@@ -24,11 +24,10 @@ abstract class Df_Localization_Block_Admin_Theme_Processor extends Df_Core_Block
 			/** @uses getLinkHtml() */
 			,array_map(
 				array(__CLASS__, 'getLinkHtml')
-				, array_keys($this->getLinksParameters())
-				, array_values($this->getLinksParameters())
+				,array_keys($this->getLinksParameters())
+				,array_values($this->getLinksParameters())
 			)
-			,$paramsToAppend = []
-			,$paramsToPrepend = array('div', [])
+			,[], ['div', []]
 		));
 	}
 
@@ -142,15 +141,9 @@ abstract class Df_Localization_Block_Admin_Theme_Processor extends Df_Core_Block
 						, array('class' => 'dropdown-menu')
 						, implode(df_map(
 							'df_tag'
-							, df_map(
-								'df_tag'
-								, self::getDemoLinksParameters($href)
-								, $paramsToAppend = []
-								, $paramsToPrepend = array('a')
-								, $keyPosition = DF_AFTER
-							)
-							, $paramsToAppend = []
-							, $paramsToPrepend = array('li', [])
+							,df_map('df_tag', self::getDemoLinksParameters($href), [], ['a'], DF_AFTER)
+							,[]
+							,['li', []]
 						))
 					)
 				)

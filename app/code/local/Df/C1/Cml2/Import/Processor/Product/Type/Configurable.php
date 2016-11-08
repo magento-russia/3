@@ -41,10 +41,10 @@ class Configurable extends \Df\C1\Cml2\Import\Processor\Product\Type {
 	}
 
 	/** @return array(int => array(array(string => string|int|float))) */
-	protected function getConfigurableProductsData() {return dfc($this, function() {return df_map(
+	protected function getConfigurableProductsData() {return dfc($this, function() {return df_map_r(
 		function(Offer $o) {return [
 			$o->getProduct()->getId(), $this->getConfigurableProductData($o)
-		];}, $this->getEntityOffer()->getConfigurableChildren(), [], [], 0, true
+		];}, $this->getEntityOffer()->getConfigurableChildren()
 	);});}
 
 	/**

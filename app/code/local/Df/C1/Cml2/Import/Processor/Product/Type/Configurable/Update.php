@@ -52,10 +52,10 @@ class Update extends Configurable {
 	protected function getProductMagento() {return $this->getExistingMagentoProduct();}
 
 	/** @return array(string => string) */
-	private function getProductDataNewOrUpdateAttributeValueIdsCustom() {return array_filter(df_map(
+	private function getProductDataNewOrUpdateAttributeValueIdsCustom() {return array_filter(df_map_r(
 		function(AttributeValueCustom $v) {return [
 			$v->getAttributeName(), !$v->am() ? null : $v->getValueForObject()
-		];}, $this->getEntityProduct()->getAttributeValuesCustom(), [], [], 0, true
+		];}, $this->getEntityProduct()->getAttributeValuesCustom()
 	));}
 
 	/**

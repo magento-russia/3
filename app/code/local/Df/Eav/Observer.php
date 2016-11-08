@@ -13,7 +13,7 @@ class Df_Eav_Observer {
 			$collection = $o['collection'];
 			if (df_loc()->isEnabled() && self::isEntityAttributeCollection($collection)) {
 				/** @uses Df_Eav_Model_Translator::translateAttribute() */
-				df_map(array(Df_Eav_Model_Translator::s(), 'translateAttribute'), $collection);
+				df_map([Df_Eav_Model_Translator::s(), 'translateAttribute'], $collection);
 			}
 		}
 		catch (Exception $e) {
