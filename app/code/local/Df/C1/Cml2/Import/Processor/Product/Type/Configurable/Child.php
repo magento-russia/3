@@ -10,15 +10,13 @@ class Child extends \Df\C1\Cml2\Import\Processor\Product\Type\Simple\AbstractT {
 	public function process() {
 		if ($this->getEntityOffer()->isTypeConfigurableChild()) {
 			$this->getImporter()->import();
-			/** @var \Df_Catalog_Model_Product $product */
-			$product = $this->getImporter()->getProduct();
-			df_c1_reindex_product($product);
-			df_c1_log(
-				'%s товар %s.'
-				,!is_null($this->getExistingMagentoProduct()) ? 'Обновлён' : 'Создан'
-				,$product->getTitle()
+			/** @var \Df_Catalog_Model_Product $p */
+			$p = $this->getImporter()->getProduct();
+			df_c1_reindex_product($p);
+			df_c1_log("%s товар {$p->getTitle()}.",
+				!is_null($this->getExistingMagentoProduct()) ? 'Обновлён' : 'Создан'
 			);
-			df()->registry()->products()->addEntity($product);
+			df()->registry()->products()->addEntity($p);
 		}
 	}
 

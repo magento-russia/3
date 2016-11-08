@@ -44,7 +44,7 @@ class Response extends \Df_Core_Model {
 		strtr('{module}-{date}-{time}.{extension}', [
 			'{extension}' => $this->_type, '{module}' => df_module_id($this->getRequest(), '.')
 		])
-		, $this->report()
+		,$this->report()
 	);}
 
 

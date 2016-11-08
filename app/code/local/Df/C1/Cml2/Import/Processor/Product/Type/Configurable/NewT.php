@@ -82,7 +82,19 @@ class NewT extends Configurable {
 				$result[$attribute->getName()] = $attribute->getId();
 				$labels[]= $attribute->getFrontendLabel();
 			}
-			df_c1_log("Для товара {$pt} настраиваются параметры:\n%s.", df_csv_pretty_quote($labels));
+			if (!$result) {
+				df_c1_log(
+					"У настраиваемого товара {$pt} не найдены настраиваемые опции.\n"
+					."Может быть, Вы забыли включить в настройках узла обмена модуля 1С-Битрикс "
+					."опцию «Выгружать характеристики предложений»?\n"
+					."https://github.com/magento-russia/3/issues/1"
+				);
+			}
+			else {
+				df_c1_log("Для товара {$pt} настраиваются параметры:\n%s.",
+					df_csv_pretty_quote($labels))
+				;
+			}
 		}
 		return $result;
 	});}

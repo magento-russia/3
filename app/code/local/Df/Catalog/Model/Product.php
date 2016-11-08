@@ -746,9 +746,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 	public function getResourceCollection() {return self::c()->setStoreId($this->getStoreId());}
 
 	/** @return string */
-	public function getTitle() {/** @noinspection PhpUndefinedFieldInspection */ return
-		"«$this->getName()» [{$this->getSku()}]"
-	;}
+	public function getTitle() {return "«{$this->getName()}» [{$this->getSku()}]";}
 
 	/** @return string */
 	public function getTypeName() {return self::getTypeNameById($this->getTypeId());}

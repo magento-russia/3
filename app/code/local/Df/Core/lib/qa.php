@@ -95,13 +95,18 @@ function df_debug_type($value, $addQuotes = true) {
 
 /**
  * @param string $nameTemplate
- * @param string $message   
+ * @param string $message
+ * @param string $subfolder [optional]
  * @param string $datePartsSeparator [optional]
  * @return void
  */
-function df_report($nameTemplate, $message, $datePartsSeparator = '-') {
+function df_report($nameTemplate, $message, $subfolder = '', $datePartsSeparator = '-') {
 	df_file_put_contents(
-		df_file_name(Mage::getBaseDir('var') . DS . 'log', $nameTemplate, $datePartsSeparator)
+		df_file_name(
+			df_cc_path(Mage::getBaseDir('var'), 'log', $subfolder)
+			,$nameTemplate
+			,$datePartsSeparator
+		)
 		,$message
 	);
 }
