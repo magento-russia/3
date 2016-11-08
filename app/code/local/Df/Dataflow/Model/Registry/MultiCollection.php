@@ -59,4 +59,4 @@ abstract class Df_Dataflow_Model_Registry_MultiCollection
 		}
 		return $this->{__METHOD__};
 	}
-	}
+}

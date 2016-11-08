@@ -27,25 +27,19 @@ class Offer extends \Df\C1\Cml2\Import\Data\Entity {
 	/** @return Offer[] */
 	public function getConfigurableChildren() {return dfc($this, function() {
 		/** @var Offer[] $result */
-		$result = [];
-		if (!$this->isTypeConfigurableChild()) {
-			foreach ($this->getStateOffers() as $offer) {
-				/** @var Offer $offer */
-				if (
-					$offer->isTypeConfigurableChild()
-					&& $this->getExternalId() === $offer->getExternalIdForConfigurableParent()
-				) {
-					$result[]= $offer;
-				}
-			}
+		if ($this->isTypeConfigurableChild()) {
+			$result = [];
 		}
-		if ($result) {
+		else {
+			$result = df_filter(function(Offer $offer) {return
+				$offer->isTypeConfigurableChild()
+				&& $this->getExternalId() === $offer->getExternalIdForConfigurableParent()
+			;}, $this->getStateOffers());
 			df_c1_log(
-				"У товара «%s» найдено %d вариантов:\n%s"
-				, $this->getName()
-				, count($result)
+				"У товара «{$this->getName()}» найдено %d вариантов:\n%s"
+				,count($result)
 				/** @uses \Df\C1\Cml2\Import\Data\Entity\Offer::getName() */
-				, df_cc_n(df_each($result, 'getName'))
+				,df_cc_n(df_each($result, 'getName'))
 			);
 		}
 		return $result;
@@ -363,9 +357,7 @@ class Offer extends \Df\C1\Cml2\Import\Data\Entity {
 	});}
 
 	/** @return bool */
-	public function isTypeConfigurableParent() {return dfc($this, function() {return
-		!!$this->getConfigurableChildren()
-	;});}
+	public function isTypeConfigurableParent() {return !!$this->getConfigurableChildren();}
 
 	/** @return bool */
 	public function isTypeSimple() {return
