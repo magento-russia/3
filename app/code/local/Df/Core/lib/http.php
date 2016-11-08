@@ -1,5 +1,39 @@
 <?php
 /**
+ * 2016-11-09
+ * Возвращает пару [$login, $password].
+ * @uses \Mage_Core_Helper_Http::authValidate() уже проверяет $userName и $password на непустоту:
+		if (!$user || !$pass) {
+			$this->authFailed();
+		}
+ * https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Core/Helper/Http.php#L84-L86
+ * https://github.com/OpenMage/magento-mirror/blob/1.4.0.0/app/code/core/Mage/Core/Helper/Http.php#L84-L86
+ * Поэтому нам этого делать не надо.
+ * Причем проверяет посредством !, а не is_null(), поэтому в качестве логина и пароля
+ * нельзя использовать выражения, ! для которых возвращает false: например, «0».
+ * В то же время пароль «000000» допустим: https://3v4l.org/J7Z5S
+ *
+ * При пустом логине или пароле @uses \Mage_Core_Helper_Http::authValidate()
+ * даже не возбуждает исключительную ситуацию, а просто закрывает соедениение с клиентом:
+ * @see  @uses \Mage_Core_Helper_Http::authFailed():
+		public function authFailed()
+		{
+			Mage::app()->getResponse()
+				->setHeader('HTTP/1.1','401 Unauthorized')
+				->setHeader('WWW-Authenticate','Basic realm="RSS Feeds"')
+				->setBody('<h1>401 Unauthorized</h1>')
+				->sendResponse();
+			exit;
+		}
+ *
+ * В Magento 2 аналогичный метод не проверяет $login и $password на непустоту:
+ * https://github.com/magento/magento2/blob/2.1.2/lib/internal/Magento/Framework/HTTP/Authentication.php#L39-L77
+ * https://mage2.pro/t/2257
+ * @return string[]
+ */
+function df_http_credentials() {return df_mage()->core()->httpHelper()->authValidate();}
+
+/**
  * 2016-07-31
  * К сожалению, мы не можем указывать кодировку в обработчике,
  * установленном @see set_exception_handler(),

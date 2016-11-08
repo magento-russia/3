@@ -1,5 +1,6 @@
 <?php
 namespace Df\C1\Cml2\Action;
+use Df\C1\Cml2\Session\ByCookie\MagentoAPI;
 class Login extends \Df\C1\Cml2\Action {
 	/**
 	 * @override
@@ -10,39 +11,27 @@ class Login extends \Df\C1\Cml2\Action {
 	 */
 	protected function _process() {
 		try {
-			/** @var string $userName */
+			/** @var string $login */
 			/** @var string $password */
-			list($userName, $password) = df_mage()->core()->httpHelper()->authValidate();
-			if (!$userName) {
-				df_error('Администратор пытается авторизоваться с пустым системным именем, что недопустимо.');
-			}
-			if (!$password) {
-				df_error(
-					"Администратор «{$userName}» пытается авторизоваться с пустым паролем, что недопустимо."
-				);
-			}
-			$this->sessionMagentoAPI()->start($sessionName = null);
+			list($login, $password) = df_http_credentials();
+			/** @var MagentoAPI $s */
+			$s = MagentoAPI::s();
+			$s->start($sessionName = null);
 			/** @var \Mage_Api_Model_User $apiUser */
-			$apiUser = null;
 			try {
-				$apiUser = $this->sessionMagentoAPI()->login($userName, $password);
+				$apiUser = $s->login($login, $password);
 			}
 			catch (\Exception $e) {
-				df_error('Авторизация не удалась: неверно системное имя «%s», либо пароль к нему.', $userName);
+				df_error("Авторизация не удалась: неверно системное имя «{$login}» либо пароль к нему.");
 			}
-			if (!df_bool($apiUser->getIsActive())) {
-				df_error('Администратор «%s» не допущен к работе', $userName);
-			}
-			if (!$this->sessionMagentoAPI()->isAllowed('rm/_1c')) {
-				df_error(
-					"Администратор «%s»
-					не допущен к обмену данными между Magento и 1С:Управление торговлей.
-					\nДля допуска администратора к данной работе
-					наделите администратора должностью, которая обладает полномочием
-					«Российская сборка» → «1С:Управление торговлей»."
-					,$userName
-				);
-			}
+			$apiUser->getIsActive() ?: df_error(
+				"Учётная запись «{$login}» зарегистрирована в интернет-магазине, "
+				."но отключена там администратором интернет-магазина.");
+			$s->isAllowed('rm/_1c') ?: df_error(
+				"Учётная запись «{$login}» не обладает полномочиями для обмена данными."
+				." Для наделения её этими полномочиями следуйте инструкции"
+				." http://magento-forum.ru/topic/2755/"
+			);
 			/**
 			 * 2016-11-07
 			 * Модуль Битрикс ветки 6.x поддерживает ещё 2 опциональных параметра в ответе:
@@ -63,16 +52,12 @@ class Login extends \Df\C1\Cml2\Action {
 			 * 2016-09-11
 			 * Указанного выше предупреждения не вижу.
 			 */
-			$this->setResponseLines(
-				'success'
-				,self::$SESSION_KEY
-				,$this->sessionMagentoAPI()->getSessionId()
-			);
+			$this->setResponseLines('success', self::$SESSION_KEY, $s->getSessionId());
 		}
 		catch (\Exception $e) {
 			df_c1()->logRaw(df_ets($e));
 			df_notify_exception($e);
-			$this->response()->setHeader($name = 'HTTP/1.1', $value = '401 Unauthorized');
+			$this->response()->setHeader('HTTP/1.1', '401 Unauthorized');
 			throw $e;
 		}
 	}

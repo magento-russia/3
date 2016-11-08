@@ -1,6 +1,7 @@
 <?php
 namespace Df\C1\Cml2\Action;
 use Df\C1\Cml2\Action;
+use Df\C1\Cml2\Session\ByCookie\MagentoAPI;
 class Front extends Action {
 	/**
 	 * @override
@@ -165,8 +166,8 @@ class Front extends Action {
 				. "\nОбратитесь к программисту."
 			);
 		}
-		$this->sessionMagentoAPI()->setSessionId($sessionId);
-		if (!$this->sessionMagentoAPI()->isLoggedIn($sessionId)) {
+		MagentoAPI::s()->setSessionId($sessionId);
+		if (!MagentoAPI::s()->isLoggedIn($sessionId)) {
 			df_error(
 				'Доступ к данной операции запрещён,'
 				. ' потому что система не смогла распознать администратора (неверная сессия)'

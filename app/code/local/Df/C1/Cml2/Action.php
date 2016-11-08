@@ -59,13 +59,6 @@ abstract class Action extends \Df_Core_Model_Action {
 	protected function session() {return \Df\C1\Cml2\Session\ByIp::s();}
 
 	/**
-	 * @used-by \Df\C1\Cml2\Action\Front::checkLoggedIn()
-	 * @used-by \Df\C1\Cml2\Action\Login::_process()
-	 * @return \Df\C1\Cml2\Session\ByCookie\MagentoAPI
-	 */
-	protected function sessionMagentoAPI() {return \Df\C1\Cml2\Session\ByCookie\MagentoAPI::s();}
-
-	/**
 	 * @used-by processException()
 	 * @used-by setResponseSuccess()
 	 * @used-by \Df\C1\Cml2\Action\Init::_process()
