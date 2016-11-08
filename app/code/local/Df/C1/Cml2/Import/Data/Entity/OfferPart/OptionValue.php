@@ -12,14 +12,10 @@ class OptionValue extends \Df\C1\Cml2\Import\Data\Entity {
 	 */
 	public function am() {return dfc($this, function() {
 		/** @var \Df_Catalog_Model_Resource_Eav_Attribute|null $result */
-		if (
-				$this->getEntityAttribute()
-			&&
-				/**
-				 * Значение «[неизвестно]» в справочнике должно отсутствовать.
-				 * Добавляем его вручную.
-				 */
-				(self::$VALUE__UNKNOWN !== $this->getValue())
+		if ($this->getEntityAttribute()
+			// Значение «[неизвестно]» в справочнике должно отсутствовать.
+			// Добавляем его вручную.
+			&& self::$VALUE__UNKNOWN !== $this->getValue()
 		)  {
 			$result = df_attributes()->findByExternalId($this->getEntityAttribute()->getExternalId());
 			df_assert($result);
@@ -355,11 +351,13 @@ class OptionValue extends \Df\C1\Cml2\Import\Data\Entity {
 		</Свойство>
 	 * @return ReferenceList|null
 	 */
-	private function getEntityAttribute() {return dfc($this, function() {return		
+	private function getEntityAttribute() {return dfc($this, function() {
+		/** @var ReferenceList|null $r */
+		$r = Cl::s()->getAttributes()->findByName($this->getName());
 		// Возможно, что «свойство» и «характеристика» получили одинаковое имя по случайности?
 		// Сопоставимое «свойство» обязательно должно быть типа «справочник».
-		Cl::s()->getAttributes()->findByName($this->getName()) instanceof ReferenceList ?: null	
-	;});}
+		return $r instanceof ReferenceList ? $r : null;
+	});}
 
 	/**
 	 * @param \Df_Catalog_Model_Resource_Eav_Attribute $attribute
