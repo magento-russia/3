@@ -31,10 +31,11 @@ class Offer extends \Df\C1\Cml2\Import\Data\Entity {
 		if (!$this->isTypeConfigurableChild()) {
 			foreach ($this->getStateOffers() as $offer) {
 				/** @var Offer $offer */
-				if ($offer->isTypeConfigurableChild()) {
-					if ($this->getExternalId() === $offer->getExternalIdForConfigurableParent()) {
-						$result[]= $offer;
-					}
+				if (
+					$offer->isTypeConfigurableChild()
+					&& $this->getExternalId() === $offer->getExternalIdForConfigurableParent()
+				) {
+					$result[]= $offer;
 				}
 			}
 		}

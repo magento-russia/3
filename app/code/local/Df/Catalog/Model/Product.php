@@ -561,9 +561,9 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 	 * @override
 	 * @return int|null
 	 */
-	public function getId() {
-		return isset($this->_data[self::P__ID]) ? (int)$this->_data[self::P__ID] : null;
-	}
+	public function getId() {return
+		isset($this->_data[self::P__ID]) ? (int)$this->_data[self::P__ID] : null
+	;}
 
 	/**
 	 * Этот метод надо вызывать только для полнозагруженного товара
@@ -746,14 +746,9 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 	public function getResourceCollection() {return self::c()->setStoreId($this->getStoreId());}
 
 	/** @return string */
-	public function getTitle() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = strtr('«{name}» [{sku}]', array(
-				'{name}' => $this->getName(), '{sku}' => $this->getSku()
-			));
-		}
-		return $this->{__METHOD__};
-	}
+	public function getTitle() {/** @noinspection PhpUndefinedFieldInspection */ return
+		"«$this->getName()» [{$this->getSku()}]"
+	;}
 
 	/** @return string */
 	public function getTypeName() {return self::getTypeNameById($this->getTypeId());}

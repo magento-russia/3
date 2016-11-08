@@ -10,9 +10,9 @@ class NewT extends Configurable {
 	 */
 	public function process() {
 		df_assert($this->getEntityOffer()->isTypeConfigurableParent());
-		/** @var \Df_Catalog_Model_Product $product */
-		$product = $this->getProductMagento();
-		$product->addData([
+		/** @var \Df_Catalog_Model_Product $p */
+		$p = $this->getProductMagento();
+		$p->addData([
 			'can_save_configurable_attributes' => true
 			,'can_save_custom_options' => true
 			,'configurable_attributes_data' => $this->getConfigurableAttributesData()
@@ -23,13 +23,13 @@ class NewT extends Configurable {
 			]
 		]);
 		if ($this->getDocumentCurrentAsOffers()->hasPrices()) {
-			$product->setData('configurable_products_data', $this->getConfigurableProductsData());
+			$p->setData('configurable_products_data', $this->getConfigurableProductsData());
 		}
-		$product->saveRm($isMassUpdate = true);
-		$product->reload();
-		df_c1_reindex_product($product);
-		df()->registry()->products()->addEntity($product);
-		df_c1_log('Создан товар %s.', $product->getTitle());
+		$p->saveRm($isMassUpdate = true);
+		$p->reload();
+		df_c1_reindex_product($p);
+		df()->registry()->products()->addEntity($p);
+		df_c1_log("Создан товар {$p->getTitle()}.");
 	}
 
 	/**
@@ -65,20 +65,25 @@ class NewT extends Configurable {
 	private function getUsedProductAttributeIds() {return dfc($this, function() {
 		/** @var array(string => int) $result */
 		$result = [];
-		/** @var string[] $labels */
-		$labels = [];
-		/** @var Offer|null $firstChild */
-		$firstChild = df_first($this->getEntityOffer()->getConfigurableChildren());
-		if ($firstChild) {
-			foreach ($firstChild->характеристики() as $optionValue) {
+		/** @var string $pt */
+		$pt = $this->getProductMagento()->getTitle();
+		/** @var Offer|null $child */
+		$child = df_first($this->getEntityOffer()->getConfigurableChildren());
+		if (!$child) {
+			df_c1_log("У настраиваемого товара {$pt} не найдены простые варианты.");
+		}
+		else {
+			/** @var string[] $labels */
+			$labels = [];
+			foreach ($child->характеристики() as $optionValue) {
 				/** @var OptionValue $optionValue */
 				/** @var \Df_Catalog_Model_Resource_Eav_Attribute $attribute */
 				$attribute = $optionValue->am();
 				$result[$attribute->getName()] = $attribute->getId();
 				$labels[]= $attribute->getFrontendLabel();
 			}
+			df_c1_log("Для товара {$pt} настраиваются параметры:\n%s.", df_csv_pretty_quote($labels));
 		}
-		df_c1_log("Для товара настраиваются параметры:\n%s.", df_csv_pretty_quote($labels));
 		return $result;
 	});}
 
