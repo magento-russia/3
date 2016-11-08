@@ -301,10 +301,13 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 	 * @static
 	 * @param array(string => mixed) $data
 	 * @param int $storeId
-	 * @return Df_Catalog_Model_Category
+	 * @return self
 	 */
 	public static function createAndSave(array $data, $storeId) {
-		return self::i($data)->saveRm($storeId);
+		/** @var self $result */
+		$result = self::i($data);
+		$result->saveRm($storeId);
+		return $result;
 	}
 
 	/**
