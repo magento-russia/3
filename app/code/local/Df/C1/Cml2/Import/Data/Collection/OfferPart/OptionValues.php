@@ -4,6 +4,19 @@ use Df\C1\Cml2\Import\Data\Entity\Offer;
 use Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue;
 use Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue\Anonymous;
 use Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue\EmptyT;
+/**
+ * 2016-11-08
+ * Сегодня заметил, что версия 6 модуля Битрикс (наверняка и более ранние версии тоже)
+ * не передаёт сайту характеристики, если в настройках узла обмена
+ * не включена соответствующая опция «Выгружать характеристики предложений».
+ * Если эта опция выключена, то данные будут иметь такую структуру:
+		<Предложение>
+ 			(...)
+			<ХарактеристикиТовара/>
+			(...)
+		</Предложение>
+ * То есть модуль Битрикс всё равно передаёт сайту тег <ХарактеристикиТовара/>, но в пустом виде.
+ */
 class OptionValues extends \Df\C1\Cml2\Import\Data\Collection {
 	/**
 	 * В версиях ранее 4-й модуля 1С-Битрикс
