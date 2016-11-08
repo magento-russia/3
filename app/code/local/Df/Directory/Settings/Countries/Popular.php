@@ -43,5 +43,5 @@ class Df_Directory_Settings_Countries_Popular extends Df_Core_Model_Settings {
 	protected function getKeyPrefix() {return 'df_directory/countries_popular/';}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

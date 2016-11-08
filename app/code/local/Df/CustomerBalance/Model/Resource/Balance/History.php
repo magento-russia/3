@@ -3,7 +3,7 @@ class Df_CustomerBalance_Model_Resource_Balance_History extends Df_Core_Model_Re
 	/**
 	 * @override
 	 * @param Df_CustomerBalance_Model_Balance_History|Mage_Core_Model_Abstract $object
-	 * @return Df_CustomerBalance_Model_Resource_Balance_History
+	 * @return $this
 	 */
 	public function _beforeSave(Mage_Core_Model_Abstract $object) {
 		$object->setUpdatedAt($this->formatDate(time()));
@@ -13,7 +13,7 @@ class Df_CustomerBalance_Model_Resource_Balance_History extends Df_Core_Model_Re
 
 	/**
 	 * @param int $id
-	 * @return Df_CustomerBalance_Model_Resource_Balance_History
+	 * @return $this
 	 */
 	public function markAsSent($id) {
 		$this->_getWriteAdapter()->update(
@@ -37,5 +37,5 @@ class Df_CustomerBalance_Model_Resource_Balance_History extends Df_Core_Model_Re
 	/** @used-by Df_CustomerBalance_Setup_1_0_0::_process() */
 	const TABLE = 'df_customerbalance/balance_history';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

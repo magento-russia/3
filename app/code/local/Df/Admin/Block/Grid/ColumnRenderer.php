@@ -1,4 +1,5 @@
 <?php
+use Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract as AbstractRenderer;
 class Df_Admin_Block_Grid_ColumnRender extends Df_Core_Block_Admin {
 	/** @return Varien_Object */
 	protected function getColumn() {return $this->getRenderer()->getColumn();}
@@ -8,9 +9,9 @@ class Df_Admin_Block_Grid_ColumnRender extends Df_Core_Block_Admin {
 	 * @param mixed $defaultValue
 	 * @return mixed
 	 */
-	protected function getColumnParam($paramName, $defaultValue = null) {
-		return dfo($this->getColumn(), $paramName, $defaultValue);
-	}
+	protected function getColumnParam($paramName, $defaultValue = null) {return
+		dfo($this->getColumn(), $paramName, $defaultValue)
+	;}
 
 	/** @return Varien_Object */
 	protected function getRow() {return $this->cfg(self::$P__ROW);}
@@ -20,11 +21,11 @@ class Df_Admin_Block_Grid_ColumnRender extends Df_Core_Block_Admin {
 	 * @param mixed $defaultValue
 	 * @return mixed
 	 */
-	protected function getRowParam($paramName, $defaultValue = null) {
-		return dfo($this->getRow(), $paramName, $defaultValue);
-	}
+	protected function getRowParam($paramName, $defaultValue = null) {return
+		dfo($this->getRow(), $paramName, $defaultValue)
+	;}
 
-	/** @return Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract */
+	/** @return AbstractRenderer */
 	private function getRenderer() {return $this->_getData(self::$P__RENDERER);}
 
 	/**
@@ -34,8 +35,8 @@ class Df_Admin_Block_Grid_ColumnRender extends Df_Core_Block_Admin {
 	protected function _construct() {
 		parent::_construct();
 		$this
-			->_prop(self::$P__ROW, 'Varien_Object')
-			->_prop(self::$P__RENDERER, 'Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract')
+			->_prop(self::$P__ROW, Varien_Object::class)
+			->_prop(self::$P__RENDERER, AbstractRenderer::class)
 		;
 	}
 	/** @var string */
@@ -46,15 +47,11 @@ class Df_Admin_Block_Grid_ColumnRender extends Df_Core_Block_Admin {
 	/**
 	 * @used-by Df_Sales_Block_Admin_Grid_OrderItems::r()
 	 * @param string $class
-	 * @param Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract $renderer
+	 * @param AbstractRenderer $renderer
 	 * @param Varien_Object $row
 	 * @return string
 	 */
-	protected static function rc(
-		$class, Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract $renderer, Varien_Object $row
-	) {
-		return df_render(df_ic($class, __CLASS__, array(
-			self::$P__RENDERER => $renderer, self::$P__ROW => $row
-		)));
+	protected static function rc($class, AbstractRenderer $renderer, Varien_Object $row) {return
+		df_render(df_ic($class, __CLASS__, [self::$P__RENDERER => $renderer, self::$P__ROW => $row]));
 	}
 }

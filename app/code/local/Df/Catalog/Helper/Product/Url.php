@@ -126,5 +126,5 @@ class Df_Catalog_Helper_Product_Url extends Mage_Catalog_Helper_Product_Url {
 	;
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

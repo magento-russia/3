@@ -22,7 +22,7 @@ function df_design_package() {return Mage::getSingleton('core/design_package');}
 function df_length() {return Df_Core_Model_Units_Length::s();}
 
 /** @return Df_Localization_Settings_Area */
-function df_loc() {static $r; return $r ? $r : $r = Df_Localization_Settings::s()->current();}
+function df_loc() {static $r; return $r ?: $r = Df_Localization_Settings::s()->current();}
 
 /**
  * @param float|int|string $amount
@@ -40,7 +40,7 @@ function df_session_checkout() {return Mage::getSingleton('checkout/session');}
 function df_session_core() {return Mage::getSingleton('core/session');}
 
 /** @return Mage_Tax_Helper_Data */
-function df_tax_h() {static $r; return $r ? $r : $r = Mage::helper('tax');}
+function df_tax_h() {static $r; return $r ?: $r = Mage::helper('tax');}
 
 /** @return Df_Core_Model_Units_Weight */
 function df_weight() {return Df_Core_Model_Units_Weight::s();}

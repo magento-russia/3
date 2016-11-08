@@ -12,5 +12,5 @@ class Df_Catalog_Model_Settings_Navigation extends Df_Core_Model_Settings {
 	 */
 	protected function getKeyPrefix() {return 'df_tweaks/illustrated_catalog_navigation/';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

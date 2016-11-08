@@ -24,7 +24,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 
 	/**
 	 * @param int|null $value [optional]
-	 * @return Df_Review_Model_Review
+	 * @return $this
 	 */
 	public function setCustomerId($value = null) {
 		if (!is_null($value)) {
@@ -36,7 +36,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 
 	/**
 	 * @param string $value
-	 * @return Df_Review_Model_Review
+	 * @return $this
 	 */
 	public function setDetail($value) {
 		df_param_string($value, 0);
@@ -46,7 +46,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 
 	/**
 	 * @param string $value
-	 * @return Df_Review_Model_Review
+	 * @return $this
 	 */
 	public function setNickname($value) {
 		df_param_string($value, 0);
@@ -56,7 +56,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 
 	/**
 	 * @param int|null $value [optional]
-	 * @return Df_Review_Model_Review
+	 * @return $this
 	 */
 	public function setStoreId($value = null) {
 		if (!is_null($value)) {
@@ -68,7 +68,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 
 	/**
 	 * @param int[] $value [optional]
-	 * @return Df_Review_Model_Review
+	 * @return $this
 	 */
 	public function setStores(array $value = []) {
 		$this->setData(self::P__STORES, $value);
@@ -77,7 +77,7 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 
 	/**
 	 * @param string $value
-	 * @return Df_Review_Model_Review
+	 * @return $this
 	 */
 	public function setTitle($value) {
 		df_param_string($value, 0);
@@ -111,9 +111,9 @@ class Df_Review_Model_Review extends Mage_Review_Model_Review {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Review_Model_Review
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

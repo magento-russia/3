@@ -65,5 +65,5 @@ class Df_Reward_Model_Resource_Reward_Rate extends Df_Core_Model_Resource {
 	 */
 	const TABLE = 'df_reward/reward_rate';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

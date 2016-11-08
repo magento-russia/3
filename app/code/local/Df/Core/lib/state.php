@@ -39,7 +39,7 @@ function df_is_admin($store = null) {return 'admin' === Mage::app()->getStore($s
  * @return string
  */
 function df_lang() {
-	static $r; return $r ? $r : $r = df_first(explode('_', Mage::app()->getLocale()->getLocaleCode()));
+	static $r; return $r ?: $r = df_first(explode('_', Mage::app()->getLocale()->getLocaleCode()));
 }
 
 /**
@@ -137,7 +137,7 @@ function df_request_o() {return Mage::app()->getRequest();}
  * 2015-08-14
  * @return string
  */
-function df_ruri() {static $r; return $r ? $r : $r = Mage::app()->getRequest()->getRequestUri();}
+function df_ruri() {static $r; return $r ?: $r = Mage::app()->getRequest()->getRequestUri();}
 
 /**
  * 2015-08-14
@@ -150,4 +150,4 @@ function df_ruri_contains($needle) {return df_contains(df_ruri(), $needle);}
  * @used-by df_controller()
  * @return Df_Core_State
  */
-function df_state() {static $r; return $r ? $r : $r = Df_Core_State::s();}
+function df_state() {static $r; return $r ?: $r = Df_Core_State::s();}

@@ -1,6 +1,6 @@
 <?php
 class Df_Catalog_Model_Product_Option extends Mage_Catalog_Model_Product_Option {
-	/** @return Df_Catalog_Model_Product_Option */
+	/** @return $this */
 	public function deleteWithDependencies() {
 		$this->getValueInstance()->deleteValue($this->getId());
 		$this->deletePrices($this->getId());
@@ -64,5 +64,5 @@ class Df_Catalog_Model_Product_Option extends Mage_Catalog_Model_Product_Option 
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

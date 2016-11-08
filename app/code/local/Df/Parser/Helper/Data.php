@@ -2,7 +2,7 @@
 class Df_Parser_Helper_Data extends Mage_Core_Helper_Abstract {
 	/**
 	 * @param string|array(string|int => string) $message
-	 * @return Df_Parser_Helper_Data
+	 * @return $this
 	 */
 	public function log($message) {
 		/** @var mixed[] $arguments */
@@ -12,5 +12,5 @@ class Df_Parser_Helper_Data extends Mage_Core_Helper_Abstract {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

@@ -5,7 +5,7 @@ class Df_Core_Model_Message_Collection extends Mage_Core_Model_Message_Collectio
 	 * если сообщение данного типа и с данным текстом уже присутствует в коллекции.
 	 * @override
 	 * @param Mage_Core_Model_Message_Abstract $message
-	 * @return Df_Core_Model_Message_Collection
+	 * @return $this
 	 */
 	public function addMessage(Mage_Core_Model_Message_Abstract $message) {
 		if (!isset($this->_messages[$message->getType()])) {

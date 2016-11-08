@@ -10,5 +10,5 @@ class Product extends \Df\C1\Config\Api\Cml2 {
 	/** @return Product\Prices */
 	public function prices() {return Product\Prices::s();}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

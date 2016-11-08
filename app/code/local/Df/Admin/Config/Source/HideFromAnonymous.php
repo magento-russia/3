@@ -10,13 +10,11 @@ class Df_Admin_Config_Source_HideFromAnonymous extends Df_Admin_Config_Source {
 	 * @param bool $isMultiSelect
 	 * @return array(array(string => string))
 	 */
-	protected function toOptionArrayInternal($isMultiSelect = false) {
-		return df_map_to_options(array(
-			self::$V__NO_HIDE => 'не скрывать'
-			,self::$V__HIDE => 'скрыть'
-			,self::$V__HIDE_FROM_ANONYMOUS => 'скрыть от анонимных посетителей'
-		));
-	}
+	protected function toOptionArrayInternal($isMultiSelect = false) {return df_map_to_options([
+		self::$V__NO_HIDE => 'не скрывать'
+		,self::$V__HIDE => 'скрыть'
+		,self::$V__HIDE_FROM_ANONYMOUS => 'скрыть от анонимных посетителей'
+	]);}
 	/** @var int */
 	private static $V__HIDE = 1;
 	/** @var string */

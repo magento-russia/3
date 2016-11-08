@@ -2,7 +2,7 @@
 class Df_Review_Block_Frontend_Js extends Df_Core_Block_Template {
 	/**
 	 * @override
-	 * @return Df_Review_Block_Frontend_Js
+	 * @return $this
 	 */
 	protected function _prepareLayout() {
 		if (df_magento_version('1.9', '>')) {

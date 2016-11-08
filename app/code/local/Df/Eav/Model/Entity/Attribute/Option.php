@@ -27,7 +27,7 @@ class Df_Eav_Model_Entity_Attribute_Option extends Mage_Eav_Model_Entity_Attribu
 
 	/**
 	 * @param string|null $value
-	 * @return Df_Eav_Model_Entity_Attribute_Option
+	 * @return $this
 	 */
 	public function set1CId($value) {
 		$this->setData(\Df\C1\C::ENTITY_EXTERNAL_ID, $value);

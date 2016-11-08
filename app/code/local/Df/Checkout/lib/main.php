@@ -112,7 +112,7 @@ function df_quote_has_items() {return
  * @return string
  */
 function df_url_checkout_fail() {
-	static $r; return $r ? $r : $r = Mage::getUrl('df-payment/cancel', array('_nosid' => true));
+	static $r; return $r ?: $r = Mage::getUrl('df-payment/cancel', array('_nosid' => true));
 }
 
 /**
@@ -125,6 +125,6 @@ function df_url_checkout_fail() {
  * @return string
  */
 function df_url_checkout_success() {
-	static $r; return $r ? $r : $r = Mage::getUrl('checkout/onepage/success', array('_nosid' => true));
+	static $r; return $r ?: $r = Mage::getUrl('checkout/onepage/success', array('_nosid' => true));
 }
 

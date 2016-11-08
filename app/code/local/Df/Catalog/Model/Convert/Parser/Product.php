@@ -6,7 +6,7 @@ class Df_Catalog_Model_Convert_Parser_Product extends Mage_Catalog_Model_Convert
 	 * экспортировать вместе с товаром
 	 * товарные разделы, картинки, настраиваемые покупателем опции.
 	 * @override
-	 * @return Df_Catalog_Model_Convert_Parser_Product
+	 * @return $this
 	 */
 	public function unparse() {
 		try {
@@ -147,7 +147,7 @@ class Df_Catalog_Model_Convert_Parser_Product extends Mage_Catalog_Model_Convert
 	/**
 	 * @param Mage_Catalog_Model_Product $product
 	 * @param array $row
-	 * @return Df_Catalog_Model_Convert_Parser_Product
+	 * @return $this
 	 */
 	private function unparseCustomOptions(Mage_Catalog_Model_Product $product, array &$row) {
 		if ($product->getOptions()) {

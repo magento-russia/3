@@ -28,7 +28,7 @@ class Df_Reports_Model_Handler_GroupResultsByWeek_PrepareCollection extends Df_C
 	 */
 	protected function getEventClass() {return Df_Core_Model_Event_Core_Collection_Abstract_LoadBefore::class;}
 
-	/** @return Df_Reports_Model_Handler_GroupResultsByWeek_PrepareCollection */
+	/** @return $this */
 	private function adjustColumns() {
 		/** @var array $partColumns */
 		$partColumns= $this->getSelect()->getPart(Zend_Db_Select::COLUMNS);
@@ -50,7 +50,7 @@ class Df_Reports_Model_Handler_GroupResultsByWeek_PrepareCollection extends Df_C
 		return $this;
 	}
 
-	/** @return Df_Reports_Model_Handler_GroupResultsByWeek_PrepareCollection */
+	/** @return $this */
 	private function adjustGroupPart() {
 		/** @var array $partGroup */
 		$partGroup = $this->getSelect()->getPart(Zend_Db_Select::GROUP);

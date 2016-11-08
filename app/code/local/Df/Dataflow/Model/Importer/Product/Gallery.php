@@ -1,6 +1,6 @@
 <?php
 class Df_Dataflow_Model_Importer_Product_Gallery extends Df_Core_Model {
-	/** @return Df_Dataflow_Model_Importer_Product_Gallery */
+	/** @return $this */
 	public function addAdditionalImagesToProduct() {
 		$additionalImages =
 			!$this->isAdditionalImageBorrowed()
@@ -99,7 +99,7 @@ class Df_Dataflow_Model_Importer_Product_Gallery extends Df_Core_Model {
 	 * @throws Exception
 	 * @param string $file_source
 	 * @param string $file_target
-	 * @return Df_Dataflow_Model_Importer_Product_Gallery
+	 * @return $this
 	 */
 	private function download($file_source, $file_target) {
 		$rh = null;
@@ -282,7 +282,7 @@ class Df_Dataflow_Model_Importer_Product_Gallery extends Df_Core_Model {
 
 	/**
 	 * @param bool $value
-	 * @return Df_Dataflow_Model_Importer_Product_Gallery
+	 * @return $this
 	 */
 	private function setAdditionalImageBorrowed($value) {
 		$this->_additionalImageBorrowed = $value;

@@ -52,7 +52,7 @@ class Df_Checkout_Block_Frontend_Review_OrderComments extends Df_Core_Block_Temp
 
 	/**
 	 * @param bool $needInsertFormTag
-	 * @return Df_Checkout_Block_Frontend_Review_OrderComments
+	 * @return $this
 	 */
 	public function setNeedInsertFormTag($needInsertFormTag) {
 		df_param_boolean($needInsertFormTag, 0);

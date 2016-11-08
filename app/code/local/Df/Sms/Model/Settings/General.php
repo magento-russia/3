@@ -38,5 +38,5 @@ class Df_Sms_Model_Settings_General extends Df_Core_Model_Settings {
 	 */
 	protected function getKeyPrefix() {return 'df_sms/general/';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

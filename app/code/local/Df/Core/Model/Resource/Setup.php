@@ -8,7 +8,7 @@
 class Df_Core_Model_Resource_Setup extends Mage_Core_Model_Resource_Setup {
 	/**
 	 * @override
-	 * @return Df_Core_Model_Resource_Setup
+	 * @return $this
 	 */
 	public function startSetup() {
 		parent::startSetup();
@@ -53,5 +53,5 @@ class Df_Core_Model_Resource_Setup extends Mage_Core_Model_Resource_Setup {
 	 */
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self('df_core_setup');}
+	public static function s() {static $r; return $r ?: $r = new self('df_core_setup');}
 }

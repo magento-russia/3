@@ -2,7 +2,7 @@
 class Df_Core_Model_Message_InvalidUserInput extends Mage_Core_Model_Message_Error {
 	/**
 	 * @param Zend_Form_Element $element
-	 * @return Df_Core_Model_Message_InvalidUserInput
+	 * @return $this
 	 */
 	public function setElement(Zend_Form_Element $element) {
 		$this->_element = $element;

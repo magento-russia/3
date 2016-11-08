@@ -1,6 +1,6 @@
 <?php
 class Df_AccessControl_Model_Resource_Role extends Df_Core_Model_Resource {
-	/** @return Df_AccessControl_Model_Resource_Role */
+	/** @return $this */
 	public function prepareForInsert() {
 		$this->_useIsObjectNew = true;
 		return $this;
@@ -9,7 +9,7 @@ class Df_AccessControl_Model_Resource_Role extends Df_Core_Model_Resource {
 	/**
 	 * @param int $roleId
 	 * @param bool $on
-	 * @return Df_AccessControl_Model_Resource_Role
+	 * @return $this
 	 */
 	public function setEnabled($roleId, $on) {
 		df_param_integer($roleId, 0);
@@ -90,5 +90,5 @@ class Df_AccessControl_Model_Resource_Role extends Df_Core_Model_Resource {
 	private static $TABLE = 'df_access_control/role';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

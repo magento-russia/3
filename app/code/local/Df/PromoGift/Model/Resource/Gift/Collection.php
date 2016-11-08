@@ -2,7 +2,7 @@
 class Df_PromoGift_Model_Resource_Gift_Collection extends Df_Core_Model_Resource_Collection {
 	/**
 	 * @param int $ruleId
-	 * @return Df_PromoGift_Model_Resource_Gift_Collection
+	 * @return $this
 	 */
 	public function addRuleFilter($ruleId) {
 		$this->addFieldToFilter(Df_PromoGift_Model_Gift::P__RULE_ID, array('eq' => $ruleId));
@@ -12,7 +12,7 @@ class Df_PromoGift_Model_Resource_Gift_Collection extends Df_Core_Model_Resource
 	/**
 	 * Отбраковываем неотносящиеся к магазину правила
 	 * @param int $websiteId
-	 * @return Df_PromoGift_Model_Resource_Gift_Collection
+	 * @return $this
 	 */
 	public function addWebsiteFilter($websiteId) {
 		$this->addFieldToFilter(Df_PromoGift_Model_Gift::P__WEBSITE_ID, array('eq' => $websiteId));

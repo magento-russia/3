@@ -33,7 +33,7 @@ class Df_PromoGift_Model_Gift extends Df_Core_Model {
 
 	/**
 	 * @param Df_Catalog_Model_Product $product
-	 * @return Df_PromoGift_Model_Gift
+	 * @return $this
 	 */
 	public function setProduct(Df_Catalog_Model_Product $product) {
 		$this->setData(self::P__PRODUCT, $product);
@@ -42,7 +42,7 @@ class Df_PromoGift_Model_Gift extends Df_Core_Model {
 
 	/**
 	 * @param Mage_SalesRule_Model_Rule $rule
-	 * @return Df_PromoGift_Model_Gift
+	 * @return $this
 	 */
 	public function setRule(Mage_SalesRule_Model_Rule $rule) {
 		$this->setData(self::P__RULE, $rule);
@@ -51,7 +51,7 @@ class Df_PromoGift_Model_Gift extends Df_Core_Model {
 
 	/**
 	 * @param Mage_Core_Model_Website $website
-	 * @return Df_PromoGift_Model_Gift
+	 * @return $this
 	 */
 	public function setWebsite(Mage_Core_Model_Website $website) {
 		$this->setData(self::P__WEBSITE, $website);
@@ -123,7 +123,7 @@ class Df_PromoGift_Model_Gift extends Df_Core_Model {
 
 	/**
 	 * @param string $paramName
-	 * @return Df_PromoGift_Model_Gift
+	 * @return $this
 	 */
 	private function prepareModelForSave($paramName) {
 		df_param_string($paramName, 0);
@@ -162,16 +162,16 @@ class Df_PromoGift_Model_Gift extends Df_Core_Model {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_PromoGift_Model_Gift
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id
 	 * @param string|null $field [optional]
-	 * @return Df_PromoGift_Model_Gift
+	 * @return $this
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

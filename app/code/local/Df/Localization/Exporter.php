@@ -1,10 +1,7 @@
 <?php
 class Df_Localization_Exporter extends Df_Core_Model {
-	/** @return Df_Localization_Exporter */
-	public function process() {
-		$this->writeTranslationToFiles($this->getTranslationByModules());
-		return $this;
-	}
+	/** @return void */
+	public function process() {$this->writeTranslationToFiles($this->getTranslationByModules());}
 
 	/**
 	 * Этот метод может быть приватным,
@@ -16,7 +13,7 @@ class Df_Localization_Exporter extends Df_Core_Model {
 	 * http://3v4l.org/OipEQ
 	 * @param Df_Localization_Translation_Db_Source_Key $sourceKey
 	 * @param string $stringInTargetLanguage
-	 * @return Df_Localization_Exporter
+	 * @return void
 	 */
 	private function addTranslationStringToModule(
 		Df_Localization_Translation_Db_Source_Key $sourceKey
@@ -28,7 +25,6 @@ class Df_Localization_Exporter extends Df_Core_Model {
 		$this->{__METHOD__}[$sourceKey->getModule()][$sourceKey->getString()] =
 			$stringInTargetLanguage
 		;
-		return $this;
 	}
 
 	/**
@@ -126,7 +122,7 @@ class Df_Localization_Exporter extends Df_Core_Model {
 	 * http://3v4l.org/OipEQ
 	 * @param string $moduleName
 	 * @param array $translation
-	 * @return Df_Localization_Exporter
+	 * @return void
 	 * @throws Exception
 	 */
 	private function writeTranslationToFile($moduleName, array $translation) {
@@ -160,12 +156,11 @@ class Df_Localization_Exporter extends Df_Core_Model {
 			$csvdata[]= array($key, $value)
 		;
 		$parser->saveData($targetFile, $csvdata);
-		return $this;
 	}
 
 	/**
 	 * @param array $translation
-	 * @return Df_Localization_Exporter
+	 * @return void
 	 */
 	private function writeTranslationToFiles(array $translation) {
 		array_map(
@@ -173,9 +168,7 @@ class Df_Localization_Exporter extends Df_Core_Model {
 			array($this, 'writeTranslationToFile')
 			,array_keys($translation)
 			,array_values($translation)
-		)
-		;
-		return $this;
+		);
 	}
 	/** @return Df_Localization_Exporter */
 	public static function i() {return new self;}

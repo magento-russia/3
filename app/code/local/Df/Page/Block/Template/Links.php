@@ -16,7 +16,7 @@ class Df_Page_Block_Template_Links extends Mage_Page_Block_Template_Links {
 	 * @param string|array $aParams
 	 * @param string $beforeText
 	 * @param string $afterText
-	 * @return Df_Page_Block_Template_Links
+	 * @return $this
 	 */
 	public function addLink(
 		$label, $url='', $title='', $prepare=false, $urlParams=[]
@@ -43,7 +43,7 @@ class Df_Page_Block_Template_Links extends Mage_Page_Block_Template_Links {
 
 	/**
 	 * @param string $blockType
-	 * @return Df_Page_Block_Template_Links
+	 * @return $this
 	 */
 	public function removeLinkByBlockType($blockType) {
 		/** @var array $keysToUnset */

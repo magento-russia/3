@@ -161,7 +161,7 @@ class Df_Directory_Helper_Data extends Mage_Directory_Helper_Data {
 
 	/**
 	 * @param Varien_Data_Collection_Db $regions
-	 * @return Mage_Directory_Model_Resource_Region_Collection
+	 * @return $this
 	 */
 	public function normalizeRegions(Varien_Data_Collection_Db $regions) {
 		/** @var bool $needNormalize */
@@ -246,5 +246,5 @@ class Df_Directory_Helper_Data extends Mage_Directory_Helper_Data {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

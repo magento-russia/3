@@ -74,7 +74,7 @@ abstract class Df_Core_Model_Entity extends Df_Core_Model {
 	/** @return string */
 	public function getSessionKey() {return get_class($this);}
 
-	/** @return Df_Core_Model_Entity */
+	/** @return $this */
 	protected function initDependenciesInfo() {return $this;}
 
 	/** @used-by Df_Core_Model_Form_Builder::_construct() */

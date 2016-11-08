@@ -45,7 +45,7 @@ class Df_AccessControl_Model_Role extends Df_Core_Model {
 	/**
 	 * Говорим системе использовать insert, а не update
 	 * @param int $roleId
-	 * @return Df_AccessControl_Model_Role
+	 * @return $this
 	 */
 	public function prepareForInsert($roleId) {
 		df_param_integer($roleId, 0);
@@ -59,7 +59,7 @@ class Df_AccessControl_Model_Role extends Df_Core_Model {
 
 	/**
 	 * @param int[] $categoryIds
-	 * @return Df_AccessControl_Model_Role
+	 * @return $this
 	 */
 	public function setCategoryIds(array $categoryIds) {
 		df_param_array($categoryIds, 0);
@@ -76,7 +76,7 @@ class Df_AccessControl_Model_Role extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_AccessControl_Model_Role
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		$this->setData(self::P__CATEGORIES, df_csv_parse_int($this->getCategoryIds()));

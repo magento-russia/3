@@ -34,5 +34,5 @@ class Df_Wishlist_Helper_Data extends Mage_Wishlist_Helper_Data {
 	
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

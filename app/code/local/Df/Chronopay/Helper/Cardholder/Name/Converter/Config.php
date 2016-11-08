@@ -12,5 +12,5 @@ class Df_Chronopay_Helper_Cardholder_Name_Converter_Config extends Mage_Core_Hel
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

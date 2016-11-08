@@ -39,5 +39,5 @@ class Df_SalesRule_Model_Rule extends Mage_SalesRule_Model_Rule {
 	/** @return Df_SalesRule_Model_Resource_Rule_Collection */
 	public static function c() {return new Df_SalesRule_Model_Resource_Rule_Collection;}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

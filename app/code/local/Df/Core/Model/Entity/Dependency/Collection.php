@@ -6,7 +6,7 @@ class Df_Core_Model_Entity_Dependency_Collection extends Df_Varien_Data_Collecti
 	 * @param string $actionSaveClassName
 	 * @param string $idFieldName
 	 * @param bool $deleteCascade [optional]
-	 * @return Df_Core_Model_Entity_Dependency_Collection
+	 * @return $this
 	 */
 	public function addDependency(
 		$name, $className, $actionSaveClassName, $idFieldName, $deleteCascade = false

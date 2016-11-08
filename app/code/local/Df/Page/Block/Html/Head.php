@@ -15,7 +15,7 @@ class Df_Page_Block_Html_Head extends Mage_Page_Block_Html_Head {
 	 * @param string|null $params [optional]
 	 * @param string|null $if [optional]
 	 * @param string|null $cond [optional]
-	 * @return Df_Page_Block_Html_Head
+	 * @return $this
 	 */
 	public function addItem($type, $name, $params = null, $if = null, $cond = null) {
 		if (!df_h()->page()->head()->needSkipItem($type, $name)) {

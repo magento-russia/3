@@ -5,5 +5,5 @@ class Df_Admin_Model_Settings_Admin_Catalog_Product extends Df_Core_Model_Settin
 		return $this->getYesNo('df_tweaks_admin/catalog_product/fix_bundle_js');
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

@@ -4,7 +4,7 @@ class Df_Sms_Helper_Data extends Mage_Core_Helper_Abstract {
 	 * @param string $receiver
 	 * @param string $message
 	 * @param Df_Core_Model_StoreM $store
-	 * @return Df_Sms_Helper_Data
+	 * @return void
 	 */
 	public function send($receiver, $message, Df_Core_Model_StoreM $store) {
 		if (df_cfgr()->sms()->general()->isEnabled($store)) {
@@ -27,10 +27,9 @@ class Df_Sms_Helper_Data extends Mage_Core_Helper_Abstract {
 			df_assert($gate instanceof Df_Sms_Model_Gate);
 			$gate->send();
 		}
-		return $this;
 	}
 
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

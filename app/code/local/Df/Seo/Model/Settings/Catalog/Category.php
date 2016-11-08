@@ -9,5 +9,5 @@ class Df_Seo_Model_Settings_Catalog_Category extends Df_Core_Model_Settings {
 		return $this->getYesNo('df_seo/catalog_category/hide_description_from_non_first_pages');
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

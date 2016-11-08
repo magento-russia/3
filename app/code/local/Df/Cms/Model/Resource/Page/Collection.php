@@ -39,7 +39,7 @@ class Df_Cms_Model_Resource_Page_Collection extends Mage_Cms_Model_Resource_Page
 	 * Нормально сохранять такие страницы-сироты всё равно нельзя,
 	 * поэтому при массовой обратботке коллекции страниц с последующим сохранением
 	 * отфильтровываем из такой коллекции страницы-сироты.
-	 * @return Df_Cms_Model_Resource_Page_Collection
+	 * @return $this
 	 */
 	public function withoutOrphans() {
 		/** @var int[] $orphanIds */
@@ -52,7 +52,7 @@ class Df_Cms_Model_Resource_Page_Collection extends Mage_Cms_Model_Resource_Page
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Resource_Page_Collection
+	 * @return $this
 	 */
 	protected function _afterLoad() {
 		parent::_afterLoad();

@@ -25,7 +25,7 @@ class Df_Admin_Block_Column_Select extends Df_Admin_Block_Column {
 	 * @override
 	 * @return array(string => mixed)
 	 */
-	protected function getDefaultRenderOptions() {return array('width' => 150);}
+	protected function getDefaultRenderOptions() {return ['width' => 150];}
 
 	/**
 	 * @override

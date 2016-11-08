@@ -3,7 +3,7 @@ class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balan
 	extends Df_Core_Block_Admin {
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balance_History
+	 * @return $this
 	 */
 	protected function _prepareLayout() {
 		$this->setChild(

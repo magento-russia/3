@@ -34,7 +34,7 @@ class Df_Admin_Model_Mode extends Df_Core_Model {
 		/** @var mixed $result */
 		$this->begin();
 		try {
-			$result = call_user_func_array(array($object, $method), $parameters);
+			$result = call_user_func_array([$object, $method], $parameters);
 		}
 		catch (Exception $e) {
 			$this->end();
@@ -64,5 +64,5 @@ class Df_Admin_Model_Mode extends Df_Core_Model {
 	private $_updateMode;
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

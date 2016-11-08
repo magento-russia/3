@@ -281,7 +281,7 @@ class Df_PromoGift_Model_Resource_Indexer extends Df_Core_Model_Resource {
 	 * @param Mage_Core_Model_Website $website
 	 * @param Mage_SalesRule_Model_Rule $rule
 	 * @param Df_Catalog_Model_Product $product
-	 * @return Df_PromoGift_Model_Resource_Indexer
+	 * @return $this
 	 */
 	private function makeIndexEntry(
 		Mage_Core_Model_Website $website
@@ -324,5 +324,5 @@ class Df_PromoGift_Model_Resource_Indexer extends Df_Core_Model_Resource {
 		$this->_init(Df_PromoGift_Model_Resource_Gift::TABLE, Df_PromoGift_Model_Gift::P__ID);
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

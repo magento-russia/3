@@ -76,7 +76,7 @@ class Df_Logging_Model_Archive extends Df_Core_Model {
 	/**
 	 * Search the file in storage by base name and set it
 	 * @param string $baseName
-	 * @return Df_Logging_Model_Archive
+	 * @return $this
 	 */
 	public function loadByBaseName($baseName) {
 		$this->_file = '';
@@ -107,9 +107,9 @@ class Df_Logging_Model_Archive extends Df_Core_Model {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Logging_Model_Archive
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

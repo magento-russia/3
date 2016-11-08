@@ -9,7 +9,7 @@ class Df_Invitation_Model_Invitation extends Df_Core_Model {
 	/**
 	 * @param int|string $websiteId
 	 * @param int $referralId
-	 * @return Df_Invitation_Model_Invitation
+	 * @return $this
 	 */
 	public function accept($websiteId, $referralId) {
 		$this->makeSureCanBeAccepted($websiteId);
@@ -67,7 +67,7 @@ class Df_Invitation_Model_Invitation extends Df_Core_Model {
 		return false;
 	}
 
-	/** @return Df_Invitation_Model_Invitation */
+	/** @return $this */
 	public function cancel() {
 		if ($this->canBeCanceled()) {
 			$this->setStatus(self::STATUS_CANCELED)->save();
@@ -108,7 +108,7 @@ class Df_Invitation_Model_Invitation extends Df_Core_Model {
 
 	/**
 	 * @param string $code
-	 * @return Df_Invitation_Model_Invitation
+	 * @return $this
 	 * @throws Mage_Core_Exception
 	 */
 	public function loadByInvitationCode($code) {
@@ -288,7 +288,7 @@ class Df_Invitation_Model_Invitation extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_Invitation_Model_Invitation
+	 * @return $this
 	 */
 	protected function _afterSave() {
 		Df_Invitation_Model_Invitation_History::i()
@@ -305,7 +305,7 @@ class Df_Invitation_Model_Invitation extends Df_Core_Model {
 	/**
 	 * @override
 	 * @throws Mage_Core_Exception
-	 * @return Df_Invitation_Model_Invitation
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		if (!$this->getId()) {
@@ -388,16 +388,16 @@ class Df_Invitation_Model_Invitation extends Df_Core_Model {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Invitation_Model_Invitation
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id
 	 * @param string|null $field [optional]
-	 * @return Df_Invitation_Model_Invitation
+	 * @return $this
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

@@ -82,17 +82,17 @@ class Df_Sales_Block_Admin_Grid_OrderItem extends Df_Core_Block_Admin {
 
 	/** @return string[] */
 	public static function getKeysSource() {
-		static $r; return $r ? $r : $r = array_keys(self::getMapFromSourceKeysToTargetKeys());
+		static $r; return $r ?: $r = array_keys(self::getMapFromSourceKeysToTargetKeys());
 	}
 
 	/** @return string[] */
 	public static function getKeysTarget() {
-		static $r; return $r ? $r : $r = array_values(self::getMapFromSourceKeysToTargetKeys());
+		static $r; return $r ?: $r = array_values(self::getMapFromSourceKeysToTargetKeys());
 	}
 
 	/** @return array(string => string) */
 	private static function getMapFromSourceKeysToTargetKeys() {
-		static $r; return $r ? $r : $r = array(
+		static $r; return $r ?: $r = array(
 			Df_Sales_Model_Handler_AdminOrderGrid_AddProductDataToCollection
 				::COLLECTION_ITEM_PARAM__DF_NAMES
 				=>

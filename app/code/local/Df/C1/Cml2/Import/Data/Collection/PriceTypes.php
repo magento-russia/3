@@ -108,5 +108,5 @@ class PriceTypes extends \Df\C1\Cml2\Import\Data\Collection {
 	 * @used-by \Df\C1\Cml2\State::getPriceTypes()
 	 * @return self
 	 */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

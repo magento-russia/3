@@ -11,5 +11,5 @@ class Df_Core_Helper_Mage_Adminhtml extends Mage_Core_Helper_Abstract {
 	/** @return Mage_Adminhtml_Model_System_Config_Source_Yesno */
 	public function yesNo() {return Mage::getSingleton('adminhtml/system_config_source_yesno');}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

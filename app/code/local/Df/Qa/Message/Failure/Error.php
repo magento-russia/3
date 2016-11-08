@@ -156,5 +156,5 @@ final class Error extends \Df\Qa\Message\Failure {
 	 * @used-by trace()
 	 * @return bool
 	 */
-	private static function xdebug() {static $r; return $r ? $r : $r = extension_loaded('xdebug');}
+	private static function xdebug() {static $r; return $r ?: $r = extension_loaded('xdebug');}
 }

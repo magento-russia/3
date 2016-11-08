@@ -2,7 +2,7 @@
 class Df_Banner_Block_Adminhtml_Banneritem_Edit_Tab_Form extends Mage_Adminhtml_Block_Widget_Form {
 	/**
 	 * @override
-	 * @return Df_Banner_Block_Adminhtml_Banneritem_Edit_Tab_Form
+	 * @return $this
 	 */
 	protected function _prepareForm() {
 		$form = new Varien_Data_Form();

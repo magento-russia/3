@@ -30,7 +30,7 @@ abstract class Df_Dataflow_Model_Convert_Mapper_Abstract
 	/** @var Mage_Dataflow_Model_Batch */
 	protected $_batch;
 
-	/** @return Df_Dataflow_Model_Convert_Mapper_Abstract */
+	/** @return $this */
 	public function map() {
 		foreach ($this->getSourceRowIds() as $sourceRowId) {
 			/** @var int $sourceRowModel */

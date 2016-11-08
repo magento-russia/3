@@ -34,5 +34,5 @@ class Df_Admin_Model_Notifier_DeleteDemoStores extends Df_Admin_Model_Notifier {
 	}
 
 	/** @return array(mixed => mixed) */
-	private function getDemoStoreCodes() {return array('french', 'german', 'spanish');}
+	private function getDemoStoreCodes() {return ['french', 'german', 'spanish'];}
 }

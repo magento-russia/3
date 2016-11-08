@@ -58,7 +58,7 @@ class Df_Reports_Model_Handler_SetDefaultFilterValues extends Df_Core_Model_Hand
 		return df_n_get($this->{__METHOD__});
 	}
 
-	/** @return Df_Reports_Model_Handler_SetDefaultFilterValues */
+	/** @return $this */
 	private function setEndDateToYesterday() {
 		/** @var Varien_Data_Form_Element_Date|null $elementEndDate */
 		$elementEndDate =
@@ -70,7 +70,7 @@ class Df_Reports_Model_Handler_SetDefaultFilterValues extends Df_Core_Model_Hand
 		return $this;
 	}
 
-	/** @return Df_Reports_Model_Handler_SetDefaultFilterValues */
+	/** @return $this */
 	private function setStartDate() {
 		/** @var Varien_Data_Form_Element_Date|null $elementStartDate */
 		$elementStartDate = $this->getBlockAsReportFilterForm()->getForm()->getElement('from');

@@ -85,5 +85,5 @@ class Df_Eav_Model_Resource_Entity_Attribute_Set extends Mage_Eav_Model_Resource
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

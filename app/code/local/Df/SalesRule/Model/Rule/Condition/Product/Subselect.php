@@ -4,7 +4,7 @@ class Df_SalesRule_Model_Rule_Condition_Product_Subselect extends Mage_SalesRule
 	 * Цель перекрытия —
 	 * заплатка для опции «Группа товаров с определёнными условиями».
 	 * @override
-	 * @return Df_SalesRule_Model_Rule_Condition_Product_Subselect
+	 * @return $this
 	 */
 	public function loadValueOptions() {
 		parent::loadValueOptions();

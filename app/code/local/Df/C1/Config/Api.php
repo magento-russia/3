@@ -12,5 +12,5 @@ class Api extends \Df_Core_Model_Settings {
 	/** @return Api\ReferenceLists */
 	public function referenceLists() {return Api\ReferenceLists::s();}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

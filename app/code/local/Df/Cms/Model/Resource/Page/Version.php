@@ -69,7 +69,7 @@ class Df_Cms_Model_Resource_Page_Version extends Df_Core_Model_Resource {
 	 * @param int $userId
 	 * @param int|string $value
 	 * @param string|null $field
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	public function loadWithRestrictions($object, $accessLevel, $userId, $value, $field = null)
 	{
@@ -106,5 +106,5 @@ class Df_Cms_Model_Resource_Page_Version extends Df_Core_Model_Resource {
 	 */
 	const TABLE = 'df_cms/page_version';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

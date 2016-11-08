@@ -54,7 +54,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 	 * @override
 	 * @param string|string[]|integer|Mage_Core_Model_Config_Element $attribute
 	 * @param bool|string $joinType [optional]
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	public function addAttributeToSelect($attribute, $joinType = false) {
 		if ($this->isEnabledFlat() && ('*' !== $attribute)) {
@@ -68,7 +68,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 	 * @override
 	 * @param string $attribute
 	 * @param string $dir
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	public function addAttributeToSort($attribute, $dir = self::SORT_ORDER_ASC) {
 		if (
@@ -110,7 +110,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 
 	/**
 	 * @param int[] $categoryIds
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	public function addCategoriesFilter(array $categoryIds) {
 		df_param_array($categoryIds, 0);
@@ -150,7 +150,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 	 *
 	 * Фильтрация запроса средствами интерпретатора PHP прозволяет избежать этих проблем.
 	 * @param int[] $productIds
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	public function addIdFilterClientSide(array $productIds) {
 		$this->_idFilterClientSide = $productIds;
@@ -229,7 +229,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 
 	/**
 	 * @override
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	protected function _afterLoad() {
 		parent::_afterLoad();
@@ -248,7 +248,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 	 * for different combinations of store_id/category_id/visibility filter states
 	 *
 	 * Method supports multiple changes in one collection object for this parameters
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	protected function _applyProductLimitations() {
 		/**
@@ -378,7 +378,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 	 * Method allows using one time category product table
 	 * for combinations of category_id filter states
 	 * @override
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	protected function _applyZeroStoreProductLimitations() {
 		/** @var array $filters */
@@ -464,7 +464,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 
 	/**
 	 * @param string[] $attributes
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	private function checkAttributesAreAvailableInFlatMode(array $attributes) {
 		if ($this->isEnabledFlat()) {
@@ -557,7 +557,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 	 * @see Mage_Catalog_Model_Resource_Product_Collection::_init()
 	 * @param string $model
 	 * @param string|null $entityModel [optional]
-	 * @return Df_Catalog_Model_Resource_Category_Collection
+	 * @return $this
 	 */
 	protected function _init($model, $entityModel = null) {
 		$this->_itemObjectClass = Df_Catalog_Model_Product::class;
@@ -606,7 +606,7 @@ class Df_Catalog_Model_Resource_Product_Collection
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Catalog_Model_Resource_Product_Collection
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 }

@@ -17,14 +17,9 @@ abstract class Df_Admin_Config_DynamicTable_Column extends Df_Core_Model {
 	 * @used-by Df_Admin_Block_Column::getHtmlAttributes()
 	 * @return array(string => string)
 	 */
-	public function getHtmlAttributes() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} =
-				array('name' => $this->getName()) + $this->cfg(self::$P__HTML_ATTRIBUTES, [])
-			;
-		}
-		return $this->{__METHOD__};
-	}
+	public function getHtmlAttributes() {return dfc($this, function() {return
+		['name' => $this->getName()] + $this->cfg(self::$P__HTML_ATTRIBUTES, [])
+	;});}
 
 	/**
 	 * @used-by Df_Admin_Block_Column::getInputName()

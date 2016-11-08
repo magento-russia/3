@@ -2,7 +2,7 @@
 class Df_Catalog_Model_Config_Backend_Conditions extends Df_Admin_Config_Backend {
 	/**
 	 * @overide
-	 * @return Df_Catalog_Model_Config_Backend_Conditions
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		try {

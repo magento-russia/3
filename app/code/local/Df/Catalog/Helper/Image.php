@@ -60,7 +60,7 @@ class Df_Catalog_Helper_Image extends Mage_Catalog_Helper_Image {
 	 *
 	 * @override
 	 * @param int|string $imageOpacity
-	 * @return Df_Catalog_Helper_Image
+	 * @return $this
 	 */
 	public function setWatermarkImageOpacity($imageOpacity) {
 		if (is_string($imageOpacity)) {
@@ -82,7 +82,7 @@ class Df_Catalog_Helper_Image extends Mage_Catalog_Helper_Image {
 	 * на основе информации товара.
 	 * @override
 	 * @param Df_Catalog_Model_Product $product
-	 * @return Df_Catalog_Helper_Image
+	 * @return $this
 	 */
 	protected function setProduct(
 		/**

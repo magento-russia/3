@@ -35,5 +35,5 @@ class Df_Cms_Model_Resource_Block extends Mage_Cms_Model_Resource_Block {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

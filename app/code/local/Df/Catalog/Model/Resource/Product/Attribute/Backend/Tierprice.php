@@ -12,7 +12,7 @@ class Df_Catalog_Model_Resource_Product_Attribute_Backend_Tierprice
 	 * http://stackoverflow.com/a/10178922
 	 * @override
 	 * @param Varien_Object $priceObject
-	 * @return Df_Catalog_Model_Resource_Product_Attribute_Backend_Tierprice
+	 * @return $this
 	 * @throws Exception
 	 */
 	public function savePriceData(Varien_Object $priceObject) {

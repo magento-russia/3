@@ -10,5 +10,5 @@ class Df_Admin_Model_Settings_Admin_System extends Df_Core_Model_Settings {
 	 * @used-by Df_Admin_Model_Settings_Admin::system()
 	 * @return Df_Admin_Model_Settings_Admin_System
 	 */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

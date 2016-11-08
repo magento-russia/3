@@ -44,7 +44,7 @@ class Df_Cms_Adminhtml_Cms_Page_RevisionController extends Df_Cms_Adminhtml_Cms_
 
 	/**
 	 * Generates preview of page
-	 * @return Df_Cms_Adminhtml_Cms_Page_RevisionController
+	 * @return $this
 	 */
 	public function dropAction()
 	{
@@ -291,7 +291,7 @@ class Df_Cms_Adminhtml_Cms_Page_RevisionController extends Df_Cms_Adminhtml_Cms_
 
 	/**
 	 * Init actions
-	 * @return Df_Cms_Adminhtml_Cms_Page_RevisionController
+	 * @return $this
 	 */
 	protected function _initAction()
 	{

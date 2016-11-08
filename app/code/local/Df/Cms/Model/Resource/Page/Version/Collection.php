@@ -6,7 +6,7 @@ class Df_Cms_Model_Resource_Page_Version_Collection
 	 * Can take parameter array or one level.
 	 *
 	 * @param mixed $level
-	 * @return Df_Cms_Model_Resource_Page_Version_Collection
+	 * @return $this
 	 */
 	public function addAccessLevelFilter($level) {
 		if (is_array($level)) {
@@ -42,7 +42,7 @@ class Df_Cms_Model_Resource_Page_Version_Collection
 
 	/**
 	 * Join revision data by version id
-	 * @return Df_Cms_Model_Resource_Page_Version_Collection
+	 * @return $this
 	 */
 	public function joinRevisions()
 	{
@@ -61,7 +61,7 @@ class Df_Cms_Model_Resource_Page_Version_Collection
 	 * Add order by version number in specified direction.
 	 *
 	 * @param string $dir
-	 * @return Df_Cms_Model_Resource_Page_Version_Collection
+	 * @return $this
 	 */
 	public function addNumberSort($dir = 'desc') {
 		$this->setOrder('version_number', $dir);

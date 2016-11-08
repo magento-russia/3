@@ -35,7 +35,7 @@ class Df_Localization_Onetime_Processor_Collection extends Df_Varien_Data_Collec
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 
 	/**
 	 * @var Df_Localization_Onetime_Processor $processor1

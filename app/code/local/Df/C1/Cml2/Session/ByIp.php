@@ -88,5 +88,5 @@ class ByIp extends \Df_Core_Model_Session_Custom_Additional {
 	private static $P__FILE_MAPS = 'file_maps';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

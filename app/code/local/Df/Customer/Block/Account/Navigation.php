@@ -5,7 +5,7 @@ class Df_Customer_Block_Account_Navigation extends Mage_Customer_Block_Account_N
 	 * Он добавлен именно в этот класс,
 	 * потому что он использует поле $_links родительского класса.
 	 * @param string $path
-	 * @return Df_Customer_Block_Account_Navigation
+	 * @return $this
 	 */
 	public function removeLinkByPath($path) {
 		$linkNamesToRemove = [];

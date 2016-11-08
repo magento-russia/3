@@ -1,6 +1,6 @@
 <?php
 class Df_Chronopay_Model_Gate_Response extends \Df\Xml\Parser\Entity {
-	/** @return Df_Chronopay_Model_Gate_Response */
+	/** @return $this */
 	public function check() {
 		if (0 != $this->getCode()) {
 			df_error($this->getDiagnosticMessage());

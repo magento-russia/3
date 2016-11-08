@@ -38,12 +38,12 @@ class Df_Admin_Config_DynamicTable_Column_Select
 	) {
 		df_param_string_not_empty($name, 0);
 		df_param_string_not_empty($label, 1);
-		return new self(array(
+		return new self([
 			self::$P__NAME => $name
 			, self::$P__LABEL => $label
 			, self::$P__OPTIONS => $options
 			, self::$P__HTML_ATTRIBUTES => $htmlAttributes
 			, self::$P__RENDER_OPTIONS => $renderOptions
-		));
+		]);
 	}
 }

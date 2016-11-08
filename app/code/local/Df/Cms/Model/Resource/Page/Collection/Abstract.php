@@ -21,7 +21,7 @@ abstract class Df_Cms_Model_Resource_Page_Collection_Abstract extends Df_Core_Mo
 	 * Parameter $page can be int or cms page object.
 	 *
 	 * @param mixed $page
-	 * @return Df_Cms_Model_Resource_Page_Collection_Abstract
+	 * @return $this
 	 */
 	public function addPageFilter($page) {
 		if ($page instanceof Mage_Cms_Model_Page) {
@@ -39,7 +39,7 @@ abstract class Df_Cms_Model_Resource_Page_Collection_Abstract extends Df_Core_Mo
 	 *
 	 * @param mixed $userId
 	 * @param mixed $accessLevel
-	 * @return Df_Cms_Model_Resource_Page_Collection_Abstract
+	 * @return $this
 	 */
 	public function addVisibilityFilter($userId, $accessLevel = Df_Cms_Model_Page_Version::ACCESS_LEVEL_PUBLIC)
 	{
@@ -66,7 +66,7 @@ abstract class Df_Cms_Model_Resource_Page_Collection_Abstract extends Df_Core_Mo
 
 	/**
 	 * Mapping user_id to user column with additional value for non-existent users
-	 * @return Df_Cms_Model_Resource_Page_Collection_Abstract
+	 * @return $this
 	 */
 	public function addUserColumn()
 	{
@@ -78,7 +78,7 @@ abstract class Df_Cms_Model_Resource_Page_Collection_Abstract extends Df_Core_Mo
 
 	/**
 	 * Join username from system user table
-	 * @return Df_Cms_Model_Resource_Page_Collection_Abstract
+	 * @return $this
 	 */
 	public function addUserNameColumn()
 	{
@@ -126,7 +126,7 @@ abstract class Df_Cms_Model_Resource_Page_Collection_Abstract extends Df_Core_Mo
 	 * Add filtering by user id.
 	 *
 	 * @param int|null $userId
-	 * @return Df_Cms_Model_Resource_Page_Collection_Abstract
+	 * @return $this
 	 */
 	public function addUserIdFilter($userId = null)
 	{

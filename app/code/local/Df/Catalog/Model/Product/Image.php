@@ -5,7 +5,7 @@ class Df_Catalog_Model_Product_Image extends Mage_Catalog_Model_Product_Image {
 	 * добавление к товарному изображению информации EXIF.
 	 * @override
 	 * @see Mage_Catalog_Model_Product_Image::saveFile()
-	 * @return Df_Catalog_Model_Product_Image
+	 * @return $this
 	 */
 	public function saveFile() {
 		parent::saveFile();

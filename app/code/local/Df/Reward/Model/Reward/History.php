@@ -213,5 +213,5 @@ class Df_Reward_Model_Reward_History extends Df_Core_Model {
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

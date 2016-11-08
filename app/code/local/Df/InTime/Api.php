@@ -472,5 +472,5 @@ class Api extends \Df_Core_Model {
 	private $_soap;
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

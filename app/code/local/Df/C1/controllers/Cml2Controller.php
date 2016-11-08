@@ -28,7 +28,7 @@ class Df_C1_Cml2Controller extends Mage_Core_Controller_Front_Action {
 	 * @override
 	 * @see Mage_Core_Controller_Front_Action::preDispatch()
 	 * @used-by Mage_Core_Controller_Front_Action::dispatch()
-	 * @return Df_C1_Cml2Controller
+	 * @return $this
 	 */
 	public function preDispatch() {
 		/**
@@ -36,7 +36,6 @@ class Df_C1_Cml2Controller extends Mage_Core_Controller_Front_Action {
 		 * @see Df_Core_Model_Session_Custom_Primary::_construct()
 		 */
 		\Df\C1\Cml2\Session\ByCookie\C1::s();
-		parent::preDispatch();
-		return $this;
+		return parent::preDispatch();
 	}
 }

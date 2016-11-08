@@ -22,5 +22,5 @@ class Products extends Yml {
 	private function getRuleId() {return $this->nat0('conditions');}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

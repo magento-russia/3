@@ -15,7 +15,7 @@ class Df_Sales_Model_Quote_Address_Rate extends Mage_Sales_Model_Quote_Address_R
 	 * @see Mage_Sales_Model_Quote_Address_Rate::importShippingRate()
 	 * @used-by Mage_Sales_Model_Quote_Address::requestShippingRates()
 	 * @param Mage_Shipping_Model_Rate_Result_Abstract $rate
-	 * @return Df_Sales_Model_Quote_Address_Rate
+	 * @return $this
 	 */
 	public function importShippingRate(Mage_Shipping_Model_Rate_Result_Abstract $rate) {
 		parent::importShippingRate($rate);

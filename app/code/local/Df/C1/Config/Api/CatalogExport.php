@@ -20,5 +20,5 @@ class CatalogExport extends \Df\C1\Config\Api\Cml2 {
 	private function getRuleId() {return $this->nat0('product_conditions');}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

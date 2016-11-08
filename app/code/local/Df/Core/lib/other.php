@@ -2,7 +2,7 @@
 use Exception as E;
 
 /** @return Df_Core_Helper_Data */
-function df() {static $r; return $r ? $r : $r = Df_Core_Helper_Data::s();}
+function df() {static $r; return $r ?: $r = Df_Core_Helper_Data::s();}
 
 /**
  * Обработка исключительных ситуаций в точках сочленения моих модулей и ядра

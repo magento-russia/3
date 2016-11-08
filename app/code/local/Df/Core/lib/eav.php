@@ -97,7 +97,7 @@ function df_eav_reset_categories() {
 
 /** @return int */
 function df_eav_id_product() {
-	static $r; return $r ? $r : $r = Df_Eav_Model_Entity::product()->getTypeId();
+	static $r; return $r ?: $r = Df_Eav_Model_Entity::product()->getTypeId();
 }
 
 /**

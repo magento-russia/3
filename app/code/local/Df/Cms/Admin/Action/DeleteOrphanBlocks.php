@@ -15,5 +15,5 @@ class Df_Cms_Admin_Action_DeleteOrphanBlocks extends Df_Core_Model_Action_Admin 
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

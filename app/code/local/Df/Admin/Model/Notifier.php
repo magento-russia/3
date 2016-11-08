@@ -48,12 +48,7 @@ abstract class Df_Admin_Model_Notifier extends Df_Core_Model {
 	}
 
 	/** @return array(string => string) */
-	protected function getMessageVariables() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = array('{веб-адрес пояснений}' => $this->getUrlHelp());
-		}
-		return $this->{__METHOD__};
-	}
+	protected function getMessageVariables() {return ['{веб-адрес пояснений}' => $this->getUrlHelp()];}
 
 	/** @return string */
 	protected function getUrlHelp() {return '';}

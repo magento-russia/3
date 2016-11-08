@@ -19,7 +19,7 @@ class Df_Logging_Block_Index_Grid extends Mage_Adminhtml_Block_Widget_Grid {
 
 	/**
 	 * @override
-	 * @return Df_Logging_Block_Index_Grid
+	 * @return $this
 	 */
 	protected function _prepareCollection() {
 		$this->setCollection(Df_Logging_Model_Event::c());
@@ -29,7 +29,7 @@ class Df_Logging_Block_Index_Grid extends Mage_Adminhtml_Block_Widget_Grid {
 
 	/**
 	 * @override
-	 * @return Df_Logging_Block_Index_Grid
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		/** @var string[] $actions */

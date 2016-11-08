@@ -12,7 +12,7 @@ class Df_Dataflow_Model_Importer_Product_Categories
 	/**
 	 * @override
 	 * @throws Exception
-	 * @return Df_Dataflow_Model_Importer_Product_Categories
+	 * @return $this
 	 */
 	public function process() {
 		try {

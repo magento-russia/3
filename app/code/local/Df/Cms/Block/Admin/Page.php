@@ -24,7 +24,7 @@
 class Df_Cms_Block_Admin_Page extends Df_Core_Block_Admin {
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Page
+	 * @return $this
 	 */
 	protected function _prepareLayout() {
 		if (df_cfgr()->cms()->versioning()->isEnabled()) {

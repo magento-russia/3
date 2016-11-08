@@ -138,7 +138,7 @@ class Df_Cms_Block_Admin_Page_Edit_Tab_Versions
 
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Page_Edit_Tab_Versions
+	 * @return $this
 	 */
 	protected function _prepareMassaction() {
 		parent::_prepareMassaction();

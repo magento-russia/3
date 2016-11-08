@@ -444,5 +444,5 @@ class Df_Directory_Model_Resource_Country_Collection
 	 * @used-by Df_Directory_Model_Country::cs()
 	 * @return Df_Directory_Model_Resource_Country_Collection
 	 */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

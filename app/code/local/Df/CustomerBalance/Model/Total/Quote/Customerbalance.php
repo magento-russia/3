@@ -13,7 +13,7 @@ class Df_CustomerBalance_Model_Total_Quote_Customerbalance
 	/**
 	 * Collect customer balance totals for specified address
 	 * @param Mage_Sales_Model_Quote_Address|Df_Sales_Model_Quote_Address $address
-	 * @return Df_CustomerBalance_Model_Total_Quote_Customerbalance
+	 * @return $this
 	 */
 	public function collect(Mage_Sales_Model_Quote_Address $address) {
 		if (!Df_CustomerBalance_Helper_Data::s()->isEnabled()) {
@@ -65,7 +65,7 @@ class Df_CustomerBalance_Model_Total_Quote_Customerbalance
 	/**
 	 * Return shopping cart total row items
 	 * @param Mage_Sales_Model_Quote_Address|Df_Sales_Model_Quote_Address $address
-	 * @return Df_CustomerBalance_Model_Total_Quote_Customerbalance
+	 * @return $this
 	 */
 	public function fetch(Mage_Sales_Model_Quote_Address $address) {
 		if (!Df_CustomerBalance_Helper_Data::s()->isEnabled()) {

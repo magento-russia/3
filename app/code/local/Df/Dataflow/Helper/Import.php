@@ -8,5 +8,5 @@ class Df_Dataflow_Helper_Import extends Mage_Core_Helper_Abstract {
 		return $this->{__METHOD__};
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

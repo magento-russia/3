@@ -5,7 +5,7 @@ class Df_Adminhtml_Block_Tax_Rule_Edit_Form extends Mage_Adminhtml_Block_Tax_Rul
 	 * добавление поясняющих комментариев к экрану налогового правила:
 	 * «Продажи» → «НДС» → «Правила»  → <Налоговое правило>.
 	 * @override
-	 * @return Df_Adminhtml_Block_Tax_Rule_Edit_Form
+	 * @return $this
 	 */
 	protected function _prepareForm() {
 		parent::_prepareForm();

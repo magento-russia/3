@@ -41,5 +41,5 @@ class Df_Core_Model_Design_Package extends Df_Core_Model {
 	const PACKAGE_PARAM__VERSION = 'version';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

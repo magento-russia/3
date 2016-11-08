@@ -10,9 +10,9 @@ class Df_Admin_Config_Source_NoYes extends Df_Admin_Config_Source {
 	 * @param bool $isMultiSelect
 	 * @return array(array(string => string))
 	 */
-	protected function toOptionArrayInternal($isMultiSelect = false) {
-		return df_map_to_options(array('Yes', 'No'), 'Mage_Adminhtml');
-	}
+	protected function toOptionArrayInternal($isMultiSelect = false) {return
+		df_map_to_options(['Yes', 'No'], 'Mage_Adminhtml')
+	;}
 
 	/**
 	 * @override

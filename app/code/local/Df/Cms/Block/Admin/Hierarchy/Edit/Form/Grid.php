@@ -2,7 +2,7 @@
 class Df_Cms_Block_Admin_Hierarchy_Edit_Form_Grid extends Mage_Adminhtml_Block_Widget_Grid {
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Hierarchy_Edit_Form_Grid
+	 * @return $this
 	 */
 	protected function _prepareCollection() {
 		/** @var Df_Cms_Model_Resource_Page_Collection $collection */
@@ -18,7 +18,7 @@ class Df_Cms_Block_Admin_Hierarchy_Edit_Form_Grid extends Mage_Adminhtml_Block_W
 
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Hierarchy_Edit_Form_Grid
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		$this

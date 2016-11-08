@@ -176,7 +176,7 @@ class Df_Banner_Adminhtml_BannerController extends Mage_Adminhtml_Controller_Act
 		$this->_redirect('*/*/');
 	}
 
-	/** @return Df_Banner_Adminhtml_BannerController */
+	/** @return $this */
 	private function _initAction() {
 		$this->loadLayout()
 			->_setActiveMenu('df_banner/banners')

@@ -28,7 +28,7 @@ class Df_Tweaks_Block_Frontend_Style extends Df_Core_Block_Abstract {
 	/**
 	 * @param Df_Admin_Config_Font $font
 	 * @param string|string[] $selector
-	 * @return Df_Tweaks_Block_Frontend_Style
+	 * @return $this
 	 */
 	private function adjustLetterCase(Df_Admin_Config_Font $font, $selector) {
 		if (!$font->isDefault()) {
@@ -67,7 +67,7 @@ class Df_Tweaks_Block_Frontend_Style extends Df_Core_Block_Abstract {
 		return $this;
 	}
 
-	/** @return Df_Tweaks_Block_Frontend_Style */
+	/** @return $this */
 	private function adjustReviewsAndRatings() {
 		/** @var Df_Tweaks_Model_Settings_Catalog_Product $s */
 		$s = df_cfgr()->tweaks()->catalog()->product();

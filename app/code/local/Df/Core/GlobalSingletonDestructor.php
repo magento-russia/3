@@ -29,5 +29,5 @@ class Df_Core_GlobalSingletonDestructor {
 	private $_objects = [];
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

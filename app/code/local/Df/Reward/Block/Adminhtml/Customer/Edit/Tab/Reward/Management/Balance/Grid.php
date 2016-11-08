@@ -11,7 +11,7 @@ class Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_Management_Balance_Grid
 
 	/**
 	 * @override
-	 * @return Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_Management_Balance_Grid
+	 * @return $this
 	 */
 	protected function _afterLoadCollection() {
 		parent::_afterLoadCollection();
@@ -62,7 +62,7 @@ class Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_Management_Balance_Grid
 	/**
 	 * Prepare grid collection
 	 * @override
-	 * @return Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_Management_Balance_Grid
+	 * @return $this
 	 */
 	protected function _prepareCollection() {
 		/** @var Df_Reward_Model_Resource_Reward_Collection $collection */
@@ -75,7 +75,7 @@ class Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_Management_Balance_Grid
 
 	/**
 	 * @override
-	 * @return Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_Management_Balance_Grid
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		$this

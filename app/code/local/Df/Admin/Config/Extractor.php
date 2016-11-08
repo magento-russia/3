@@ -73,11 +73,13 @@ abstract class Df_Admin_Config_Extractor extends Df_Core_Model {
 	 * @param string $groupPath
 	 * @param string $keyPrefix [optional]
 	 * @param Df_Core_Model_StoreM|int|string|bool|null [optional]
-	 * @return Df_Admin_Config_Extractor
+	 * @return self
 	 */
-	protected static function ic($class, $groupPath, $keyPrefix = '', $store = null) {
-		return df_ic($class, __CLASS__, array(
-			self::$P__GROUP_PATH => $groupPath, self::$P__KEY_PREFIX => $keyPrefix, self::$P__STORE => $store
-		));
-	}
+	protected static function ic($class, $groupPath, $keyPrefix = '', $store = null) {return
+		df_ic($class, __CLASS__, [
+			self::$P__GROUP_PATH => $groupPath
+			,self::$P__KEY_PREFIX => $keyPrefix
+			,self::$P__STORE => $store
+		])
+	;}
 }

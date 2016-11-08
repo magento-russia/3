@@ -14,5 +14,5 @@ class Df_PromoGift_Model_Resource_Gift extends Df_Core_Model_Resource {
 	 */
 	const TABLE = 'df_promo_gift/gift';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

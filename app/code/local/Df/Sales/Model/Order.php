@@ -101,7 +101,7 @@ class Df_Sales_Model_Order extends Mage_Sales_Model_Order {
 	 * Нам же нужно сохранять прежнее значение protect_code,
 	 * потому что оно используется, например, в веб-адресе на квитанцию Сбербанка для конкретного заказа.
 	 * @override
-	 * @return Df_Sales_Model_Order
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		/** @var string|null $protectCode */
@@ -329,5 +329,5 @@ class Df_Sales_Model_Order extends Mage_Sales_Model_Order {
 		return self::ld($incrementId, self::P__INCREMENT_ID, $throwOnError);
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

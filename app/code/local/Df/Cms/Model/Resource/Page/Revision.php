@@ -111,7 +111,7 @@ class Df_Cms_Model_Resource_Page_Revision extends Df_Core_Model_Resource {
 	 *
 	 * @param Df_Cms_Model_Page_Revision $object
 	 * @param int $targetId
-	 * @return Df_Cms_Model_Resource_Page_Revision
+	 * @return $this
 	 */
 	public function publish(Df_Cms_Model_Page_Revision $object, $targetId)
 	{
@@ -129,7 +129,7 @@ class Df_Cms_Model_Resource_Page_Revision extends Df_Core_Model_Resource {
 	 * @param int $userId
 	 * @param int|string $value
 	 * @param string|null $field
-	 * @return Df_Cms_Model_Page_Revision
+	 * @return $this
 	 */
 	public function loadWithRestrictions($object, $accessLevel, $userId, $value, $field)
 	{
@@ -177,7 +177,7 @@ class Df_Cms_Model_Resource_Page_Revision extends Df_Core_Model_Resource {
 	 * @param int $pageId
 	 * @param array|string $accessLevel
 	 * @param int $userId
-	 * @return Df_Cms_Model_Page_Revision
+	 * @return $this
 	 */
 	public function loadByVersionPageWithRestrictions($object, $versionId, $pageId, $accessLevel, $userId)
 	{
@@ -294,5 +294,5 @@ class Df_Cms_Model_Resource_Page_Revision extends Df_Core_Model_Resource {
 	const TABLE = 'df_cms/page_revision';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

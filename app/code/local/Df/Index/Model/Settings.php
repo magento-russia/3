@@ -5,5 +5,5 @@ class Df_Index_Model_Settings extends Df_Core_Model_Settings {
 		return $this->nat0('df_tweaks_admin/system_indices/varchar_length');
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

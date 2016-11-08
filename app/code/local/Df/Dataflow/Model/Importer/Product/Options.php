@@ -2,7 +2,7 @@
 class Df_Dataflow_Model_Importer_Product_Options extends Df_Dataflow_Model_Importer_Product_Specialized {
 	/**
 	 * @override
-	 * @return Df_Dataflow_Model_Importer_Product_Options
+	 * @return $this
 	 */
 	public function process() {
 		foreach ($this->getImportedRow() as $key => $value) {

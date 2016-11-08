@@ -1,4 +1,5 @@
 <?php
+use Varien_Data_Form_Element_Abstract as FE;
 /**
  * Класс @see Mage_Adminhtml_Block_System_Config_Form_Field
  * и все его потомки используются системой как объекты-одиночки.
@@ -132,7 +133,7 @@ class Df_Admin_Config_Form_FieldInstance extends Df_Core_Model {
 	protected function _construct() {
 		parent::_construct();
 		$this
-			->_prop(self::$P__ELEMENT, 'Varien_Data_Form_Element_Abstract')
+			->_prop(self::$P__ELEMENT, FE::class)
 			->_prop(self::$P__FIELD, Df_Admin_Block_Field_Custom::class)
 		;
 	}
@@ -144,13 +145,11 @@ class Df_Admin_Config_Form_FieldInstance extends Df_Core_Model {
 	/**
 	 * @used-by Df_Admin_Block_Field_Custom::render()
 	 * @param Df_Admin_Block_Field_Custom $field
-	 * @param Varien_Data_Form_Element_Abstract $element
+	 * @param FE $element
 	 * @param string $class
-	 * @return Df_Admin_Config_Form_FieldInstance
+	 * @return self
 	 */
-	public static function create(
-		Df_Admin_Block_Field_Custom $field, Varien_Data_Form_Element_Abstract $element, $class
-	) {
-		return df_ic($class, __CLASS__, array(self::$P__FIELD => $field, self::$P__ELEMENT => $element));
-	}
+	public static function create(Df_Admin_Block_Field_Custom $field, FE $element, $class) {return
+		df_ic($class, __CLASS__, [self::$P__FIELD => $field, self::$P__ELEMENT => $element])
+	;}
 }

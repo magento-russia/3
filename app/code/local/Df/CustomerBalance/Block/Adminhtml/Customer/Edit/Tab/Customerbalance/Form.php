@@ -1,5 +1,9 @@
 <?php
 class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Form extends Mage_Adminhtml_Block_Widget_Form {
+	/**             
+	 * @override
+	 * @return $this
+	 */
 	protected function _prepareForm()
 	{
 		$form = new Varien_Data_Form();

@@ -184,7 +184,7 @@ abstract class Df_Core_Block_Abstract extends Mage_Core_Block_Abstract {
 	 * @see Varien_Object::setData()
 	 * @param string|array(string => mixed) $key
 	 * @param mixed $value
-	 * @return Df_Core_Block_Abstract
+	 * @return $this
 	 */
 	public function setData($key, $value = null) {
 		/**
@@ -240,7 +240,7 @@ abstract class Df_Core_Block_Abstract extends Mage_Core_Block_Abstract {
 	 * @param Zend_Validate_Interface|\Df\Zf\Validate\Type|string|mixed[] $validator
 	 * @param bool|null $isRequired [optional]
 	 * @throws \Df\Core\Exception
-	 * @return Df_Core_Block_Abstract
+	 * @return $this
 	 */
 	protected function _prop($key, $validator, $isRequired = null) {
 		/**

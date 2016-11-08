@@ -83,5 +83,5 @@ class Df_Core_Helper_Df_Helper extends Mage_Core_Helper_Abstract {
 	/** @return Df_Zf_Helper_Data */
 	public function zf() {return Df_Zf_Helper_Data::s();}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

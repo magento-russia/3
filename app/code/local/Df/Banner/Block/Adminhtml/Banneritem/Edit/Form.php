@@ -2,7 +2,7 @@
 class Df_Banner_Block_Adminhtml_Banneritem_Edit_Form extends Mage_Adminhtml_Block_Widget_Form {
 	/**
 	 * @override
-	 * @return Df_Banner_Block_Adminhtml_Banneritem_Edit_Form
+	 * @return $this
 	 * @throws Exception
 	 */
 	protected function _prepareForm() {

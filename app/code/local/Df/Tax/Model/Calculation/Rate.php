@@ -24,5 +24,5 @@ class Df_Tax_Model_Calculation_Rate extends Mage_Tax_Model_Calculation_Rate {
 	 */
 	public static function c() {return new Df_Tax_Model_Resource_Calculation_Rate_Collection;}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

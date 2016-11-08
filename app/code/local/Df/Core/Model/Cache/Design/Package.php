@@ -29,5 +29,5 @@ class Df_Core_Model_Cache_Design_Package extends Df_Core_Model {
 	private static $F__CACHE = '_cache';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

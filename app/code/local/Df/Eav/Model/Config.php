@@ -84,7 +84,7 @@ class Df_Eav_Model_Config extends Mage_Eav_Model_Config {
 	 * @override
 	 * @param mixed $obj
 	 * @param mixed $id
-	 * @return Mage_Eav_Model_Config
+	 * @return $this
 	 */
 	protected function _save($obj, $id) {
 		if (Mage::isInstalled() && ($obj instanceof Mage_Eav_Model_Entity_Attribute)) {

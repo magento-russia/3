@@ -5,5 +5,5 @@ class Df_Admin_Model_Settings_Admin_System_Configuration extends Df_Core_Model_S
 		return $this->getYesNo('df_tweaks_admin/system_config/remind_fieldset_toggle_state');
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

@@ -3,20 +3,20 @@ class Df_Dataflow_Model_Convert_Adapter_Dropdown
 	extends Mage_Dataflow_Model_Convert_Adapter_Abstract {
 	/**
 	 * @override
-	 * @return Df_Dataflow_Model_Convert_Adapter_Dropdown
+	 * @return $this
 	 */
 	public function load() {return $this;}
 
 	/**
 	 * @override
-	 * @return Df_Dataflow_Model_Convert_Adapter_Dropdown
+	 * @return $this
 	 */
 	public function save() {return $this;}
 
 	/**
 	 * @override
 	 * @param array $importData
-	 * @return Df_Dataflow_Model_Convert_Adapter_Dropdown
+	 * @return $this
 	 */
 	public function saveRow(array $importData) {
 		$this->_rowData = $importData;
@@ -136,7 +136,7 @@ class Df_Dataflow_Model_Convert_Adapter_Dropdown
 
 	/**
 	 * @param array $storage
-	 * @return Df_Dataflow_Model_Convert_Adapter_Dropdown
+	 * @return $this
 	 */
 	private function setSessionStorage(array $storage) {
 		df_session_core()->setData($this->getSessionKey(), $storage);
@@ -146,7 +146,7 @@ class Df_Dataflow_Model_Convert_Adapter_Dropdown
 	/**
 	 * @param string $key
 	 * @param mixed $value
-	 * @return Df_Dataflow_Model_Convert_Adapter_Dropdown
+	 * @return $this
 	 */
 	private function setSessionParam($key, $value) {
 		$storage = $this->getSessionStorage();

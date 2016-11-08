@@ -63,7 +63,7 @@ class Df_Core_Model_StoreM extends Mage_Core_Model_Store {
 
 	/**
 	 * @override
-	 * @return Df_Core_Model_StoreM
+	 * @return $this
 	 */
 	public function resetConfig() {
 		parent::resetConfig();
@@ -83,7 +83,7 @@ class Df_Core_Model_StoreM extends Mage_Core_Model_Store {
 	 * @used-by Df_Core_Observer::core_config_data_save_commit_after()
 	 * @param string $path
 	 * @param mixed $value
-	 * @return Df_Core_Model_StoreM
+	 * @return $this
 	 */
 	public function setConfig($path, $value) {
 		parent::setConfig($path, $value);

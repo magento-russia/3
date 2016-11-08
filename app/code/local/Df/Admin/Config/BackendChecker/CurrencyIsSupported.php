@@ -1,6 +1,5 @@
 <?php
-class Df_Admin_Config_BackendChecker_CurrencyIsSupported
-	extends Df_Admin_Config_BackendChecker {
+class Df_Admin_Config_BackendChecker_CurrencyIsSupported extends Df_Admin_Config_BackendChecker {
 	/**
 	 * Этот метод должен быть публичным,
 	 * потому что используется как callable за пределами своего класса:
@@ -26,11 +25,24 @@ class Df_Admin_Config_BackendChecker_CurrencyIsSupported
 
 	/**
 	 * @override
-	 * @return Df_Admin_Config_BackendChecker
+	 * @return $this
 	 */
 	protected function checkInternal() {
 		if ($this->getFailedStores()->count()) {
-			df_error($this->getFailureMessage());
+			df_error(strtr($this->getFailureMessageTemplate(), [
+				'{module}' => $this->getBackend()->getModuleName()
+				,'{baseCurrenciesOrigin}' => $this->getFailedBaseCurrenciesInFormOrigin()
+				,'{currency}' => df_currency_name($this->getCurrencyCode())
+				,'{currencyInstrumental}' => $this->getCurrency()->getNameInCaseInstrumental()
+				,'{stores}' => $this->getFailedStoreNames()
+				/**
+				 * Раньше с формой «куда» была проблема:
+				 * для казахского тенге Морфер возвращал «на казахского тенге».
+				 * Однако это вроде исправлено:
+				 * http://morpher.ru/WebService.aspx#msg2515
+				 */
+				,'{currencyInFormDestionation}' => $this->getCurrency()->getNameInFormDestination()
+			]));
 		}
 		return $this;
 	}
@@ -76,10 +88,10 @@ class Df_Admin_Config_BackendChecker_CurrencyIsSupported
 	/** @return string[] */
 	private function getFailedStoreNames() {
 		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = implode(' ', array(
+			$this->{__METHOD__} = implode(' ', [
 				(1 === $this->getFailedStores()->count()) ? 'магазина' : 'магазинов'
 				, $this->getFailedStores()->getNames()
-			));
+			]);
 		}
 		return $this->{__METHOD__};
 	}
@@ -93,53 +105,27 @@ class Df_Admin_Config_BackendChecker_CurrencyIsSupported
 	}
 
 	/** @return string */
-	private function getFailureMessage() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = strtr(
-				$this->getFailureMessageTemplate()
-				,array(
-					'{module}' => $this->getBackend()->getModuleName()
-					,'{baseCurrenciesOrigin}' => $this->getFailedBaseCurrenciesInFormOrigin()
-					,'{currency}' => df_currency_name($this->getCurrencyCode())
-					,'{currencyInstrumental}' => $this->getCurrency()->getNameInCaseInstrumental()
-					,'{stores}' => $this->getFailedStoreNames()
-					/**
-					 * Раньше с формой «куда» была проблема:
-					 * для казахского тенге Морфер возвращал «на казахского тенге».
-					 * Однако это вроде исправлено:
-					 * http://morpher.ru/WebService.aspx#msg2515
-					 */
-					,'{currencyInFormDestionation}' => $this->getCurrency()->getNameInFormDestination()
-				)
-			);
-		}
-		return $this->{__METHOD__};
-	}
-
-	/** @return string */
-	private function getFailureMessageTemplate() {
-		return
-		 	$this->getBackend()->getFailureMessageTemplate()
-			? $this->getBackend()->getFailureMessageTemplate()
-			: 'Модулю «{module}» нужно работать с {currencyInstrumental}.<br/>'
-			.'1) Убедитесь, что валюта «{currency}» включена для {stores}.<br/>'
-			/**
-			 * Раньше с формой «куда» была проблема:
-			 * для казахского тенге Морфер возвращал «на казахского тенге».
-			 * Однако это вроде исправлено:
-			 * http://morpher.ru/WebService.aspx#msg2515
-			 */
-			.'2) Укажите курс обмена {baseCurrenciesOrigin} на {currencyInFormDestionation}.'
-		;
-	}
+	private function getFailureMessageTemplate() {return
+		$this->getBackend()->getFailureMessageTemplate()
+		? $this->getBackend()->getFailureMessageTemplate()
+		: 'Модулю «{module}» нужно работать с {currencyInstrumental}.<br/>'
+		.'1) Убедитесь, что валюта «{currency}» включена для {stores}.<br/>'
+		/**
+		 * Раньше с формой «куда» была проблема:
+		 * для казахского тенге Морфер возвращал «на казахского тенге».
+		 * Однако это вроде исправлено:
+		 * http://morpher.ru/WebService.aspx#msg2515
+		 */
+		.'2) Укажите курс обмена {baseCurrenciesOrigin} на {currencyInFormDestionation}.'
+	;}
 
 	/** @return bool[] */
 	private function getSupportMatrix() {
 		if (!isset($this->{__METHOD__})) {
 			/** @uses checkCurrencyIsSupportedByStore() */
-			$this->{__METHOD__} = $this->getBackend()->getStores()->walk(array(
+			$this->{__METHOD__} = $this->getBackend()->getStores()->walk([
 				$this, 'checkCurrencyIsSupportedByStore'
-			));
+			]);
 		}
 		return $this->{__METHOD__};
 	}
@@ -161,8 +147,6 @@ class Df_Admin_Config_BackendChecker_CurrencyIsSupported
 	 * @return void
 	 */
 	public static function _check(Df_Admin_Config_Backend $backend, $currencyCode) {
-		/** @var Df_Admin_Config_BackendChecker_CurrencyIsSupported $checker */
-		$checker = new self(array(self::$P__CURRENCY_CODE => $currencyCode, self::$P__BACKEND => $backend));
-		$checker->check();
-	}
+		(new self([self::$P__CURRENCY_CODE => $currencyCode, self::$P__BACKEND => $backend]))->check()
+	;}
 }

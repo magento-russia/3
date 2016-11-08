@@ -226,7 +226,7 @@ class Df_Cms_Block_Admin_Hierarchy_Edit_Form extends Mage_Adminhtml_Block_Widget
 
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Hierarchy_Edit_Form
+	 * @return $this
 	 */
 	protected function _prepareForm() {
 		/** @var Varien_Data_Form $form */
@@ -255,7 +255,7 @@ class Df_Cms_Block_Admin_Hierarchy_Edit_Form extends Mage_Adminhtml_Block_Widget
 
 	/**
 	 * @param Varien_Data_Form $form
-	 * @return Df_Cms_Block_Admin_Hierarchy_Edit_Form
+	 * @return $this
 	 */
 	private function addAsideMenuSettings(Varien_Data_Form $form) {
 		/** @var array $optionsYesNo */
@@ -495,7 +495,7 @@ class Df_Cms_Block_Admin_Hierarchy_Edit_Form extends Mage_Adminhtml_Block_Widget
 
 	/**
 	 * @param Varien_Data_Form $form
-	 * @return Df_Cms_Block_Admin_Hierarchy_Edit_Form
+	 * @return $this
 	 */
 	private function addGeneralSettings(Varien_Data_Form $form) {
 		$fieldset =
@@ -618,7 +618,7 @@ class Df_Cms_Block_Admin_Hierarchy_Edit_Form extends Mage_Adminhtml_Block_Widget
 
 	/**
 	 * @param Varien_Data_Form $form
-	 * @return Df_Cms_Block_Admin_Hierarchy_Edit_Form
+	 * @return $this
 	 */
 	private function addPaginationSettings(Varien_Data_Form $form) {
 		/**

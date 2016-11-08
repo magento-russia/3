@@ -64,5 +64,5 @@ class Df_Adminhtml_Model_Config_Data_1401 extends Df_Adminhtml_Model_Config_Data
 	/** @return Df_Adminhtml_Model_Config_Data_1401 */
 	public static function i() {return new self;}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

@@ -4,7 +4,7 @@ class Df_Adminhtml_Block_Customer_Edit_Tab_Account extends Mage_Adminhtml_Block_
 	 * Цель перекрытия —
 	 * позволить администратору менять привязку пользователя к сайту.
 	 * @override
-	 * @return Df_Adminhtml_Block_Customer_Edit_Tab_Account
+	 * @return $this
 	 */
 	public function initForm() {
 		parent::initForm();

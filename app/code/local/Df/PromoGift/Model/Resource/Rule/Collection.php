@@ -3,7 +3,7 @@ class Df_PromoGift_Model_Resource_Rule_Collection extends Df_SalesRule_Model_Res
 	/**
 	 * @override
 	 * @see Mage_Core_Model_Resource_Db_Collection_Abstract::_beforeLoad()
-	 * @return Df_PromoGift_Model_Resource_Rule_Collection
+	 * @return $this
 	 */
 	protected function _beforeLoad() {
 		// Отбраковываем отключенные правила
@@ -28,7 +28,7 @@ class Df_PromoGift_Model_Resource_Rule_Collection extends Df_SalesRule_Model_Res
 
 	/**
 	 * Отбраковываем ещё не начавшиеся правила
-	 * @return Df_PromoGift_Model_Resource_Rule_Collection
+	 * @return $this
 	 */
 	public function addNotStartedYetRulesExclusionFilter() {
 		$this->addFieldToFilter(Df_SalesRule_Model_Rule::P__FROM_DATE, array('or' => array(

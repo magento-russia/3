@@ -15,5 +15,5 @@ class Shop extends Yml {
 	 */
 	protected function getKeyPrefix() {return 'df_yandex_market/shop/';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

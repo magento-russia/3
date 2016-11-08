@@ -10,7 +10,7 @@ class Df_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
 	 * Df_Catalog_Model_Resource_Product_Attribute_Collection::translateLabels()
 	 * Df_Eav_Model_Config::_save()
 	 * @override
-	 * @return Df_Catalog_Model_Resource_Product_Type_Configurable_Attribute_Collection
+	 * @return $this
 	 */
 	protected function _loadLabels() {
 		parent::_loadLabels();

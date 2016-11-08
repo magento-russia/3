@@ -4,7 +4,7 @@ class Df_CustomerBalance_Model_Total_Creditmemo_Customerbalance extends Mage_Sal
 	 * Collect customer balance totals for credit memo
 	 *
 	 * @param Mage_Sales_Model_Order_Creditmemo $creditmemo
-	 * @return Df_CustomerBalance_Model_Total_Creditmemo_Customerbalance
+	 * @return $this
 	 */
 	public function collect(Mage_Sales_Model_Order_Creditmemo $creditmemo)
 	{

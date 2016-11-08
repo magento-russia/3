@@ -14,5 +14,5 @@ class Settings extends \Df_Core_Model_Settings {
 	/** @return Settings\Shop */
 	public function shop() {return Settings\Shop::s();}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

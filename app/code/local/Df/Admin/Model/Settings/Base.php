@@ -8,5 +8,5 @@ class Df_Admin_Model_Settings_Base extends Df_Core_Model_Settings {
 		return $this->v(Mage_Core_Model_Store::XML_PATH_STORE_STORE_PHONE, $store);
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

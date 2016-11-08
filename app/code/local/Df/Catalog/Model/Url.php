@@ -324,7 +324,7 @@ class Df_Catalog_Model_Url extends Mage_Catalog_Model_Url {
 	 * Refresh all product rewrites for designated store
 	 * @override
 	 * @param int $storeId
-	 * @return Mage_Catalog_Model_Url
+	 * @return $this
 	 */
 	public function refreshProductRewrites($storeId) {
 		parent::refreshProductRewrites($storeId);
@@ -379,7 +379,7 @@ class Df_Catalog_Model_Url extends Mage_Catalog_Model_Url {
 	 * @override
 	 * @param Varien_Object $product
 	 * @param Varien_Object $category
-	 * @return Mage_Catalog_Model_Url
+	 * @return $this
 	 */
 	protected function _refreshProductRewrite(Varien_Object $product, Varien_Object $category) {
 		//Mage::log($product->getData('entity_id') . ': ' . $product->getData('url_path'));
@@ -541,7 +541,7 @@ class Df_Catalog_Model_Url extends Mage_Catalog_Model_Url {
 
 	/**
 	 * @param int $storeId
-	 * @return Df_Catalog_Model_Url
+	 * @return $this
 	 */
 	private function makeRedirectsToCanonicalProductUrl($storeId) {
 		$lastEntityId = 0;
@@ -572,7 +572,7 @@ class Df_Catalog_Model_Url extends Mage_Catalog_Model_Url {
 	/**
 	 * @param array $rewrites
 	 * @param int $storeId
-	 * @return Df_Catalog_Model_Url
+	 * @return $this
 	 */
 	private function makeRedirectsToCanonicalProductUrlForConcreteProduct(array $rewrites, $storeId) {
 		// Если перенаправлений меньше 2, то переписывать нечего

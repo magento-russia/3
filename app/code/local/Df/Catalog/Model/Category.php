@@ -33,7 +33,7 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 	 * @override
 	 * @return int
 	 */
-	public function getAttributeSetId() {static $r; return $r ? $r : $r = $this['attribute_set_id'];}
+	public function getAttributeSetId() {static $r; return $r ?: $r = $this['attribute_set_id'];}
 
 	/** @return string|null */
 	public function get1CId() {return $this[\Df\C1\C::ENTITY_EXTERNAL_ID];}
@@ -166,7 +166,7 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 	 * «catalog_category_flat_store_4»
 	 *
 	 * @param Df_Core_Model_StoreM|string|int|bool $store
-	 * @return Df_Catalog_Model_Category
+	 * @return void
 	 */
 	public function saveRm($store) {
 		/** поле @see _useFlatResource присутствует в том числе и в Magento CE 1.4.0.1 */
@@ -180,7 +180,6 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 			);
 		}
 		df_admin_call($this, 'saveRmInternal', array($store));
-		return $this;
 	}
 
 	/**
@@ -207,12 +206,9 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 
 	/**
 	 * @param string|null $value
-	 * @return Df_Catalog_Model_Category
+	 * @return void
 	 */
-	public function set1CId($value) {
-		$this->setData(\Df\C1\C::ENTITY_EXTERNAL_ID, $value);
-		return $this;
-	}
+	public function set1CId($value) {$this->setData(\Df\C1\C::ENTITY_EXTERNAL_ID, $value);}
 
 	/**
 	 * 2015-02-09
@@ -385,7 +381,7 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 
 	/**
 	 * Нельзя кэшировать результат этого метода,

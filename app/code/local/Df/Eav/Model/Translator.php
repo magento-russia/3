@@ -212,7 +212,7 @@ class Df_Eav_Model_Translator extends Df_Core_Model_DestructableSingleton {
 	private $_untranslated = [];
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 	/** @var string[] */
 	private static $LABEL_NAMES = array('store_label', 'frontend_label');
 	/** @var string[] */

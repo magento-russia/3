@@ -4,7 +4,7 @@ class Df_Catalog_Helper_Product extends Mage_Catalog_Helper_Data {
 	 * @param int $attributeSetId
 	 * @param string $groupName
 	 * @param int|null $sortOrder [optional]
-	 * @return Df_Catalog_Helper_Product
+	 * @return $this
 	 */
 	public function addGroupToAttributeSetIfNeeded($attributeSetId, $groupName, $sortOrder = null) {
 		df_param_integer($attributeSetId, 0);
@@ -100,5 +100,5 @@ class Df_Catalog_Helper_Product extends Mage_Catalog_Helper_Data {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

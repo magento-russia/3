@@ -22,7 +22,7 @@ class Df_Admin_Config_Backend_Currency extends Df_Admin_Config_Backend {
 
 	/**
 	 * @overide
-	 * @return Df_Admin_Config_Backend_Currency
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		// Выполняем проверки только при включенности модуля.

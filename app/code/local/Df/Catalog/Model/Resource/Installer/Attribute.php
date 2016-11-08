@@ -155,7 +155,7 @@ class Df_Catalog_Model_Resource_Installer_Attribute extends Mage_Catalog_Model_R
 
 	/**
 	 * @override
-	 * @return Df_Catalog_Model_Resource_Installer_Attribute
+	 * @return $this
 	 */
 	public function startSetup() {
 		parent::startSetup();
@@ -163,7 +163,7 @@ class Df_Catalog_Model_Resource_Installer_Attribute extends Mage_Catalog_Model_R
 		return $this;
 	}
 
-	/** @return Df_Catalog_Model_Resource_Installer_Attribute */
+	/** @return $this */
 	public function cleanQueryCache() {
 		$this->_setupCache = [];
 		return $this;
@@ -270,5 +270,5 @@ class Df_Catalog_Model_Resource_Installer_Attribute extends Mage_Catalog_Model_R
 	const ADD_ATTRIBUTE_TO_SET__CHANGED_GROUP = 'changed_group';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self('df_catalog_setup');}
+	public static function s() {static $r; return $r ?: $r = new self('df_catalog_setup');}
 }

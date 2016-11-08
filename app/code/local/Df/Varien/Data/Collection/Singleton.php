@@ -18,7 +18,7 @@ abstract class Df_Varien_Data_Collection_Singleton extends Df_Varien_Data_Collec
 	 * @override
 	 * @param bool $printQuery [optional]
 	 * @param bool $logQuery [optional]
-	 * @return Df_Varien_Data_Collection
+	 * @return $this
 	 */
 	public function load($printQuery = false, $logQuery = false) {
 		/**

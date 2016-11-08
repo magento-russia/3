@@ -26,5 +26,5 @@ class AddressSession extends \Df_Core_Model {
 	private static function _get() {return df_nta(self::session()->getData(__CLASS__));}
 
 	/** @return \Mage_Checkout_Model_Session */
-	private static function session() {static $r; return $r ? $r : $r = df_session_checkout();}
+	private static function session() {static $r; return $r ?: $r = df_session_checkout();}
 }

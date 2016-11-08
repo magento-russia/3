@@ -35,22 +35,13 @@ abstract class Df_Admin_Model_Notifier_Settings extends Df_Admin_Model_Notifier 
 	 * @override
 	 * @return array(string => string)
 	 */
-	protected function getMessageVariables() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = array_merge(parent::getMessageVariables(), array(
-				self::MESSAGE_VAR__STORES_AFFECTED =>
-					Mage::app()->isSingleStoreMode()
-					? ''
-					: df_ccc(' '
-						, (1 === $this->getStoresAffectedCount()) ? ' для магазина ' : 'для магазинов'
-						, Df_Core_Model_Resource_Store_Collection::getNamesStatic(
-							$this->getStoresAffected()
-						)
-					)
-			));
-		}
-		return $this->{__METHOD__};
-	}
+	protected function getMessageVariables() {return dfc($this, function() {return [
+		self::MESSAGE_VAR__STORES_AFFECTED =>
+			Mage::app()->isSingleStoreMode() ? '' : df_ccc(' '
+				,(1 === $this->getStoresAffectedCount()) ? ' для магазина ' : 'для магазинов'
+				,Df_Core_Model_Resource_Store_Collection::getNamesStatic($this->getStoresAffected())
+			)
+	] + parent::getMessageVariables();});}
 
 	/** @return Df_Core_Model_StoreM[] */
 	private function getStoresAffected() {

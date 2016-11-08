@@ -72,5 +72,5 @@ class Df_Catalog_Model_Processor_DeleteOrphanCategoryAttributesData {
 	private static $_CONFIG_PATH = 'df/catalog/orhran_category_attributes_data_has_been_deleted';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

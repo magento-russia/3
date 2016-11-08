@@ -25,5 +25,5 @@ class Df_Cms_Model_Cache extends Df_Core_Model_Cache {
 	const TYPE = 'rm_cms';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

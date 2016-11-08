@@ -69,7 +69,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 
 	/**
 	 * @override
-	 * @return Df_Dataflow_Model_Importer_Row
+	 * @return $this
 	 */
 	public function import() {
 		if ($this->getRow()->isProductNew()) {
@@ -148,7 +148,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function importBundleData() {
 		if ('bundle' === $this->getProduct()->getTypeId()) {
 			$this->reloadProduct();
@@ -158,7 +158,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product_Bundle */
+	/** @return $this_Bundle */
 	private function getBundleImporter() {
 		if (!isset($this->_bundleImporter)) {
 			$this->_bundleImporter = Df_Dataflow_Model_Importer_Product_Bundle::i(
@@ -170,7 +170,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 	/** @var Df_Dataflow_Model_Importer_Product_Bundle */
 	private $_bundleImporter;	
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function importCustomOptions() {
 		if (df_cfgr()->dataflow()->products()->getCustomOptionsSupport()) {
 			$this->reloadProduct();
@@ -180,7 +180,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product_Options */
+	/** @return $this_Options */
 	private function getCustomOptionsImporter() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = Df_Dataflow_Model_Importer_Product_Options::i(
@@ -192,7 +192,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 
 	/**
 	 * @throws Exception
-	 * @return Df_Dataflow_Model_Importer_Product
+	 * @return $this
 	 */
 	private function importImages() {
 		/** @var array $primaryImages */
@@ -232,7 +232,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product_Gallery */
+	/** @return $this_Gallery */
 	private function getGalleryImporter() {
 		if (!isset($this->{__METHOD__})) {
 			$this->{__METHOD__} = Df_Dataflow_Model_Importer_Product_Gallery::i(
@@ -242,7 +242,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this->{__METHOD__};
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function importInventoryData() {
 		/** @var array $stockData */
 		$stockData = [];
@@ -262,7 +262,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function importTierPrices() {
 		/** @var string $pattern */
 		$pattern = '#^rm_tier_price_(\d+)_(\d+)_(\d+)$#';
@@ -333,13 +333,13 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this->helper()->getInventoryFieldsByProductType($this->getProduct()->getTypeId());
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function reloadProduct() {
 		$this->getProduct()->reload();
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function initWebsiteAttributeForProduct() {
 		$this
 			->initWebsiteAttributeFromStore()
@@ -348,7 +348,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function importCategoriesUsingStandardTechnology() {
 		/** @var string|null $categoryIdsAsString */
 		$categoryIdsAsString = $this->getRow()->getCategoryIdsAsString();
@@ -358,7 +358,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function importCategoriesUsingAdvancedTechnology() {
 		if (df_cfgr()->dataflow()->products()->getEnhancedCategorySupport()) {
 			Df_Dataflow_Model_Importer_Product_Categories::i(
@@ -368,7 +368,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function initWebsiteAttributeFromStore() {
 		/** @var array $websiteIds */
 		$websiteIds = $this->getProduct()->getWebsiteIds();
@@ -386,7 +386,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 		return $this;
 	}
 
-	/** @return Df_Dataflow_Model_Importer_Product */
+	/** @return $this */
 	private function initWebsiteAttributeFromWebsiteIdsField() {
 		if ($this->getRow()->getWebsites()) {
 			/** @var array $websiteIds */
@@ -409,7 +409,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 
 	/**
 	 * @throws Exception
-	 * @return Df_Dataflow_Model_Importer_Product
+	 * @return $this
 	 */
 	private function importAttributeValues() {
 		/********************************************************************
@@ -637,7 +637,7 @@ class Df_Dataflow_Model_Importer_Product extends Df_Dataflow_Model_Importer_Row 
 	/**
 	 * @static
 	 * @param Df_Dataflow_Model_Import_Product_Row $row
-	 * @return Df_Dataflow_Model_Importer_Product
+	 * @return $this
 	 */
 	public static function i(Df_Dataflow_Model_Import_Product_Row $row) {
 		return new self(array(self::P__ROW => $row));

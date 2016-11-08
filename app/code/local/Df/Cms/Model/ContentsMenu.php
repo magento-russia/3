@@ -29,7 +29,7 @@ class Df_Cms_Model_ContentsMenu extends Df_Core_Model {
 	/** @return int */
 	public function getVerticalOrdering() {return $this->getApplicator()->getVerticalOrdering();}
 
-	/** @return Df_Cms_Model_ContentsMenu */
+	/** @return $this */
 	public function insertIntoLayout() {
 		if ($this->getBlockParent()) {
 			$this->getBlockParent()->insert($this->getBlockMenu(), df_nts($this->getBlockSiblingName()));
@@ -39,7 +39,7 @@ class Df_Cms_Model_ContentsMenu extends Df_Core_Model {
 
 	/**
 	 * @param Df_Cms_Model_ContentsMenu $menu
-	 * @return Df_Cms_Model_ContentsMenu
+	 * @return $this
 	 */
 	public function merge(Df_Cms_Model_ContentsMenu $menu) {
 		$this->getApplicators()->add($menu->getApplicators());

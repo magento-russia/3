@@ -19,7 +19,7 @@ class Df_Catalog_Model_Resource_Url extends Mage_Catalog_Model_Resource_Url {
 	 * @used-by clearStoreInvalidRewrites()
 	 * @used-by Df_Catalog_Model_Url::refreshProductRewrites()
 	 * @param int $storeId [optional]
-	 * @return Df_Catalog_Model_Resource_Url
+	 * @return $this
 	 */
 	public function clearRewritesForInvisibleProducts($storeId = null) {
 		if ($this->getInvisibleProductIds($storeId)) {
@@ -303,7 +303,7 @@ class Df_Catalog_Model_Resource_Url extends Mage_Catalog_Model_Resource_Url {
 	 * и переводим стрелки на $rewriteTo
 	 *
 	 * @param array $params
-	 * @return Df_Catalog_Model_Resource_Url
+	 * @return $this
 	 */
 	private function relinkRewrites(array $params) {
 		/** @var Varien_Object $rewriteFrom */
@@ -397,7 +397,7 @@ class Df_Catalog_Model_Resource_Url extends Mage_Catalog_Model_Resource_Url {
 	 * возвращал тот же объект, что и наш метод @see s(),
 	 * сохраняя тем самым объект одиночкой (это важно, например, для производительности:
 	 * сохраняя объект одиночкой — мы сохраняем его кэш между всеми пользователями объекта).
-	 * @return Df_Catalog_Model_Resource_Url
+	 * @return $this
 	 */
 	public static function s() {return Mage::getResourceSingleton('catalog/url');}
 }

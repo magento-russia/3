@@ -6,5 +6,5 @@ class Export extends \Df_Core_Model {
 	public function getProducts() {return Products::s();}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

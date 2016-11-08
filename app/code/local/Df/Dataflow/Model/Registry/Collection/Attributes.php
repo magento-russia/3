@@ -146,5 +146,5 @@ class Df_Dataflow_Model_Registry_Collection_Attributes extends Df_Dataflow_Model
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

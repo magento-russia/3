@@ -20,7 +20,7 @@ class Method extends \Df\Payment\Method {
 	 * http://magento-forum.ru/topic/5394/
 	 * @param \Varien_Object $payment
 	 * @param string $amount
-	 * @return \Df\Payment\Method
+	 * @return $this
 	 */
 	public function capture(\Varien_Object $payment, $amount) {return $this;}
 
@@ -31,7 +31,7 @@ class Method extends \Df\Payment\Method {
 	 * http://magento-forum.ru/topic/5394/
 	 * @param \Varien_Object $payment
 	 * @param string $amount
-	 * @return \Df\Payment\Method
+	 * @return $this
 	 */
 	public function refund(\Varien_Object $payment, $amount) {return $this;}
 }

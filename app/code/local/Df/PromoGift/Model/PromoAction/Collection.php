@@ -7,7 +7,7 @@ class Df_PromoGift_Model_PromoAction_Collection extends Df_Varien_Data_Collectio
 	 * @override
 	 * @param bool $printQuery [optional]
 	 * @param bool $logQuery [optional]
-	 * @return  Varien_Data_Collection
+	 * @return $this
 	 */
 	public function loadData($printQuery = false, $logQuery = false) {
 		if (!$this->isLoaded()) {

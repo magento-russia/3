@@ -10,7 +10,7 @@ class Df_Catalog_Model_Product_Attribute_Backend_Media
 	 *
 	 * @override
 	 * @param Df_Catalog_Model_Product $object
-	 * @return Df_Catalog_Model_Product_Attribute_Backend_Media
+	 * @return $this
 	 */
 	public function beforeSave($object) {
 		$this->setProduct($object);

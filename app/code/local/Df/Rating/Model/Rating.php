@@ -48,7 +48,7 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 
 	/**
 	 * @param int $value|null
-	 * @return Df_Rating_Model_Rating
+	 * @return $this
 	 */
 	public function setCustomerId($value) {
 		if (!is_null($value)) {
@@ -61,7 +61,7 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 
 	/**
 	 * @param int $value
-	 * @return Df_Rating_Model_Rating
+	 * @return $this
 	 */
 	public function setEntityId($value) {
 		df_param_integer($value, 0);
@@ -71,7 +71,7 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 
 	/**
 	 * @param int $value
-	 * @return Df_Rating_Model_Rating
+	 * @return $this
 	 */
 	public function setPosition($value) {
 		df_param_integer($value, 0);
@@ -81,7 +81,7 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 
 	/**
 	 * @param string $value
-	 * @return Df_Rating_Model_Rating
+	 * @return $this
 	 */
 	public function setRatingCode($value) {
 		df_param_string($value, 0);
@@ -91,7 +91,7 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 
 	/**
 	 * @param int $value|null
-	 * @return Df_Rating_Model_Rating
+	 * @return $this
 	 */
 	public function setRatingId($value) {
 		if (!is_null($value)) {
@@ -104,7 +104,7 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 
 	/**
 	 * @param int $value|null
-	 * @return Df_Rating_Model_Rating
+	 * @return $this
 	 */
 	public function setReviewId($value) {
 		if (!is_null($value)) {
@@ -156,9 +156,9 @@ class Df_Rating_Model_Rating extends Mage_Rating_Model_Rating {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Rating_Model_Rating
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

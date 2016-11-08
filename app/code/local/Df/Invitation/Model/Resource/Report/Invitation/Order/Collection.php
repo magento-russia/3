@@ -3,7 +3,7 @@ class Df_Invitation_Model_Resource_Report_Invitation_Order_Collection
 	extends Df_Invitation_Model_Resource_Report_Invitation_Collection {
 	/**
 	 * Join custom fields
-	 * @return Df_Invitation_Model_Resource_Report_Invitation_Order_Collection
+	 * @return $this
 	 */
 	protected function _joinFields()
 	{

@@ -23,5 +23,5 @@ class General extends Yml {
 	 */
 	protected function getKeyPrefix() {return 'df_yandex_market/general/';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

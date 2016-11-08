@@ -9,7 +9,7 @@ class Df_Core_Model_Resource_Store extends Mage_Core_Model_Resource_Store {
 	 * и стандартная проверка ядра $object->getId() === '0' уже не является корректной.
 	 * @override
 	 * @param Mage_Core_Model_Abstract|Df_Core_Model_Store $object
-	 * @return Df_Core_Model_Resource_Store
+	 * @return $this
 	 * @throws Mage_Core_Exception
 	 */
 	protected function _checkUnique(Mage_Core_Model_Abstract $object) {

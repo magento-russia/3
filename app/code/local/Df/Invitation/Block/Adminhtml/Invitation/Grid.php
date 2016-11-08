@@ -11,7 +11,7 @@ class Df_Invitation_Block_Adminhtml_Invitation_Grid extends Mage_Adminhtml_Block
 
 	/**
 	 * @override
-	 * @return Df_Invitation_Block_Adminhtml_Invitation_Grid
+	 * @return $this
 	 */
 	protected function _prepareCollection() {
 		/** @var Df_Invitation_Model_Resource_Invitation_Collection $collection */
@@ -27,7 +27,7 @@ class Df_Invitation_Block_Adminhtml_Invitation_Grid extends Mage_Adminhtml_Block
 
 	/**
 	 * @override
-	 * @return Df_Invitation_Block_Adminhtml_Invitation_Grid
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		$this
@@ -130,7 +130,7 @@ class Df_Invitation_Block_Adminhtml_Invitation_Grid extends Mage_Adminhtml_Block
 
 	/**
 	 * @override
-	 * @return Df_Invitation_Block_Adminhtml_Invitation_Grid
+	 * @return $this
 	 */
 	protected function _prepareMassaction() {
 		parent::_prepareMassaction();

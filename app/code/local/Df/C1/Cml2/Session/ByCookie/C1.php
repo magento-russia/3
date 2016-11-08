@@ -26,5 +26,5 @@ class C1 extends \Df_Core_Model_Session_Custom_Primary {
 	private static $P__FILE_NAME_LOG = 'file_name_log';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

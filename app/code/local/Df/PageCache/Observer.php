@@ -4,7 +4,7 @@ class Df_PageCache_Observer {
 	 * Save page body to cache storage
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function cacheResponse(Varien_Event_Observer $observer)
 	{
@@ -24,7 +24,7 @@ class Df_PageCache_Observer {
 	 * Check category state on post dispatch to allow category page be cached
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function checkCategoryState(Varien_Event_Observer $observer)
 	{
@@ -46,7 +46,7 @@ class Df_PageCache_Observer {
 	 * Check cross-domain session messages
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function checkMessages(Varien_Event_Observer $observer)
 	{
@@ -70,7 +70,7 @@ class Df_PageCache_Observer {
 	 * Check product state on post dispatch to allow product page be cached
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function checkProductState(Varien_Event_Observer $observer)
 	{
@@ -91,7 +91,7 @@ class Df_PageCache_Observer {
 	/**
 	 * Clean full page cache
 	 *
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function cleanCache()
 	{
@@ -142,7 +142,7 @@ class Df_PageCache_Observer {
 
 	/**
 	 * Clean expired entities in full page cache
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function cleanExpiredCache()
 	{
@@ -178,7 +178,7 @@ class Df_PageCache_Observer {
 	 * Update customer rates cookie after address update
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function customerAddressUpdate(Varien_Event_Observer $observer)
 	{
@@ -195,7 +195,7 @@ class Df_PageCache_Observer {
 	 * Set cookie for logged in customer
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function customerLogin(Varien_Event_Observer $observer)
 	{
@@ -213,7 +213,7 @@ class Df_PageCache_Observer {
 	 * Remove customer cookie
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function customerLogout(Varien_Event_Observer $observer)
 	{
@@ -234,7 +234,7 @@ class Df_PageCache_Observer {
 	/**
 	 * Flush full page cache
 	 *
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function flushCache()
 	{
@@ -244,7 +244,7 @@ class Df_PageCache_Observer {
 
 	/**
 	 * Invalidate full page cache
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function invalidateCache()
 	{
@@ -268,7 +268,7 @@ class Df_PageCache_Observer {
 	 * Process entity action
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function processEntityAction(Varien_Event_Observer $observer)
 	{
@@ -284,7 +284,7 @@ class Df_PageCache_Observer {
 	 * Remove new message cookie on clearing session messages.
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function processMessageClearing(Varien_Event_Observer $observer)
 	{
@@ -299,7 +299,7 @@ class Df_PageCache_Observer {
 	 * Set new message cookie on adding messsage to session.
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function processNewMessage(Varien_Event_Observer $observer)
 	{
@@ -314,7 +314,7 @@ class Df_PageCache_Observer {
 	 * Check when cache should be disabled
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function processPreDispatch(Varien_Event_Observer $observer)
 	{
@@ -361,7 +361,7 @@ class Df_PageCache_Observer {
 	 * Retrieve block tags and add it to processor
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerBlockTags(Varien_Event_Observer $observer)
 	{
@@ -450,7 +450,7 @@ class Df_PageCache_Observer {
 	 * Set compare list in cookie on list change. Also modify recently compared cookie.
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerCompareListChange(Varien_Event_Observer $observer)
 	{
@@ -496,7 +496,7 @@ class Df_PageCache_Observer {
 	 * Resave exception rules to cache storage
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerDesignExceptionsChange(Varien_Event_Observer $observer)
 	{
@@ -509,7 +509,7 @@ class Df_PageCache_Observer {
 	 * model_load_after event processor. Collect tags of all loaded entities
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerModelTag(Varien_Event_Observer $observer)
 	{
@@ -531,7 +531,7 @@ class Df_PageCache_Observer {
 	 * Clean order sidebar cache
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerNewOrder(Varien_Event_Observer $observer)
 	{
@@ -549,7 +549,7 @@ class Df_PageCache_Observer {
 	 * Set poll hash in cookie on poll vote
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerPollChange(Varien_Event_Observer $observer)
 	{
@@ -567,7 +567,7 @@ class Df_PageCache_Observer {
 	 * Set cart hash in cookie on quote change
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerQuoteChange(Varien_Event_Observer $observer)
 	{
@@ -625,7 +625,7 @@ class Df_PageCache_Observer {
 	 * Re-save exception rules to cache storage
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerSslOffloaderChange(Varien_Event_Observer $observer)
 	{
@@ -644,7 +644,7 @@ class Df_PageCache_Observer {
 	 * Set wishlist hash in cookie on wishlist change
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerWishlistChange(Varien_Event_Observer $observer)
 	{
@@ -675,7 +675,7 @@ class Df_PageCache_Observer {
 	 * Clear wishlist list
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function registerWishlistListChange(Varien_Event_Observer $observer)
 	{
@@ -693,7 +693,7 @@ class Df_PageCache_Observer {
 	 * Render placeholder tags around the block if needed
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function renderBlockPlaceholder(Varien_Event_Observer $observer)
 	{
@@ -730,7 +730,7 @@ class Df_PageCache_Observer {
 	/**
 	 * Update customer viewed products index and renew customer viewed product ids cookie
 	 *
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function updateCustomerProductIndex()
 	{
@@ -762,7 +762,7 @@ class Df_PageCache_Observer {
 	 * Update info about product on product page
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function updateProductInfo(Varien_Event_Observer $observer)
 	{
@@ -783,7 +783,7 @@ class Df_PageCache_Observer {
 	 * Check if data changes duering object save affect cached pages
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function validateDataChanges(Varien_Event_Observer $observer)
 	{
@@ -799,7 +799,7 @@ class Df_PageCache_Observer {
 	 * Check if data delete affect cached pages
 	 *
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	public function validateDataDelete(Varien_Event_Observer $observer)
 	{
@@ -814,7 +814,7 @@ class Df_PageCache_Observer {
 	/**
 	 * Saves 'web/secure/offloader_header' config to cache, only when value was updated
 	 *
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	protected function _checkAndSaveSslOffloaderHeaderToCache()
 	{
@@ -879,7 +879,7 @@ class Df_PageCache_Observer {
 	 * Checks whether exists design exception value in cache.
 	 * If not, gets it from config and puts into cache
 	 *
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	protected function _saveDesignException()
 	{
@@ -909,7 +909,7 @@ class Df_PageCache_Observer {
 
 	/**
 	 * @param array $exceptions
-	 * @return Df_PageCache_Observer
+	 * @return $this
 	 */
 	protected function _saveDesignExceptions(array $exceptions)
 	{

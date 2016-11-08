@@ -4,7 +4,7 @@ class Df_Cms_Block_Admin_Page_Edit extends Df_Core_Block_Admin {
 	 * Adding js to CE blocks to implement special functionality which
 	 * will allow go back to edit page with pre loaded tab passed through query string.
 	 * Added permission checking to remove some buttons if needed.
-	 * @return Df_Cms_Block_Admin_Page_Edit
+	 * @return $this
 	 */
 	protected function _prepareLayout()
 	{

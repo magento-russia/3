@@ -16,7 +16,7 @@ class Df_Sales_Model_Order_Status extends Mage_Sales_Model_Order_Status {
 
 	/**
 	 * @param string $value
-	 * @return Df_Sales_Model_Order_Status
+	 * @return $this
 	 */
 	public function setLabel($value) {
 		df_param_string($value, 0);
@@ -43,5 +43,5 @@ class Df_Sales_Model_Order_Status extends Mage_Sales_Model_Order_Status {
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

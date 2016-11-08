@@ -1,6 +1,6 @@
 <?php
 class Df_Invitation_Model_Resource_Invitation_Collection extends Df_Core_Model_Resource_Collection {
-	/** @return Df_Invitation_Model_Resource_Invitation_Collection */
+	/** @return $this */
 	public function addCanBeCanceledFilter(){
 		return $this->addFieldToFilter('status', array('nin' => array(
 			Df_Invitation_Model_Invitation::STATUS_CANCELED
@@ -8,12 +8,12 @@ class Df_Invitation_Model_Resource_Invitation_Collection extends Df_Core_Model_R
 		)));
 	}
 
-	/** @return Df_Invitation_Model_Resource_Invitation_Collection */
+	/** @return $this */
 	public function addCanBeSentFilter() {
 		return $this->addFieldToFilter('status', Df_Invitation_Model_Invitation::STATUS_NEW);
 	}
 
-	/** @return Df_Invitation_Model_Resource_Invitation_Collection */
+	/** @return $this */
 	public function addInviteeInformation() {
 		$this->getSelect()->joinLeft(
 			array('c' => df_table('customer/entity'))
@@ -25,14 +25,14 @@ class Df_Invitation_Model_Resource_Invitation_Collection extends Df_Core_Model_R
 
 	/**
 	 * @param array|int $storeIds
-	 * @return Df_Invitation_Model_Resource_Invitation_Collection
+	 * @return $this
 	 */
 	public function addStoreFilter($storeIds) {
 		$this->getSelect()->where('main_table.store_id IN (?)', $storeIds);
 		return $this;
 	}
 
-	/** @return Df_Invitation_Model_Resource_Invitation_Collection */
+	/** @return $this */
 	public function addWebsiteInformation() {
 		$this->getSelect()->joinInner(
 			array('w' => df_table('core/store'))
@@ -50,7 +50,7 @@ class Df_Invitation_Model_Resource_Invitation_Collection extends Df_Core_Model_R
 
 	/**
 	 * @param int $id
-	 * @return Df_Invitation_Model_Resource_Invitation_Collection
+	 * @return $this
 	 */
 	public function loadByCustomerId($id) {
 		$this->getSelect()->where('main_table.customer_id = ?', $id);
@@ -60,7 +60,7 @@ class Df_Invitation_Model_Resource_Invitation_Collection extends Df_Core_Model_R
 
 	/**
 	 * @override
-	 * @return Df_Invitation_Model_Resource_Invitation_Collection
+	 * @return $this
 	 */
 	protected function _initSelect() {
 		$this->getSelect()->from(

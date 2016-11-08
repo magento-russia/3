@@ -1,4 +1,5 @@
 <?php
+use Df_Admin_Config_Backend_Validator as Backend;
 abstract class Df_Admin_Config_Backend_Validator_Strategy extends Df_Core_Model {
 	/**
 	 * @abstract
@@ -6,7 +7,7 @@ abstract class Df_Admin_Config_Backend_Validator_Strategy extends Df_Core_Model 
 	 */
 	abstract public function validate();
 
-	/** @return Df_Admin_Config_Backend_Validator */
+	/** @return Backend */
 	protected function getBackend() {return $this->cfg(self::$P__BACKEND);}
 
 	/**
@@ -22,7 +23,7 @@ abstract class Df_Admin_Config_Backend_Validator_Strategy extends Df_Core_Model 
 	protected function _construct() {
 		parent::_construct();
 		$this
-			->_prop(self::$P__BACKEND, Df_Admin_Config_Backend::class)
+			->_prop(self::$P__BACKEND, Backend::class)
 			->_prop(self::$P__STORE, Df_Core_Model_StoreM::class)
 		;
 	}
@@ -34,11 +35,11 @@ abstract class Df_Admin_Config_Backend_Validator_Strategy extends Df_Core_Model 
 	/**
 	 * @used-by Df_Admin_Config_Backend_Validator::validateForStore()
 	 * @param string $class
-	 * @param Df_Admin_Config_Backend $backend
+	 * @param Backend $backend
 	 * @param Df_Core_Model_StoreM $store
-	 * @return Df_Admin_Config_Backend_Validator_Strategy
+	 * @return self
 	 */
-	public static function ic($class, Df_Admin_Config_Backend $backend, Df_Core_Model_StoreM $store) {
-		return df_ic($class, __CLASS__, array(self::$P__BACKEND => $backend, self::$P__STORE => $store));
-	}
+	public static function ic($class, Backend $backend, Df_Core_Model_StoreM $store) {return
+		df_ic($class, __CLASS__, [self::$P__BACKEND => $backend, self::$P__STORE => $store])
+	;}
 }

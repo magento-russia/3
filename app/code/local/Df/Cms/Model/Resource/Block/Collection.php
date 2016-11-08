@@ -29,7 +29,7 @@ class Df_Cms_Model_Resource_Block_Collection extends Mage_Cms_Model_Resource_Blo
 	/**
 	 * Метод выполнен по аналогии с методом
 	 * @see Df_Cms_Model_Resource_Page_Collection::withoutOrphans()
-	 * @return Df_Cms_Model_Resource_Block_Collection
+	 * @return $this
 	 */
 	public function withoutOrphans() {
 		/** @var int[] $orphanIds */
@@ -42,7 +42,7 @@ class Df_Cms_Model_Resource_Block_Collection extends Mage_Cms_Model_Resource_Blo
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Resource_Block_Collection
+	 * @return $this
 	 */
 	protected function _afterLoad() {
 		parent::_afterLoad();

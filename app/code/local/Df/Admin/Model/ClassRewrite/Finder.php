@@ -48,7 +48,7 @@ class Df_Admin_Model_ClassRewrite_Finder extends Df_Core_Model {
 			/** @var array(string => Mage_Core_Model_Config_Element) $moduleDeclarations */
 			$moduleDeclarations = df_config_node('modules')->children();
 			/** @var string[] $configFileBaseNames */
-			$configFileBaseNames = array('config.xml', $this->getResourceConfigFileName());
+			$configFileBaseNames = ['config.xml', $this->getResourceConfigFileName()];
 			foreach ($moduleDeclarations as $moduleName => $moduleDeclaration) {
 				/** @var string $moduleName */
 				/** @var Mage_Core_Model_Config_Element $moduleDeclaration */
@@ -112,7 +112,7 @@ class Df_Admin_Model_ClassRewrite_Finder extends Df_Core_Model {
 	 * @param string $type
 	 * @param string $moduleName
 	 * @param string $filePath
-	 * @return Df_Admin_Model_ClassRewrite_Finder
+	 * @return $this
 	 */
 	private function parseRewrites(
 		Df_Admin_Model_ClassRewrite_Collection $rewrites
@@ -154,5 +154,5 @@ class Df_Admin_Model_ClassRewrite_Finder extends Df_Core_Model {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

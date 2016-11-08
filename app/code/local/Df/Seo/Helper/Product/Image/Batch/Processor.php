@@ -1,6 +1,6 @@
 <?php
 class Df_Seo_Helper_Product_Image_Batch_Processor extends Mage_Core_Helper_Abstract {
-	/** @return Df_Seo_Helper_Product_Image_Batch_Processor */
+	/** @return $this */
 	public function process() {
 		/** @var Df_Catalog_Model_Resource_Product_Collection $collection */
 		$collection = Df_Catalog_Model_Product::c();
@@ -21,5 +21,5 @@ class Df_Seo_Helper_Product_Image_Batch_Processor extends Mage_Core_Helper_Abstr
 
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

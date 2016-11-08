@@ -3,7 +3,7 @@ class Df_Invitation_Block_Adminhtml_Report_Invitation_General_Grid
 	extends Mage_Adminhtml_Block_Report_Grid {
 	/**
 	 * Prepare report collection
-	 * @return Df_Invitation_Block_Adminhtml_Report_Invitation_General_Grid
+	 * @return $this
 	 */
 	protected function _prepareCollection()
 	{

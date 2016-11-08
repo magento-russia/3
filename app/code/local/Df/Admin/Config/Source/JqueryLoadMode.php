@@ -10,13 +10,11 @@ class Df_Admin_Config_Source_JqueryLoadMode extends Df_Admin_Config_Source {
 	 * @param bool $isMultiSelect
 	 * @return array(array(string => string))
 	 */
-	protected function toOptionArrayInternal($isMultiSelect = false) {
-		return df_map_to_options(array(
-			self::$LOAD_FROM_GOOGLE => 'загружать с серверов Google'
-			,'load-from-local' => 'загружать с сервера магазина'
-			,self::$NO_LOAD => 'не загружать'
-		));
-	}
+	protected function toOptionArrayInternal($isMultiSelect = false) {return df_map_to_options([
+		self::$LOAD_FROM_GOOGLE => 'загружать с серверов Google'
+		,'load-from-local' => 'загружать с сервера магазина'
+		,self::$NO_LOAD => 'не загружать'
+	]);}
 	/** @var string */
 	private static $LOAD_FROM_GOOGLE = 'load-from-google';
 	/** @var string */

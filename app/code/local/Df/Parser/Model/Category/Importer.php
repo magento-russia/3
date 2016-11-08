@@ -1,6 +1,6 @@
 <?php
 class Df_Parser_Model_Category_Importer extends Df_Core_Model {
-	/** @return Df_Parser_Model_Category_Importer */
+	/** @return $this */
 	public function import() {
 		foreach ($this->getTree()->getNodes() as $category) {
 			/** @var Df_Parser_Model_Category_Node $category */
@@ -17,7 +17,7 @@ class Df_Parser_Model_Category_Importer extends Df_Core_Model {
 	/**
 	 * @param Df_Parser_Model_Category_Node $nodeCategory
 	 * @param Df_Catalog_Model_Category|null $parent [optional]
-	 * @return Df_Parser_Model_Category_Importer
+	 * @return $this
 	 */
 	private function importCategory(Df_Parser_Model_Category_Node $nodeCategory, $parent = null) {
 		if (is_null($parent)) {

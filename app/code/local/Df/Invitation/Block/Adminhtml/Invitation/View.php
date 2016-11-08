@@ -2,7 +2,7 @@
 class Df_Invitation_Block_Adminhtml_Invitation_View extends Mage_Adminhtml_Block_Widget_Container {
 	/**
 	 * Set header text, add some buttons
-	 * @return Df_Invitation_Block_Adminhtml_Invitation_View
+	 * @return $this
 	 */
 	protected function _prepareLayout()
 	{

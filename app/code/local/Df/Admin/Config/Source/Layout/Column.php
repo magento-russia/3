@@ -10,12 +10,10 @@ class Df_Admin_Config_Source_Layout_Column extends Df_Admin_Config_Source {
 	 * @param bool $isMultiSelect
 	 * @return array(array(string => string))
 	 */
-	protected function toOptionArrayInternal($isMultiSelect = false) {
-		return array_merge(
-			$this->needShowOptionNo() ? array(df_option('no', 'не показывать')) : []
-			, df_map_to_options(array(self::$LEFT => 'левая колонка', self::$RIGHT => 'правая колонка'))
-		);
-	}
+	protected function toOptionArrayInternal($isMultiSelect = false) {return array_merge(
+		$this->needShowOptionNo() ? [df_option('no', 'не показывать')] : []
+		, df_map_to_options([self::$LEFT => 'левая колонка', self::$RIGHT => 'правая колонка'])
+	);}
 
 	/** @return bool */
 	private function needShowOptionNo() {return df_bool($this->getFieldParam('df_option_no', false));}

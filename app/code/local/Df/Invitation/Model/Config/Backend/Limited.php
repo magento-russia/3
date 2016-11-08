@@ -3,7 +3,7 @@ class Df_Invitation_Model_Config_Backend_Limited extends Mage_Core_Model_Config_
 	/**
 	 * Validating entered value if it will be 0 (unlimited)
 	 * throw notice and change it to old one
-	 * @return Df_Invitation_Model_Config_Backend_Limited
+	 * @return $this
 	 */
 	protected function _beforeSave()
 	{

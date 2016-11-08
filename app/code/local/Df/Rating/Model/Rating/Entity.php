@@ -15,5 +15,5 @@ class Df_Rating_Model_Rating_Entity extends Mage_Rating_Model_Rating_Entity {
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

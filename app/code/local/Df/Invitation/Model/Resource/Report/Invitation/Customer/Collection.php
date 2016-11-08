@@ -6,7 +6,7 @@ class Df_Invitation_Model_Resource_Report_Invitation_Customer_Collection
 	 *
 	 * @param Zend_Date|string $from
 	 * @param Zend_Date|string $to
-	 * @return Df_Invitation_Model_Resource_Report_Invitation_Customer_Collection
+	 * @return $this
 	 */
 	public function setDateRange($from, $to)
 	{
@@ -38,7 +38,7 @@ class Df_Invitation_Model_Resource_Report_Invitation_Customer_Collection
 	 * Filters report by stores
 	 *
 	 * @param array $storeIds
-	 * @return Df_Invitation_Model_Resource_Report_Invitation_Customer_Collection
+	 * @return $this
 	 */
 	public function setStoreIds($storeIds)
 	{

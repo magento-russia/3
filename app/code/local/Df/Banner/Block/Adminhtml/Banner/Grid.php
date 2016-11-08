@@ -109,7 +109,7 @@ class Df_Banner_Block_Adminhtml_Banner_Grid extends Mage_Adminhtml_Block_Widget_
 
 	/**
 	 * @override
-	 * @return Df_Banner_Block_Adminhtml_Banner_Grid
+	 * @return $this
 	 */
 	protected function _prepareMassaction() {
 		parent::_prepareMassaction();

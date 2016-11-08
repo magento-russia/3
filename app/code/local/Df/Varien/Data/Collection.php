@@ -26,8 +26,8 @@ class Df_Varien_Data_Collection extends Varien_Data_Collection {
 	/**
 	 * Adding item to item array
 	 * @override
-	 * @param  Varien_Object $item
-	 * @return  Varien_Data_Collection
+	 * @param Varien_Object $item
+	 * @return $this
 	 */
 	public function addItem(Varien_Object $item) {
 		/** @var string $itemClass */
@@ -73,7 +73,7 @@ class Df_Varien_Data_Collection extends Varien_Data_Collection {
 	 * непотомков Varien_Object
 	 * @used-by Df_Cms_Model_ContentsMenu_Collection::getPosition()
 	 * @param object $item
-	 * @return Df_Varien_Data_Collection
+	 * @return $this
 	 * @throws Exception
 	 */
 	public function addItemNotVarienObject($item) {
@@ -95,7 +95,7 @@ class Df_Varien_Data_Collection extends Varien_Data_Collection {
 
 	/**
 	 * @param int[]|string[] $keys
-	 * @return Df_Varien_Data_Collection
+	 * @return $this
 	 */
 	public function removeItemsByKeys(array $keys) {
 		$this->load();
@@ -103,7 +103,7 @@ class Df_Varien_Data_Collection extends Varien_Data_Collection {
 		return $this;
 	}
 
-	/** @return Df_Varien_Data_Collection */
+	/** @return $this */
 	public function reverse() {
 		$this->load();
 		$this->_items = array_reverse($this->_items, $preserve_keys = true);

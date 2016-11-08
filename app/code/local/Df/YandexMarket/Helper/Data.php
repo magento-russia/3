@@ -106,5 +106,5 @@ class Df_YandexMarket_Helper_Data extends Mage_Core_Helper_Data {
 	private function settings() {return df_cfgr()->yandexMarket();}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

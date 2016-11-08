@@ -2,9 +2,9 @@
 class Df_Sales_Block_Admin_Grid_OrderItem_Collection extends Df_Varien_Data_Collection {
 	/**
 	 * @override
-	 * @param  string $field
-	 * @param  string $direction [optional]
-	 * @return  Df_Sales_Block_Admin_Grid_OrderItem_Collection
+	 * @param string $field
+	 * @param string $direction [optional]
+	 * @return $this
 	 */
 	public function setOrder($field, $direction = self::SORT_ORDER_DESC) {
 		df_param_string($field, 0);

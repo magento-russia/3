@@ -69,7 +69,7 @@ class Df_Admin_Config_Backend_Table extends Df_Admin_Config_Backend {
 	 * Оба этих формата не являются стандартными для интерфейсного элемента управления
 	 * и поэтому вручную преобразуется к стандартному методом
 	 * @see Df_Admin_Block_Field_DynamicTable::getArrayRows()
-	 * @return Df_Admin_Config_Backend_Table
+	 * @return $this
 	 */
 	protected function _afterLoad() {
 		/** @var mixed|Mage_Core_Model_Config_Element|string $value */
@@ -119,7 +119,7 @@ class Df_Admin_Config_Backend_Table extends Df_Admin_Config_Backend {
 	 * @see Mage_Core_Model_Abstract::_beforeSave()
 	 * @used-by Mage_Core_Model_Abstract::save()
 	 * @see Mage_Adminhtml_Model_System_Config_Backend_Serialized_Array::_beforeSave()
-	 * @return Df_Admin_Config_Backend_Table
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		/** @var mixed $value */
@@ -143,7 +143,7 @@ class Df_Admin_Config_Backend_Table extends Df_Admin_Config_Backend {
 	 */
 	public static function unserialize($value, $rowClass) {
 		/** @var array(string => array(string => string))|null $result */
-		if (!df_contains($value, array('"', '[', '{'))) {
+		if (!df_contains($value, ['"', '[', '{'])) {
 			/**
 			 * Итак, мы имеем дело с простым форматом CSV, например:
 				<default>
@@ -201,7 +201,7 @@ class Df_Admin_Config_Backend_Table extends Df_Admin_Config_Backend {
 			 * @uses Df_Directory_Config_MapItem_Country::fields()
 			 * @var string[] $fields
 			 */
-			$fields = call_user_func(array($rowClass, 'fields'));
+			$fields = call_user_func([$rowClass, 'fields']);
 			df_assert_array($fields);
 			df_assert($fields);
 			$result = self::normalize($result, $fields);
@@ -243,7 +243,7 @@ class Df_Admin_Config_Backend_Table extends Df_Admin_Config_Backend {
 			 * array(array("RU"), array("UA"))) =>
 			 * array(array("code" => "RU"), array("code" => "UA")))
 			 */
-			$result = df_map('array_combine', $result, [], array($fields));
+			$result = df_map('array_combine', $result, [], [$fields]);
 			/**
 			 * Теперь добавляем идентификаторы строк:
 			 * array(array("code" => "RU"), array("code" => "UA"))) =>

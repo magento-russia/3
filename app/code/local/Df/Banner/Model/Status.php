@@ -11,7 +11,7 @@ class Df_Banner_Model_Status extends Varien_Object {
 		);
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 	/**
 	 * 2015-01-31
 	 * обратите внимание, что для «нет» используется идиотское значение «2»

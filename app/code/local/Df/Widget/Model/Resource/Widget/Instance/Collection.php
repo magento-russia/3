@@ -29,7 +29,7 @@ class Df_Widget_Model_Resource_Widget_Instance_Collection
 
 	/**
 	 * @override
-	 * @return Df_Widget_Model_Resource_Widget_Instance_Collection
+	 * @return $this
 	 */
 	protected function _afterLoad() {
 		parent::_afterLoad();

@@ -23,14 +23,14 @@
 class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 	/**
 	 * Public version of afterLoad
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	public function afterLoad() {return $this->_afterLoad();}
 
 	/**
 	 * Delete customer orphan balances
 	 * @param int $customerId
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	public function deleteBalancesByCustomerId($customerId) {
 		$this->getResource()->deleteBalancesByCustomerId($customerId);
@@ -43,7 +43,7 @@ class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 	/**
 	 * Get customer orphan balances count
 	 * @param int $customerId
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	public function getOrphanBalancesCount($customerId) {
 		return $this->getResource()->getOrphanBalancesCount($customerId);
@@ -81,7 +81,7 @@ class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 	 * Load balance by customer
 	 * Website id should either be set or not admin
 	 * @throws Mage_Core_Exception
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	public function loadByCustomer() {
 		$this->_ensureCustomer();
@@ -102,7 +102,7 @@ class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 	 * Update customers balance currency code per website id
 	 * @param int $websiteId
 	 * @param string $currencyCode
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	public function setCustomersBalanceCurrencyTo($websiteId, $currencyCode) {
 		$this->getResource()->setCustomersBalanceCurrencyTo($websiteId, $currencyCode);
@@ -113,7 +113,7 @@ class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 	 * Specify whether email notification should be sent
 	 * @param bool $shouldNotify
 	 * @param int $storeId
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 * @throws Mage_Core_Exception
 	 */
 	public function setNotifyByEmail($shouldNotify, $storeId = null) {
@@ -129,7 +129,7 @@ class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	protected function _afterSave() {
 		parent::_afterSave();
@@ -145,7 +145,7 @@ class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		$this->_ensureCustomer();
@@ -242,16 +242,16 @@ class Df_CustomerBalance_Model_Balance extends Df_Core_Model {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id
 	 * @param string|null $field [optional]
-	 * @return Df_CustomerBalance_Model_Balance
+	 * @return $this
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

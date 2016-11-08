@@ -27,5 +27,5 @@ class Df_Customer_Model_Resource_Customer extends Mage_Customer_Model_Entity_Cus
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

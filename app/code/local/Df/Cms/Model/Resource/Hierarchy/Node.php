@@ -39,7 +39,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 
 	/**
 	 * @param int $pageId
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function deleteRootNodesByPageId($pageId) {
 		$this->_getWriteAdapter()->delete(
@@ -164,7 +164,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 *
 	 * @param N $object
 	 * @param string $url
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function loadByRequestUrl($object, $url)
 	{
@@ -185,7 +185,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 *
 	 * @param N $object
 	 * @param int $parentNodeId
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function loadFirstChildByParent($object, $parentNodeId)
 	{
@@ -207,7 +207,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * Saving meta if such available for node (in case node is root node of three)
 	 *
 	 * @param Mage_Core_Model_Abstract $object
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function saveMetaData(Mage_Core_Model_Abstract $object)
 	{
@@ -225,7 +225,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * Flag to indicate whether append active pages only or not
 	 *
 	 * @param bool $flag
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function setAppendActivePagesOnly($flag) {
 		$this->_appendActivePagesOnly = !!$flag;
@@ -247,7 +247,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * Setter for $_treeIsBrief
 	 *
 	 * @param bool $brief
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function setTreeIsBrief($brief) {
 		$this->_treeIsBrief = !!$brief;
@@ -258,7 +258,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * Setter for $_treeMaxDepth
 	 *
 	 * @param int $depth
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function setTreeMaxDepth($depth)
 	{
@@ -270,7 +270,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * Rebuild URL rewrites for a tree with specified path.
 	 *
 	 * @param string $xpath
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function updateRequestUrlsForTreeByXpath($xpath)
 	{
@@ -303,7 +303,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 *
 	 * @param int $nodeId
 	 * @param int $sortOrder
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function updateSortOrder($nodeId, $sortOrder)
 	{
@@ -358,7 +358,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * Load page data for model if defined page id
 	 *
 	 * @param N $object
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function loadPageData($object)
 	{
@@ -385,7 +385,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 *
 	 * @param int $pageId
 	 * @param int|array $nodes
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	public function removePageFromNodes($pageId, $nodes) {
 		$whereClause = df_db_quote_into('page_id = ? AND ', $pageId);
@@ -397,7 +397,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	/**
 	 * @override
 	 * @param N|Mage_Core_Model_Abstract $object
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	protected function _afterLoad(Mage_Core_Model_Abstract $object) {
 		parent::_afterLoad($object);
@@ -414,7 +414,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 
 	/**
 	 * @param N|Mage_Core_Model_Abstract $object
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	protected function _afterSave(Mage_Core_Model_Abstract $object) {
 		if ($object->dataHasChangedFor($this->getIdFieldName())) {
@@ -481,7 +481,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * @param array $nodes
 	 * @param int $parentNodeId
 	 * @param string $path
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	protected function _updateNodeRequestUrls(array $nodes, $parentNodeId = 0, $path = null) {
 		foreach ($nodes[$parentNodeId] as $nodeRow) {
@@ -513,7 +513,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 * Add attributes filter to select object based on flags
 	 *
 	 * @param Zend_Db_Select $select Select object instance
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node
+	 * @return $this
 	 */
 	protected function _applyParamFilters($select)
 	{
@@ -624,5 +624,5 @@ class Df_Cms_Model_Resource_Hierarchy_Node extends Df_Core_Model_Resource {
 	 */
 	const TABLE_META_DATA = 'df_cms/hierarchy_metadata';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

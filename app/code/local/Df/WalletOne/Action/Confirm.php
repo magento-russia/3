@@ -50,14 +50,13 @@ class Confirm extends \Df\Payment\Action\Confirm {
 
 	/**
 	 * @override
-	 * @return \Df\Payment\Action\Confirm
+	 * @return void
 	 * @throws \Mage_Core_Exception
 	 */
 	protected function processOrderCanNotInvoice() {
 		// Единая Касса любит присылать повторные оповещения об оплате
 		$this->order()->comment('Единая Касса повторно прислала оповещение об оплате');
 		$this->response()->setBody($this->responseTextForSuccess());
-		return $this;
 	}
 
 	/** @return G */

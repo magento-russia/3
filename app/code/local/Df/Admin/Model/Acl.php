@@ -8,7 +8,7 @@ class Df_Admin_Model_Acl extends Mage_Admin_Model_Acl {
 	 * @param Zend_Acl_Resource_Interface $resource
 	 * @param Zend_Acl_Resource_Interface|string $parent
 	 * @throws Zend_Acl_Exception
-	 * @return Df_Admin_Model_Acl
+	 * @return $this
 	 */
 	public function add(Zend_Acl_Resource_Interface $resource, $parent = null) {
 		if (!$this->has($resource)) {

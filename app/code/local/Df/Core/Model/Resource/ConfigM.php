@@ -7,7 +7,7 @@ class Df_Core_Model_Resource_ConfigM extends Mage_Core_Model_Resource_Config {
 	 * @override
 	 * @param Mage_Core_Model_Config $xmlConfig
 	 * @param string|null $condition [optional]
-	 * @return Df_Core_Model_Resource_ConfigM
+	 * @return $this
 	 */
 	public function loadToXml(Mage_Core_Model_Config $xmlConfig, $condition = null) {
 		/**

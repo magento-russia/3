@@ -10,7 +10,7 @@ class Df_Admin_Config_Source_YesNo extends Df_Admin_Config_Source {
 	 * @param bool $isMultiSelect
 	 * @return array(array(string => string))
 	 */
-	protected function toOptionArrayInternal($isMultiSelect = false) {
-		return array(df_option(1, $this->__a('Yes')), df_option(0, $this->__a('No')));
-	}
+	protected function toOptionArrayInternal($isMultiSelect = false) {return
+		[df_option(1, $this->__a('Yes')), df_option(0, $this->__a('No'))]
+	;}
 }

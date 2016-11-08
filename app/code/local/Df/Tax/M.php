@@ -78,5 +78,5 @@ class Df_Tax_M extends Df_Core_Model {
 	protected function cached() {return self::m(__CLASS__, 'productClassId');}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

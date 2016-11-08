@@ -18,5 +18,5 @@ class Df_Banner_Model_Resource_Banner extends Df_Core_Model_Resource {
 	 * @used-by Df_Banner_Model_Resource_Banner_Collection::getResource()
 	 * @return Df_Banner_Model_Resource_Banner
 	 */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

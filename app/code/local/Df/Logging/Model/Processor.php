@@ -3,7 +3,7 @@ class Df_Logging_Model_Processor extends Df_Core_Model {
 	/**
 	 * Add new event changes
 	 * @param Df_Logging_Model_Event_Changes $eventChange
-	 * @return Df_Logging_Model_Processor
+	 * @return $this
 	 */
 	public function addEventChanges($eventChange) {
 		$this->_eventChanges[]= $eventChange;
@@ -35,7 +35,7 @@ class Df_Logging_Model_Processor extends Df_Core_Model {
 
 	/**
 	 * @param Mage_Core_Model_Abstract $model
-	 * @return Df_Logging_Model_Processor
+	 * @return $this
 	 */
 	public function collectId(Mage_Core_Model_Abstract $model) {
 		$this->_collectedIds[get_class($model)][]= $model->getId();
@@ -352,5 +352,5 @@ class Df_Logging_Model_Processor extends Df_Core_Model {
 	const XML_PATH_SKIP_GLOBAL_FIELDS = 'adminhtml/df/logging/skip_fields';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

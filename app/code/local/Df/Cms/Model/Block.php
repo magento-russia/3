@@ -73,5 +73,5 @@ class Df_Cms_Model_Block extends Mage_Cms_Model_Block {
 		return df_load(__CLASS__, $identifier, self::P__IDENTIFIER, $throwOnError = false);
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

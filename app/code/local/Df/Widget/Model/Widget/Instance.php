@@ -16,7 +16,7 @@ class Df_Widget_Model_Widget_Instance extends Mage_Widget_Model_Widget_Instance 
 		return is_null($result) ? true : $result;
 	}
 
-	/** @return Df_Widget_Model_Widget_Instance */
+	/** @return $this */
 	public function skipSaveRelations() {
 		$this->setData(self::$P__NEED_SAVE_RELATIONS, false);
 		return $this;
@@ -24,7 +24,7 @@ class Df_Widget_Model_Widget_Instance extends Mage_Widget_Model_Widget_Instance 
 
 	/**
 	 * @override
-	 * @return Df_Widget_Model_Widget_Instance
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		if ($this->needSaveRelations()) {
@@ -72,5 +72,5 @@ class Df_Widget_Model_Widget_Instance extends Mage_Widget_Model_Widget_Instance 
 		return Df_Widget_Model_Resource_Widget_Instance_Collection::i($forUpdating);
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

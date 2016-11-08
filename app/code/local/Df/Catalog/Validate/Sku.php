@@ -36,5 +36,5 @@ class Df_Catalog_Validate_Sku extends \Df\Zf\Validate\Type {
 	protected function getExpectedTypeInGenitiveCase() {return 'артикула';}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

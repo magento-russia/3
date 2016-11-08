@@ -6,7 +6,7 @@ class Df_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option
 	 * перевести надпись на кнопке «Delete Option»
 	 * на административном экране товарного комплекта.
 	 * @override
-	 * @return Df_Bundle_Block_Adminhtml_Catalog_Product_Edit_Tab_Bundle_Option
+	 * @return $this
 	 */
 	protected function _prepareLayout() {
 		parent::_prepareLayout();

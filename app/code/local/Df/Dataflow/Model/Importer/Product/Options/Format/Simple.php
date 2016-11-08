@@ -1,7 +1,7 @@
 <?php
 class Df_Dataflow_Model_Importer_Product_Options_Format_Simple
 	extends Df_Dataflow_Model_Importer_Product_Options_Format_Abstract {
-	/** @return Df_Dataflow_Model_Importer_Product_Options_Format_Simple */
+	/** @return $this */
 	public function process() {
 		$this->deletePreviousOptionWithSameTitle();
 		/** @var $option Df_Catalog_Model_Product_Option */

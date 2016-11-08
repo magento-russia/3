@@ -10,5 +10,5 @@ class Df_Dataflow_Model_Settings_Common extends Df_Core_Model_Settings {
 	 */
 	protected function getKeyPrefix() {return 'df_dataflow/common/';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

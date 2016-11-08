@@ -89,7 +89,7 @@ class Import extends \Df\C1\Cml2\Action\Catalog {
 	/** @return \Df\C1\Cml2\State\Import\Collections */
 	private function getCollections() {return $this->getState()->import()->cl();}
 
-	/** @return \Df\C1\Cml2\Action\Catalog\Import */
+	/** @return void */
 	private function importCategories() {
 		/** @var int $count */
 		$count = $this->getCollections()->getCategories()->count();
@@ -107,10 +107,9 @@ class Import extends \Df\C1\Cml2\Action\Catalog {
 			}
 			df_c1_log('Импорт товарных разделов завершён.');
 		}
-		return $this;
 	}
 
-	/** @return \Df\C1\Cml2\Action\Catalog\Import */
+	/** @return void */
 	private function importProductsConfigurable() {
 		/** @var int $countParent */
 		$countParent = count($this->getCollections()->getOffersConfigurableParent());
@@ -140,10 +139,9 @@ class Import extends \Df\C1\Cml2\Action\Catalog {
 			}
 			df_c1_log('Импорт настраиваемых товаров завершён.');
 		}
-		return $this;
 	}
 
-	/** @return \Df\C1\Cml2\Action\Catalog\Import */
+	/** @return void */
 	private function importProductsConfigurablePartImages() {
 		foreach ($this->getCollections()->getOffers() as $offer) {
 			/** @var \Df\C1\Cml2\Import\Data\Entity\Offer $offer */
@@ -151,10 +149,9 @@ class Import extends \Df\C1\Cml2\Action\Catalog {
 				\Df\C1\Cml2\Import\Processor\Product\Part\Images::i($offer)->process();
 			}
 		}
-		return $this;
 	}
 
-	/** @return \Df\C1\Cml2\Action\Catalog\Import */
+	/** @return void */
 	private function importProductsSimple() {
 		/** @var int $count */
 		$count = count($this->getCollections()->getOffersSimple());
@@ -170,10 +167,9 @@ class Import extends \Df\C1\Cml2\Action\Catalog {
 			}
 			df_c1_log('Импорт простых товаров завершён.');
 		}
-		return $this;
 	}
 
-	/** @return \Df\C1\Cml2\Action\Catalog\Import */
+	/** @return void */
 	private function importProductsSimplePartImages() {
 		foreach ($this->getCollections()->getOffers() as $offer) {
 			/** @var \Df\C1\Cml2\Import\Data\Entity\Offer $offer */
@@ -181,10 +177,9 @@ class Import extends \Df\C1\Cml2\Action\Catalog {
 				\Df\C1\Cml2\Import\Processor\Product\Part\Images::i($offer)->process();
 			}
 		}
-		return $this;
 	}
 
-	/** @return \Df\C1\Cml2\Action\Catalog\Import */
+	/** @return void */
 	private function importReferenceLists() {
 		df_c1_log('Импорт справочников начат.');
 		df_h()->eav()->packetUpdateBegin();
@@ -198,6 +193,5 @@ class Import extends \Df\C1\Cml2\Action\Catalog {
 		}
 		df_h()->eav()->packetUpdateEnd();
 		df_c1_log('Импорт справочников завершён.');
-		return $this;
 	}
 }

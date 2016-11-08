@@ -17,11 +17,8 @@ class Df_Admin_Model_ClassInfo extends Df_Core_Model {
 	public function getNameByMf() {
 		if (!isset($this->{__METHOD__})) {
 			df_assert_string_not_empty($this->getNameMf());
-			$this->{__METHOD__} =
-				call_user_func(
-					array(Mage::getConfig(), $this->getConstructor())
-					,$this->getNameMf()
-				)
+			$this->{__METHOD__} = 
+				call_user_func([Mage::getConfig(), $this->getConstructor()], $this->getNameMf())
 			;
 			if (!$this->{__METHOD__}) {
 				df_error(
@@ -40,24 +37,11 @@ class Df_Admin_Model_ClassInfo extends Df_Core_Model {
 	public function getType() {return $this->cfg(self::$P__TYPE);}
 
 	/** @return string */
-	private function getConstructor() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} =
-				dfa(
-					array(
-						self::$TYPE__BLOCK => 'getBlockClassName'
-						, self::$TYPE__HELPER => 'getHelperClassName'
-						, self::$TYPE__MODEL => 'getModelClassName'
-					)
-					,$this->getType()
-				)
-			;
-			if (!$this->{__METHOD__}) {
-				df_error('Неизвестный тип класса: «%s».', $this->getType());
-			}
-		}
-		return $this->{__METHOD__};
-	}
+	private function getConstructor() {return dfc($this, function() {return dfa([
+		self::$TYPE__BLOCK => 'getBlockClassName'
+		,self::$TYPE__HELPER => 'getHelperClassName'
+		,self::$TYPE__MODEL => 'getModelClassName'
+	], $this->getType()) ?: df_error("Неизвестный тип класса: «{$this->getType()}».");});}
 
 	/**
 	 * @override
@@ -101,11 +85,11 @@ class Df_Admin_Model_ClassInfo extends Df_Core_Model {
 	 */
 	public static function classTypeMap() {
 		/** @var array(string => string) $r */
-		static $r; return $r ? $r : $r = array(
+		static $r; return $r ?: $r = [
 			'blocks' => self::$TYPE__BLOCK
-			, 'helpers' => self::$TYPE__HELPER
-			, 'models' => self::$TYPE__MODEL
-		);
+			,'helpers' => self::$TYPE__HELPER
+			,'models' => self::$TYPE__MODEL
+		];
 	}
 
 	/**
@@ -116,22 +100,20 @@ class Df_Admin_Model_ClassInfo extends Df_Core_Model {
 	 * @param string $configFilePath
 	 * @return Df_Admin_Model_ClassInfo
 	 */
-	public static function i($type, $name, $moduleName, $configFilePath) {
-		return new self(array(
-			self::$P__CONFIG_FILE_PATH => $configFilePath
-			,self::$P__MODULE_NAME => $moduleName
-			,self::$P__NAME => $name
-			,self::$P__TYPE => $type
-		));
-	}
+	public static function i($type, $name, $moduleName, $configFilePath) {return new self([
+		self::$P__CONFIG_FILE_PATH => $configFilePath
+		,self::$P__MODULE_NAME => $moduleName
+		,self::$P__NAME => $name
+		,self::$P__TYPE => $type
+	]);}
 
 	/**
 	 * @used-by Df_Admin_Model_ClassRewrite_Finder::parseRewrites()
 	 * @param string $type
 	 * @param string $nameMf
-	 * @return Df_Admin_Model_ClassInfo
+	 * @return self
 	 */
-	public static function i_mf($type, $nameMf) {
-		return new self(array(self::$P__NAME_MF => $nameMf, self::$P__TYPE => $type));
-	}
+	public static function i_mf($type, $nameMf) {return new self([
+		self::$P__NAME_MF => $nameMf, self::$P__TYPE => $type
+	]);}
 }

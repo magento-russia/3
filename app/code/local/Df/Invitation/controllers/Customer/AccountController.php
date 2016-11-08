@@ -15,7 +15,8 @@ class Df_Invitation_Customer_AccountController extends Mage_Customer_AccountCont
 	 * Allowing only specific actions
 	 * Checking whether invitation functionality is enabled
 	 * Checking whether registration is allowed at all
-	 * No way to logged in customers
+	 * No way to logged in customers 
+	 * @return $this
 	 */
 	public function preDispatch() {
 		Mage_Core_Controller_Front_Action::preDispatch();

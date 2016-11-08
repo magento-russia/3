@@ -14,7 +14,7 @@ class Df_Customer_Model_Group extends Mage_Customer_Model_Group {
 
 	/**
 	 * @param string|null $value
-	 * @return Df_Customer_Model_Group
+	 * @return $this
 	 */
 	public function set1CId($value) {
 		$this->setData(\Df\C1\C::ENTITY_EXTERNAL_ID, $value);
@@ -50,5 +50,5 @@ class Df_Customer_Model_Group extends Mage_Customer_Model_Group {
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

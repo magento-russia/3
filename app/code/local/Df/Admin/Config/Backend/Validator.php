@@ -15,7 +15,7 @@ class Df_Admin_Config_Backend_Validator extends Df_Admin_Config_Backend {
 
 	/**
 	 * @overide
-	 * @return Df_Admin_Config_Backend_Validator
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		try {
@@ -33,7 +33,7 @@ class Df_Admin_Config_Backend_Validator extends Df_Admin_Config_Backend {
 		// Показываем администратору все сообщения,
 		// которые валидатор счёл нужным предоставить.
 		/** @uses Mage_Core_Model_Session_Abstract::addMessage() */
-		array_map(array(df_session(), 'addMessage'), $this->getMessages()->getItems());
+		array_map([df_session(), 'addMessage'], $this->getMessages()->getItems());
 		parent::_beforeSave();
 		return $this;
 	}
@@ -48,7 +48,7 @@ class Df_Admin_Config_Backend_Validator extends Df_Admin_Config_Backend {
 		return $this->{__METHOD__};
 	}
 
-	/** @return Df_Admin_Config_Backend_Validator */
+	/** @return $this */
 	private function validate() {
 		/** @var bool $isValid */
 		$isValid = true;

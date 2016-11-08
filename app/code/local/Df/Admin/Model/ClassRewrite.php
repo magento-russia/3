@@ -1,4 +1,5 @@
 <?php
+use Df_Admin_Model_ClassInfo as ClassInfo;
 class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 	/** @return Df_Admin_Model_ClassInfo_Collection */
 	public function getDestinations() {
@@ -20,7 +21,7 @@ class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 		return $this->{__METHOD__};
 	}
 
-	/** @return Df_Admin_Model_ClassInfo */
+	/** @return ClassInfo */
 	public function getOrigin() {return $this->cfg(self::$P__ORIGIN);}
 
 	/** @return string */
@@ -50,10 +51,10 @@ class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 				// Смотрим родственные отношения этих классов.
 				// Алгоритм аналогичен алгоритму для 2-х классов,
 				// смотрите комментарии ниже для случая 2-х классов.
-				/** @var Df_Admin_Model_ClassInfo[] $items */
+				/** @var ClassInfo[] $items */
 				$items = $this->getDestinations()->getItems();
-				/** @var Df_Admin_Model_ClassInfo $classInfoActive */
-				/** @var Df_Admin_Model_ClassInfo[] $classInfoInactive */
+				/** @var ClassInfo $classInfoActive */
+				/** @var ClassInfo[] $classInfoInactive */
 				foreach ($items as $item) {
 					/** Df_Admin_Model_ClassInfo $item */
 					if ($this->isDestinationActive($item)) {
@@ -101,12 +102,12 @@ class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 				 * Если находятся, и если именно директива сына является активной (важно!),
 				 * то мы не считаем данную ситуацию конфликтом.
 				 */
-				/** @var Df_Admin_Model_ClassInfo $classInfo1 */
+				/** @var ClassInfo $classInfo1 */
 				$classInfo1 = $this->getDestinations()->getFirstItem();
-				/** @var Df_Admin_Model_ClassInfo $classInfo2 */
+				/** @var ClassInfo $classInfo2 */
 				$classInfo2 = $this->getDestinations()->getLastItem();
-				/** @var Df_Admin_Model_ClassInfo $classInfoActive */
-				/** @var Df_Admin_Model_ClassInfo $classInfoInactive */
+				/** @var ClassInfo $classInfoActive */
+				/** @var ClassInfo $classInfoInactive */
 				if ($this->isDestinationActive($classInfo1)) {
 					$classInfoActive = $classInfo1;
 					$classInfoInactive = $classInfo2;
@@ -162,12 +163,12 @@ class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 	}
 
 	/**
-	 * @param Df_Admin_Model_ClassInfo $destination
+	 * @param ClassInfo $destination
 	 * @return bool
 	 */
-	public function isDestinationActive(Df_Admin_Model_ClassInfo $destination) {
-		return $this->getActiveDestinationName() === $destination->getName();
-	}
+	public function isDestinationActive(ClassInfo $destination) {return
+		$this->getActiveDestinationName() === $destination->getName()
+	;}
 
 	/** @return string */
 	private function getActiveDestinationName() {return $this->getOrigin()->getNameByMf();}
@@ -178,7 +179,7 @@ class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 	 */
 	protected function _construct() {
 		parent::_construct();
-		$this->_prop(self::$P__ORIGIN, Df_Admin_Model_ClassInfo::class);
+		$this->_prop(self::$P__ORIGIN, ClassInfo::class);
 	}
 	/** @used-by Df_Admin_Model_ClassRewrite_Collection::itemClass() */
 
@@ -187,12 +188,10 @@ class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 
 	/**
 	 * @used-by Df_Admin_Model_ClassRewrite_Finder::parseRewrites()
-	 * @param Df_Admin_Model_ClassInfo $origin
-	 * @return Df_Admin_Model_ClassRewrite
+	 * @param ClassInfo $origin
+	 * @return self
 	 */
-	public static function i(Df_Admin_Model_ClassInfo $origin) {
-		return new self(array(self::$P__ORIGIN => $origin));
-	}
+	public static function i(ClassInfo $origin) {return new self([self::$P__ORIGIN => $origin]);}
 
 	/**
 	 * @used-by getId()
@@ -201,5 +200,5 @@ class Df_Admin_Model_ClassRewrite extends Df_Core_Model {
 	 * @param string $classNameMf
 	 * @return string
 	 */
-	public static function makeId($type, $classNameMf) {return implode('_', array($type, $classNameMf));}
+	public static function makeId($type, $classNameMf) {return implode('_', [$type, $classNameMf]);}
 }

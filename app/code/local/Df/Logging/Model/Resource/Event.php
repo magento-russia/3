@@ -81,7 +81,7 @@ class Df_Logging_Model_Resource_Event extends Df_Core_Model_Resource {
 	/**
 	 * @override
 	 * @param Df_Logging_Model_Event|Mage_Core_Model_Abstract $event
-	 * @return Df_Logging_Model_Resource_Event
+	 * @return $this
 	 */
 	protected function _beforeSave(Mage_Core_Model_Abstract $event) {
 		$event->setData('ip', ip2long($event->getIp()));
@@ -101,5 +101,5 @@ class Df_Logging_Model_Resource_Event extends Df_Core_Model_Resource {
 	/** @used-by Df_Logging_Setup_1_0_0::_process() */
 	const TABLE = 'df_logging/event';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

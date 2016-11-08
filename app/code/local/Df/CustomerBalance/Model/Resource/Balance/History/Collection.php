@@ -3,7 +3,7 @@ class Df_CustomerBalance_Model_Resource_Balance_History_Collection
 	extends Df_Core_Model_Resource_Collection {
 	/**
 	 * @param array|int $websiteIds
-	 * @return Df_CustomerBalance_Model_Resource_Balance_History_Collection
+	 * @return $this
 	 */
 	public function addWebsitesFilter($websiteIds) {
 		$this->getSelect()->where(df_db_quote_into('b.website_id IN (?)', $websiteIds));
@@ -18,7 +18,7 @@ class Df_CustomerBalance_Model_Resource_Balance_History_Collection
 
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Model_Resource_Balance_History_Collection
+	 * @return $this
 	 */
 	protected function _initSelect() {
 		parent::_initSelect();

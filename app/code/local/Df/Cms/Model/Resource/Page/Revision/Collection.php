@@ -6,7 +6,7 @@ class Df_Cms_Model_Resource_Page_Revision_Collection
 	 * Columns which should be joined determined by parameter $cols.
 	 *
 	 * @param mixed $cols
-	 * @return Df_Cms_Model_Resource_Page_Revision_Collection
+	 * @return $this
 	 */
 	public function joinVersions($cols = '')
 	{
@@ -36,7 +36,7 @@ class Df_Cms_Model_Resource_Page_Revision_Collection
 	 * Parameter $version can be int or object.
 	 *
 	 * @param int|Df_Cms_Model_Page_Version $version
-	 * @return Df_Cms_Model_Resource_Page_Revision_Collection
+	 * @return $this
 	 */
 	public function addVersionFilter($version) {
 		if ($version instanceof Df_Cms_Model_Page_Version) {
@@ -53,7 +53,7 @@ class Df_Cms_Model_Resource_Page_Revision_Collection
 	 * Add order by revision number in specified direction.
 	 *
 	 * @param string $dir
-	 * @return Df_Cms_Model_Resource_Page_Revision_Collection
+	 * @return $this
 	 */
 	public function addNumberSort($dir = 'desc') {
 		$this->setOrder('revision_number', $dir);

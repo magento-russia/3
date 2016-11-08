@@ -3,7 +3,7 @@ class Df_Catalog_Model_Config_Backend_Catalog_Category_Flat
 	extends Mage_Catalog_Model_System_Config_Backend_Catalog_Category_Flat {
 	/**
 	 * @override
-	 * @return Df_Catalog_Model_Config_Backend_Catalog_Category_Flat
+	 * @return $this
 	 */
 	protected function _afterSave() {
 		Mage::dispatchEvent(

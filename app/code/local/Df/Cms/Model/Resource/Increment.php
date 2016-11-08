@@ -29,7 +29,7 @@ class Df_Cms_Model_Resource_Increment extends Df_Core_Model_Resource {
 	 * @param int $type
 	 * @param int $node
 	 * @param int $level
-	 * @return Df_Cms_Model_Resource_Increment
+	 * @return $this
 	 */
 	public function cleanIncrementRecord($type, $node, $level) {
 		$write = $this->_getWriteAdapter();
@@ -51,5 +51,5 @@ class Df_Cms_Model_Resource_Increment extends Df_Core_Model_Resource {
 	/** @used-by Df_Cms_Setup_2_0_0::_process() */
 	const TABLE = 'df_cms/increment';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

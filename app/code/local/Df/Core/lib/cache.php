@@ -3,7 +3,7 @@
  * 2015-08-14
  * @return Mage_Core_Model_Cache
  */
-function df_cache() {static $r; return $r ? $r : $r = Mage::app()->getCacheInstance();}
+function df_cache() {static $r; return $r ?: $r = Mage::app()->getCacheInstance();}
 
 /**
  * 2015-02-10

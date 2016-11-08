@@ -10,7 +10,7 @@ class Df_Page_Block_Html_Breadcrumbs extends Mage_Page_Block_Html_Breadcrumbs {
 	 * @param string $crumbName
 	 * @param array(string => string) $crumbInfo
 	 * @param bool $after [optional]
-	 * @return Df_Page_Block_Html_Breadcrumbs
+	 * @return $this
 	 */
 	public function addCrumb($crumbName, $crumbInfo, $after = false) {
 		/** @var bool $hide */

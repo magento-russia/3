@@ -21,5 +21,5 @@ class Df_Cms_Model_Config_Source_ContentsMenu_Position extends Df_Admin_Config_S
 	const RIGHT = 'right';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

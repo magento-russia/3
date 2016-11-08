@@ -1,6 +1,6 @@
 <?php
 class Df_Sms_Model_Gate_Sms16Ru extends Df_Sms_Model_Gate {
-	/** @return Df_Sms_Model_Gate_Sms16Ru */
+	/** @return void */
 	public function send() {
 		/** @var Zend_Http_Client $httpClient */
 		$httpClient = new Zend_Http_Client();
@@ -24,7 +24,6 @@ class Df_Sms_Model_Gate_Sms16Ru extends Df_Sms_Model_Gate {
 		/** @var string $responseAsXml */
 		$responseAsXml = $response->getBody();
 		Mage::log($responseAsXml);
-		return $this;
 	}
 
 	/**

@@ -3,11 +3,11 @@ abstract class Df_Dataflow_Model_Convert_Adapter_Abstract
 	extends Mage_Dataflow_Model_Convert_Adapter_Abstract {
 	/**
 	 * @override
-	 * @return Df_Dataflow_Model_Convert_Adapter_Abstract
+	 * @return $this
 	 */
 	public function load() {return $this;}
 
-	/** @return Df_Dataflow_Model_Convert_Adapter_Abstract */
+	/** @return $this */
 	public function parse() {
 		try {
 			/**
@@ -41,7 +41,7 @@ abstract class Df_Dataflow_Model_Convert_Adapter_Abstract
 
 	/**
 	 * @override
-	 * @return Df_Dataflow_Model_Convert_Adapter_Abstract
+	 * @return $this
 	 */
 	public function save() {return $this;}
 
@@ -51,7 +51,7 @@ abstract class Df_Dataflow_Model_Convert_Adapter_Abstract
 	 * Сам класс данный метод не использует.
 	 * @see Df_Adminhtml_System_Convert_ProfileController
 	 * @param mixed[] $rowAsArray
-	 * @return Df_Dataflow_Model_Convert_Adapter_Abstract
+	 * @return $this
 	 */
 	public function saveRow(array $rowAsArray) {
 		try {

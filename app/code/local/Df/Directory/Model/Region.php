@@ -60,5 +60,5 @@ class Df_Directory_Model_Region extends Mage_Directory_Model_Region {
 		df_load(self::i(), $id, $f)
 	;}, func_get_args());}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

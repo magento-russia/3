@@ -8,7 +8,7 @@ class Df_Catalog_Model_Category_Attribute_Backend_Image
 	 * (заметил в Magento CE 1.6.1.0).
 	 * @override
 	 * @param Varien_Object|Df_Catalog_Model_Category $object
-	 * @return Df_Catalog_Model_Category_Attribute_Backend_Image
+	 * @return $this
 	 */
 	public function afterSave($object) {
 		/** @var mixed $value */

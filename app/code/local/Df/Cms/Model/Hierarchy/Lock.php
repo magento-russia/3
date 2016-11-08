@@ -9,7 +9,7 @@ class Df_Cms_Model_Hierarchy_Lock extends Df_Core_Model {
 		return ($timeout != 0 && $timeout < 120 ) ? 120 : $timeout;
 	}
 
-	/** @return Df_Cms_Model_Hierarchy_Lock */
+	/** @return $this */
 	public function loadLockData() {
 		if (!$this->_dataLoaded) {
 			$data = $this->getResource()->getLockData();
@@ -36,7 +36,7 @@ class Df_Cms_Model_Hierarchy_Lock extends Df_Core_Model {
 		return($this->isLocked() && !$this->isLockOwner());
 	}
 
-	/** @return Df_Cms_Model_Hierarchy_Lock */
+	/** @return $this */
 	public function revalidate() {
 		if (!$this->isEnabled()) {
 			return $this;
@@ -83,7 +83,7 @@ class Df_Cms_Model_Hierarchy_Lock extends Df_Core_Model {
 		return false;
 	}
 
-	/** @return Df_Cms_Model_Hierarchy_Lock */
+	/** @return $this */
 	public function lock() {
 		$this->loadLockData();
 		if ($this->getId()) {
@@ -106,7 +106,7 @@ class Df_Cms_Model_Hierarchy_Lock extends Df_Core_Model {
 	/**
 	 * Setter for session instance
 	 * @param Mage_Core_Model_Session_Abstract $session
-	 * @return Df_Cms_Model_Hierarchy_Lock
+	 * @return $this
 	 */
 	public function setSession(Mage_Core_Model_Session_Abstract $session) {
 		$this->_session = $session;
@@ -132,16 +132,16 @@ class Df_Cms_Model_Hierarchy_Lock extends Df_Core_Model {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Cms_Model_Hierarchy_Lock
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id
 	 * @param string|null $field [optional]
-	 * @return Df_Cms_Model_Hierarchy_Lock
+	 * @return $this
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

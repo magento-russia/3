@@ -10,14 +10,12 @@ class Df_Admin_Config_Source_LetterCase extends Df_Admin_Config_Source {
 	 * @param bool $isMultiSelect
 	 * @return array(array(string => string))
 	 */
-	protected function toOptionArrayInternal($isMultiSelect = false) {
-		return df_map_to_options(array(
-			self::_DEFAULT => 'не менять'
-			,self::$UCFIRST => 'с заглавной буквы'
-			,self::$UPPERCASE => 'заглавными буквами'
-			,self::$LOWERCASE => 'строчными буквами'
-		));
-	}
+	protected function toOptionArrayInternal($isMultiSelect = false) {return df_map_to_options([
+		self::_DEFAULT => 'не менять'
+		,self::$UCFIRST => 'с заглавной буквы'
+		,self::$UPPERCASE => 'заглавными буквами'
+		,self::$LOWERCASE => 'строчными буквами'
+	]);}
 
 	/**
 	 * @used-by convertToCss()
@@ -32,14 +30,12 @@ class Df_Admin_Config_Source_LetterCase extends Df_Admin_Config_Source {
 	 * @param string $value
 	 * @return string
 	 */
-	public static function css($value) {
-		return dfa(array(
-			self::_DEFAULT => 'none'
-			,self::$UPPERCASE => self::$UPPERCASE
-			,self::$LOWERCASE => self::$LOWERCASE
-			,self::$UCFIRST => 'capitalize'
-		), $value);
-	}
+	public static function css($value) {return dfa([
+		self::_DEFAULT => 'none'
+		,self::$UPPERCASE => self::$UPPERCASE
+		,self::$LOWERCASE => self::$LOWERCASE
+		,self::$UCFIRST => 'capitalize'
+	], $value);}
 
 	/**
 	 * @used-by Df_Admin_Config_Font::applyLetterCase()

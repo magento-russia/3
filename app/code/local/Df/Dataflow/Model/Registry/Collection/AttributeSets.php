@@ -28,5 +28,5 @@ class Df_Dataflow_Model_Registry_Collection_AttributeSets extends Df_Dataflow_Mo
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

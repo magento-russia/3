@@ -19,9 +19,9 @@ class SkipNotification extends \Df_Core_Model_Action_Admin {
 	 * @param string $class
 	 * @return string
 	 */
-	public static function getLink($class) {
-		return df_url_backend('df_admin/notification/skip', array(self::$RP__CLASS => $class));
-	}
+	public static function getLink($class) {return
+		df_url_backend('df_admin/notification/skip', [self::$RP__CLASS => $class])
+	;}
 
 	/** @var string  */
 	private static $RP__CLASS = 'class';

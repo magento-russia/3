@@ -15,7 +15,7 @@ class Df_Adminhtml_Block_Page_Head extends Mage_Adminhtml_Block_Page_Head {
 	 * @param string $params
 	 * @param string $if
 	 * @param string $cond
-	 * @return Df_Page_Block_Html_Head
+	 * @return $this
 	 */
 	public function addItem($type, $name, $params = null, $if = null, $cond = null) {
 		if (!df_h()->page()->head()->needSkipItem($type, $name)) {
@@ -24,13 +24,13 @@ class Df_Adminhtml_Block_Page_Head extends Mage_Adminhtml_Block_Page_Head {
 			}
 			else {
 				$params = null;
-				dfa_unshift_assoc($this->_data['items'], $type . '/' . $name, array(
+				dfa_unshift_assoc($this->_data['items'], $type . '/' . $name, [
 					'type' => $type
 					,'name' => $name
 					,'params' => $params
 					,'if' => $if
 					,'cond' => $cond
-				));
+				]);
 			}
 		}
 		return $this;

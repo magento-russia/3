@@ -22,5 +22,5 @@ class Df_Customer_Model_Resource_Group_Collection extends Mage_Customer_Model_En
 
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

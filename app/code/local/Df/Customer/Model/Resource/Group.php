@@ -3,7 +3,7 @@ class Df_Customer_Model_Resource_Group extends Mage_Customer_Model_Entity_Group 
 	/**
 	 * @override
 	 * @param Mage_Core_Model_Abstract|Df_Customer_Model_Group $object
-	 * @return Df_Customer_Model_Resource_Group
+	 * @return $this
 	 * @throws Mage_Core_Exception
 	 */
 	protected function _checkUnique(Mage_Core_Model_Abstract $object) {
@@ -13,5 +13,5 @@ class Df_Customer_Model_Resource_Group extends Mage_Customer_Model_Entity_Group 
 		return $this;
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

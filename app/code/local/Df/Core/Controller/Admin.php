@@ -5,7 +5,7 @@ abstract class Df_Core_Controller_Admin extends Mage_Adminhtml_Controller_Action
 	 * @param string $label
 	 * @param string $title
 	 * @param string|null $link [optional]
-	 * @return Df_Core_Controller_Admin
+	 * @return $this
 	 */
 	public function addBreadcrumb($label, $title, $link = null) {
 		$this->_addBreadcrumb($label, $title, $link);
@@ -21,7 +21,7 @@ abstract class Df_Core_Controller_Admin extends Mage_Adminhtml_Controller_Action
 
 	/**
 	 * @param string $menuPath
-	 * @return Df_Core_Controller_Admin
+	 * @return $this
 	 */
 	public function setActiveMenu($menuPath) {
 		$this->_setActiveMenu($menuPath);
@@ -31,7 +31,7 @@ abstract class Df_Core_Controller_Admin extends Mage_Adminhtml_Controller_Action
 	/**
 	 * @param string|bool|-1|null $text
   	 * @param bool $resetIfExists
-	 * @return Df_Core_Controller_Admin
+	 * @return $this
 	 */
 	public function title($text = null, $resetIfExists = true) {
 		$this->_title($text, $resetIfExists);

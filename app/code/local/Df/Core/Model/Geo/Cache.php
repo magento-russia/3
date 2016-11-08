@@ -23,5 +23,5 @@ class Df_Core_Model_Geo_Cache extends Df_Core_Model {
 	public $cache = [];
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

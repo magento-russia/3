@@ -29,7 +29,7 @@ class Df_Cms_Model_Increment extends Df_Core_Model {
 	 * @param int $type
 	 * @param int $node
 	 * @param int $level
-	 * @return Df_Cms_Model_Increment
+	 * @return $this
 	 */
 	public function loadByTypeNodeLevel($type, $node, $level) {
 		$this->getResource()->loadByTypeNodeLevel($this, $type, $node, $level);

@@ -37,11 +37,7 @@ abstract class Df_Admin_Config_Backend_Cron extends Mage_Core_Model_Config_Data 
 	 */
 	protected function _afterSave() {
 		try {
-			$this
-				->saveConfigKey(
-					$this->getCronSchedulePath(), $this->getCronExpression()
-				)
-			;
+			$this->saveConfigKey($this->getCronSchedulePath(), $this->getCronExpression());
 			$this->saveConfigKey(
 				$this->getCronModelPath(), df_leaf_s(df_config_node($this->getCronModelPath()))
 			);
@@ -66,35 +62,30 @@ abstract class Df_Admin_Config_Backend_Cron extends Mage_Core_Model_Config_Data 
 	}
 
 	/** @return string */
-	private function getCronExpression() {
-		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = implode(' ', array(
-				// минута
-				$this->getMinute()
-				,// час
-				$this->getHour()
-				,// день месяца
-					(
-							$this->getFrequency()
-						===
-							Mage_Adminhtml_Model_System_Config_Source_Cron_Frequency::CRON_MONTHLY
-					)
-					? '1'
-					: '*'
-				,// месяц года
-				'*'
-				,// день недели
-					(
-							$this->getFrequency()
-						===
-							Mage_Adminhtml_Model_System_Config_Source_Cron_Frequency::CRON_WEEKLY
-					)
-				? '1'
-				: '*'
-			));
-		}
-		return $this->{__METHOD__};
-	}
+	private function getCronExpression() {return implode(' ', [
+		// минута
+		$this->getMinute()
+		,// час
+		$this->getHour()
+		,// день месяца
+			(
+					$this->getFrequency()
+				===
+					Mage_Adminhtml_Model_System_Config_Source_Cron_Frequency::CRON_MONTHLY
+			)
+			? '1'
+			: '*'
+		,// месяц года
+		'*'
+		,// день недели
+			(
+					$this->getFrequency()
+				===
+					Mage_Adminhtml_Model_System_Config_Source_Cron_Frequency::CRON_WEEKLY
+			)
+		? '1'
+		: '*'
+	]);}
 
 	/** @return string */
 	private function getCronModelPath() {
@@ -157,7 +148,7 @@ abstract class Df_Admin_Config_Backend_Cron extends Mage_Core_Model_Config_Data 
 	/**
 	 * @param string $path
 	 * @param string $value
-	 * @return Df_Admin_Config_Backend_Cron
+	 * @return $this
 	 */
 	private function saveConfigKey($path, $value) {
 		df_param_string($path, 0);

@@ -9,7 +9,7 @@ class Df_Poll_Model_Poll_Answer extends Mage_Poll_Model_Poll_Answer {
 	/**
 	 * @override
 	 * @param int $pollId
-	 * @return Df_Poll_Model_Poll_Answer
+	 * @return $this
 	 */
 	public function setPollId($pollId) {
 		/**
@@ -42,5 +42,5 @@ class Df_Poll_Model_Poll_Answer extends Mage_Poll_Model_Poll_Answer {
 	/** @return Df_Poll_Model_Resource_Poll_Answer_Collection */
 	public static function c() {return new Df_Poll_Model_Resource_Poll_Answer_Collection;}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

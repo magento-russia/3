@@ -3,7 +3,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 	/**
 	 * @param string $attributeName
 	 * @param string $attributeValue
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function addAdditionalHtmlAttribute($attributeName, $attributeValue) {
 		df_param_string($attributeName, 0);
@@ -17,7 +17,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 	 * @param string $fieldId
 	 * @param string $fieldName
 	 * @param mixed $fieldValue
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function addHiddenField($fieldId, $fieldName, $fieldValue) {
 		df_param_string($fieldId, 0);
@@ -49,7 +49,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 	 * @param string $fieldId
 	 * @param string $fieldName
 	 * @param array $fieldValue
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function addHiddenFieldWithMultipleValues($fieldId, $fieldName, array $fieldValue) {
 		df_param_string($fieldId, 0);
@@ -87,7 +87,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 
 	/**
 	 * @param array $fields
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function addHiddenFields(array $fields) {
 		foreach ($fields as $fieldName => $fieldValue) {
@@ -114,7 +114,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 
 	/**
 	 * @param string $action
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function setAction($action) {
 		df_param_string($action, 0);
@@ -124,7 +124,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 
 	/**
 	 * @param string $method
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function setMethod($method) {
 		df_param_string($method, 0);
@@ -134,7 +134,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 
 	/**
 	 * @param string $name
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function setName($name) {
 		df_param_string($name, 0);
@@ -144,7 +144,7 @@ class Df_Varien_Data_Form extends Varien_Data_Form {
 
 	/**
 	 * @param bool $useContainer
-	 * @return Df_Varien_Data_Form
+	 * @return $this
 	 */
 	public function setUseContainer($useContainer) {
 		df_param_boolean($useContainer, 0);

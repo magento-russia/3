@@ -10,7 +10,7 @@ class Df_CustomerBalance_Block_Sales_Order_Customerbalance extends Df_Core_Block
 
 	/**
 	 * Initialize customer balance order total
-	 * @return Df_CustomerBalance_Block_Sales_Order_Customerbalance
+	 * @return $this
 	 */
 	public function initTotals()
 	{

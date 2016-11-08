@@ -38,7 +38,7 @@ class Df_Chronopay_Model_Standard extends Mage_Payment_Model_Method_Abstract {
 		return df_cfg($path, $storeId);
 	}
 
-	/** @return Df_Chronopay_Model_Standard */
+	/** @return $this */
 	public function validate() {
 		parent::validate();
 		/** @var Mage_Sales_Model_Order_Payment|Mage_Sales_Model_Quote_Payment $paymentInfo */
@@ -57,7 +57,7 @@ class Df_Chronopay_Model_Standard extends Mage_Payment_Model_Method_Abstract {
 	/**
 	 * @param Varien_Object $payment
 	 * @param float $amount
-	 * @return Df_Chronopay_Model_Standard
+	 * @return $this
 	 */
 	public function capture(Varien_Object $payment, $amount) {
 		/** @noinspection PhpUndefinedMethodInspection */

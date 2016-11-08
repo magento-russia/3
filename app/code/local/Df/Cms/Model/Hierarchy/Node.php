@@ -13,7 +13,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 *
 	 * @param Mage_Cms_Model_Page $page
 	 * @param array $nodes
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function appendPageToNodes($page, $nodes)
 	{
@@ -77,7 +77,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 *
 	 * @param array $data	   modified nodes data array
 	 * @param int[] $remove	 the removed node ids
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function collectTree($data, $remove) {
 		if (!is_array($data)) {
@@ -302,7 +302,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * Load node by Request Url
 	 *
 	 * @param string $url
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function loadByRequestUrl($url)
 	{
@@ -316,7 +316,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * Retrieve first child node
 	 *
 	 * @param int $parentNodeId
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function loadFirstChildByParent($parentNodeId)
 	{
@@ -328,7 +328,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 
 	/**
 	 * Load page data for model if defined page id end undefined page data
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function loadPageData()
 	{
@@ -342,7 +342,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * Flag to indicate whether append active pages only or not
 	 *
 	 * @param bool $flag
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function setCollectActivePagesOnly($flag) {
 		$flag = !!$flag;
@@ -355,7 +355,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * Flag to indicate whether append included pages (menu_excluded=0) only or not
 	 *
 	 * @param bool $flag
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function setCollectIncludedPagesOnly($flag) {
 		$flag = !!$flag;
@@ -369,7 +369,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * Maximum tree depth for tree slice, if equals zero - no limitations
 	 *
 	 * @param int $depth
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function setTreeMaxDepth($depth)
 	{
@@ -382,7 +382,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * Tree Detalization, i.e. brief or detailed
 	 *
 	 * @param bool $brief
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function setTreeIsBrief($brief) {
 		$this->setData('tree_is_brief', !!$brief);
@@ -393,7 +393,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * Update rewrite for page (if identifier changed)
 	 *
 	 * @param Mage_Cms_Model_Page $page
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public function updateRewriteUrls(Mage_Cms_Model_Page $page) {
 		$xpaths = $this->getResource()->getTreeXpathsByPage($page->getId());
@@ -406,7 +406,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	/**
 	 * Process additional data after save.
 	 * @override
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	protected function _afterSave()
 	{
@@ -425,7 +425,7 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	 * @param int $parentNodeId
 	 * @param string $path
 	 * @param int $level
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	protected function _collectTree(array $nodes, $parentNodeId, $path = '', $xpath = '', $level = 0)
 	{
@@ -604,16 +604,16 @@ class Df_Cms_Model_Hierarchy_Node extends Df_Core_Model {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id
 	 * @param string|null $field [optional]
-	 * @return Df_Cms_Model_Hierarchy_Node
+	 * @return $this
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

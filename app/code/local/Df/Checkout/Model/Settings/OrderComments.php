@@ -42,5 +42,5 @@ class Df_Checkout_Model_Settings_OrderComments extends Df_Core_Model_Settings {
 	 */
 	protected function getKeyPrefix() {return 'df_checkout/order_comments/';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

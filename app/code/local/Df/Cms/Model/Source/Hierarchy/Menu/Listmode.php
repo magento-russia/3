@@ -15,5 +15,5 @@ class Df_Cms_Model_Source_Hierarchy_Menu_Listmode {
 		);
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

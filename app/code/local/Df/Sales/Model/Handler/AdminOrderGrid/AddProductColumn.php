@@ -15,7 +15,7 @@ class Df_Sales_Model_Handler_AdminOrderGrid_AddProductColumn extends Df_Core_Mod
 		}
 	}
 
-	/** @return Df_Sales_Model_Handler_AdminOrderGrid_AddProductColumn */
+	/** @return $this */
 	private function registerProductColumnRenderer() {
 		/** @var array|null $columnRenderers */
 		$columnRenderers = $this->_getData('column_renderers');
@@ -31,7 +31,7 @@ class Df_Sales_Model_Handler_AdminOrderGrid_AddProductColumn extends Df_Core_Mod
 		return $this;
 	}
 
-	/** @return Df_Sales_Model_Handler_AdminOrderGrid_AddProductColumn */
+	/** @return $this */
 	private function addProductColumn() {
 		$this->getEvent()->getGrid()->addColumnAfter(
 			'df_products'

@@ -17,7 +17,7 @@ class Df_Review_Model_Resource_Review_Collection extends Mage_Review_Model_Resou
 	 */
 	public function getResource() {return Df_Review_Model_Resource_Review::s();}
 
-	/** @return Df_Review_Model_Resource_Review_Collection */
+	/** @return $this */
 	public function limitLast() {
 		$this->setDateOrder('DESC');
 		$this->getSelect()->limit(1);

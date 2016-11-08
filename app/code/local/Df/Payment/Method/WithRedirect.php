@@ -65,7 +65,7 @@ abstract class WithRedirect extends \Df\Payment\Method {
 	 * @override
 	 * @param string|bool|null $paymentAction
 	 * @param \Varien_Object $stateObject
-	 * @return \Mage_Payment_Model_Method_Abstract
+	 * @return $this
 	 */
 	public function initialize($paymentAction, $stateObject) {
 		df_assert($stateObject instanceof \Varien_Object);

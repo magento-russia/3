@@ -27,7 +27,7 @@ class Df_Dataflow_Model_Convert_Adapter_Product
 	/**
 	 * @param array $rowAsArray
 	 * @param int $rowOrdering
-	 * @return Df_Dataflow_Model_Convert_Adapter_Product
+	 * @return $this
 	 */
 	protected function saveRowInternal(array $rowAsArray, $rowOrdering) {
 		df_param_array($rowAsArray, 0);

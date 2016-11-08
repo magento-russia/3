@@ -28,7 +28,7 @@ class Df_Poll_Model_Resource_Poll_Collection extends Mage_Poll_Model_Resource_Po
 
 	/**
 	 * @override
-	 * @return Df_Poll_Model_Resource_Poll_Collection
+	 * @return $this
 	 */
 	protected function _afterLoad() {
 		parent::_afterLoad();

@@ -115,7 +115,7 @@ class Df_Customer_Model_Address_Validator extends Df_Core_Model {
 	/**
 	 * @param string $fieldName
 	 * @param string $errorMessage
-	 * @return Df_Customer_Model_Address_Validator
+	 * @return $this
 	 */
 	private function validateNotEmpty($fieldName, $errorMessage) {
 		if (

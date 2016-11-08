@@ -66,7 +66,7 @@ abstract class Df_Directory_Setup_Processor_InstallRegions extends Df_Core_Model
 
 	/**
 	 * @param array $regionData
-	 * @return Df_Directory_Setup_Processor_InstallRegions
+	 * @return $this
 	 */
 	private function regionInsert(array $regionData) {
 		df_conn()->insert(

@@ -36,5 +36,5 @@ class Df_Tweaks_Model_Settings_Catalog_Product_View extends Df_Core_Model_Settin
 	 */
 	protected function getKeyPrefix() {return 'df_tweaks/catalog_product_view/hide_';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

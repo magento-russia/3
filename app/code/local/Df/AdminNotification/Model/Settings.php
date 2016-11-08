@@ -5,5 +5,5 @@ class Df_AdminNotification_Model_Settings extends Df_Core_Model_Settings {
 		return $this->getYesNo('df_tweaks_admin/system_notifications/fix_reminder');
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

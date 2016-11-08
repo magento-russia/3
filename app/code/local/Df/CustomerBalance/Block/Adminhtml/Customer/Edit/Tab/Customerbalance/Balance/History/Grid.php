@@ -11,7 +11,7 @@ class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balan
 
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balance_History_Grid
+	 * @return $this
 	 */
 	protected function _prepareCollection() {
 		/** @var Df_CustomerBalance_Model_Resource_Balance_History_Collection $collection */
@@ -24,7 +24,7 @@ class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balan
 
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balance_History_Grid
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		$this
@@ -124,4 +124,10 @@ class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balan
 		$this->setUseAjax(true);
 		$this->setDefaultSort('updated_at');
 	}
+	
+	/**
+	 * @param string|null $name [optional]
+	 * @return Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balance_History_Grid
+	 */
+	public static function i($name = null) {return df_block(__CLASS__, $name);}	
 }

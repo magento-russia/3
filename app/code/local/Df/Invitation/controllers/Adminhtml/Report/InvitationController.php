@@ -3,7 +3,7 @@ class Df_Invitation_Adminhtml_Report_InvitationController
 	extends Mage_Adminhtml_Controller_Action {
 	/**
 	 * Init action breadcrumbs
-	 * @return Df_Invitation_Adminhtml_Report_InvitationController
+	 * @return $this
 	 */
 	public function _initAction()
 	{

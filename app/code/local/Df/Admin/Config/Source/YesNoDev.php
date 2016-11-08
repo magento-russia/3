@@ -10,21 +10,16 @@ class Df_Admin_Config_Source_YesNoDev extends Df_Admin_Config_Source {
 	 * @param bool $isMultiSelect
 	 * @return array(array(string => string))
 	 */
-	protected function toOptionArrayInternal($isMultiSelect = false) {
-		return df_map_to_options(array(
-			self::YES => 'да'
-			, self::NO => 'нет'
-			, self::DEVELOPER_MODE => sprintf(
-				'только при %s режиме разработчика'
-				, $this->needEnableInDeveloperMode() ? 'включенном' : 'отключенном'
-			)
-		));
-	}
+	protected function toOptionArrayInternal($isMultiSelect = false) {return df_map_to_options([
+		self::YES => 'да'
+		,self::NO => 'нет'
+		,self::DEVELOPER_MODE => "только при {$this->mode()} режиме разработчика"
+	]);}
 
-	/** @return bool */
-	private function needEnableInDeveloperMode() {
-		return df_bool($this->getFieldParam('df_enable_in_developer_mode', 1));
-	}
+	/** @return string */
+	private function mode() {return
+		df_bool($this->getFieldParam('df_enable_in_developer_mode', 1)) ? 'включенном' : 'отключенном'
+	;}
 	/**
 	 * @used-by toOptionArrayInternal()
 	 * @used-by Df_Core_Model_Translate::_addData()

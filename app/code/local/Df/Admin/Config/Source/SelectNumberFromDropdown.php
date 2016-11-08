@@ -43,5 +43,5 @@ class Df_Admin_Config_Source_SelectNumberFromDropdown extends Df_Admin_Config_So
 	 * @param int $max
 	 * @return Df_Admin_Config_Source_SelectNumberFromDropdown
 	 */
-	public static function i($max) {return new self(array(self::$DF_MAX => $max));}
+	public static function i($max) {return new self([self::$DF_MAX => $max]);}
 }

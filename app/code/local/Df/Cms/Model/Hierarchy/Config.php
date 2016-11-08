@@ -25,7 +25,7 @@ class Df_Cms_Model_Hierarchy_Config {
 		return $this->_defaultMenuLayoutCode;
 	}
 
-	/** @return Df_Cms_Model_Hierarchy_Config */
+	/** @return $this */
 	protected function _initContextMenuLayouts() {
 		$config = df_config_node(self::XML_PATH_CONTEXT_MENU_LAYOUTS);
 		if ($this->_contextMenuLayouts !== null || !$config) {
@@ -53,5 +53,5 @@ class Df_Cms_Model_Hierarchy_Config {
 	const XML_PATH_CONTEXT_MENU_LAYOUTS = 'global/df_cms/hierarchy/menu/layouts';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

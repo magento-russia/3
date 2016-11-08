@@ -25,7 +25,7 @@ class Df_Cms_Model_ContentsMenu_Collection extends Df_Varien_Data_Collection {
 	 * потому что у нас будут существовать и другие коллекции меню,
 	 * которые будут содержать не все меню текущей страницы, а набор меню
 	 * по другим критериям: в частности, все меню для конкретного места текущей страницы.
-	 * @return Df_Cms_Model_ContentsMenu_Collection
+	 * @return $this
 	 */
 	public function loadItemsForTheCurrentPage() {
 		if (!$this->isLoaded()) {
@@ -40,7 +40,7 @@ class Df_Cms_Model_ContentsMenu_Collection extends Df_Varien_Data_Collection {
 	 * Этот метод предназначен не для коллекции всех меню,
 	 * а для коллекции меню текущего места на экране.
 	 * Метод объединяет меню, которые на экране расположены рядом.
-	 * @return Df_Cms_Model_ContentsMenu_Collection
+	 * @return $this
 	 */
 	public function mergeItems() {
 		/** @var Df_Cms_Model_ContentsMenu[] $verticalOrderings */

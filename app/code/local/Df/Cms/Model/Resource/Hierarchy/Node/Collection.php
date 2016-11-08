@@ -2,7 +2,7 @@
 class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Resource_Collection {
 	/**
 	 * Adding sub query for custom column to determine on which stores page active.
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function addCmsPageInStoresColumn() {
 		$this->_needAddStoresColumn = true;
@@ -14,7 +14,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 	/**
 	 * Adds dynamic column with maximum value (which means that it
 	 * is sort_order of last direct child) of sort_order column in scope of one node.
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function addLastChildSortOrderColumn() {
 		if (!$this->getFlag('last_child_sort_order_column_added')) {
@@ -31,7 +31,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 	 * Apply filter to retrieve only root nodes.
 	 *
 	 * @param int $pageId
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function addPageFilter($pageId) {
 		$this->addFieldToFilter('page_id', $pageId);
@@ -40,7 +40,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 
 	/**
 	 * Apply filter to retrieve only root nodes.
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function addRootNodeFilter() {
 		$this->addFieldToFilter('parent_node_id', array('null' => true));
@@ -52,7 +52,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 	 *
 	 * @param Df_Core_Model_StoreM|int|string|bool|null $store
 	 * @param bool $withAdmin Include admin store or not
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function addStoreFilter($store, $withAdmin = true) {
 		$this->addCmsPageInStoresColumn();
@@ -72,7 +72,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 	 *
 	 * @param int|array $nodeIds
 	 * @param int|Mage_Cms_Model_Page|null $page
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function applyPageExistsOrNodeIdFilter($nodeIds, $page = null) {
 		if (!$this->getFlag('page_exists_or_node_id_filter_applied')) {
@@ -88,13 +88,13 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 		return $this;
 	}
 
-	/** @return Df_Cms_Model_Resource_Hierarchy_Node_Collection */
+	/** @return $this */
 	public function filterExcludedPagesOut() {
 		$this->addFieldToFilter('metadata_table.menu_excluded', 0);
 		return $this;
 	}
 
-	/** @return Df_Cms_Model_Resource_Hierarchy_Node_Collection */
+	/** @return $this */
 	public function filterUnpublishedPagesOut() {
 		$this->getSelect()
 			->where('page_table.is_active=1 OR main_table.page_id IS null')
@@ -110,7 +110,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 
 	/**
 	 * Join Cms Page data to collection
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function joinCmsPage() {
 		if (!$this->getFlag('cms_page_data_joined')) {
@@ -129,7 +129,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 
 	/**
 	 * Join meta data for tree root nodes from extra table.
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function joinMetaData() {
 		if (!$this->getFlag('meta_data_joined')) {
@@ -157,7 +157,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 	 * have defined page as direct child node.
 	 *
 	 * @param int|Mage_Cms_Model_Page $page
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function joinPageExistsNodeInfo($page) {
 		if (!$this->getFlag('page_exists_joined')) {
@@ -181,7 +181,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 
 	/**
 	 * Order tree by level and position
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function setOrderByLevel() {
 		$this->getSelect()->order(array('level', 'sort_order'));
@@ -190,7 +190,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 
 	/**
 	 * Order nodes as tree
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	public function setTreeOrder() {
 		if (!$this->getFlag('tree_order_added')) {
@@ -209,7 +209,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	protected function _afterLoad() {
 		// cтранно, что стандартный код этого не делает
@@ -221,7 +221,7 @@ class Df_Cms_Model_Resource_Hierarchy_Node_Collection extends Df_Core_Model_Reso
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Resource_Hierarchy_Node_Collection
+	 * @return $this
 	 */
 	protected function _renderFiltersBefore() {
 		parent::_renderFiltersBefore();

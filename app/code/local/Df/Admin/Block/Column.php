@@ -32,7 +32,7 @@ abstract class Df_Admin_Block_Column extends Df_Core_Block_Admin {
 		if (!isset($this->{__METHOD__})) {
 			/** @var array(string => string) $attributes */
 			$attributes = $this->getColumn()->getHtmlAttributes();
-			$attributes['class'] = implode(' ', array_filter(array(
+			$attributes['class'] = implode(' ', array_filter([
 				/**
 				 * Этот класс затем используется в шаблоне.
 				 * @used-by df/admin/column/select.phtml
@@ -41,8 +41,8 @@ abstract class Df_Admin_Block_Column extends Df_Core_Block_Admin {
 				$this->getColumn()->getName()
 				, dfa($attributes, 'class')
 				, $this->getAdditionalCssClass()
-			)));
-			$this->{__METHOD__} = array('name' => $this->getInputName()) + $attributes;
+			]));
+			$this->{__METHOD__} = ['name' => $this->getInputName()] + $attributes;
 		}
 		return $this->{__METHOD__};
 	}
@@ -63,10 +63,10 @@ abstract class Df_Admin_Block_Column extends Df_Core_Block_Admin {
 	 */
 	private function getInputName() {
 		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = strtr('{elementName}[#{_id}][{columnName}]', array(
+			$this->{__METHOD__} = strtr('{elementName}[#{_id}][{columnName}]', [
 				'{elementName}' => $this->getField()->getName()
 				,'{columnName}' => $this->getColumn()->getName()
-			));
+			]);
 		}
 		return $this->{__METHOD__};
 	}
@@ -102,7 +102,7 @@ abstract class Df_Admin_Block_Column extends Df_Core_Block_Admin {
 		, Varien_Data_Form_Element_Abstract $field
 	) {
 		/** @var Df_Admin_Block_Column $block */
-		$block = new $class(array(self::$P__COLUMN => $column, self::$P__FIELD => $field));
+		$block = new $class([self::$P__COLUMN => $column, self::$P__FIELD => $field]);
 		df_assert($block instanceof Df_Admin_Block_Column);
 		return df_render($block);
 	}

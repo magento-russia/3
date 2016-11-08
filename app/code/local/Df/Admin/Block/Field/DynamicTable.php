@@ -94,7 +94,7 @@ abstract class Df_Admin_Block_Field_DynamicTable
 			 * Класс CSS используется для задания ширины таблицы и колонок:
 			 * @see C:/work/p/2015/01/03/1c/code/skin/adminhtml/rm/default/df/css/source/forms/_grid.scssк).
 			 */
-			, array('id' => $element->getHtmlId(), 'class' => get_class($this))
+			, ['id' => $element->getHtmlId(), 'class' => get_class($this)]
 			, parent::_getElementHtml($element)
 		);
 	}

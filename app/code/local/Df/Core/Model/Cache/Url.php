@@ -49,5 +49,5 @@ class Df_Core_Model_Cache_Url extends Df_Core_Model {
 	protected function cached() {return array('_urlCache');}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

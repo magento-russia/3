@@ -111,7 +111,7 @@ class Df_Banner_Block_Adminhtml_Banneritem_Grid extends Mage_Adminhtml_Block_Wid
 
 	/**
 	 * @override
-	 * @return Df_Banner_Block_Adminhtml_Banneritem_Grid
+	 * @return $this
 	 */
 	protected function _prepareMassaction() {
 		parent::_prepareMassaction();

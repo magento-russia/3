@@ -9,7 +9,7 @@ class Df_Catalog_Model_Resource_Product_Option_Collection
 
 	/**
 	 * @override
-	 * @return Df_Catalog_Model_Resource_Product_Option_Collection
+	 * @return $this
 	 */
 	protected function _afterLoadData() {
 		$this->translateLabels();

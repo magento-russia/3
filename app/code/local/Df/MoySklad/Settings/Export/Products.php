@@ -24,5 +24,5 @@ class Products extends \Df_Core_Model_Settings {
 	 */
 	protected function getKeyPrefix() {return 'df_moysklad/export_products/';}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

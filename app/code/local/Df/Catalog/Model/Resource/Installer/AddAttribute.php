@@ -78,5 +78,5 @@ class Df_Catalog_Model_Resource_Installer_AddAttribute extends Df_Catalog_Model_
 	 * @static
 	 * @return Df_Catalog_Model_Resource_Installer_AddAttribute
 	 */
-	public static function s() {static $r; return $r ? $r : $r = new self('df_catalog_setup');}
+	public static function s() {static $r; return $r ?: $r = new self('df_catalog_setup');}
 }

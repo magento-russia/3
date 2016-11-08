@@ -36,7 +36,7 @@ class Df_Admin_Block_Field
 
 	/**
 	 * @param Df_Admin_Model_Form_Element $element
-	 * @return Df_Admin_Block_Field
+	 * @return $this
 	 */
 	public function setElement(Df_Admin_Model_Form_Element $element) {
 		$this->_element = $element;

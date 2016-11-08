@@ -18,7 +18,7 @@ class Df_PromoGift_Model_Customer_Rule_Counter extends Df_Core_Model {
 		return $result;
 	}
 
-	/** @return Df_PromoGift_Model_Customer_Rule_Counter */
+	/** @return $this */
 	public function reset() {
 		$this->getSession()->unsetData(self::SESSION_CONTAINER_KEY);
 		return $this;
@@ -27,7 +27,7 @@ class Df_PromoGift_Model_Customer_Rule_Counter extends Df_Core_Model {
 	/**
 	 * @param int $ruleId
 	 * @param int $quoteItemId
-	 * @return Df_PromoGift_Model_Customer_Rule_Counter
+	 * @return $this
 	 */
 	public function count($ruleId, $quoteItemId) {
 		df_param_integer($ruleId, 0);
@@ -85,7 +85,7 @@ class Df_PromoGift_Model_Customer_Rule_Counter extends Df_Core_Model {
 	/**
 	 * @param int $ruleId
 	 * @param array $ruleData
-	 * @return Df_PromoGift_Model_Customer_Rule_Counter
+	 * @return $this
 	 */
 	private function setRuleData($ruleId, array $ruleData) {
 		df_param_integer($ruleId, 0);
@@ -111,7 +111,7 @@ class Df_PromoGift_Model_Customer_Rule_Counter extends Df_Core_Model {
 
 	/**
 	 * @param array $dataContainer
-	 * @return Df_PromoGift_Model_Customer_Rule_Counter
+	 * @return $this
 	 */
 	private function setDataContainer(array $dataContainer) {
 		$this->getSession()->setData(self::SESSION_CONTAINER_KEY, $dataContainer);
@@ -127,6 +127,6 @@ class Df_PromoGift_Model_Customer_Rule_Counter extends Df_Core_Model {
 	const SESSION_CONTAINER_KEY = 'promo_gift_counter';
 	const KEY_RULE_COUNTER = 'counter';
 	const KEY_RULE_QUOTE_ITEMS = 'quote_items';
-	/** @return Df_PromoGift_Model_Customer_Rule_Counter */
+	/** @return $this */
 	public static function i() {return new self;}
 }

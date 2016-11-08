@@ -2,7 +2,7 @@
 class Df_Dataflow_Model_Importer_Product_Bundle extends Df_Dataflow_Model_Importer_Product_Specialized {
 	/**
 	 * @override
-	 * @return Df_Dataflow_Model_Importer_Product_Bundle
+	 * @return $this
 	 */
 	public function process() {
 		if ('bundle' === $this->getProduct()->getTypeId()) {

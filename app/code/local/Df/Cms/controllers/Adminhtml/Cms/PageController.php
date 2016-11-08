@@ -74,7 +74,7 @@ class Df_Cms_Adminhtml_Cms_PageController extends Mage_Adminhtml_Cms_PageControl
 
 	/**
 	 * Action for versions ajax tab
-	 * @return Df_Cms_Adminhtml_Cms_Page_RevisionController
+	 * @return $this
 	 */
 	public function versionsAction()
 	{
@@ -93,7 +93,7 @@ class Df_Cms_Adminhtml_Cms_PageController extends Mage_Adminhtml_Cms_PageControl
 	/**
 	 * Init actions
 	 * @override
-	 * @return Df_Cms_Adminhtml_Cms_PageController
+	 * @return $this
 	 */
 	protected function _initAction()
 	{

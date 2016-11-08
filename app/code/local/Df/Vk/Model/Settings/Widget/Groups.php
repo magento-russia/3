@@ -43,5 +43,5 @@ class Df_Vk_Model_Settings_Widget_Groups extends Df_Vk_Model_Settings_Widget {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

@@ -30,5 +30,5 @@ class Df_Core_Helper_Mage_Core extends Mage_Core_Helper_Abstract {
 	/** @return Mage_Core_Model_Url */
 	public function urlSingleton() {return Mage::getSingleton('core/url');}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

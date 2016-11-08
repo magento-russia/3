@@ -103,10 +103,10 @@ class Df_Admin_Config_Backend extends Mage_Core_Model_Config_Data {
 					$result = array_keys(Mage::app()->getWebsites($withDefault = false, $codeKey = false));
 					break;
 				case self::$SCOPE__STORES:
-					$result = array(df_store($this->getScopeId())->getWebsiteId());
+					$result = [df_store($this->getScopeId())->getWebsiteId()];
 					break;
 				case self::$SCOPE__WEBSITES:
-					$result = array($this->getScopeId());
+					$result = [$this->getScopeId()];
 					break;
 				default:
 					df_error();

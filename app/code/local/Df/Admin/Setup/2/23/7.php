@@ -25,7 +25,7 @@ class Df_Admin_Setup_2_23_7 extends Df_Core_Setup {
 	 * @param string $name
 	 * @return string
 	 */
-	private function translateRoleName($name) {
-		return $this->translate($name, array('Administrators' => 'администратор'));
-	}
+	private function translateRoleName($name) {return
+		$this->translate($name, ['Administrators' => 'администратор'])
+	;}
 }

@@ -15,7 +15,7 @@ class Df_Invitation_Block_Link extends Df_Core_Block_Template_NoCache {
 	 * @param $aParams [optional]
 	 * @param string $beforeText [optional]
 	 * @param string $afterText [optional]
-	 * @return Df_Invitation_Block_Link
+	 * @return $this
 	 */
 	public function addAccountLink(
 		$block
@@ -49,7 +49,7 @@ class Df_Invitation_Block_Link extends Df_Core_Block_Template_NoCache {
 	 * @param string $path
 	 * @param string $label
 	 * @param array $urlParams
-	 * @return Df_Invitation_Block_Link
+	 * @return $this
 	 */
 	public function addDashboardLink($block, $name, $path, $label, $urlParams = [])
 	{

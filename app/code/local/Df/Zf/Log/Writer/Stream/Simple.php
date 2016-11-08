@@ -1,7 +1,7 @@
 <?php
 /**
- * Этот класс перекрывает системный класс @see Zend_Log_Writer_Stream
- * в файле Df/Zf/etc/config.xml следующим образом:
+ * пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ @see Zend_Log_Writer_Stream
+ * пїЅ пїЅпїЅпїЅпїЅпїЅ Df/Zf/etc/config.xml пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ:
 	<global>
 		<log>
 			<core>
@@ -14,7 +14,7 @@ class Df_Zf_Log_Writer_Stream_Simple extends Zend_Log_Writer_Stream {
 	/**
 	 * @override
 	 * @param Zend_Log_Formatter_Interface $formatter
-	 * @return Df_Zf_Log_Writer_Stream_Simple
+	 * @return $this
 	 */
 	public function setFormatter(Zend_Log_Formatter_Interface $formatter) {
 		if ($formatter instanceof Zend_Log_Formatter_Simple) {

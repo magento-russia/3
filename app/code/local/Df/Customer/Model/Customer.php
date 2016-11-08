@@ -61,7 +61,7 @@ class Df_Customer_Model_Customer extends Mage_Customer_Model_Customer {
 
 	/**
 	 * @param string|Zend_Date|null $value
-	 * @return Df_Customer_Model_Customer
+	 * @return $this
 	 */
 	public function setDob($value) {
 		/**
@@ -78,7 +78,7 @@ class Df_Customer_Model_Customer extends Mage_Customer_Model_Customer {
 	/**
 	 * В качестве параметра можно передавать как код пола, так и строки «Male» / «Female»
 	 * @param int|string|null $value
-	 * @return Df_Customer_Model_Customer
+	 * @return $this
 	 */
 	public function setGender($value) {
 		/**

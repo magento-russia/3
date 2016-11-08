@@ -24,7 +24,7 @@ class Df_Cms_Model_Page_Version extends Df_Core_Model {
 	 * @param int $userId
 	 * @param int|string $value
 	 * @param string|null $field
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	public function loadWithRestrictions($accessLevel, $userId, $value, $field = null) {
 		$this->getResource()->loadWithRestrictions($this, $accessLevel, $userId, $value, $field = null);
@@ -35,7 +35,7 @@ class Df_Cms_Model_Page_Version extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	protected function _afterDelete() {
 		Df_Cms_Model_Resource_Increment::s()->cleanIncrementRecord(
@@ -47,7 +47,7 @@ class Df_Cms_Model_Page_Version extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	protected function _afterSave() {
 		// If this was a new version we should create initial revision for it
@@ -74,7 +74,7 @@ class Df_Cms_Model_Page_Version extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	protected function _beforeDelete() {
 		$resource = $this->getResource();
@@ -97,7 +97,7 @@ class Df_Cms_Model_Page_Version extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		if (!$this->getId()) {
@@ -163,16 +163,16 @@ class Df_Cms_Model_Page_Version extends Df_Core_Model {
 	/**
 	 * @static
 	 * @param array(string => mixed) $parameters [optional]
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/**
 	 * @static
 	 * @param int|string $id
 	 * @param string|null $field [optional]
-	 * @return Df_Cms_Model_Page_Version
+	 * @return $this
 	 */
 	public static function ld($id, $field = null) {return df_load(self::i(), $id, $field);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

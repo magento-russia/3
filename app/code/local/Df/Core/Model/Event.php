@@ -101,7 +101,7 @@ abstract class Df_Core_Model_Event extends Df_Core_Model {
 	}
 
 	/**
-	 * @return Df_Core_Model_Event
+	 * @return $this
 	 * @throws \Df\Core\Exception
 	 */
 	private function validateEventType() {

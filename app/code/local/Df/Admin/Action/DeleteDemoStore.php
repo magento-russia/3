@@ -17,11 +17,11 @@ class DeleteDemoStore extends \Df_Core_Model_Action_Admin {
 	 * @param \Df_Core_Model_StoreM $store
 	 * @return string
 	 */
-	public static function getLink(\Df_Core_Model_StoreM $store) {
-		return df_url_backend('df_admin/notification/deleteDemoStore', array(
+	public static function getLink(\Df_Core_Model_StoreM $store) {return
+		df_url_backend('df_admin/notification/deleteDemoStore', [
 			self::$RP__STORE => $store->getCode()
-		));
-	}
+		])
+	;}
 
 	/** @var string */
 	private static $RP__STORE = 'store';

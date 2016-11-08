@@ -60,5 +60,5 @@ class General extends \Df\C1\Config\Api\Cml2 {
 	protected function getKeyPrefix() {return 'df_1c/general/';}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

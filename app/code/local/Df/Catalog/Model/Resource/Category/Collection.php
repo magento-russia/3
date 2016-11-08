@@ -7,7 +7,7 @@ class Df_Catalog_Model_Resource_Category_Collection
 	 * Обратите внимание, что вызов этого метода приводит к загрузке коллекции,
 	 * то есть потом к коллекции уже нельзя будет добавить фильтры, ограничения и т.п.
 	 * @param string|string[] $attributesToSelect [optional]
-	 * @return Df_Catalog_Model_Resource_Category_Collection
+	 * @return $this
 	 */
 	public function addAncestors($attributesToSelect = '*') {
 		/** @var int[] $ancestorIds */
@@ -71,7 +71,7 @@ class Df_Catalog_Model_Resource_Category_Collection
 	 * потому что данный метод отсутствует в Magento CE 1.4.0.1
 	 * @override
 	 * @var bool $flag
-	 * @return Df_Catalog_Model_Resource_Category_Collection
+	 * @return $this
 	 */
 	public function setDisableFlat($flag) {
 		$this->_disableFlat = (bool)$flag;
@@ -94,7 +94,7 @@ class Df_Catalog_Model_Resource_Category_Collection
 	 * @override
 	 * @param string $model
 	 * @param string|null $entityModel [optional]
-	 * @return Df_Catalog_Model_Resource_Category_Collection
+	 * @return $this
 	 */
 	protected function _init($model, $entityModel = null) {
 		$this->_itemObjectClass = Df_Catalog_Model_Category::class;

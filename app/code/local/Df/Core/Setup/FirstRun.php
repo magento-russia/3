@@ -1,13 +1,13 @@
 <?php
 class Df_Core_Setup_FirstRun extends Df_Core_Model {
-	/** @return Df_Core_Setup_FirstRun */
+	/** @return $this */
 	public function process() {
 		$this->disableAndCleanCache();
 		df_h()->index()->reindexEverything();
 		return $this;
 	}
 
-	/** @return Df_Core_Setup_FirstRun */
+	/** @return $this */
 	private function disableAndCleanCache() {
 		/** @var Mage_Core_Model_Resource_Cache $resource */
 		$resource = Mage::getResourceSingleton('core/cache');

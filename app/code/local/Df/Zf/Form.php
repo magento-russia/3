@@ -2,7 +2,7 @@
 class Df_Zf_Form extends Zend_Form {
 	/**
 	 * @param array $data
-	 * @return Df_Zf_Form
+	 * @return $this
 	 */
 	public function setValues(array $data) {
 		/**

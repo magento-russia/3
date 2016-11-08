@@ -3,7 +3,7 @@ class Df_CustomerBalance_Model_Resource_Balance extends Df_Core_Model_Resource {
 	/**
 	 * Delete customer orphan balances
 	 * @param int $customerId
-	 * @return Df_CustomerBalance_Model_Resource_Balance
+	 * @return $this
 	 */
 	public function deleteBalancesByCustomerId($customerId) {
 		$this->_getWriteAdapter()->delete(
@@ -50,7 +50,7 @@ class Df_CustomerBalance_Model_Resource_Balance extends Df_Core_Model_Resource {
 	 * Update customers balance currency code per website id
 	 * @param int $websiteId
 	 * @param string $currencyCode
-	 * @return Df_CustomerBalance_Model_Resource_Balance
+	 * @return $this
 	 */
 	public function setCustomersBalanceCurrencyTo($websiteId, $currencyCode) {
 		$bind = array('base_currency_code' => $currencyCode);
@@ -78,5 +78,5 @@ class Df_CustomerBalance_Model_Resource_Balance extends Df_Core_Model_Resource {
 	 */
 	const TABLE = 'df_customerbalance/balance';
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

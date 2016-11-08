@@ -1,6 +1,6 @@
 <?php
 class Df_Dataflow_Model_Importer_Product_Images extends Df_Core_Model {
-	/** @return Df_Dataflow_Model_Importer_Product_Images */
+	/** @return $this */
 	public function process() {
 		/** @var bool $needSave */
 		$needSave = false;
@@ -266,7 +266,7 @@ class Df_Dataflow_Model_Importer_Product_Images extends Df_Core_Model {
 
 	/**
 	 * @param string|array(string|int => string) $message
-	 * @return Df_Dataflow_Model_Importer_Product_Images
+	 * @return $this
 	 */
 	public function log($message) {
 		if (is_object($this->getLogger())) {
@@ -302,7 +302,7 @@ class Df_Dataflow_Model_Importer_Product_Images extends Df_Core_Model {
 	 * @param Df_Catalog_Model_Product $product
 	 * @param string[] $images
 	 * @param Df_Dataflow_Logger|null $logger [optional]
-	 * @return Df_Dataflow_Model_Importer_Product_Images
+	 * @return $this
 	 */
 	public static function i(
 		Df_Catalog_Model_Product $product, array $images, Df_Dataflow_Logger $logger = null

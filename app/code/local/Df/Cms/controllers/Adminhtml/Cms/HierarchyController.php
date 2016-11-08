@@ -55,7 +55,7 @@ class Df_Cms_Adminhtml_Cms_HierarchyController extends Mage_Adminhtml_Controller
 	/**
 	 * Controller pre dispatch method
 	 * @override
-	 * @return Df_Cms_Adminhtml_Cms_HierarchyController
+	 * @return $this
 	 */
 	public function preDispatch()
 	{
@@ -132,7 +132,7 @@ class Df_Cms_Adminhtml_Cms_HierarchyController extends Mage_Adminhtml_Controller
 
 	/**
 	 * Load layout, set active menu and breadcrumbs
-	 * @return Df_Cms_Adminhtml_Cms_HierarchyController
+	 * @return $this
 	 */
 	protected function _initAction()
 	{

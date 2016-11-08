@@ -13,5 +13,5 @@ class Df_Bundle_Model_Resource_Bundle extends Mage_Bundle_Model_Resource_Bundle 
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

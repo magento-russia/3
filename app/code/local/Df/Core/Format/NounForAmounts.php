@@ -56,5 +56,5 @@ class NounForAmounts extends \Df_Core_Model {
 	const NOUN_FORM_5 = 2;
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

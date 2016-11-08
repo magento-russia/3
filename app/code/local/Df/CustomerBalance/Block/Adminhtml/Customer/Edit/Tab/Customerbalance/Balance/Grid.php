@@ -3,7 +3,7 @@ class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balan
 	extends Mage_Adminhtml_Block_Widget_Grid {
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balance_Grid
+	 * @return $this
 	 */
 	protected function _prepareCollection() {
 		/** @var Df_CustomerBalance_Model_Resource_Balance_Collection $collection */
@@ -16,7 +16,7 @@ class Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balan
 
 	/**
 	 * @override
-	 * @return Df_CustomerBalance_Block_Adminhtml_Customer_Edit_Tab_Customerbalance_Balance_Grid
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		$this

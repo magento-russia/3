@@ -15,7 +15,7 @@ class Df_Vk_Model_Settings_Widget_Groups_Page extends Df_Core_Model_Settings {
 
 	/**
 	 * @param string $type
-	 * @return Df_Vk_Model_Settings_Widget_Groups_Page
+	 * @return $this
 	 */
 	public function setType($type) {
 		df_param_string($type, 0);

@@ -24,5 +24,5 @@ class Uri extends Type {
 	protected function getExpectedTypeInGenitiveCase() {return 'веб-адреса';}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

@@ -474,7 +474,7 @@ abstract class Method
 	 	$this->getMethodInstance()->setStore($order->getStoreId())->$gatewayCallback($this);
 	 * @override
 	 * @param \Mage_Sales_Model_Order_Payment|\Varien_Object $payment
-	 * @return \Df\Payment\Method
+	 * @return $this
 	 */
 	public function void(\Varien_Object $payment) {
 		parent::void($payment);

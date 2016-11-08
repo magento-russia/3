@@ -1,6 +1,6 @@
 <?php
 class Df_Directory_Setup_Processor_Region extends Df_Core_Model {
-	/** @return Df_Directory_Setup_Processor_Region */
+	/** @return $this */
 	public function process() {
 		/** @var Mage_Directory_Model_Region $region */
 		$region = $this->getLegacyRussianRegionByNamePart($this->getRegion()->getName());
@@ -26,7 +26,7 @@ class Df_Directory_Setup_Processor_Region extends Df_Core_Model {
 	/**
 	 * @param Mage_Directory_Model_Region $region
 	 * @param string $localeCode
-	 * @return Df_Directory_Setup_Processor_Region
+	 * @return $this
 	 */
 	private function addRegionLocaleNameToDb(Mage_Directory_Model_Region $region, $localeCode) {
 		df_param_string($localeCode, 1);

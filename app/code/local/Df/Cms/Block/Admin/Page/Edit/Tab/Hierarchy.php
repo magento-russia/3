@@ -93,7 +93,7 @@ class Df_Cms_Block_Admin_Page_Edit_Tab_Hierarchy
 	 * Forced nodes setter
 	 *
 	 * @param array $nodes New nodes array
-	 * @return Df_Cms_Block_Admin_Page_Edit_Tab_Hierarchy
+	 * @return $this
 	 */
 	public function setNodes($nodes) {
 		if (is_array($nodes)) {

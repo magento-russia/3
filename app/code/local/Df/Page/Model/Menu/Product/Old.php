@@ -3,7 +3,7 @@ class Df_Page_Model_Menu_Product_Old extends Df_Page_Model_Menu_Product {
 	/**
 	 * @override
 	 * @param Varien_Data_Tree_Node $node
-	 * @return Df_Page_Model_Menu_Product_Old
+	 * @return $this
 	 */
 	public function addNode(Varien_Data_Tree_Node $node) {
 		$this->getMenu()->addNode($node);

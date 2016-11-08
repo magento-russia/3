@@ -24,5 +24,5 @@ class Df_Tweaks_Model_Settings_Labels extends Df_Core_Model_Settings {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

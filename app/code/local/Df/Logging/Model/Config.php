@@ -116,5 +116,5 @@ class Df_Logging_Model_Config extends Df_Core_Model {
 
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

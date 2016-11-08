@@ -76,5 +76,5 @@ class Countries extends \Df_Core_Model {
 	const XML_TAG__NAME__YANDEX_MARKET = 'yandex-market';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

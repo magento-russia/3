@@ -12,9 +12,9 @@ class Df_AccessControl_Block_Admin_Tab_Tree	extends Mage_Adminhtml_Block_Catalog
 	 * @param bool|null $expanded [optional]
 	 * @return string
 	 */
-	public function getLoadTreeUrl($expanded = null) {
-		return $this->getUrl('df_access_control/admin/categories', array('rid' => $this->roleId()));
-	}
+	public function getLoadTreeUrl($expanded = null) {return
+		$this->getUrl('df_access_control/admin/categories', ['rid' => $this->roleId()])
+	;}
 
 	/**
 	 * @override

@@ -1,8 +1,8 @@
 <?php
+use Df_Core_Model_Event_Adminhtml_Block_Sales_Order_Grid_PrepareColumnsAfter as Event;
 class Df_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Sales_Order_Grid {
 	/**
-	 * Цель перекрытия —
-	 * сигнализации о событии @uses Df_Core_Model_Event_Adminhtml_Block_Sales_Order_Grid_PrepareCollection.
+	 * Цель перекрытия — сигнализации о событии @see Event.
 	 * @override
 	 * @param Varien_Data_Collection $collection
 	 * @return void
@@ -25,11 +25,9 @@ class Df_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Sales_Ord
 	}
 
 	/**
-	 * Цель перекрытия —
-	 * сигнализации о событии
-	 * @uses Df_Core_Model_Event_Adminhtml_Block_Sales_Order_Grid_PrepareColumnsAfter
+	 * Цель перекрытия — сигнализации о событии @see Event
 	 * @override
-	 * @return Df_Adminhtml_Block_Sales_Order_Grid
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		parent::_prepareColumns();
@@ -38,10 +36,7 @@ class Df_Adminhtml_Block_Sales_Order_Grid extends Mage_Adminhtml_Block_Sales_Ord
 		 * @used-by Df_Sales_Observer::df_adminhtml_block_sales_order_grid__prepare_columns_after()
 		 * для добавления в коллекцию колонки с перечислением заказанных товаров.
 		 */
-		Mage::dispatchEvent(
-			Df_Core_Model_Event_Adminhtml_Block_Sales_Order_Grid_PrepareColumnsAfter::EVENT
-			,array('grid' => $this)
-		);
+		Mage::dispatchEvent(Event::EVENT, ['grid' => $this]);
 		// Учитывая, что обработчики вызванного выше события могли изменить столбцы,
 		// столбцы надо упорядочить заново.
 		$this->sortColumnsByOrder();

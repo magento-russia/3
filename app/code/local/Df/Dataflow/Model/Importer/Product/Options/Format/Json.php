@@ -1,7 +1,7 @@
 <?php
 class Df_Dataflow_Model_Importer_Product_Options_Format_Json
 	extends Df_Dataflow_Model_Importer_Product_Options_Format_Abstract {
-	/** @return Df_Dataflow_Model_Importer_Product_Options_Format_Json */
+	/** @return $this */
 	public function process() {
 		try {
 			/** @var string|null $customOptionsAsJson */

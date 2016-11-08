@@ -3,7 +3,7 @@
 class Df_Banner_Block_Adminhtml_Banner_Edit_Tabs extends Mage_Adminhtml_Block_Widget_Tabs {
 	/**
 	 * @override
-	 * @return Df_Banner_Block_Adminhtml_Banner_Edit_Tabs
+	 * @return $this
 	 */
 	protected function _beforeToHtml() {
 		$this->addTab('form_section', array(

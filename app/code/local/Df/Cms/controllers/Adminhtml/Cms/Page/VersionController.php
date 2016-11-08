@@ -68,7 +68,7 @@ class Df_Cms_Adminhtml_Cms_Page_VersionController extends Df_Cms_Adminhtml_Cms_P
 
 	/**
 	 * Mass deletion for revisions
-	 * @return Df_Cms_Adminhtml_Cms_Page_VersionController
+	 * @return $this
 	 */
 	public function massDeleteRevisionsAction()
 	{
@@ -154,7 +154,7 @@ class Df_Cms_Adminhtml_Cms_Page_VersionController extends Df_Cms_Adminhtml_Cms_P
 
 	/**
 	 * Action for ajax grid with revisions
-	 * @return Df_Cms_Adminhtml_Cms_Page_VersionController
+	 * @return $this
 	 */
 	public function revisionsAction()
 	{
@@ -214,7 +214,7 @@ class Df_Cms_Adminhtml_Cms_Page_VersionController extends Df_Cms_Adminhtml_Cms_P
 
 	/**
 	 * Init actions
-	 * @return Df_Cms_Adminhtml_Cms_Page_VersionController
+	 * @return $this
 	 */
 	protected function _initAction()
 	{

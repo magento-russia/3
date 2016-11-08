@@ -7,7 +7,7 @@ class Df_Checkout_Model_Resource_Cart extends Mage_Checkout_Model_Resource_Cart 
 	 * @override
 	 * @param Mage_Catalog_Model_Resource_Product_Collection $collection
 	 * @param int $quoteId
-	 * @return Mage_Checkout_Model_Resource_Cart
+	 * @return $this
 	 */
 	public function addExcludeProductFilter($collection, $quoteId) {
 		$adapter = $this->_getReadAdapter();

@@ -10,7 +10,7 @@ class Df_Adminhtml_Block_Tax_Class_Edit_Form extends Mage_Adminhtml_Block_Tax_Cl
 	 * @override
 	 * @see Mage_Adminhtml_Block_Tax_Class_Edit_Form::_prepareForm()
 	 * @used-by Mage_Adminhtml_Block_Widget_Form::_beforeToHtml()
-	 * @return Df_Adminhtml_Block_Tax_Class_Edit_Form
+	 * @return $this
 	 */
 	protected function _prepareForm() {
 		parent::_prepareForm();
@@ -24,14 +24,14 @@ class Df_Adminhtml_Block_Tax_Class_Edit_Form extends Mage_Adminhtml_Block_Tax_Cl
 		if (!$value) {
 			$value = df_store_iso2('general/store_information/merchant_country');
 		}
-		$fieldset->addField(Df_Tax_Model_Class::P__ISO2, 'select', array(
+		$fieldset->addField(Df_Tax_Model_Class::P__ISO2, 'select', [
 			'name'  => Df_Tax_Model_Class::P__ISO2
 			,'label' => 'Страна'
 			,'class' => 'required-entry'
 			,'value' => $value
 			,'values'   => df_countries_options($emptyLabel = false)
 			,'required' => false
-		));
+		]);
 		return $this;
 	}
 }

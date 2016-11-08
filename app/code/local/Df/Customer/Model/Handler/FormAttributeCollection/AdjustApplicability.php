@@ -24,7 +24,7 @@ class Df_Customer_Model_Handler_FormAttributeCollection_AdjustApplicability exte
 
 	/**
 	 * @param Mage_Customer_Model_Attribute $attribute
-	 * @return Df_Customer_Model_Handler_FormAttributeCollection_AdjustApplicability
+	 * @return $this
 	 */
 	private function adjust(Mage_Customer_Model_Attribute $attribute) {
 		Df_Customer_Model_Attribute_ApplicabilityAdjuster::i(array(

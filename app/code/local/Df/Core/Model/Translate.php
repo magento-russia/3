@@ -82,7 +82,7 @@ class Df_Core_Model_Translate extends Mage_Core_Model_Translate {
 	 * @override
 	 * @param string $area
 	 * @param bool $forceReload [optional]
-	 * @return Df_Core_Model_Translate
+	 * @return $this
 	 */
 	public function init($area, $forceReload = false) {
 		if (!$this->needDisableTranslation()) {
@@ -151,7 +151,7 @@ class Df_Core_Model_Translate extends Mage_Core_Model_Translate {
 	 * @param array(string => string) $data
 	 * @param string|bool|int $scope
 	 * @param bool $forceReload [optional]
-	 * @return Mage_Core_Model_Translate
+	 * @return $this
 	 */
 	protected function _addData($data, $scope, $forceReload = false) {
 		/** @var bool $allowInterference */
@@ -405,7 +405,7 @@ class Df_Core_Model_Translate extends Mage_Core_Model_Translate {
 			 * Как ни странно, это ранее почему-то не приводило к проблемам.
 			 * Видимо, потому что объект-одиночка нашего класса @see Df_Core_Model_Translate
 			 * создавался не вполне корректно:
-			 * public static function s() {static $r; return $r ? $r : $r = new self;}
+			 * public static function s() {static $r; return $r ?: $r = new self;}
 			 *
 			 * Правильно, конечно, создавать наш объект-одиночку так:
 			 * public static function s() {return Mage::getSingleton('core/translate');}
@@ -527,7 +527,7 @@ class Df_Core_Model_Translate extends Mage_Core_Model_Translate {
 	 * @param string $moduleName
 	 * @param array $files
 	 * @param bool $forceReload
-	 * @return Df_Core_Model_Translate
+	 * @return $this
 	 */
 	protected function _loadModuleTranslation($moduleName, $files, $forceReload=false) {
 		/** @var bool $localeIsRussian */

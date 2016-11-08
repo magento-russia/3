@@ -7,7 +7,7 @@ class Df_Log_Model_Visitor extends Mage_Log_Model_Visitor {
 	 *
 	 * @override
 	 * @param Varien_Event_Observer $observer
-	 * @return Df_Log_Model_Visitor
+	 * @return $this
 	 */
 	public function saveByRequest($observer) {
 		if (!$this->_skipRequestLogging && !$this->isModuleIgnored($observer)) {

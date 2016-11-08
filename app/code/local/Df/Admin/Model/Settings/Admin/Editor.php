@@ -15,5 +15,5 @@ class Df_Admin_Model_Settings_Admin_Editor extends Df_Core_Model_Settings {
 	 * @used-by Df_Admin_Model_Settings_Admin::editor()
 	 * @return Df_Admin_Model_Settings_Admin_Editor
 	 */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

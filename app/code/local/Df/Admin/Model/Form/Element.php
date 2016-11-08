@@ -1,4 +1,5 @@
 <?php
+use Varien_Data_Form_Element_Abstract as FE;
 class Df_Admin_Model_Form_Element extends Df_Core_Model {
 	/** @return string */
 	public function getCheckboxLabel() {
@@ -112,17 +113,15 @@ class Df_Admin_Model_Form_Element extends Df_Core_Model {
 	 */
 	protected function _construct() {
 		parent::_construct();
-		$this->_prop(self::$P__E, 'Varien_Data_Form_Element_Abstract');
+		$this->_prop(self::$P__E, FE::class);
 	}
 	/** @var string */
 	private static $P__E = 'e';
 
 	/**
 	 * @used-by Df_Admin_Block_Field::render()
-	 * @param Varien_Data_Form_Element_Abstract $e
-	 * @return Df_Admin_Model_Form_Element
+	 * @param FE $e
+	 * @return self
 	 */
-	public static function i(Varien_Data_Form_Element_Abstract $e) {
-		return new self(array(self::$P__E => $e));
-	}
+	public static function i(FE $e) {return new self([self::$P__E => $e]);}
 }

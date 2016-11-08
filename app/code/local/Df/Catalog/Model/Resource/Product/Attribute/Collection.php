@@ -12,7 +12,7 @@ class Df_Catalog_Model_Resource_Product_Attribute_Collection
 	 * перевод экранного названия «Special Price» товарного свойства «special_price»,
 	 * а также экранных названий некоторых других товарных свойств.
 	 * @override
-	 * @return Df_Catalog_Model_Resource_Product_Attribute_Collection
+	 * @return $this
 	 */
 	protected function _afterLoadData() {
 		$this->translateLabels();

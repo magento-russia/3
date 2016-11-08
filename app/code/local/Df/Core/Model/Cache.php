@@ -2,7 +2,7 @@
 class Df_Core_Model_Cache extends Df_Core_Model {
 	/**
 	 * @used-by df_eav_reset()
-	 * @return Df_Core_Model_Cache
+	 * @return $this
 	 */
 	public function clean() {
 		$this->getCache()->clean($this->getTags());

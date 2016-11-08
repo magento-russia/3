@@ -48,7 +48,7 @@ class Df_Cms_Block_Admin_Page_Version_Edit_Revisions extends Mage_Adminhtml_Bloc
 
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Page_Version_Edit_Revisions
+	 * @return $this
 	 */
 	protected function _prepareCollection() {
 		/** @var Df_Cms_Model_Resource_Page_Revision_Collection $collection */
@@ -64,7 +64,7 @@ class Df_Cms_Block_Admin_Page_Version_Edit_Revisions extends Mage_Adminhtml_Bloc
 
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Page_Version_Edit_Revisions
+	 * @return $this
 	 */
 	protected function _prepareColumns() {
 		$this
@@ -103,7 +103,7 @@ class Df_Cms_Block_Admin_Page_Version_Edit_Revisions extends Mage_Adminhtml_Bloc
 
 	/**
 	 * @override
-	 * @return Df_Cms_Block_Admin_Page_Version_Edit_Revisions
+	 * @return $this
 	 */
 	protected function _prepareMassaction() {
 		parent::_prepareMassaction();

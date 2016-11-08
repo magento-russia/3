@@ -19,7 +19,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param mixed $width
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setWidth($width) {
 		$this->_width = $width;
@@ -31,7 +31,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param mixed $height
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setHeight($height) {
 		$this->_height = $height;
@@ -43,7 +43,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param mixed $keep
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setKeepAspectRatio($keep) {
 		$this->_keepAspectRatio = !!$keep;
@@ -52,7 +52,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param mixed $keep
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setKeepFrame($keep) {
 		$this->_keepFrame = !!$keep;
@@ -61,7 +61,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param mixed $keep
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setKeepTransparency($keep) {
 		$this->_keepTransparency = !!$keep;
@@ -70,7 +70,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param mixed $flag
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setConstrainOnly($flag) {
 		$this->_constrainOnly = !!$flag;
@@ -79,7 +79,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param array $rgbArray
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setBackgroundColor(array $rgbArray) {
 		$this->_backgroundColor = $rgbArray;
@@ -88,7 +88,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param mixed $size
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setSize($size) {
 		// determine width and height from string
@@ -170,7 +170,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @param string $file
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 * @throws Exception
 	 */
 	public function setBaseFile($file)
@@ -259,7 +259,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return $this->_newFile;
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function setImageProcessor($processor)
 	{
 		$this->_processor = $processor;
@@ -286,7 +286,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 
 	/**
 	 * @see Varien_Image_Adapter_Abstract
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function resize()
 	{
@@ -297,7 +297,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return $this;
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function rotate($angle) {
 		$angle = df_round($angle);
 		$this->getImageProcessor()->rotate($angle);
@@ -310,7 +310,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 	 * This func actually affects only the cache filename.
 	 *
 	 * @param int $angle
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public function setAngle($angle)
 	{
@@ -318,7 +318,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return $this;
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function setWatermark($file, $position=null, $size=null, $width=null, $heigth=null)
 	{
 		$filename = false;
@@ -352,7 +352,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return $this;
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function saveFile()
 	{
 		$this->getImageProcessor()->save($this->getBaseDir().$this->getNewFile());
@@ -372,7 +372,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		$this->getImageProcessor()->display();
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function setDestinationSubdir($dir)
 	{
 		$this->_destinationSubdir = $dir;
@@ -390,7 +390,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return file_exists($this->getBaseDir().$this->_newFile);
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function setWatermarkPosition($position)
 	{
 		$this->_watermarkPosition = $position;
@@ -402,7 +402,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return $this->_watermarkPosition;
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function setWatermarkSize($size) {
 		if (is_array($size)) {
 			$this->setWatermarkWidth($size['width']);
@@ -411,7 +411,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return $this;
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function setWatermarkWidth($width)
 	{
 		$this->_watermarkWidth = $width;
@@ -423,7 +423,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 		return $this->_watermarkWidth;
 	}
 
-	/** @return Df_Banner_Model_Image */
+	/** @return $this */
 	public function setWatermarkHeigth($heigth)
 	{
 		$this->_watermarkHeigth = $heigth;
@@ -443,7 +443,7 @@ class Df_Banner_Model_Image extends Df_Core_Model {
 	}
 	/**
 	 * @used-by Df_Banner_Helper_Image::init()
-	 * @return Df_Banner_Model_Image
+	 * @return $this
 	 */
 	public static function i() {return new self;}
 }

@@ -19,7 +19,7 @@ class Df_Chronopay_Model_Gate extends Mage_Payment_Model_Method_Cc {
 	 * @throws Exception|Df_Chronopay_Model_Gate_Exception|?
 	 * @param Varien_Object $payment
 	 * @param float $amount
-	 * @return Df_Chronopay_Model_Gate
+	 * @return $this
 	 */
 	public function capture(Varien_Object $payment, $amount)
 	{
@@ -133,7 +133,7 @@ class Df_Chronopay_Model_Gate extends Mage_Payment_Model_Method_Cc {
 
 	/**
 	 * @param Varien_Object|array $data
-	 * @return Df_Chronopay_Model_Gate
+	 * @return $this
 	 */
 	public function assignData($data) {
 		parent::assignData($data);
@@ -170,7 +170,7 @@ class Df_Chronopay_Model_Gate extends Mage_Payment_Model_Method_Cc {
 		return $result;
 	}
 
-	/** @return Df_Chronopay_Model_Gate */
+	/** @return $this */
 	private function checkChronopayCurrencyEnabled() {
 		df_assert(
 			$this->getChronopayCurrency()->getCode()
@@ -208,5 +208,5 @@ class Df_Chronopay_Model_Gate extends Mage_Payment_Model_Method_Cc {
 	const FIELD__CLIENT_SCREEN_RESOLUTION = 'client_screen_resolution';
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

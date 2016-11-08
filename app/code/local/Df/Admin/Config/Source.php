@@ -18,7 +18,7 @@ abstract class Df_Admin_Config_Source extends Df_Core_Model {
 	 */
 	public function __a() {$a = func_get_args(); return df_translate($a, 'Mage_Adminhtml');}
 
-	/** @return Df_Admin_Config_Source */
+	/** @return $this */
 	protected function reset() {
 		unset($this->{__CLASS__ . '::getFieldCode'});
 		unset($this->{__CLASS__ . '::getFieldConfigNode'});
@@ -47,7 +47,7 @@ abstract class Df_Admin_Config_Source extends Df_Core_Model {
 	 */
 	public function toOptionArrayWithEmpty($isMultiSelect = false) {
 		$this->reset();
-		return array_merge(array(df_option('', '')), $this->toOptionArrayInternal($isMultiSelect));
+		return array_merge([df_option('', '')], $this->toOptionArrayInternal($isMultiSelect));
 	}
 
 	/** @return array(string|int => string) */

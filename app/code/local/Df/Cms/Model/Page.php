@@ -8,7 +8,7 @@
  */
 class Df_Cms_Model_Page extends Mage_Cms_Model_Page {
 	/**
-	 * @return Df_Cms_Model_Page
+	 * @return $this
 	 * @throws Exception
 	 */
 	public function deleteRm() {
@@ -115,5 +115,5 @@ class Df_Cms_Model_Page extends Mage_Cms_Model_Page {
 	}
 
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

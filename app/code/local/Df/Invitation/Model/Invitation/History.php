@@ -13,7 +13,7 @@ class Df_Invitation_Model_Invitation_History extends Df_Core_Model {
 
 	/**
 	 * @override
-	 * @return Df_Invitation_Model_Invitation_History
+	 * @return $this
 	 */
 	protected function _beforeSave() {
 		$this->setDate($this->getResource()->formatDate(time()));
@@ -40,5 +40,5 @@ class Df_Invitation_Model_Invitation_History extends Df_Core_Model {
 	 */
 	public static function i(array $parameters = []) {return new self($parameters);}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }

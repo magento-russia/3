@@ -4,7 +4,7 @@ class Df_Cms_Block_Admin_Page_Revision_Edit_Tab_Content
 	/**
 	 * Preparing form by adding extra fields.
 	 * Adding on change js call.
-	 * @return Df_Cms_Block_Admin_Page_Revision_Edit_Tab_Content
+	 * @return $this
 	 */
 	protected function _prepareForm()
 	{

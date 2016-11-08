@@ -87,7 +87,7 @@ class Df_Chronopay_Model_Gate_Buyer extends Df_Core_Model {
 
 	/**
 	 * @param string $name
-	 * @return Df_Chronopay_Model_Gate_Buyer
+	 * @return $this
 	 */
 	private function checkNameValidness($name) {
 		/** @var string[][] $matches */

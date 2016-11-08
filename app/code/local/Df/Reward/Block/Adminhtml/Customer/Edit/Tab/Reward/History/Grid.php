@@ -13,7 +13,7 @@ class Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_History_Grid
 	 * Add column filter to collection
 	 *
 	 * @param Mage_Adminhtml_Block_Widget_Grid_Column $column
-	 * @return Df_Reward_Block_Adminhtml_Customer_Edit_Tab_Reward_History_Grid
+	 * @return $this
 	 */
 	protected function _addColumnFilterToCollection($column)
 	{

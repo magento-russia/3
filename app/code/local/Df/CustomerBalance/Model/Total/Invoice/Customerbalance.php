@@ -4,7 +4,7 @@ class Df_CustomerBalance_Model_Total_Invoice_Customerbalance extends Mage_Sales_
 	 * Collect customer balance totals for invoice
 	 *
 	 * @param Mage_Sales_Model_Order_Invoice $invoice
-	 * @return Df_CustomerBalance_Model_Total_Invoice_Customerbalance
+	 * @return $this
 	 */
 	public function collect(Mage_Sales_Model_Order_Invoice $invoice)
 	{

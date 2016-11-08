@@ -33,7 +33,7 @@
  * @method $this setWebsiteIds(array $value)
  */
 class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
-	/** @return Df_Catalog_Model_Product */
+	/** @return $this  */
 	public function deleteImages() {
 		/** @var Mage_Eav_Model_Entity_Attribute_Abstract[] $attributes */
 		$attributes = $this->getTypeInstance()->getSetAttributes();
@@ -63,7 +63,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 		return $this;
 	}
 
-	/** @return Df_Catalog_Model_Product */
+	/** @return $this  */
 	public function deleteOptions() {
 		/** @uses Df_Catalog_Model_Product_Option::deleteWithDependencies() */
 		df_each($this->getOptions(), 'deleteWithDependencies');
@@ -891,13 +891,13 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 		return df_bool($this->_getData(self::P__RM__LOADED_IN_COLLECTION));
 	}
 
-	/** @return Df_Catalog_Model_Product */
+	/** @return $this  */
 	public function markAsLoadedInCollection() {
 		$this->setData(self::P__RM__LOADED_IN_COLLECTION, true);
 		return $this;
 	}
 
-	/** @return Df_Catalog_Model_Product */
+	/** @return $this  */
 	public function reindexPrices() {
 		/** @var Mage_Catalog_Model_Resource_Product_Indexer_Price $indexer */
 		$indexer = Mage::getResourceSingleton('catalog/product_indexer_price');
@@ -905,7 +905,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 		return $this;
 	}
 
-	/** @return Df_Catalog_Model_Product */
+	/** @return $this  */
 	public function reindexStockStatus() {
 		/** @var Mage_CatalogInventory_Model_Resource_Indexer_Stock $indexer */
 		$indexer = Mage::getResourceSingleton('cataloginventory/indexer_stock');
@@ -913,7 +913,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 		return $this;
 	}
 
-	/** @return Df_Catalog_Model_Product */
+	/** @return $this  */
 	public function reindexUrlRewrites() {
 		df_mage()->catalog()->urlSingleton()->refreshProductRewrite($this->getId());
 		return $this;
@@ -1252,5 +1252,5 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 		df_h()->index()->reindex('catalog_product_flat');
 	}
 	/** @return self */
-	public static function s() {static $r; return $r ? $r : $r = new self;}
+	public static function s() {static $r; return $r ?: $r = new self;}
 }
