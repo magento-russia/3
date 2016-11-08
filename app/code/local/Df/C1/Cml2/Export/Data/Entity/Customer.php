@@ -111,5 +111,5 @@ class Customer extends \Df_Core_Model {
 	 * @param O $order
 	 * @return \Df\C1\Cml2\Export\Data\Entity\Customer
 	 */
-	public static function i(O $order) {return new self(array(self::$P__ORDER => $order));}
+	public static function i(O $order) {return new self([self::$P__ORDER => $order]);}
 }

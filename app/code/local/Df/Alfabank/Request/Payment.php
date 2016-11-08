@@ -16,12 +16,12 @@ class Payment extends \Df\Payment\Request\Payment {
 	 * @used-by \Df\Payment\Request\Payment::params()
 	 * @return array(string => string|int)
 	 */
-	protected function _params() {return array(
+	protected function _params() {return [
 		'amount' => df_round(100 * $this->amountF())
 		,'currency' => 810
 		,'orderNumber' => $this->orderIId()
 		,'password' => $this->password()
 		,'returnUrl' => $this->urlCustomerReturn()
 		,'userName' => $this->shopId()
-	);}
+	];}
 }

@@ -28,7 +28,7 @@ class Df_Adminhtml_Model_Config_Data extends Mage_Adminhtml_Model_Config_Data {
 	private function save_patchFor_1_7_0_2() {
 		$this->_validate();
 		$this->_getScope();
-		Mage::dispatchEvent('model_config_data_save_before', array('object' => $this));
+		Mage::dispatchEvent('model_config_data_save_before', ['object' => $this]);
 		$section = $this->getSection();
 		$website = $this->getWebsite();
 		$store   = $this->getStore();

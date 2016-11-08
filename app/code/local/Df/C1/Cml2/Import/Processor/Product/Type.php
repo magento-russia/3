@@ -437,14 +437,14 @@ abstract class Type extends \Df\C1\Cml2\Import\Processor\Product {
 				,$this->getProductDataNewOrUpdateAttributeValues(
 					$this->getEntityProduct()->getAttributeValuesCustom()->getItems()
 				)
-				,$this->getProductDataNewOrUpdateAttributeValues(array(
+				,$this->getProductDataNewOrUpdateAttributeValues([
 					\Df\C1\Cml2\Import\Data\Entity\AttributeValue\ProcurementDate::i(
 						$this->getEntityOffer()
 					)
 					,\Df\C1\Cml2\Import\Data\Entity\AttributeValue\Barcode::i(
 						$this->getEntityOffer()
 					)
-				))
+				])
 				,$this->getProductDataNewOrUpdateOptionValues()
 			);
 		}
@@ -533,9 +533,9 @@ abstract class Type extends \Df\C1\Cml2\Import\Processor\Product {
 				$customerGroupId = $price->getPriceType()->getCustomerGroupId();
 				if ($customerGroupId) {
 					/** @var string $groupPriceKey */
-					$groupPriceKey = implode('_', array(
+					$groupPriceKey = implode('_', [
 						'rm_tier_price', $this->store()->getWebsiteId(), $customerGroupId, 1
-					));
+					]);
 					$result[$groupPriceKey] = $price->getPriceBase();
 				}
 			}

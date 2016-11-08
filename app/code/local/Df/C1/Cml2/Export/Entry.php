@@ -25,7 +25,7 @@ class Entry extends \Df_Core_Model {
 	 * @param string $value
 	 * @return array(string => string)
 	 */
-	public function name($name, $value) {return array('Наименование' => $name, 'Значение' => $value);}
+	public function name($name, $value) {return ['Наименование' => $name, 'Значение' => $value];}
 
 	/**
 	 * @param string $name

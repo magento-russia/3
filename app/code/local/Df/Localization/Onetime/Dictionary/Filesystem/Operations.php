@@ -19,5 +19,5 @@ class Df_Localization_Onetime_Dictionary_Filesystem_Operations extends \Df\Xml\P
 	 * @param \Df\Xml\X $e
 	 * @return Df_Localization_Onetime_Dictionary_Filesystem_Operations
 	 */
-	public static function i(\Df\Xml\X $e) {return new self(array(self::$P__E => $e));}
+	public static function i(\Df\Xml\X $e) {return new self([self::$P__E => $e]);}
 }

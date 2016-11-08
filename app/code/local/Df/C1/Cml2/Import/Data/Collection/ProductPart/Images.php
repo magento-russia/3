@@ -34,5 +34,5 @@ class Images extends \Df\C1\Cml2\Import\Data\Collection {
 	 * @param \Df\Xml\X $e
 	 * @return self
 	 */
-	public static function i(\Df\Xml\X $e) {return new self(array(self::$P__E => $e));}
+	public static function i(\Df\Xml\X $e) {return new self([self::$P__E => $e]);}
 }

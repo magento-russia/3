@@ -23,10 +23,10 @@ class Service extends \Df\Payment\Config\Area\Service {
 		/** @var \Zend_Uri_Http $result */
 		$result = \Zend_Uri::factory('https');
 		$result->setHost(($this->isTestMode() ? 'test' : 'engine') . '.paymentgate.ru');
-		$result->setPath(strtr('/{path}/rest/{action}.do', array(
+		$result->setPath(strtr('/{path}/rest/{action}.do', [
 			'{path}' => $this->isTestMode() ? 'testpayment' : 'payment'
 			,'{action}' => $action
-		)));
+		]));
 		return $result;
 	}
 }

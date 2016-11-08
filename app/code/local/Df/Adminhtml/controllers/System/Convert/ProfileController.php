@@ -139,15 +139,13 @@ class Df_Adminhtml_System_Convert_ProfileController extends Mage_Adminhtml_Syste
 			}
 		}
 		// END PATCH
-		$result =
-			array(
-				'savedRows' => $savedRowsCounter
-				,'errors'	=> $errors
-				// BEGIN PATCH
-				,'messages' => $messages
-				// END PATCH
-			)
-		;
+		$result = [
+			'savedRows' => $savedRowsCounter
+			,'errors' => $errors
+			// BEGIN PATCH
+			,'messages' => $messages
+			// END PATCH
+		];
 		$this->getResponse()
 			->setBody(
 				df_mage()->coreHelper()->jsonEncode(

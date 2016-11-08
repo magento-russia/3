@@ -39,7 +39,7 @@ class OptionValue extends \Df\C1\Cml2\Import\Data\Entity {
 	 * @return string
 	 */
 	public function getExternalId() {return dfc($this, function() {return
-		mb_strtolower(implode(': ', array($this->getName(), $this->getValue())))				
+		mb_strtolower(implode(': ', [$this->getName(), $this->getValue()]))
 	;});}
 
 	/**

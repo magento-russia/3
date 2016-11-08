@@ -61,5 +61,5 @@ class Df_Localization_Onetime_Dictionary_Rule_Conditions
 	 * @param \Df\Xml\X $e
 	 * @return Df_Localization_Onetime_Dictionary_Rule_Conditions
 	 */
-	public static function i(\Df\Xml\X $e) {return new self(array(self::$P__E => $e));}
+	public static function i(\Df\Xml\X $e) {return new self([self::$P__E => $e]);}
 }

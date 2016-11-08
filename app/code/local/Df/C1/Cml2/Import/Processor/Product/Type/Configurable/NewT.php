@@ -12,16 +12,16 @@ class NewT extends Configurable {
 		df_assert($this->getEntityOffer()->isTypeConfigurableParent());
 		/** @var \Df_Catalog_Model_Product $product */
 		$product = $this->getProductMagento();
-		$product->addData(array(
+		$product->addData([
 			'can_save_configurable_attributes' => true
 			,'can_save_custom_options' => true
 			,'configurable_attributes_data' => $this->getConfigurableAttributesData()
-			,'stock_data' => array(
+			,'stock_data' => [
 				'use_config_manage_stock' => 1
 				,'is_in_stock' => 1
 				,'is_salable' => 1
-			)
-		));
+			]
+		]);
 		if ($this->getDocumentCurrentAsOffers()->hasPrices()) {
 			$product->setData('configurable_products_data', $this->getConfigurableProductsData());
 		}

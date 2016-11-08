@@ -80,7 +80,7 @@ abstract class Secondary extends \Df\Payment\Request\Transaction {
 			)
 			->setMethod(\Zend_Http_Client::POST)
 			->setUri($this->getUri())
-			->setConfig(array('timeout' => 3))
+			->setConfig(['timeout' => 3])
 		;
 		return $result;
 	});}

@@ -19,5 +19,5 @@ class Df_Localization_Onetime_Dictionary_Db_Tables extends \Df\Xml\Parser\Collec
 	 * @param \Df\Xml\X $e
 	 * @return Df_Localization_Onetime_Dictionary_Db_Tables
 	 */
-	public static function i(\Df\Xml\X $e) {return new self(array(self::$P__E => $e));}
+	public static function i(\Df\Xml\X $e) {return new self([self::$P__E => $e]);}
 }

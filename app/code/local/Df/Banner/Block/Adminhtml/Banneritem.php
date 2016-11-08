@@ -12,11 +12,11 @@ class Df_Banner_Block_Adminhtml_Banneritem extends Mage_Adminhtml_Block_Widget_G
 		$this->_controller = 'adminhtml_banneritem';
 		$this->_blockGroup = 'df_banner';
 		$this->_headerText = 'Рекламные объявления';
-		$this->_addButton('save', array(
+		$this->_addButton('save', [
 			'label' => 'Утвердить порядок показа'
 			,'onclick' => 'save_order()'
 			,'id' => 'save_cat'
-		));
+		]);
 		$this->_addButtonLabel = 'Составить новое объявление...';
 	}
 }

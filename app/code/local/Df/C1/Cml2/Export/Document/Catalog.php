@@ -150,14 +150,12 @@ class Catalog extends \Df_Catalog_Model_XmlExport_Catalog {
 	}
 
 	/** @return array(string => array(string => array(string => mixed))) */
-	private function getПакетПредложений() {
-		return df_clean_xml(array(
-			'Ид' => $this->getПакетПредложений_Ид()
-			,'Наименование' => df_cdata($this->getПакетПредложений_Наименование())
-			,'ИдКаталога' => $this->getКаталог_Ид()
-			,'ИдКлассификатора' => $this->getКлассификатор_Ид()
-		));
-	}
+	private function getПакетПредложений() {return df_clean_xml([
+		'Ид' => $this->getПакетПредложений_Ид()
+		,'Наименование' => df_cdata($this->getПакетПредложений_Наименование())
+		,'ИдКаталога' => $this->getКаталог_Ид()
+		,'ИдКлассификатора' => $this->getКлассификатор_Ид()
+	]);}
 
 	/** @return string */
 	private function getПакетПредложений_Ид() {

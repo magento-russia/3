@@ -19,5 +19,5 @@ class Df_Localization_Realtime_Dictionary_ModulePart_Blocks extends \Df\Xml\Pars
 	 * @param \Df\Xml\X $e
 	 * @return Df_Localization_Realtime_Dictionary_ModulePart_Blocks
 	 */
-	public static function i(\Df\Xml\X $e) {return new self(array(self::$P__E => $e));}
+	public static function i(\Df\Xml\X $e) {return new self([self::$P__E => $e]);}
 }

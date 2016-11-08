@@ -24,7 +24,7 @@ class AddExternalId extends \Df_Core_Model {
 			// свойство для учёта внешнего идентификатора товара в 1С:Управление торговлей
 			df_c1_add_external_id_attribute_to_set($product->getAttributeSet());
 			$product->saveAttributes(
-				array(\Df\C1\C::ENTITY_EXTERNAL_ID => $this->getExternalId())
+				[\Df\C1\C::ENTITY_EXTERNAL_ID => $this->getExternalId()]
 				// Единое значение для всех витрин
 				,$storeId = null
 			);

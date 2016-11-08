@@ -129,7 +129,7 @@ class Custom extends \Df\C1\Cml2\Import\Data\Entity\AttributeValue {
 	 * @override
 	 * @return array(string => string|int)
 	 */
-	protected function getCreationParamsCustom() {return array('is_configurable' => 1);}
+	protected function getCreationParamsCustom() {return ['is_configurable' => 1];}
 
 	/**
 	 * @override

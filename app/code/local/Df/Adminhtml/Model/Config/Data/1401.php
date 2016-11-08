@@ -51,11 +51,11 @@ class Df_Adminhtml_Model_Config_Data_1401 extends Df_Adminhtml_Model_Config_Data
 			$result[$data->getPath()] =
 				!$full
 				? $data->getValue()
-				: array(
+				: [
 					'path' => $data->getPath()
-					, 'value' => $data->getValue()
-					, 'config_id' => $data->getConfigId()
-				)
+					,'value' => $data->getValue()
+					,'config_id' => $data->getConfigId()
+				]
 			;
 		}
 		return $result;

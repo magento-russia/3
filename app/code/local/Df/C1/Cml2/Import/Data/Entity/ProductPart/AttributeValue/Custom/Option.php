@@ -117,12 +117,12 @@ class Option extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeValue\C
 				. "\nТакое могло произойти по причине наличия"
 				. " в «1С:Управление торговлей» нескольких одинаковых (дублирующих друг друга)"
 				. " значений этого свойства."
-				,array(
+				,[
 					'{value}' => $this->getExternalId()
 					,'{attribute}' => $this->getAttributeMagento()->getTitle()
 					,'{productName}' => $this->getProduct()->getName()
 					,'{productSku}' => $this->getProduct()->getSku()
-				)
+				]
 			);
 			/** @var \Df_Eav_Model_Resource_Entity_Attribute_Option_Collection $optionsAll */
 			$optionsAll = EavOption::c();
@@ -132,10 +132,10 @@ class Option extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeValue\C
 			df_c1_log('Допустимые значения свойства %s:', $this->getAttributeMagento()->getTitle());
 			foreach ($optionsAll as $option) {
 				/** @var EavOption $option */
-				df_c1_log('«{optionLabel}» («{optionExternalId}»)', array(
+				df_c1_log('«{optionLabel}» («{optionExternalId}»)', [
 					'{optionLabel}' => $option->getValue()
 					,'{optionExternalId}' => $option->get1CId()
-				));
+				]);
 			}
 		}
 		else {

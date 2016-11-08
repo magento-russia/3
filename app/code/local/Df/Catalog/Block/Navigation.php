@@ -25,7 +25,7 @@ class Df_Catalog_Block_Navigation extends Mage_Catalog_Block_Navigation {
 			||
 				$result instanceof Varien_Data_Collection
 		);
-		Mage::dispatchEvent('df_menu_top_add_submenu', array('menu' => $this->getAdditionalRoot()));
+		Mage::dispatchEvent('df_menu_top_add_submenu', ['menu' => $this->getAdditionalRoot()]);
 		if ($isArray || $isNodeCollection) {
 			foreach ($this->getAdditionalRoot()->getNodes() as $node) {
 				/** @var Varien_Data_Tree_Node $node */

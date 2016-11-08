@@ -15,26 +15,20 @@ class State extends \Df\Alfabank\Response {
 	/**
 	 * @override
 	 * @return array(int => string)
+	 * 2015-02-08
+	 * Ошибочно вместо операции «+» использовать здесь @see array_merge(),
+	 * потому что @see array_merge() не сохраняет числовые ключи (перенумеровывает их).
+	 * Обратите внимание, что операция «+» игнорирует те элементы второго массива,
+	 * ключи которого присутствуют в первом массиве:
+	 * «The keys from the first array will be preserved.
+	 * If an array key exists in both arrays,
+	 * then the element from the first array will be used
+	 * and the matching key's element from the second array will be ignored.»
+	 * http://php.net/manual/function.array-merge.php
 	 */
-	protected function getErrorCodeMap() {
-		/**
-		 * 2015-02-08
-		 * Ошибочно вместо операции «+» использовать здесь @see array_merge(),
-		 * потому что @see array_merge() не сохраняет числовые ключи (перенумеровывает их).
-		 * Обратите внимание, что операция «+» игнорирует те элементы второго массива,
-		 * ключи которого присутствуют в первом массиве:
-		 * «The keys from the first array will be preserved.
-		 * If an array key exists in both arrays,
-		 * then the element from the first array will be used
-		 * and the matching key's element from the second array will be ignored.»
-		 * http://php.net/manual/function.array-merge.php
-		 */
-		return
-				array(2 => 'Заказ отклонен по причине ошибки в реквизитах платежа')
-			+
-				parent::getErrorCodeMap()
-		;
-	}
+	protected function getErrorCodeMap() {return [
+		2 => 'Заказ отклонен по причине ошибки в реквизитах платежа'
+	 ] + parent::getErrorCodeMap();}
 	/** @return string */
 	public function getIpAddress() {return $this->cfg(self::$P__IP_ADDRESS);}
 	/** @return string */
@@ -42,23 +36,15 @@ class State extends \Df\Alfabank\Response {
 	/** @return int */
 	public function getPaymentStatus() {return $this->cfg(self::$P__PAYMENT_STATUS);}
 	/** @return string */
-	public function getPaymentStatusMeaning() {
-		return
-			dfa(
-				array(
-					0 => 'Заказ зарегистрирован, но не оплачен'
-					,1 => 'Проведена предавторизация суммы заказа'
-					,2 => 'Проведена полная авторизация суммы заказа'
-					,3 => 'Авторизация отменена'
-					,4 => 'По транзакции была проведена операция возврата'
-					,5 => 'Инициирована авторизация через ACS банка-эмитента'
-					,6 => 'Авторизация отклонена'
-				)
-				,$this->getPaymentStatus()
-				,'Неизвестно'
-			)
-		;
-	}
+	public function getPaymentStatusMeaning() {return dfa([
+		0 => 'Заказ зарегистрирован, но не оплачен'
+		,1 => 'Проведена предавторизация суммы заказа'
+		,2 => 'Проведена полная авторизация суммы заказа'
+		,3 => 'Авторизация отменена'
+		,4 => 'По транзакции была проведена операция возврата'
+		,5 => 'Инициирована авторизация через ACS банка-эмитента'
+		,6 => 'Авторизация отклонена'
+	],$this->getPaymentStatus(),'Неизвестно');}
 
 	/** @return int */
 	public function getPaymentAmount() {return $this->cfg(self::$P__AMOUNT);}
@@ -104,7 +90,7 @@ class State extends \Df\Alfabank\Response {
 	 */
 	public function throwOnFailure() {
 		parent::throwOnFailure();
-		if (!in_array($this->getPaymentStatus(), array(1, 2, 5))) {
+		if (!in_array($this->getPaymentStatus(), [1, 2, 5])) {
 			$this->throwException('Заказ не был оплачен.');
 		}
 	}
@@ -122,7 +108,7 @@ class State extends \Df\Alfabank\Response {
 	protected function getKey_ErrorMessage() {return 'ErrorMessage';}
 
 	/** @return string[] */
-	protected function getKeysToSuppress() {return array('Состояние платежа');}
+	protected function getKeysToSuppress() {return ['Состояние платежа'];}
 
 	/**
 	 * @override

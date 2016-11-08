@@ -16,12 +16,12 @@ class ReferenceList extends \Df\C1\Cml2\Import\Processor {
 		/** @var mixed[] $attributeData */
 		if ($attribute) {
 			self::removeDuplicateOptionsWithTheSameExternalId($attribute);
-			$attributeData = array_merge($attribute->getData(), array(
+			$attributeData = array_merge($attribute->getData(), [
 				'frontend_label' => $this->getEntity()->getName()
 				,'option' => \Df_Eav_Model_Entity_Attribute_Option_Calculator::calculateStatic(
 					$attribute, dfa($this->getEntity()->getOptionsInMagentoFormat(), 'value')
 				)
-			));
+			]);
 			df_c1_log('Обновление справочника «%s».', $this->getEntity()->getName());
 		}
 		else {
@@ -51,16 +51,16 @@ class ReferenceList extends \Df\C1\Cml2\Import\Processor {
 			}
 			if ($attribute) {
 				// Используем объект-свойство из стандартной комплектации
-				$attributeData = array_merge($attribute->getData(), array(
+				$attributeData = array_merge($attribute->getData(), [
 					\Df\C1\C::ENTITY_EXTERNAL_ID => $this->getEntity()->getExternalId()
 					,'option' => \Df_Eav_Model_Entity_Attribute_Option_Calculator::calculateStatic(
 						$attribute, dfa($this->getEntity()->getOptionsInMagentoFormat(), 'value')
 					)
-				));
+				]);
 				df_c1_log('Обновление справочника «%s».', $this->getEntity()->getName());
 			}
 			else {
-				$attributeData = array(
+				$attributeData = [
 					'entity_type_id' => df_eav_id_product()
 					,'attribute_code' => df_c1()->generateAttributeCode($this->getEntity()->getName())
 					/**
@@ -111,7 +111,7 @@ class ReferenceList extends \Df\C1\Cml2\Import\Processor {
 					,'is_used_for_promo_rules' => 0
 					,\Df\C1\C::ENTITY_EXTERNAL_ID => $this->getEntity()->getExternalId()
 					,'option' => $this->getEntity()->getOptionsInMagentoFormat()
-				);
+				];
 				df_c1_log('Создание справочника «%s».', $this->getEntity()->getName());
 			}
 		}
@@ -174,9 +174,9 @@ class ReferenceList extends \Df\C1\Cml2\Import\Processor {
 	 * а использовать объекты-свойства из стандартной комплектации Magento
 	 * @return string[]
 	 */
-	private function getMapFromExternalNameToStandardAttributeCode() {
-		return array('Производитель' => 'manufacturer');
-	}
+	private function getMapFromExternalNameToStandardAttributeCode() {return [
+		'Производитель' => 'manufacturer'
+	];}
 
 	/**
 	 * @override
@@ -189,11 +189,11 @@ class ReferenceList extends \Df\C1\Cml2\Import\Processor {
 	/**
 	 * @static
 	 * @param \Df\C1\Cml2\Import\Data\Entity\Attribute\ReferenceList $refList
-	 * @return \Df\C1\Cml2\Import\Processor\ReferenceList
+	 * @return self
 	 */
-	public static function i(\Df\C1\Cml2\Import\Data\Entity\Attribute\ReferenceList $refList) {
-		return new self(array(self::$P__ENTITY => $refList));
-	}
+	public static function i(\Df\C1\Cml2\Import\Data\Entity\Attribute\ReferenceList $refList) {return
+		new self([self::$P__ENTITY => $refList])
+	;}
 
 	/**
 	 * @static

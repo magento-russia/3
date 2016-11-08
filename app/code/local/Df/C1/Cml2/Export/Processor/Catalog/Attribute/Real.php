@@ -138,9 +138,9 @@ class Real extends \Df\C1\Cml2\Export\Processor\Catalog\Attribute {
 	 */
 	protected function getИд() {return dfc($this, function() {
 		if (!$this->getAttribute()->get1CId()) {
-			$this->setData(self::$P__ATTRIBUTE, df_attributes()->createOrUpdate(array(
+			$this->setData(self::$P__ATTRIBUTE, df_attributes()->createOrUpdate([
 				\Df\C1\C::ENTITY_EXTERNAL_ID => df_t()->guid()
-			), $this->getAttribute()->getName()));
+			], $this->getAttribute()->getName()));
 		}
 		return $this->getAttribute()->get1CId();
 	});}
@@ -271,7 +271,7 @@ class Real extends \Df\C1\Cml2\Export\Processor\Catalog\Attribute {
 		/** @var string|string[] $result */
 		if (is_array($value)) {
 			// multiselect
-			$result = array_map(array($this, __FUNCTION__), $value);
+			$result = array_map([$this, __FUNCTION__], $value);
 		}
 		else if (is_null($value)) {
 			$result = null;

@@ -32,11 +32,11 @@ abstract class Secondary extends \Df\Payment\Request\Transaction {
 	 */
 	protected function _params() {
 		/** @var array(string => string|int) $result */
-		$result = array(
+		$result = [
 			'userName' => $this->shopId()
 			,'password' => $this->password()
 			,'orderId' => $this->getPaymentExternalId()
-		);
+		];
 		if ($this->hasAmount()) {
 			$result['amount'] = df_round(100 * $this->amount()->getAsFixedFloat());
 		}
@@ -83,7 +83,7 @@ abstract class Secondary extends \Df\Payment\Request\Transaction {
 			$httpClient
 				->setHeaders([])
 				->setUri($this->getUri())
-				->setConfig(array('timeout' => 10))
+				->setConfig(['timeout' => 10])
 			;
 			/** @var Zend_Http_Response $response */
 			$response = $httpClient->request(Zend_Http_Client::GET);

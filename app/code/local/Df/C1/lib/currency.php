@@ -45,11 +45,8 @@ function df_c1_currency_code_to_1c_format($ccInMagentoFormat) {
  */
 function df_c1_currency_code_to_magento_format($ccIn1CFormat) {
 	df_param_string_not_empty($ccIn1CFormat, 0);
-	/** @var string $normalized */
-	$normalized = df_c1_currency_code_normalize($ccIn1CFormat);
-	return dfa(
-		df_c1_cfg()->general()->ccMapFrom1C() + array('РУБ' => 'RUB', 'ГРН' => 'UAH')
-		,$normalized
-		,$normalized
+	return dftr(
+		df_c1_currency_code_normalize($ccIn1CFormat)
+		,df_c1_cfg()->general()->ccMapFrom1C() + ['РУБ' => 'RUB', 'ГРН' => 'UAH']
 	);
 }

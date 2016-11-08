@@ -30,7 +30,7 @@ class Df_Adminhtml_Catalog_Product_GalleryController extends Mage_Adminhtml_Cata
 		$result = [];
 		try {
 			$uploader = new Varien_File_Uploader('image');
-			$uploader->setAllowedExtensions(array('jpg','jpeg','gif','png'));
+			$uploader->setAllowedExtensions(['jpg','jpeg','gif','png']);
 			$uploader->addValidateCallback('catalog_product_image', df_mage()->catalogImageHelper(), 'validateUploadFile');
 			$uploader->setAllowRenameFiles(true);
 			$uploader->setFilesDispersion(true);
@@ -67,15 +67,15 @@ class Df_Adminhtml_Catalog_Product_GalleryController extends Mage_Adminhtml_Cata
 			$result['path'] = str_replace(DS, "/", $result['path']);
 			$result['url'] = df_mage()->catalog()->productMediaConfig()->getTmpMediaUrl($result['file']);
 			$result['file'] = $result['file'] . '.tmp';
-			$result['cookie'] = array(
+			$result['cookie'] = [
 				'name'=> session_name()
 				,'value' => $this->_getSession()->getSessionId()
 				,'lifetime' => $this->_getSession()->getCookieLifetime()
 				,'path'	=> $this->_getSession()->getCookiePath()
 				,'domain' => $this->_getSession()->getCookieDomain()
-			);
+			];
 		} catch (Exception $e) {
-			$result = array('error' => df_ets($e), 'errorcode' => $e->getCode());
+			$result = ['error' => df_ets($e), 'errorcode' => $e->getCode()];
 		}
 		$this->getResponse()->setBody(df_mage()->coreHelper()->jsonEncode($result));
 	}

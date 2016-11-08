@@ -101,5 +101,5 @@ class Offers extends \Df\C1\Cml2\Import\Data\Collection {
 	 * @param X $xml
 	 * @return self
 	 */
-	public static function i(X $xml) {return new self(array(self::$P__E => $xml));}
+	public static function i(X $xml) {return new self([self::$P__E => $xml]);}
 }

@@ -183,10 +183,10 @@ class Product extends \Df_Catalog_Model_XmlExport_Product {
 	protected function entry() {return \Df\C1\Cml2\Export\Entry::s();}
 
 	/** @return array(string => string[]) */
-	private function getOutput_Группы() {
+	private function getOutput_Группы() {return [
 		/** @uses Df_Catalog_Model_Category::get1CId() */
-		return array('Ид' => df_each($this->getCategories(), 'get1CId'));
-	}
+		'Ид' => df_each($this->getCategories(), 'get1CId')
+	];}
 
 	/** @return array(string => string[]) */
 	private function getOutput_ЗначенияРеквизитов() {return [[

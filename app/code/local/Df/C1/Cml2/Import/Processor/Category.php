@@ -33,7 +33,7 @@ class Category extends \Df\C1\Cml2\Import\Processor {
 			 * (`catalog_category_flat_store_1`, * CONSTRAINT `FK_CAT_CTGR_FLAT_STORE_1_ENTT_ID_CAT_CTGR_ENTT_ENTT_ID`
 			 * FOREIGN KEY (`entity_id`) REFERENCES `catalog_category_entity` (`en)
 			 */
-			$category = C::createAndSave(array(
+			$category = C::createAndSave([
 				C::P__PATH => $this->getParent()->getPath()
 				,C::P__NAME => $this->getEntity()->getName()
 				,C::P__IS_ACTIVE => true
@@ -43,7 +43,7 @@ class Category extends \Df\C1\Cml2\Import\Processor {
 				,'attribute_set_id' =>
 					\Df_Catalog_Model_Resource_Installer_Attribute::s()->getCategoryAttributeSetId()
 				,'include_in_menu' => 1
-			), $this->storeId());
+			], $this->storeId());
 			df()->registry()->categories()->addEntity($category);
 			df_c1_log('Создан товарный раздел «%s».', $category->getName());
 		}

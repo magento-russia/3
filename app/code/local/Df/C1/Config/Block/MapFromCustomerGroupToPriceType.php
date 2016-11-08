@@ -12,10 +12,10 @@ class MapFromCustomerGroupToPriceType extends \Df_Admin_Block_Field_DynamicTable
 			, 'категория покупателей'
 			, \Df_Customer_Model_Group::c()->setRealGroupsFilter()->toOptionHash()
 		));
-		$this->addColumn(\Df\C1\Config\MapItem\PriceType::P__PRICE_TYPE, array(
+		$this->addColumn(\Df\C1\Config\MapItem\PriceType::P__PRICE_TYPE, [
 			'label' => 'типовое соглашение / вид цен'
 			,'style' => 'width:15em'
-		));
+		]);
 		$this->_addAfter = false;
 		$this->_addButtonLabel = 'добавить...';
 	}

@@ -96,9 +96,9 @@ class Export extends \Df\C1\Cml2\Action\GenericExport {
 		 * Как я понимаю, оба ограничения можно наложить единым фильтром:
 		 * по времени изменения заказа.
 		 */
-		$result->addFieldToFilter(O::P__UPDATED_AT, array(
+		$result->addFieldToFilter(O::P__UPDATED_AT, [
 			'from' => $this->getLastProcessedTime(), 'datetime' => true
-		));
+		]);
 		return $result;
 	});}
 

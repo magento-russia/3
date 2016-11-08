@@ -121,13 +121,13 @@ class Configurable extends \Df\C1\Cml2\Import\Processor\Product\Type {
 					. ' он имеет номер {идентификатор уже имеющегося товара},'
 					. ' название «{название уже имеющегося товара}»'
 					. ' и внешний идентификатор {внешний идентификатор уже имеющегося товара}.'
-					, array(
+					, [
 						'{артикул}' => $result
 						,'{идентификатор уже имеющегося товара}' => $existingProduct->getId()
 						,'{внешний идентификатор уже имеющегося товара}' =>
 								$existingProduct->getExternalId()
 						,'{название уже имеющегося товара}' => $existingProduct->getName()
-					)
+					]
 				);
 				df_assert_ne($result, $this->getEntityOffer()->getExternalId());
 				$result = df_sku_adapt($this->getEntityOffer()->getExternalId());

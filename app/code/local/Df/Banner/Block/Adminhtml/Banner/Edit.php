@@ -13,11 +13,11 @@ class Df_Banner_Block_Adminhtml_Banner_Edit extends Mage_Adminhtml_Block_Widget_
 		$this->_controller = 'adminhtml_banner';
 		$this->_updateButton('save', 'label', 'Утвердить и вернуться');
 		$this->_updateButton('delete', 'label', 'Удалить');
-		$this->_addButton('saveandcontinue', array(
+		$this->_addButton('saveandcontinue', [
 			'label'	=> 'Утвердить и остаться'
 			,'onclick' => 'saveAndContinueEdit()'
 			,'class' => 'save'
-		), -100);
+		], -100);
 		$this->_formScripts[]= "
 			function toggleEditor() {
 				if (null === tinyMCE.getInstanceById('df_banner_content')) {

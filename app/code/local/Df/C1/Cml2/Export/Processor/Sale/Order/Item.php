@@ -23,8 +23,8 @@ class Item extends \Df\C1\Cml2\Export\Processor\Sale {
 				-
 					abs($this->getOrderItemExtended()->getDiscountAmount())
 			)
-			,'СтавкиНалогов' => array(
-				'СтавкаНалога' => array(
+			,'СтавкиНалогов' => [
+				'СтавкаНалога' => [
 					'Наименование' => 'НДС'
 					,'Ставка' => df_f2(
 							100
@@ -33,14 +33,14 @@ class Item extends \Df\C1\Cml2\Export\Processor\Sale {
 						/
 							$this->getOrderItemExtended()->getRowTotal()
 					)
-				)
-			)
-			,'Налоги' => array(
+				]
+			]
+			,'Налоги' => [
 				'Налог' => $this->entry()->tax(
 					'НДС', $this->getOrderItemExtended()->getTaxAmount(), true
 				)
-			)
-			,'Скидки' => array(
+			]
+			,'Скидки' => [
 				'Скидка' =>
 					$this->entry()->discount(
 						'Совокупная скидка'
@@ -48,13 +48,13 @@ class Item extends \Df\C1\Cml2\Export\Processor\Sale {
 						, abs($this->getOrderItemExtended()->getDiscountAmount())
 						, true
 					)
-			)
-			,'ЗначенияРеквизитов' => array(
-				'ЗначениеРеквизита' => array(
+			]
+			,'ЗначенияРеквизитов' => [
+				'ЗначениеРеквизита' => [
 					$this->entry()->name('ВидНоменклатуры', $this->getAttributeSetName())
 					,$this->entry()->name('ТипНоменклатуры', 'Товар')
-				)
-			)
+				]
+			]
 		]
 		/**
 		 * Если товар был создан в Magento,
@@ -165,7 +165,7 @@ class Item extends \Df\C1\Cml2\Export\Processor\Sale {
 					/** @var string $value */
 					$value = dfa($customOption, 'value');
 					df_assert_string($value);
-					$customOptionsKeyValuePairsAsText[]= implode(' = ', array($label, $value));
+					$customOptionsKeyValuePairsAsText[]= implode(' = ', [$label, $value]);
 				}
 				$result = sprintf('%s {%s}', $result, df_csv($customOptionsKeyValuePairsAsText));
 			}

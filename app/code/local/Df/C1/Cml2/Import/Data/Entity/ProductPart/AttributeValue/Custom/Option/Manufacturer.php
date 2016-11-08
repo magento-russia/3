@@ -46,15 +46,15 @@ class Manufacturer extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeV
 				$result
 			);
 			/** @var array(string => mixed) $attributeData */
-			$attributeData = array_merge($result->getData(), array(
+			$attributeData = array_merge($result->getData(), [
 				\Df\C1\C::ENTITY_EXTERNAL_ID => 'Изготовитель'
 				,'option' => \Df_Eav_Model_Entity_Attribute_Option_Calculator::calculateStatic(
 					$result
-					, array('option_0' => array($this->getName()))
+					, ['option_0' => [$this->getName()]]
 					,$isModeInsert = true
 					,$caseInsensitive = true
 				)
-			));
+			]);
 			df_c1_log('Обновление справочника «%s».', 'Изготовитель');
 			$result = df_attributes()->createOrUpdate($attributeData);
 			df_c1_log('Добавили в справочник «%s» значение «%s».', 'Изготовитель', $this->getName());
@@ -219,7 +219,7 @@ class Manufacturer extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeV
 			// Русифицируем свойство
 			if ($result && ('Manufacturer' === $result->getFrontendLabel())) {
 				$result = df_attributes()->createOrUpdate(
-					array('frontend_label' => 'Производитель'), $this->getAttributeCode()
+					['frontend_label' => 'Производитель'], $this->getAttributeCode()
 				);
 			}
 			$oldAttributeProcessed = true;
