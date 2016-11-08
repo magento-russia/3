@@ -7,10 +7,10 @@ class OptionValue extends \Df\C1\Cml2\Import\Data\Entity {
 	/**
 	 * Добавили к названию метода окончание «Magento»,
 	 * чтобы избежать конфликта с родительским методом
-	 * \Df\Xml\Parser\Entity::getAttribute()
+	 * @see \Df\Xml\Parser\Entity::getAttribute()
 	 * @return \Df_Catalog_Model_Resource_Eav_Attribute
 	 */
-	public function getAttributeMagento() {return dfc($this, function() {
+	public function am() {return dfc($this, function() {
 		/** @var \Df_Catalog_Model_Resource_Eav_Attribute|null $result */
 		if (
 				$this->getEntityAttribute()
@@ -134,7 +134,7 @@ class OptionValue extends \Df\C1\Cml2\Import\Data\Entity {
 	 * @return \Df_Eav_Model_Entity_Attribute_Option
 	 */
 	public function getOption() {return dfc($this, function() {return
-		$this->getOptionByAttribute($this->getAttributeMagento())				
+		$this->getOptionByAttribute($this->am())
 	;});}
 
 	/**      
@@ -404,7 +404,7 @@ class OptionValue extends \Df\C1\Cml2\Import\Data\Entity {
 	 */
 	const P__OFFER = 'offer';
 	/**
-	 * @used-by getAttributeMagento()
+	 * @used-by am()
 	 * @used-by getValue()
 	 * @used-by \Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue\EmptyT::getValue()
 	 * @var string

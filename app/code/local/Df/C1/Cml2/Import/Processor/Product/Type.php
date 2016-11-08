@@ -486,13 +486,13 @@ abstract class Type extends \Df\C1\Cml2\Import\Processor\Product {
 		foreach ($this->getEntityOffer()->характеристики() as $optionValue) {
 			/** @var \Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue $optionValue */
 			\Df_Catalog_Model_Installer_AddAttributeToSet::p(
-				$optionValue->getAttributeMagento()->getAttributeCode()
+				$optionValue->am()->getAttributeCode()
 				,$this->getEntityProduct()->getAttributeSet()->getId()
 				,\Df\C1\C::PRODUCT_ATTRIBUTE_GROUP_NAME
 			);
 			/** @var \Df_Eav_Model_Entity_Attribute_Option $option */
 			$option = $optionValue->getOption();
-			$result[$optionValue->getAttributeMagento()->getName()] = $option->getData('value');
+			$result[$optionValue->am()->getName()] = $option->getData('value');
 		}
 		return $result;
 	}

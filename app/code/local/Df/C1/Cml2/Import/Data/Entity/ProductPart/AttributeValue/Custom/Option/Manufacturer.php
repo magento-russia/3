@@ -8,10 +8,10 @@ class Manufacturer extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeV
 	 * @override
 	 * @return Attribute
 	 */
-	public function getAttributeMagento() {
+	public function am() {
 		if (!isset($this->{__METHOD__})) {
 			/** @var Attribute $result */
-			$result = parent::getAttributeMagento();
+			$result = parent::am();
 			// Все обычные справочники мы импортируем перед товарами.
 			// Однако справочник «Изготовители» («Производители») в УТ 11 — необычный.
 			// 11 февраля 2014 года заметил,

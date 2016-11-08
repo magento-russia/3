@@ -32,7 +32,7 @@ abstract class AttributeValue extends \Df\C1\Cml2\Import\Data\Entity {
 	 * \Df\Xml\Parser\Entity::getAttribute()
 	 * @return Attribute
 	 */
-	public function getAttributeMagento() {return dfc($this, function() {
+	public function am() {return dfc($this, function() {
 		/** @var Attribute|null $result */
 		$result = $this->findMagentoAttributeInRegistry();
 		if (!$result) {
@@ -73,7 +73,7 @@ abstract class AttributeValue extends \Df\C1\Cml2\Import\Data\Entity {
 	});}
 
 	/** @return string|null */
-	public function getAttributeName() {return $this->getAttributeMagento()->getName();}
+	public function getAttributeName() {return $this->am()->getName();}
 
 	/**
 	 * @override

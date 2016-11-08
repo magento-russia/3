@@ -82,7 +82,7 @@ class OptionValues extends \Df\C1\Cml2\Import\Data\Collection {
 			/** @var OptionValue|null $result */
 			foreach ($this as $optionValue) {
 				/** @var OptionValue $optionValue */
-				if ($attributeId === $optionValue->getAttributeMagento()->getId()) {
+				if ($attributeId === $optionValue->am()->getId()) {
 					$result = $optionValue;
 					break;
 				}

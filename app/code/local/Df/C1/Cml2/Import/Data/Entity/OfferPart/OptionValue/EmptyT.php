@@ -7,9 +7,9 @@ class EmptyT extends \Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue {
 	 * @override
 	 * @return Attribute
 	 */
-	public function getAttributeMagento() {
+	public function am() {
 		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = $this->_getAttributeMagento();
+			$this->{__METHOD__} = $this->_am();
 			// Нельзя объединять это выражение с предыдущим,
 			// чтобы не попасть в рекурсию.
 			$this->setupAttribute($this->{__METHOD__});
@@ -22,7 +22,7 @@ class EmptyT extends \Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue {
 	 * @override
 	 * @return string
 	 */
-	public function getName() {return $this->_getAttributeMagento()->getFrontendLabel();}
+	public function getName() {return $this->_am()->getFrontendLabel();}
 
 	/**
 	 * @override
@@ -34,7 +34,7 @@ class EmptyT extends \Df\C1\Cml2\Import\Data\Entity\OfferPart\OptionValue {
 	 * Этот метод необходим, иначе @used-by getName() приведёт к сбою.
 	 * @return Attribute
 	 */
-	private function _getAttributeMagento() {return $this->cfg(self::$P__ATTRIBUTE);}
+	private function _am() {return $this->cfg(self::$P__ATTRIBUTE);}
 
 	/**
 	 * @override

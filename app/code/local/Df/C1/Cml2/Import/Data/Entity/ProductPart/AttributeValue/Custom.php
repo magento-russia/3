@@ -12,7 +12,7 @@ class Custom extends \Df\C1\Cml2\Import\Data\Entity\AttributeValue {
 	public function getAttributeExternalId() {return $this->leafSne('Ид');}
 
 	/** @return string */
-	public function getAttributeName() {return $this->getAttributeMagento()->getName();}
+	public function getAttributeName() {return $this->am()->getName();}
 
 	/**
 	 * @override

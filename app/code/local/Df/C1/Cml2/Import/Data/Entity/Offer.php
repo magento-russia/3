@@ -9,20 +9,17 @@ class Offer extends \Df\C1\Cml2\Import\Data\Entity {
 	public function getConfigurableAttributes() {return dfc($this, function() {
 		df_assert($this->isTypeConfigurableParent() || $this->isTypeConfigurableChild());
 		/** @var array(string => Df_Catalog_Model_Resource_Eav_Attribute) $result */
-		$result = [];
 		if ($this->isTypeConfigurableParent()) {
+			$result = [];
 			foreach ($this->getConfigurableChildren() as $child) {
 				/** @var Offer $child */
 				$result += $child->getConfigurableAttributes();
 			}
 		}
 		else {
-			foreach ($this->характеристики() as $optionValue) {
-				/** @var OptionValue $optionValue */
-				$result[$optionValue->getAttributeMagento()->getAttributeCode()] =
-					$optionValue->getAttributeMagento()
-				;
-			}
+			$result = df_map(function(OptionValue $o) {return [
+				$o->am()->getAttributeCode() => $o->am()
+			];}, $this->характеристики(), [], [], 0, true);
 		}
 		return $result;
 	});}

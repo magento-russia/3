@@ -54,7 +54,7 @@ class Update extends Configurable {
 	/** @return array(string => string) */
 	private function getProductDataNewOrUpdateAttributeValueIdsCustom() {return array_filter(df_map(
 		function(AttributeValueCustom $v) {return [
-			$v->getAttributeName(), !$v->getAttributeMagento() ? null : $v->getValueForObject()
+			$v->getAttributeName(), !$v->am() ? null : $v->getValueForObject()
 		];}, $this->getEntityProduct()->getAttributeValuesCustom(), [], [], 0, true
 	));}
 

@@ -102,8 +102,8 @@ class Option extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeValue\C
 		/** @var \Df_Eav_Model_Resource_Entity_Attribute_Option_Collection $options */
 		$options = EavOption::c();
 		$options->setPositionOrder('asc');
-		$options->setAttributeFilter($this->getAttributeMagento()->getId());
-		$options->setStoreFilter($this->getAttributeMagento()->getStoreId());
+		$options->setAttributeFilter($this->am()->getId());
+		$options->setStoreFilter($this->am()->getStoreId());
 		$options->addFieldToFilter(\Df\C1\C::ENTITY_EXTERNAL_ID, $this->getExternalId());
 		if (!$options->count()) {
 			// Из 1С:Управление торговлей в интернет-магазин передано справочное значение,
@@ -119,7 +119,7 @@ class Option extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeValue\C
 				. " значений этого свойства."
 				,[
 					'{value}' => $this->getExternalId()
-					,'{attribute}' => $this->getAttributeMagento()->getTitle()
+					,'{attribute}' => $this->am()->getTitle()
 					,'{productName}' => $this->getProduct()->getName()
 					,'{productSku}' => $this->getProduct()->getSku()
 				]
@@ -127,9 +127,9 @@ class Option extends \Df\C1\Cml2\Import\Data\Entity\ProductPart\AttributeValue\C
 			/** @var \Df_Eav_Model_Resource_Entity_Attribute_Option_Collection $optionsAll */
 			$optionsAll = EavOption::c();
 			$optionsAll->setPositionOrder('asc');
-			$optionsAll->setAttributeFilter($this->getAttributeMagento()->getId());
-			$optionsAll->setStoreFilter($this->getAttributeMagento()->getStoreId());
-			df_c1_log('Допустимые значения свойства %s:', $this->getAttributeMagento()->getTitle());
+			$optionsAll->setAttributeFilter($this->am()->getId());
+			$optionsAll->setStoreFilter($this->am()->getStoreId());
+			df_c1_log('Допустимые значения свойства %s:', $this->am()->getTitle());
 			foreach ($optionsAll as $option) {
 				/** @var EavOption $option */
 				df_c1_log('«{optionLabel}» («{optionExternalId}»)', [

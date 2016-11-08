@@ -73,7 +73,7 @@ class NewT extends Configurable {
 			foreach ($firstChild->характеристики() as $optionValue) {
 				/** @var OptionValue $optionValue */
 				/** @var \Df_Catalog_Model_Resource_Eav_Attribute $attribute */
-				$attribute = $optionValue->getAttributeMagento();
+				$attribute = $optionValue->am();
 				$result[$attribute->getName()] = $attribute->getId();
 				$labels[]= $attribute->getFrontendLabel();
 			}
