@@ -1,4 +1,5 @@
 <?php
+use Df\Qa\Message\Failure\Exception as FE;
 use Exception as E;
 
 /** @return Df_Core_Helper_Data */
@@ -139,18 +140,15 @@ function df_notify_admin($message, $doLog = true) {
 /**
  * Задача данного метода — ясно и доступно объяснить разработчику причину исключительной ситуации
  * и состояние системы в момент возникновения исключительной ситуации.
- * @param Exception|string $exception
+ * @param Exception|string $e
  * @param string|null $additionalMessage [optional]
  * @return void
  */
-function df_notify_exception($exception, $additionalMessage = null) {
-	if (is_string($exception)) {
-		$exception = new Exception($exception);
-	}
-	\Df\Qa\Message\Failure\Exception::i(array(
-		\Df\Qa\Message\Failure\Exception::P__EXCEPTION => $exception
-		,\Df\Qa\Message\Failure\Exception::P__ADDITIONAL_MESSAGE => $additionalMessage
-	))->log();
+function df_notify_exception($e, $additionalMessage = null) {
+	FE::i([
+		FE::P__EXCEPTION => is_string($e) ? new Exception($e) : $e
+		,FE::P__ADDITIONAL_MESSAGE => $additionalMessage
+	])->log();
 }
 
 /**

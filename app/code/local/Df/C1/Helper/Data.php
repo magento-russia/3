@@ -1,5 +1,6 @@
 <?php
 use Df\C1\Cml2\Session\ByCookie\C1 as SessionByCookieC1;
+use Df\C1\Config\Api\General as S;
 class Df_C1_Helper_Data extends Mage_Core_Helper_Abstract implements Df_Dataflow_Logger {
 	/**
 	 * @param int $attributeSetId
@@ -30,26 +31,22 @@ class Df_C1_Helper_Data extends Mage_Core_Helper_Abstract implements Df_Dataflow
 	/**
 	 * @see Df_Dataflow_Logger::log()
 	 * @override
-	 * @param string $message
+	 * @param mixed[] $args
 	 * @return void
 	 */
-	public function log($message) {
-		if (df_c1_cfg()->general()->needLogging()) {
-			/** @var mixed[] $arguments */
-			$arguments = func_get_args();
-			self::logger()->log(df_format($arguments));
+	public function log(...$args) {
+		if (S::s()->needLogging()) {
+			self::logger()->log(df_format($args));
 		}
 	}
 	
 	/**
-	 * @param string|array(string|int => string) $message
+	 * @param mixed[] $args
 	 * @return void
 	 */
-	public function logRaw($message) {
-		if (df_c1_cfg()->general()->needLogging()) {
-			/** @var mixed[] $arguments */
-			$arguments = func_get_args();
-			self::logger()->logRaw(df_format($arguments));
+	public function logRaw(...$args) {
+		if (S::s()->needLogging()) {
+			self::logger()->logRaw(df_format($args));
 		}
 	}
 
