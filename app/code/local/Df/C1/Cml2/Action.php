@@ -55,8 +55,8 @@ abstract class Action extends \Df_Core_Model_Action {
 		df_h()->dataflow()->registry()->products()->addValidator(\Df\C1\Validate\Product::s());
 	}
 
-	/** @return \Df\C1\Cml2\Session\ByIp */
-	protected function session() {return \Df\C1\Cml2\Session\ByIp::s();}
+	/** @return \Df\C1\Cml2\Session\Composite */
+	protected function session() {return \Df\C1\Cml2\Session\Composite::s();}
 
 	/**
 	 * @used-by processException()

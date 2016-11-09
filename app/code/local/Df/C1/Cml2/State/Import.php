@@ -3,7 +3,7 @@ namespace Df\C1\Cml2\State;
 use Df\C1\Cml2\File;
 use Df\C1\Cml2\Import\Data\Document\Catalog as DocumentCatalog;
 use Df\C1\Cml2\Import\Data\Document\Offers as DocumentOffers;
-use Df\C1\Cml2\Session\ByIp as SessionByIp;
+use Df\C1\Cml2\Session\Composite as CompositeSession;
 use Df_Catalog_Model_Category as Category;
 class Import extends \Df_Core_Model {
 	/** @return \Df\C1\Cml2\State\Import\Collections */
@@ -40,7 +40,7 @@ class Import extends \Df_Core_Model {
 				&& $this->getDocumentCurrentAsCatalog()->hasAttributes()
 			? $this->getFileCurrent()
 			: self::prepareSession($preprareSession, function() {return
-				File::i(SessionByIp::s()->getFilePathById(
+				File::i(CompositeSession::s()->getFilePathById(
 					DocumentCatalog::TYPE__ATTRIBUTES
 					,$this->getDocumentCurrent()->getExternalId_CatalogAttributes()
 				))
@@ -64,7 +64,7 @@ class Import extends \Df_Core_Model {
 			/** @var File $fileProducts */
 			/** @var File $fileStructure */
 			list($fileAttributes, $fileProducts, $fileStructure) =
-				SessionByIp::s()->run(function() {return [
+				CompositeSession::s()->run(function() {return [
 					$this->getFileCatalogAttributes(false)
 					,$this->getFileCatalogProducts(false)
 					,$this->getFileCatalogStructure(false)
@@ -93,7 +93,7 @@ class Import extends \Df_Core_Model {
 				&& $this->getDocumentCurrentAsCatalog()->hasProducts()
 			? $this->getFileCurrent()
 			: self::prepareSession($preprareSession, function() {return
-				File::i(SessionByIp::s()->getFilePathById(
+				File::i(CompositeSession::s()->getFilePathById(
 					DocumentCatalog::TYPE__PRODUCTS
 					,$this->getDocumentCurrent()->getExternalId_CatalogProducts()
 				))
@@ -114,7 +114,7 @@ class Import extends \Df_Core_Model {
 				&& $this->getDocumentCurrentAsCatalog()->hasStructure()
 			? $this->getFileCurrent()
 			: self::prepareSession($preprareSession, function() {return
-				File::i(SessionByIp::s()->getFilePathById(
+				File::i(CompositeSession::s()->getFilePathById(
 					DocumentCatalog::TYPE__STRUCTURE
 					,$this->getDocumentCurrent()->getExternalId_CatalogStructure()
 				))
@@ -160,7 +160,7 @@ class Import extends \Df_Core_Model {
 			$this->getDocumentCurrentAsOffers()->isBase()
 			? $this->getFileCurrent()
 			: self::prepareSession($preprareSession, function() {return
-				File::i(SessionByIp::s()->getFilePathById(
+				File::i(CompositeSession::s()->getFilePathById(
 					DocumentOffers::TYPE__BASE
 					,$this->getDocumentCurrentAsOffers()->getExternalId()
 				))
@@ -180,7 +180,7 @@ class Import extends \Df_Core_Model {
 			$this->getDocumentCurrentAsOffers()->hasPrices()
 			? $this->getFileCurrent()
 			: self::prepareSession($preprareSession, function() {return
-				File::i(SessionByIp::s()->getFilePathById(
+				File::i(CompositeSession::s()->getFilePathById(
 					DocumentOffers::TYPE__PRICES
 					,$this->getDocumentCurrentAsOffers()->getExternalId()
 				))
@@ -200,7 +200,7 @@ class Import extends \Df_Core_Model {
 			$this->getDocumentCurrentAsOffers()->hasStock()
 			? $this->getFileCurrent()
 			: self::prepareSession($preprareSession, function() {return
-				File::i(SessionByIp::s()->getFilePathById(
+				File::i(CompositeSession::s()->getFilePathById(
 					DocumentOffers::TYPE__STOCK
 					,$this->getDocumentCurrentAsOffers()->getExternalId()
 				))
@@ -234,7 +234,7 @@ class Import extends \Df_Core_Model {
 	 * @return mixed
 	 */
 	private static function prepareSession($flag, \Closure $f) {return
-		!$flag ? $f() : SessionByIp::s()->run($f)
+		!$flag ? $f() : CompositeSession::s()->run($f)
 	;}
 
 	/** @return self */

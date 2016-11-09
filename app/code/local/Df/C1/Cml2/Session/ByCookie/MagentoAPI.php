@@ -1,5 +1,11 @@
 <?php
 namespace Df\C1\Cml2\Session\ByCookie;
+use Mage_Api_Model_User as User;
+/**
+ * 2016-11-09
+ * https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Api/Model/Session.php#L96
+ * @method User getUser()
+ */
 class MagentoAPI extends \Mage_Api_Model_Session {
 	/**
 	 * В отличие от родительского метода @see Mage_Api_Model_Session::isSessionExpired()
@@ -14,7 +20,8 @@ class MagentoAPI extends \Mage_Api_Model_Session {
 	 * нежели чем менять значение опции «api/config/session_timeout»
 	 * сразу для всех возможных внешних систем, подключающихся к Magento.
 	 * @override
-	 * @param \Mage_Api_Model_User $user
+	 * @see \Mage_Api_Model_Session::isSessionExpired()
+	 * @param User $user
 	 * @return bool
 	 */
 	public function isSessionExpired($user) {return !$user->getId();}

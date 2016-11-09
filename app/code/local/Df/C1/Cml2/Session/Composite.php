@@ -1,5 +1,6 @@
 <?php
 namespace Df\C1\Cml2\Session;
+use Df\C1\Cml2\Session\ByCookie\MagentoAPI;
 /**
  * 2016-11-09
  * Эта сессия идентифицирует экземпляр учётной системы.
@@ -10,13 +11,8 @@ namespace Df\C1\Cml2\Session;
  * в единую последовательность.
  * Это позволяет в текущем сеансе обращаться к файлам прошлого сеанса
  * (переданным данным, журналу обмена).
- *
- * @todo На самом деле тут недостаточно учитывать только адрес IP экземпляра:
- * надо ещё, как минимум, учитывать логин и, видимо, еще какие-то параметры.
- * Я так понимаю, для МойСклад вообще неормальным будет, если разные экземпляры разных клиентов
- * будут иметь одинаковый адрес IP.
  */
-class ByIp extends \Df_Core_Model_Session_Custom_Additional {
+class Composite extends \Df_Core_Model_Session_Custom_Additional {
 	/**
 	 * @param bool|null $value [optional]
 	 * @return bool|null
@@ -71,21 +67,22 @@ class ByIp extends \Df_Core_Model_Session_Custom_Additional {
 	}
 
 	/**
+	 * Вызывая функцию @uses md5(), мы избавляемся от недопустимых символов
+	 * в идентификаторе сессии.
+	 * 2016-11-09
+	 * Недостаточно учитывать только адрес IP экземпляра:
+	 * для МойСклад и других облачных систем вообще нормальным будет,
+	 * если разные экземпляры разных клиентов будут иметь одинаковый адрес IP.
+	 * @see session_id()
+	 * http://php.net/manual/function.session-id.php
 	 * @override
 	 * @return string
 	 */
-	protected function getSessionIdCustom() {return dfc($this, function() {
-		/** @var string $result */
-		$ipAddress = \Mage::app()->getRequest()->getClientIp();
-		df_assert_string_not_empty($ipAddress);
-		/**
-		 * Вызывая функцию @uses md5(), мы избавляемся от недопустимых символов
-		 * в идентификаторе сессии.
-		 * @see session_id()
-		 * http://php.net/manual/function.session-id.php
-		 */
-		return md5($ipAddress);
-	});}
+	protected function getSessionIdCustom() {return dfc($this, function() {return md5(df_ckey(
+		\Mage::app()->getRequest()->getClientIp()
+		,MagentoAPI::s()->getUser()->getId()
+		,df_store_id()
+	));});}
 
 	/**
 	 * @param string $type [optional]

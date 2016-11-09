@@ -41,8 +41,8 @@ abstract class Document extends \Df\Xml\Parser\Entity {
 	/** @return string */
 	protected function getPath() {return $this->cfg(self::$P__PATH);}
 
-	/** @return \Df\C1\Cml2\Session\ByIp */
-	protected function session() {return \Df\C1\Cml2\Session\ByIp::s();}
+	/** @return \Df\C1\Cml2\Session\Composite */
+	protected function session() {return \Df\C1\Cml2\Session\Composite::s();}
 
 	/**
 	 * @override
