@@ -73,17 +73,11 @@ class Df_C1_Helper_Data extends Mage_Core_Helper_Abstract implements Df_Dataflow
 	 */
 	private static function logger() {return dfcf(function() {
 		/** @var string $fileName */
-		$filePath = SessionByCookieC1::s()->getFileName_Log();
-		if (!$filePath) {
-			$filePath = df_file_name(
-				df_cc_path(
-					Mage::getBaseDir('var'), 'log'
-					, df_c1_cfg()->general()->getLogFileNameTemplatePath()
-				)
-				, df_c1_cfg()->general()->getLogFileNameTemplateBaseName()
-			);
-			SessionByCookieC1::s()->setFileName_Log($filePath);
+		$path = SessionByCookieC1::s()->getFileName_Log();
+		if (!$path) {
+			$path = df_file_name(Mage::getBaseDir('var') . '/log', S::s()->logName(), '.');
+			SessionByCookieC1::s()->setFileName_Log($path);
 		}
-		return Df_Core_Model_Logger::s($filePath);
+		return Df_Core_Model_Logger::s($path);
 	});}
 }

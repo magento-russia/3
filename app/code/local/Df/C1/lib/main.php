@@ -36,7 +36,7 @@ function df_c1_is_external_id($string) {return
  * @param mixed[] $args
  * @return void
  */
-function df_c1_log(...$args) {df_c1()->log($args);}
+function df_c1_log(...$args) {df_c1()->log(df_format($args));}
 
 /**
  * @param Df_Catalog_Model_Product $product

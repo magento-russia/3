@@ -74,7 +74,7 @@
 								<enabled>1</enabled>
 							</depends>
 						</enable_logging>
-						<log_file_name_template>
+						<logName>
 							<label>Шаблон имени диагностического журнала</label>
 							<comment>
 								<![CDATA[
@@ -84,11 +84,15 @@
 <table class='rm-definition'>
 	<tr>
 		<td>{date}</td>
-		<td>текущая дата в формате yyyy-mm-dd (например: «2014-05-25»)</td>
+		<td>текущая дата в формате yyyy.mm.dd (например: «2014.05.25»)</td>
 	</tr>
 	<tr>
 		<td>{time}</td>
-		<td>текущее время в формате hh-mm (например: «18-58»)</td>
+		<td>текущее время в формате hh.mm (например: «18.58»)</td>
+	</tr>
+	<tr>
+		<td>{time-full}</td>
+		<td>текущее время в формате hh.mm.ss (например: «18.58.33»)</td>
 	</tr>
 	<tr>
 		<td>{store-view}</td>
@@ -114,7 +118,7 @@ Eсли Вы хотите использовать параметр {node},
 								<enabled>1</enabled>
 								<enable_logging>1</enable_logging>
 							</depends>
-						</log_file_name_template>
+						</logName>
 						<non_standard_currency_codes>
 							<label>Нестандартные символьные коды валют</label>
 							<comment>

@@ -53,7 +53,7 @@
 			<general>
 				<enabled>0</enabled>
 				<enable_logging>0</enable_logging>
-				<log_file_name_template>1c/{date}-{time}.log</log_file_name_template>
+				<logName>1c/{date}-{time-full}.log</logName>
 				<non_standard_currency_codes>[["руб.", "RUB"],["грн", "UAH"]]</non_standard_currency_codes>
 			</general>
 			<orders>

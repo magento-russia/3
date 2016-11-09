@@ -21,14 +21,14 @@ class C1 extends \Df_Core_Model_Session_Custom_Primary {
 	 * @used-by Df_C1_Helper_Data::logger()
 	 * @return string|null
 	 */
-	public function getFileName_Log() {return $this->getData(self::$P__FILE_NAME_LOG);}
+	public function getFileName_Log() {return $this[self::$P__FILE_NAME_LOG];}
 
 	/**
 	 * @used-by Df_C1_Helper_Data::logger()
 	 * @param string $value
 	 * @return void
 	 */
-	public function setFileName_Log($value) {$this->setData(self::$P__FILE_NAME_LOG, $value);}
+	public function setFileName_Log($value) {$this[self::$P__FILE_NAME_LOG] = $value;}
 
 	/**
 	 * @override

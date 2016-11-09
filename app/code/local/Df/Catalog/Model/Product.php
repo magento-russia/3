@@ -890,7 +890,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 		return $this;
 	}
 
-	/** @return $this  */
+	/** @return $this */
 	public function reindexPrices() {
 		/** @var Mage_Catalog_Model_Resource_Product_Indexer_Price $indexer */
 		$indexer = Mage::getResourceSingleton('catalog/product_indexer_price');

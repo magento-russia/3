@@ -28,22 +28,12 @@ class General extends \Df\C1\Config\Api\Cml2 {
 	});}
 
 	/** @return string */
-	public function getLogFileNameTemplate() {return dfc($this, function() {return
-		strtr(df_trim_ds_left(df_path_n($this->v('log_file_name_template'))), [
+	public function logName() {return dfc($this, function() {return
+		strtr(df_trim_ds_left(df_path_n($this->v('logName'))), [
 			'{store-view}' => df_state()->getStoreProcessed()->getCode()
 			,'{node}' => df_request('node')
 		])
 	;});}
-
-	/** @return string */
-	public function getLogFileNameTemplateBaseName() {return dfc($this, function() {return
-		df_last(explode(DS, $this->getLogFileNameTemplate()))
-	;});}
-
-	/** @return string */
-	public function getLogFileNameTemplatePath() {return dfc($this, function() {return df_trim_ds(
-		str_replace($this->getLogFileNameTemplateBaseName(), '', $this->getLogFileNameTemplate())
-	);});}
 
 	/** @return boolean */
 	public function isEnabled() {return $this->getYesNo('enabled');}
