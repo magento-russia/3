@@ -16,17 +16,20 @@ class Login extends \Df\C1\Cml2\Action {
 			list($login, $password) = df_http_credentials();
 			/** @var MagentoAPI $s */
 			$s = MagentoAPI::s();
-			$s->start($sessionName = null);
-			/** @var \Mage_Api_Model_User $apiUser */
-			try {
-				$apiUser = $s->login($login, $password);
-			}
-			catch (\Exception $e) {
-				df_error("Авторизация не удалась: неверно системное имя «{$login}» либо пароль к нему.");
-			}
-			$apiUser->getIsActive() ?: df_error(
-				"Учётная запись «{$login}» зарегистрирована в интернет-магазине, "
-				."но отключена там администратором интернет-магазина.");
+			$s->start(null);
+			$s->login($login, $password);
+			/**
+			 * 2016-11-09
+			 * Проверка $apiUser->getIsActive() здесь не нужна,
+			 * потому что она уже выполнена в @uses \Mage_Api_Model_Session::login():
+					if ( $user->getId() && $user->getIsActive() != '1' ) {
+						Mage::throwException(Mage::helper('api')->__(
+							'Your account has been deactivated.'
+						));
+					}
+			 * https://github.com/OpenMage/magento-mirror/blob/1.4.0.0/app/code/core/Mage/Api/Model/Session.php#L94-L95
+			 * https://github.com/OpenMage/magento-mirror/blob/1.9.3.0/app/code/core/Mage/Api/Model/Session.php#L90-L91
+			 */
 			$s->isAllowed('rm/_1c') ?: df_error(
 				"Учётная запись «{$login}» не обладает полномочиями для обмена данными."
 				." Для наделения её этими полномочиями следуйте инструкции"
