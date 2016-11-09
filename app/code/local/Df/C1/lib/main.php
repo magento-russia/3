@@ -33,14 +33,10 @@ function df_c1_is_external_id($string) {return
 ;}
 
 /**
- * @param string|mixed[] $arguments
+ * @param mixed[] $args
  * @return void
  */
-function df_c1_log($arguments) {
-	/** @uses func_get_args() не может быть параметром другой функции */
-	$arguments = is_array($arguments) ? $arguments : func_get_args();
-	df_c1()->log(df_format($arguments));
-}
+function df_c1_log(...$args) {df_c1()->log($args);}
 
 /**
  * @param Df_Catalog_Model_Product $product

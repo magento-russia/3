@@ -11,6 +11,20 @@ use Df\C1\Cml2\Session\ByCookie\MagentoAPI;
  * в единую последовательность.
  * Это позволяет в текущем сеансе обращаться к файлам прошлого сеанса
  * (переданным данным, журналу обмена).
+ *
+ * На протяжении одной сессии Composite проводится несколько сессий @see \Df\C1\Cml2\Session\ByCookie\C1
+ *
+ * Вообще говоря, сессия Composite может быть вечной.
+ * Однако в силу особенности реализации метода @see \Df\C1\Cml2\Session\Composite::setFilePathById()
+ * сессии не грозит бесконечное разрастание:
+ * ведь setFilePathById() сохраняет данные только по ключу $type,
+ * а колчество возможных значений $type у нас фиксировано, пока их всего 6:
+ * @see \Df\C1\Cml2\Import\Data\Document\Catalog::TYPE__ATTRIBUTES
+ * @see \Df\C1\Cml2\Import\Data\Document\Catalog::TYPE__PRODUCTS
+ * @see \Df\C1\Cml2\Import\Data\Document\Catalog::TYPE__STRUCTURE
+ * @see \Df\C1\Cml2\Import\Data\Document\Offers::TYPE__BASE
+ * @see \Df\C1\Cml2\Import\Data\Document\Offers::TYPE__PRICES
+ * @see \Df\C1\Cml2\Import\Data\Document\Offers::TYPE__STOCK
  */
 class Composite extends \Df_Core_Model_Session_Custom_Additional {
 	/**
@@ -34,22 +48,12 @@ class Composite extends \Df_Core_Model_Session_Custom_Additional {
 	 * @param string $id
 	 * @return string
 	 */
-	public function getFilePathById($type, $id) {
-		df_param_string_not_empty($type, 0);
-		df_param_string_not_empty($id, 1);
-		/** @var string $result */
-		$result = dfa($this->getFileMap($type), $id);
-		if (!$result) {
-			df_error(
-				'По какой-то причине файл типа «%s» с идентификатором «%s»'
-				. ' не был зарегистрирован в системе.'
-				. "\nРабота модуля невозможна."
-				. "\nОбратитесь к разработчику."
-				, $type, $id
-			);
-		}
-		return $result;
-	}
+	public function getFilePathById($type, $id) {return
+		dfa($this->getFileMap($type), $id) ?: df_error(
+			"По какой-то причине файл типа «{$type}» с идентификатором «{$id}»"
+			. " не был зарегистрирован в системе.\nРабота модуля невозможна.\nОбратитесь к разработчику."
+		)
+	;}
 
 	/**
 	 * @param string $type
@@ -57,14 +61,9 @@ class Composite extends \Df_Core_Model_Session_Custom_Additional {
 	 * @param string $path
 	 * @return void
 	 */
-	public function setFilePathById($type, $id, $path) {
-		df_param_string_not_empty($type, 0);
-		df_param_string_not_empty($id, 1);
-		df_param_string_not_empty($path, 2);
-		$this->setData(self::$P__FILE_MAPS, array_merge($this->getFileMap(), [
-			$type => array_merge($this->getFileMap($type), [$id => $path])
-		]));
-	}
+	public function setFilePathById($type, $id, $path) {$this[self::$P__FILE_MAPS] =
+		[$type => array_merge($this->getFileMap($type), [$id => $path])] + $this->getFileMap()
+	;}
 
 	/**
 	 * Вызывая функцию @uses md5(), мы избавляемся от недопустимых символов
@@ -94,7 +93,6 @@ class Composite extends \Df_Core_Model_Session_Custom_Additional {
 		return !$type ? $maps : dfa($maps, $type, []);
 	}
 
-	const NAME = __CLASS__;
 	/** @var string */
 	private static $P__CATALOG_HAS_JUST_BEEN_EXPORTED = 'catalog_has_just_been_exported';
 	/** @var string */
