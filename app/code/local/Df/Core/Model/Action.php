@@ -395,7 +395,7 @@ abstract class Df_Core_Model_Action extends Df_Core_Model {
 	 * @return string
 	 */
 	private function rrLog($data, $ext, $suffix) {return df_report(
-		df_ccc('-', [df_cts_lc_camel($this, '.'), '{date}-{time}', $suffix]) . ".{$ext}"
+		df_ccc('-', ['{date}-{time-full-ms}', df_cts_lc_camel($this, '.'), $suffix]) . ".{$ext}"
 		,$data, 'action', '.'
 	);}
 
