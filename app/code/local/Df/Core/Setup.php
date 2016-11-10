@@ -1,4 +1,5 @@
 <?php
+use Mage_Sales_Model_Resource_Setup as SRS;
 class Df_Core_Setup extends Df_Core_Model {
 	/**
 	 * Метод публичен, потому что объекты данного класса могут передаваться в ресурсную модель,
@@ -75,31 +76,24 @@ class Df_Core_Setup extends Df_Core_Model {
 	 */
 	protected function _process() {}
 
-	/** @return Mage_Sales_Model_Resource_Setup */
-	protected function getSetupSales() {
-		if (!isset($this->{__METHOD__})) {
-			/** @var Mage_Sales_Model_Resource_Setup $result */
-			/**
-			 * Обратите внимание, что мы не можем использовать @see Mage::getResourceSingleton(),
-			 * потому что этот метод требует, чтобы второй параметр его конструктора был массивом.
-			 * По этой причине мы вынуждены использовать @uses Mage::getResourceModel()
-			 * и кэшировать результат вручную.
-			 */
-			$result = Mage::getResourceModel('sales/setup', 'sales_setup');
-			/**
-			 * Обратите внимание, что в новых версиях Magento CE
-			 * Mage::getResourceModel('sales/setup')
-			 * вернёт объект класса @see Mage_Sales_Model_Resource_Setup,
-			 * а в старых версиях — объект класса @see Mage_Sales_Model_Mysql4_Setup.
-			 *
-			 * 2016-10-16
-			 * Упомянутые старые версии отныне не поддерживаем.
-			 */
-			df_assert_class($result, Mage_Sales_Model_Resource_Setup::class);
-			$this->{__METHOD__} = $result;
-		}
-		return $this->{__METHOD__};
-	}
+	/**
+	 * Мы не можем использовать @see Mage::getResourceSingleton(),
+	 * потому что этот метод требует, чтобы второй параметр его конструктора был массивом.
+	 * По этой причине мы вынуждены использовать @uses Mage::getResourceModel()
+	 * и кэшировать результат вручную.
+	 *
+	 * В новых версиях Magento CE Mage::getResourceModel('sales/setup')
+	 * вернёт объект класса @see Mage_Sales_Model_Resource_Setup,
+	 * а в старых версиях — объект класса @see Mage_Sales_Model_Mysql4_Setup.
+	 *
+	 * 2016-10-16
+	 * Упомянутые старые версии отныне не поддерживаем.
+	 *
+	 * @return SRS
+	 */
+	protected function getSetupSales() {return dfc($this, function() {return
+		df_ar(Mage::getResourceModel('sales/setup', 'sales_setup'), SRS::class)
+	;});}
 
 	/**
 	 * @used-by pc()

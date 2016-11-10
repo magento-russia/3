@@ -43,12 +43,9 @@ function df_class_exists($type) {return @class_exists($type);}
  * @param array(string => mixed) $params [optional]
  * @return Varien_Object|object
  */
-function df_ic($resultClass, $expectedClass, array $params = []) {
-	/** @var Varien_Object|object $result */
-	$result = new $resultClass($params);
-	df_assert_is($expectedClass, $result);
-	return $result;
-}
+function df_ic($resultClass, $expectedClass, array $params = []) {return
+	df_ar(new $resultClass($params), $expectedClass)
+;}
 
 /**
  * 2016-08-24

@@ -7,16 +7,15 @@ class Df_Newsletter_Observer {
 	 */
 	public function newsletter_subscriber_save_before(Varien_Event_Observer $o) {
 		try {
-			/** @var Mage_Newsletter_Model_Subscriber $subscriber */
-			$subscriber = $o['subscriber'];
 			/**
 			 * Заметил, что в магазине mamymall.ru
 			 * сюда иногда передаётся не объект класса Mage_Newsletter_Model_Subscriber,
 			 * а нечто другое.
 			 * Чтобы понять тип неправильно передаваемого сюда параметра,
-			 * используем @see df_assert_class() вместо @see instanceof().
+			 * используем @see df_ar() вместо @see instanceof().
 			 */
-			df_assert_class($subscriber, 'Mage_Newsletter_Model_Subscriber');
+			/** @var Mage_Newsletter_Model_Subscriber $subscriber */
+			$subscriber = df_ar($o['subscriber'], Mage_Newsletter_Model_Subscriber::class);
 			if (
 				0 === df_nat0($subscriber->getStoreId())
 				&& df_cfgr()->newsletter()->subscription()->fixSubscriberStore()
