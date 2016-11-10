@@ -68,9 +68,10 @@ function df_ar($v, $class, $message = null) {
 		is_object($v) ?: df_error($message ?:
 			"Expected class: «{$class}», given a value of type «%s».", gettype($v)
 		);
-		$v = df_cts($v);
-		if (!is_a($v, $class, true)) {
-			df_error($message ?: "Expected class: «{$class}», given class: «{$v}».");
+		/** @var string $cv */
+		$cv = df_cts($v);
+		if (!is_a($cv, $class, true)) {
+			df_error($message ?: "Expected class: «{$class}», given class: «{$cv}».");
 		}
 	}
 	return $v;
