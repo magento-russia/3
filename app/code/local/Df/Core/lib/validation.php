@@ -65,7 +65,7 @@ function df_ar($v, $class, $message = null) {
 	if ($class && df_enable_assertions()) {
 		$class = df_cts($class);
 		!is_null($v) ?: df_error($message ?: "Expected class: «{$class}», given NULL.");
-		!is_object($v) ?: df_error($message ?:
+		is_object($v) ?: df_error($message ?:
 			"Expected class: «{$class}», given a value of type «%s».", gettype($v)
 		);
 		$v = df_cts($v);
