@@ -144,13 +144,21 @@ function df_currency_h() {return Df_Directory_Helper_Currency::s();}
 /**
  * Возвращает имя валюты по её 3-буквенному коду.
  * В случает отсутствия валюты возвращает 3-буквенный код.
- * @param string $code
+ * @param string|Zend_Currency|string[]|Zend_Currency[]|null $currency [optional]
  * @return string
  */
-function df_currency_name($code) {
-	/** @var Zend_Currency|null $currency */
-	$currency = df_currency_zf($code, false);
-	return $currency ? $currency->getName() : $code;
+function df_currency_name($currency = null) {
+	/** @var string|string[] $result */
+	if (is_array($currency)) {
+		$result = array_map(__FUNCTION__, $currency);
+	}
+	else {
+		/** @var string $code */
+		$code = is_string($currency) ? $currency : df_currency_code($currency);
+		$currency = df_currency_zf($code, false);
+		return $currency ? $currency->getName() : $code;
+	}
+	return $result;
 }
 
 /**
