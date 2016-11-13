@@ -12,7 +12,7 @@ function df_div($class, $content = null) {return df_tag('div', ['class' => $clas
  * @param string[] $args
  * @return string|string[]
  */
-function df_html_b(...$args) {return df_call_a(function($name) {return df_tag('b', [], $name);}, $args);}
+function df_html_b(...$args) {return df_call_a(function($s) {return df_tag('b', [], $s);}, $args);}
 
 /**
  * @used-by df_html_select_yesno()
