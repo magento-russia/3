@@ -2,6 +2,7 @@
 use Df_Directory_Model_Currency as Currency;
 use Mage_Core_Model_Store as Store;
 use Mage_Sales_Model_Order as O;
+use Mage_Sales_Model_Quote as Q;
 
 /**
  * 2015-12-28
@@ -40,11 +41,11 @@ function df_currency($currency = null) {
 /**
  * 2016-07-04
  * «How to programmatically get the base currency's ISO code for a store?» https://mage2.pro/t/1841
- * @param null|string|int|Store|O $scope [optional]
+ * @param null|string|int|Store|O|Q $scope [optional]
  * @return Currency
  */
 function df_currency_base($scope = null) {
-	if ($scope instanceof O) {
+	if ($scope instanceof O || $scope instanceof Q) {
 		$scope = $scope->getStore();
 	}
 	/** @var string $code */
