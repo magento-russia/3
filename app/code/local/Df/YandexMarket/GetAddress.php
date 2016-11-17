@@ -8,7 +8,7 @@ class GetAddress {
 	 * @return string
 	 */
 	public static function r() {return 
-		!S::s()->canGetAddressFromYandexMarket() || df_customer_logged_in() ? '' : 
+		!S::s()->canGetAddressFromYandexMarket() || df_customer_logged_in() ? '' :
 			df_tag('a', [
 				'class' => 'df-yandex-market-address'
 				,'href' =>

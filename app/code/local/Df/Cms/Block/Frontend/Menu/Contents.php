@@ -142,7 +142,7 @@ class Df_Cms_Block_Frontend_Menu_Contents extends Df_Core_Block_Abstract {
 				&&
 					($cmsNode->getId() === df_h()->cms()->getCurrentNode()->getId())
 			? df_tag('span', [], df_tag('strong', [], $cmsNode->getLabel()))
-			: df_tag('a', array('href' => $cmsNode->getUrl()), $cmsNode->getLabel())
+			: df_tag_a($cmsNode->getLabel(), $cmsNode->getUrl())
 		;
 	}
 
