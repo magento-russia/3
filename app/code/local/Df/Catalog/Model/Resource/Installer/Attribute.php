@@ -159,7 +159,7 @@ class Df_Catalog_Model_Resource_Installer_Attribute extends Mage_Catalog_Model_R
 	 */
 	public function startSetup() {
 		parent::startSetup();
-		Df_Core_Boot::run();
+		\Df\Core\Boot::run();
 		return $this;
 	}
 

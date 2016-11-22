@@ -16,7 +16,7 @@ class Df_Core_Model_StoreM extends Mage_Core_Model_Store {
 		/** @var bool $resultInitialized */
 		$resultInitialized = false;
 		/** @var string|null $result */
-		if (Df_Core_Boot::done()) {
+		if (\Df\Core\Boot::done()) {
 			/** @var Df_Core_Model_Cache_Store $cache */
 			$cache = Df_Core_Model_Cache_Store::s($this);
 			if ($cache) {
@@ -68,7 +68,7 @@ class Df_Core_Model_StoreM extends Mage_Core_Model_Store {
 	public function resetConfig() {
 		parent::resetConfig();
 		/** @var string|null $result */
-		if (Df_Core_Boot::done()) {
+		if (\Df\Core\Boot::done()) {
 			/** @var Df_Core_Model_Cache_Store $cache */
 			$cache = Df_Core_Model_Cache_Store::s($this);
 			if ($cache) {
@@ -88,7 +88,7 @@ class Df_Core_Model_StoreM extends Mage_Core_Model_Store {
 	public function setConfig($path, $value) {
 		parent::setConfig($path, $value);
 		/** @var string|null $result */
-		if (Df_Core_Boot::done()) {
+		if (\Df\Core\Boot::done()) {
 			/** @var Df_Core_Model_Cache_Store $cache */
 			$cache = Df_Core_Model_Cache_Store::s($this);
 			if ($cache) {

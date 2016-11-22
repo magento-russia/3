@@ -1,5 +1,6 @@
 <?php
-class Df_Core_Autoload extends Varien_Autoload {
+namespace Df\Core;
+class Autoload extends \Varien_Autoload {
 	/**
 	 * @param string $class
 	 * @return mixed|null
@@ -50,10 +51,10 @@ class Df_Core_Autoload extends Varien_Autoload {
 		if ($errorMessage) {
 			if (1 === mb_strlen($errorMessage) && 0 === mb_strlen(df_t()->bomRemove($errorMessage))) {
 				$errorMessage = sprintf('Дефект: файл «%s» начинается с символа BOM.', $classFile);
-				Mage::log($errorMessage);
+				\Mage::log($errorMessage);
 			}
 			else {
-				Mage::log(
+				\Mage::log(
 					"При загрузке интерпретатором PHP программного файла «%s» произошёл сбой.\n"
 					. "Сообщение интерпретатора: «%s»."
 					,$classFile
@@ -66,12 +67,8 @@ class Df_Core_Autoload extends Varien_Autoload {
 		return $result;
 	}
 
-	/**
-	 * @used-by Df_Core_Boot::initCore()
-	 * @return void
-	 */
-	public static function register() {
-		/** @var bool $r */
-		static $r; if (!$r) {$r = spl_autoload_register(array(new self, 'autoload'), true, true);}
-	}
+	/** @used-by \Df\Core\Boot::initCore() */
+	public static function register() {static $r; if (!$r) {$r =
+		spl_autoload_register([new self, 'autoload'], true, true)
+	;}}
 }

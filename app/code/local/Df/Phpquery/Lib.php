@@ -1,5 +1,5 @@
 <?php
-class Df_Phpquery_Lib extends Df_Core_Lib {
+class Df_Phpquery_Lib extends \Df\Core\Lib {
 	/**
 	 * @override
 	 * @return int

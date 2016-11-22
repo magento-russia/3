@@ -146,7 +146,7 @@ class Df_Core_Helper_DataM extends Mage_Core_Helper_Data {
 		 * Может быть, они и есть (скорей всего есть), однако трудозатраты по их поиску и анализу
 		 * не стоят получаемого результата (редкая проблема для небольшой клиентской базы).
 		 */
-		Df_Core_Boot::run();
+		\Df\Core\Boot::run();
 		return parent::useDbCompatibleMode();
 	}
 

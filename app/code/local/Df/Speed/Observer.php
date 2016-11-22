@@ -9,7 +9,7 @@ class Df_Speed_Observer {
 	 * а метод @see Df_Speed_Observer::controller_front_init_before()
 	 * уже использует @uses df_cfgr(),
 	 * поэтому нам надо инициализирвать РСМ.
-	 * Мы это делаем в методе @see Df_Core_Boot::controller_front_init_before()
+	 * Мы это делаем в методе @see \Df\Core\Boot::controller_front_init_before()
 	 * @used-by Mage_Core_Model_App::_callObserverMethod()
 	 * @return void
 	 */

@@ -5,7 +5,7 @@ class Df_Compiler_Model_Process extends Mage_Compiler_Model_Process {
 	 * @return array
 	 */
 	public function getCompileClassList() {
-		Df_Core_Boot::run();
+		\Df\Core\Boot::run();
 		$arrFiles = [];
 		foreach ($this->getScopes() as $code) {
 			/** @var array|null $classes */
@@ -58,7 +58,7 @@ class Df_Compiler_Model_Process extends Mage_Compiler_Model_Process {
 	 * @return string
 	 */
 	protected function _getClassesSourceCode($classes, $scope) {
-		Df_Core_Boot::run();
+		\Df\Core\Boot::run();
 		return
 			// Видимо, улучшенную компиляцию нельзя отрубать даже по истечению лицензии,
 			// иначе при неправильной компиляции сайт может перестать работать

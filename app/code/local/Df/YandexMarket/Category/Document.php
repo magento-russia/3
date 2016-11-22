@@ -5,7 +5,7 @@ class Document extends \Df_Core_Model {
 	private function _rows() {return dfc($this, function() {
 		/** @var string[][] $result  */
 		$result = [];
-		\Df_Core_Lib::load('Excel');
+		\Df\Core\Lib::load('Excel');
 		$this->downloadFile();
 		/** @var \PHPExcel_Worksheet $sheet */
 		$sheet = \PHPExcel_IOFactory::load($this->path())->getSheet(0);

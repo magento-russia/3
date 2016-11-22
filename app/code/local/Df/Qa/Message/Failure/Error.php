@@ -53,7 +53,7 @@ final class Error extends \Df\Qa\Message\Failure {
 	}
 
 	/**
-	 * @used-by Df_Core_Boot::init1()
+	 * @used-by \Df\Core\Boot::init1()
 	 * @return void
 	 */
 	public static function check() {

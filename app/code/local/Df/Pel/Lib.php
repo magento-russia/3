@@ -1,11 +1,12 @@
 <?php
-class Df_Pel_Lib extends Df_Core_Lib {
+namespace Df\Pel;
+class Lib extends \Df\Core\Lib {
 	/**
-	 * @used-by Df_Core_Lib::__construct()
-	 * @see Df_Core_Lib::checkEnvironment()
+	 * @used-by \Df\Core\Lib::__construct()
+	 * @see \Df\Core\Lib::checkEnvironment()
 	 * @override
 	 * @return void
-	 * @throws Exception
+	 * @throws \Exception
 	 */
 	protected function checkEnvironment() {
 		if (ini_get('mbstring.func_overload')) {
@@ -17,9 +18,9 @@ class Df_Pel_Lib extends Df_Core_Lib {
 	}
 
 	/**
-	 * @used-by Df_Core_Lib::setCompatibleErrorReporting()
-	 * @used-by Df_Core_Lib::setCompatibleErrorReporting()
-	 * @see Df_Core_Lib::getIncompatibleErrorLevels()
+	 * @used-by \Df\Core\Lib::setCompatibleErrorReporting()
+	 * @used-by \Df\Core\Lib::setCompatibleErrorReporting()
+	 * @see \Df\Core\Lib::getIncompatibleErrorLevels()
 	 * @override
 	 * @return int
 	 */
@@ -39,15 +40,15 @@ class Df_Pel_Lib extends Df_Core_Lib {
 	 * а вместо этого будет вызван require_once для всех файлов из папки «lib».
 	 * Этот алгоритм используется для всех внутренних библиотек Российской сборки Magento.
 	 *
-	 * @see Df_Core_Lib::needAddToIncludePath()
-	 * @used-by Df_Core_Lib::__construct()
+	 * @see \Df\Core\Lib::needAddToIncludePath()
+	 * @used-by \Df\Core\Lib::__construct()
 	 * @return bool
 	 */
 	protected function needAddToIncludePath() {return true;}
 
 	/**
 	 * @used-by Df_Seo_Model_Processor_Image_Exif::process()
-	 * @return Df_Pel_Lib
+	 * @return self
 	 */
 	public static function s() {return self::load(__CLASS__);}
 }

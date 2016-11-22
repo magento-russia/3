@@ -1096,7 +1096,7 @@ class Df_Catalog_Model_Product extends Mage_Catalog_Model_Product {
 		 * а системный класс используется при установке ядра,
 		 * в то время, когда Российская сборка ещё не инициализирована.
 		 */
-		Df_Core_Boot::run();
+		\Df\Core\Boot::run();
 	}
 	/**
 	 * @used-by \Df\C1\Cml2\Processor\Product\AddExternalId::_construct()

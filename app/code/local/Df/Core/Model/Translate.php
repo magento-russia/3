@@ -421,12 +421,12 @@ class Df_Core_Model_Translate extends Mage_Core_Model_Translate {
 			 * сразу инициализировать Российскую сборку Magento.
 			 *
 			 * Ещё одной нормальной альтернативой является применение метода
-			 * @see Df_Core_Boot::done(), чтобы использовать
+			 * @see \Df\Core\Boot::done(), чтобы использовать
 			 * @uses Df_Localization_Realtime_Translator
 			 * уже после инициализации Российской сборки Magento,
 			 * которая случиться где-нибудь в другом месте позже.
 			 */
-			Df_Core_Boot::run();
+			\Df\Core\Boot::run();
 			/**
 			 * Не используем Df_Localization_Realtime_Translator
 			 * в процессе установки Magento Community Edition,

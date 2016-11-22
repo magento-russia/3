@@ -56,7 +56,7 @@ class Df_Directory_Observer {
 		 * потому что они не вызывают Mage::dispatchEvent('default');
 		 * http://magento-forum.ru/topic/3929/
 		 */
-		Df_Core_Boot::run();
+		\Df\Core\Boot::run();
 		/**
 		 * Для ускорения работы системы проверяем класс коллекции прямо здесь,
 		 * а не в обработчике события.

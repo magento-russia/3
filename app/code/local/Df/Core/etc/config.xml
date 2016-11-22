@@ -259,7 +259,7 @@ https://github.com/OpenMage/magento-mirror/blob/1.6.1.0/lib/Varien/Db/Adapter/Pd
 			<controller_front_init_before>
 				<observers>
 					<Df_Core>
-						<class>Df_Core_Boot</class>
+						<class>Df\Core\Boot</class>
 						<method>controller_front_init_before</method>
 					</Df_Core>
 				</observers>
@@ -283,7 +283,7 @@ https://github.com/OpenMage/magento-mirror/blob/1.6.1.0/lib/Varien/Db/Adapter/Pd
 			<default>
 				<observers>
 					<Df_Core>
-						<class>Df_Core_Boot</class>
+						<class>Df\Core\Boot</class>
 						<method>_default</method>
 					</Df_Core>
 				</observers>
@@ -291,7 +291,7 @@ https://github.com/OpenMage/magento-mirror/blob/1.6.1.0/lib/Varien/Db/Adapter/Pd
 			<resource_get_tablename>
 				<observers>
 					<Df_Core>
-						<class>Df_Core_Boot</class>
+						<class>Df\Core\Boot</class>
 						<method>resource_get_tablename</method>
 					</Df_Core>
 				</observers>

@@ -1,5 +1,6 @@
 <?php
-class Df_Core_Boot {
+namespace Df\Core;
+class Boot {
 	/**
 	 * @used-by Mage_Core_Model_App::_callObserverMethod()
 	 * @return void
@@ -21,10 +22,10 @@ class Df_Core_Boot {
 
 	/**
 	 * @used-by Mage_Core_Model_App::_callObserverMethod()
-	 * @param Varien_Event_Observer $observer
+	 * @param \Varien_Event_Observer $observer
 	 * @return void
 	 */
-	public function resource_get_tablename(Varien_Event_Observer $observer) {
+	public function resource_get_tablename(\Varien_Event_Observer $observer) {
 		if (!self::done() && self::needInitNow($observer['table_name'])) {
 			self::run();
 		}
@@ -61,17 +62,12 @@ class Df_Core_Boot {
 	 */
 	public static function run() {
 		if (!self::$_done1) {
-			Df_Core_Autoload::register();
+			Autoload::register();
 			self::init1();
-			Df_Core_Lib::load('C1');
-			Df_Core_Lib::load('Checkout');
-			Df_Core_Lib::load('Customer');
-			Df_Core_Lib::load('Directory');
-			Df_Core_Lib::load('Framework');
-			Df_Core_Lib::load('Payment');
-			Df_Core_Lib::load('Shipping');
-			Df_Core_Lib::load('Tax');
-			Df_Core_Lib::load('Xml');
+			array_map([Lib::class, 'load'], [
+				'C1', 'Checkout', 'Customer', 'Directory',
+				'Framework', 'Payment', 'Shipping', 'Tax', 'Xml'
+			]);
 			self::$_done1 = true;
 		}
 		/**
@@ -105,9 +101,9 @@ class Df_Core_Boot {
 		 * (поле website_id не инициализировано).
 		 */
 		if (!self::$_done2
-			&& Mage::app()->getStores()
-			&& Mage::isInstalled()
-			&& !Mage::app()->getUpdateMode()
+			&& \Mage::app()->getStores()
+			&& \Mage::isInstalled()
+			&& !\Mage::app()->getUpdateMode()
 		) {
 			self::init2();
 			self::$_done2 = true;
@@ -126,7 +122,7 @@ class Df_Core_Boot {
 		// 2015-03-04
 		// Наверное, это не совсем правильно для промышленных магазинов.
 		// Надо, видимо, сделать административную опцию.
-		Mage::setIsDeveloperMode(true);
+		\Mage::setIsDeveloperMode(true);
 		/**
 		 * В PHP 5.6 этот вызов считается устаревшим:
 		 * «Use of mbstring.internal_encoding is deprecated».
@@ -190,9 +186,9 @@ class Df_Core_Boot {
 		 */
 		ini_set('session.gc_probability', 1);
 		ini_set('session.gc_divisor', 100);
-		Df_Core_Lib::load('Core');
+		Lib::load('Core');
 		/** @uses \Df\Qa\Message\Failure\Error::check() */
-		register_shutdown_function(array('\Df\Qa\Message\Failure\Error', 'check'));
+		register_shutdown_function([\Df\Qa\Message\Failure\Error::class, 'check']);
 		if (!ini_get('date.timezone')) {
 			/**
 			 * Временно устанавливаем в качестве часового пояса московский.
@@ -217,7 +213,7 @@ class Df_Core_Boot {
 	 */
 	private static function init2() {
 		/** @var string|null $defaultTimezone */
-		$defaultTimezone = Mage::getStoreConfig(Mage_Core_Model_Locale::XML_PATH_DEFAULT_TIMEZONE);
+		$defaultTimezone = \Mage::getStoreConfig(\Mage_Core_Model_Locale::XML_PATH_DEFAULT_TIMEZONE);
 		// По необъяснимой причине
 		// после предыдущего вызова $defaultTimezone может быть пустым значением
 		if ($defaultTimezone) {
@@ -226,9 +222,9 @@ class Df_Core_Boot {
 	}
 
 	/** @return bool */
-	private static function isCompilationFromCommandLine() {
-		static $r; return !is_null($r) ? $r : $r = @class_exists('Mage_Shell_Compiler', false);
-	}
+	private static function isCompilationFromCommandLine() {static $r; return $r ?: $r =
+		@class_exists('Mage_Shell_Compiler', false)
+	;}
 
 	/**
 	 * Мы бы рады инициализировать нашу библиотеку при загрузке таблицы «core_resource»,
@@ -242,12 +238,9 @@ class Df_Core_Boot {
 	 * @param string $tableName
 	 * @return bool
 	 */
-	private static function needInitNow($tableName) {
-		return
-				'core_website' === $tableName
-			||
-				'index_process' === $tableName && self::isCompilationFromCommandLine()
-		;
+	private static function needInitNow($tableName) {return
+		'core_website' === $tableName
+		|| 'index_process' === $tableName && self::isCompilationFromCommandLine();
 	}
 
 	/** @var bool */

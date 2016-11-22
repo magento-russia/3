@@ -1,5 +1,6 @@
 <?php
-class Df_Core_Lib {
+namespace Df\Core;
+class Lib {
 	/**
 	 * @used-by load()
 	 * @param string $moduleLocalPath
@@ -155,16 +156,16 @@ class Df_Core_Lib {
 	private $_moduleLocalPath = null;
 
 	/**
-	 * @used-by Df_Core_Boot::run()
-	 * @used-by Df_Core_Boot::initCore()
+	 * @used-by \Df\Core\Boot::run()
+	 * @used-by \Df\Core\Boot::initCore()
 	 * @used-by \Df\YandexMarket\Category\Document::_rows()
 	 * @param string $key
-	 * @return Df_Core_Lib
+	 * @return \Df\Core\Lib
 	 */
 	public static function load($key) {
-		/** @var array(string => Df_Core_Lib) */
+		/** @var array(string => \Df\Core\Lib) */
 		static $cache;
-		/** @var Df_Core_Lib $result */
+		/** @var \Df\Core\Lib $result */
 		if (!isset($cache[$key])) {
 			/** @var string[] $keyA */
 			$keyA = explode('_', $key);
@@ -176,7 +177,7 @@ class Df_Core_Lib {
 			$class = 2 < $count ? $key : __CLASS__;
 			/**
 			 * Нам нужно сохранить в кэше не просто флаг загруженности объекта,
-			 * а именно сам объект @uses Df_Core_Lib,
+			 * а именно сам объект @uses \Df\Core\Lib,
 			 * потому что затем у этого объекта могут вызываться методы:
 			 * @see setCompatibleErrorReporting()
 			 * @see restoreErrorReporting()

@@ -168,7 +168,7 @@ class Df_Seo_Model_Processor_Image_Exif extends Df_Core_Model {
 		 * Этот вызов неявно (автоматически) инициализирует библиотеку Pel.
 		 * @uses Df_Pel_Lib::s()
 		 */
-		Df_Pel_Lib::s()->setCompatibleErrorReporting();
+		\Df\Pel\Lib::s()->setCompatibleErrorReporting();
 		try {
 			if ($this->getPelJpeg()) {
 				$this->addTag_imageDescription();
@@ -183,10 +183,10 @@ class Df_Seo_Model_Processor_Image_Exif extends Df_Core_Model {
 				$this->getPelIfd0()->addSubIfd($ifdInterop);
 				df_file_put_contents($this->getImagePath(), $this->getPelJpeg()->getBytes());
 			}
-			Df_Pel_Lib::s()->restoreErrorReporting();
+			\Df\Pel\Lib::s()->restoreErrorReporting();
 		}
 		catch (Exception $e) {
-			Df_Pel_Lib::s()->restoreErrorReporting();
+			\Df\Pel\Lib::s()->restoreErrorReporting();
 			df_handle_entry_point_exception($e, false);
 		}
 	}

@@ -241,7 +241,7 @@ class Df_Catalog_Model_Category extends Mage_Catalog_Model_Category {
 			 * поэтому надо инициализировать Российскую сборку Magento
 			 * http://magento-forum.ru/topic/3732/
 			 */
-			Df_Core_Boot::run();
+			\Df\Core\Boot::run();
 		}
 		$this->_useFlatResource = self::useFlatResource() && !$this->_getData('disable_flat');
 	}
