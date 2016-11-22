@@ -1,5 +1,6 @@
 <?php
 namespace Df\Core;
+use Df\Qa\Message\Failure\Error;
 class Boot {
 	/**
 	 * @used-by Mage_Core_Model_App::_callObserverMethod()
@@ -187,8 +188,7 @@ class Boot {
 		ini_set('session.gc_probability', 1);
 		ini_set('session.gc_divisor', 100);
 		Lib::load('Core');
-		/** @uses \Df\Qa\Message\Failure\Error::check() */
-		register_shutdown_function([\Df\Qa\Message\Failure\Error::class, 'check']);
+		register_shutdown_function(function() {Error::check();});
 		if (!ini_get('date.timezone')) {
 			/**
 			 * Временно устанавливаем в качестве часового пояса московский.

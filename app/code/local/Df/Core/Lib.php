@@ -1,5 +1,6 @@
 <?php
 namespace Df\Core;
+use Df\Core\Helper\Path;
 class Lib {
 	/**
 	 * @used-by load()
@@ -105,7 +106,7 @@ class Lib {
 	 * Возвращает, например, строку «Df/Core/lib»
 	 * @return string
 	 */
-	private function getLibDirLocal() {return $this->_moduleLocalPath  . DS . 'lib';}
+	private function getLibDirLocal() {return "{$this->_moduleLocalPath}/lib";}
 
 	/** @return string */
 	private function getLibDirStandard() {
@@ -126,23 +127,22 @@ class Lib {
 	private function includeScripts() {
 		$this->setCompatibleErrorReporting();
 		try {
-			/** @var string $libPath */
-			$libPath = $this->getLibDir() . DS;
+			/** @var string $libDir */
+			$libDir = $this->getLibDir();
 			// Нельзя писать df_path()->children(),
 			// потому что библиотеки Российской сборки ещё не загружены
-			foreach (\Df\Core\Helper\Path::s()->children($this->getLibDir()) as $child) {
-				/** @var string $child */
-				$fullPath = $libPath . $child;
-				if (is_file($fullPath)) {
-					require_once $fullPath;
-				}
+			foreach (Path::s()->children($libDir) as $c) {
+				/** @var string $c */
+				/** @var string $path */
+				$path = "{$libDir}/{$c}";
+				// 2016-11-22
+				// «include returns FALSE on failure and raises a warning.
+				// Successful includes, unless overridden by the included file, return 1.»
+				// require_once ведёт себя так же.
+				is_file($path) ? require_once $path : null;
 			}
-			$this->restoreErrorReporting();
 		}
-		catch (Exception $e) {
-			$this->restoreErrorReporting();
-			throw $e;
-		}
+		finally {$this->restoreErrorReporting();}
 	}
 
 	/** @var int */
