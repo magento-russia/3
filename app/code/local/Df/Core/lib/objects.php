@@ -39,13 +39,16 @@ function df_class_exists($type) {return @class_exists($type);}
 /**
  * @see df_sc()
  * @param string $resultClass
- * @param string $expectedClass
- * @param array(string => mixed) $params [optional]
+ * @param string|null|array(string => mixed) $a2 [optional]
+ * @param array(string => mixed) $a3 [optional]
  * @return Varien_Object|object
  */
-function df_ic($resultClass, $expectedClass, array $params = []) {return
-	df_ar(new $resultClass($params), $expectedClass)
-;}
+function df_ic($resultClass, $a2 = null, array $a3 = []) {
+	/** @var string|null $expectedClass */
+	/** @var array(string => mixed) $params */
+	list($expectedClass, $params) = is_array($a2) ? [null, $a2] : [$a2, $a3];
+	return df_ar(new $resultClass($params), $expectedClass);
+}
 
 /**
  * 2016-08-24
