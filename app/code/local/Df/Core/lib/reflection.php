@@ -283,6 +283,13 @@ function df_con_s($c, $suffix, $method, array $params = []) {return dfcf(
 
 /**
  * 2016-07-10
+ * 2016-11-25
+ * Возвращает имя класса из той же папки, что и $c, но с окончанием $nameLast.
+ * Пример:
+ * $c => \Df\Payment\R\Response
+ * $nameLast = «Exception»
+ * Результат: «Df\Payment\R\Exception»
+ *
  * @param object|string $c
  * @param string|string[] $nameLast
  * @param string|null $def [optional]
