@@ -175,6 +175,14 @@ function df_class_second($c) {return df_explode_class($c)[1];}
 function df_class_second_lc($c) {return df_lcfirst(df_class_second($c));}
 
 /**
+ * 2016-11-25
+ * «Df\Sso\Settings\Button» => «Settings\Button»
+ * @param string|object $c
+ * @return string
+ */
+function df_class_suffix($c) {return implode(df_cld($c), array_slice(df_explode_class($c), 2));}
+
+/**
  * 2016-10-15
  * 2016-10-20
  * Нельзя делать параметр $c опциональным, потому что иначе получим сбой:
@@ -206,7 +214,7 @@ function df_const($c, $name, $def = null) {
  * 2016-02-08
  * Проверяет наличие следующих классов в указанном порядке:
  * 1) <имя конечного модуля>\<окончание класса>
- * 2) $default
+ * 2) $def
  * Возвращает первый из найденных классов.
  * @param object|string $c
  * @param string|string[] $suffix
@@ -473,5 +481,3 @@ function df_module_title($c) {
 	$moduleName = df_module_name($c);
 	return df_leaf_s(df_config_node('modules', $moduleName,  'title'), $moduleName);
 }
-
-
