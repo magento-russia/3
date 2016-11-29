@@ -123,7 +123,7 @@ class Df_AccessControl_Model_Role extends Df_Core_Model {
 	public static function fromRequest() {
 		/** @var Df_AccessControl_Model_Role $result */
 		static $result;
-		if (!isset($result)) {
+		if (!$result) {
 			/** @var Df_AccessControl_Model_Role $result */
 			$result = new self;
 			/** @var int|null $id */
