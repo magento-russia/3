@@ -24,11 +24,11 @@ https://github.com/OpenMage/magento-mirror/blob/1.6.1.0/lib/Varien/Db/Adapter/Pd
 					которая несовместима с кодом, написанным для версий jQuery ниже 1.9:
 					https://github.com/jquery/jquery-migrate/
 				-->
-				<cdn>http://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js</cdn>
+				<cdn>//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js</cdn>
 				<local>df/js/system/jquery.js</local>
 			</core>
 			<migrate>
-				<cdn>http://code.jquery.com/jquery-migrate-1.4.1.js</cdn>
+				<cdn>//code.jquery.com/jquery-migrate-1.4.1.js</cdn>
 				<local>df/js/system/jquery-migrate-1.4.1.js</local>
 			</migrate>
 		</jquery>
