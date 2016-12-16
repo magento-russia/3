@@ -13,10 +13,10 @@ class Method extends \Df\Payment\Method\WithRedirect {
 	 * автоматизированное разблокирование (возврат покупателю)
 	 * ранее зарезервированных (но не снятых со счёта покупателя) средств
 	 * @override
-	 * @param Varien_Object $payment
+	 * @param \Varien_Object $payment
 	 * @return bool
 	 */
-	public function canVoid(Varien_Object $payment) {return true;}
+	public function canVoid(\Varien_Object $payment) {return true;}
 
 	/**
 	 * @static
