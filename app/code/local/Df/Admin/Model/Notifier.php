@@ -17,7 +17,7 @@ abstract class Df_Admin_Model_Notifier extends Df_Core_Model {
 	 */
 	public function getUrlSkip() {
 		if (!isset($this->{__METHOD__})) {
-			$this->{__METHOD__} = Df_Admin_Action_SkipNotification::getLink(get_class($this));
+			$this->{__METHOD__} = \Df\Admin\Action\SkipNotification::getLink(get_class($this));
 		}
 		return $this->{__METHOD__};
 	}

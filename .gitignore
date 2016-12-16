@@ -24,6 +24,7 @@
 !skin/adminhtml/rm/**/*
 !skin/frontend/rm/**/*
 dev/
+lib/
 mail/
 # 2015-12-22
 # Раньше я исключал ещё файлы *.css.map,
