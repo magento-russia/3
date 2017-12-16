@@ -11,7 +11,7 @@ function df_cache() {static $r; return $r ?: $r = Mage::app()->getCacheInstance(
  * @uses Mage_Core_Model_Cache::flush().
  * Вызов Mage::app()->getCacheInstance()->flush()
  * соответствует действию административной кнопки «удалить веь кэш (Mаgento и другой)».
- * Например, кэш храниться в файлах (он там хранится по умолчанию),
+ * Например, если кэш хранится в файлах (а он там хранится по умолчанию),
  * то вызов Mage::app()->getCacheInstance()->flush() удалит всё содержимое папки с файлами кэша
  * (по умолчанию это папка «var/cache»).
  *
