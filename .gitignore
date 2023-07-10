@@ -3,6 +3,7 @@
 # http://stackoverflow.com/questions/8024924#comment15884195_8025106
 *
 !*/
+!.editorconfig
 !.gitignore
 # 2016-11-07
 !LICENSE
